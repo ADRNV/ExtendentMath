@@ -12,11 +12,29 @@ namespace MathExtended
     public class Matrix<T> : IEnumerator<T>
     {
         private T[ ,] matrix;
+       
         private T mainDiagonal;
         
+        private int rowsCount;
+        
+        private int collumnsCount;
+        
         private bool disposedValue;
+        
         private int _position;
+        
         private int _position1;  
+
+        public int RowsCount
+        {
+            get => rowsCount;
+        }
+
+        public int CollumnsCount
+        {
+            get => collumnsCount;
+        }
+
 
 #region IEnumerable
         public T Current
@@ -42,9 +60,10 @@ namespace MathExtended
         }
         public bool MoveNext()
         {
-            if (_position < GetLenght(matrix))
+            if (_position < matrix.GetUpperBound(0) + 1 && _position1 < matrix.Length / matrix.GetUpperBound(1) + 1)
             {
                 _position++;
+                _position1++;
                 return true;
             }
             else
@@ -54,6 +73,7 @@ namespace MathExtended
         public void Reset()
         {
             _position = -1;
+            _position1 = -1;
         }
 
         #endregion
@@ -63,9 +83,13 @@ namespace MathExtended
             get => matrix.Length;
         }
 
-        public Matrix(int width, int height)
+        public Matrix(int rows, int collumns)
         {
-            matrix = new T[height,width];
+            rowsCount = rows;
+
+            collumnsCount = collumns;
+
+            matrix = new T[rowsCount,collumns];
         }
        
         private int GetLenght(T[,] matrix)
