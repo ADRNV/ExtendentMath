@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\MatrixDifferentSizeException.cs" />
+    <Compile Include="Interfaces\INum.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MathExtendent.cs" />
   </ItemGroup>
