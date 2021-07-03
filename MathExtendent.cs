@@ -90,7 +90,7 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Сумма A и B</returns>
-        public static double[,] SumMatrixatrix(double[,] matrixA,double[,] matrixB)
+        public static double[,] SumMatrix(double[,] matrixA,double[,] matrixB)
         {
             var matrixC = new double[matrixA.GetLength(0), matrixB.GetLength(0) - 1];
             
@@ -113,7 +113,7 @@ namespace MathExtended
             return summedmatrix;
         }
 
-        public static Matrixatrix operator +(Matrixatrix matrixA, Matrixatrix matrixB)
+        public static Matrixatrix operator + (Matrixatrix matrixA, Matrixatrix matrixB)
         {
             var matrixC = new double[matrixA.Matrix.GetLength(0), matrixB.Matrix.GetLength(0) - 1];
 

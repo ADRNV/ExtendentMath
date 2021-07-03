@@ -1,24 +1,22 @@
-﻿using MathExtended.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MathExtended.Interfaces;
 using System.Collections;
 using MathExtended.Exceptions;
+using MiscUtil;
+
 
 namespace MathExtended
 {
-    public class Matrix<T> : IEnumerator<T> 
+    public class Matrix<T> : IEnumerator<T>
     {
         #region Поля матрицы
 
         private T[,] matrix;
 
-        private T mainDiagonal;
-
-
+        private T[] _mainDiagonal;
 
         private int rowsCount;
 
@@ -99,6 +97,27 @@ namespace MathExtended
             collumnsCount = collumns;
 
             matrix = new T[rowsCount, collumns];
+
+          
+        }
+
+        public T[] FindDiagonal()
+        {
+            T[] mainDiagonal = new T[(this.Length / 2) - 1];
+
+            for (int i = 0; i < rowsCount; i++)//Цикл, бегущий по строкам. 
+            {
+                for (int j = 0; j < collumnsCount; j++)//Цикл, бегущий по столбцам. 
+                {
+                    if (i == j)
+                    {
+                        mainDiagonal[j] = this[i, j];
+                    }
+
+                }
+            }
+          
+            return mainDiagonal;
         }
 
         private int GetLenght(T[,] matrix)
@@ -137,7 +156,7 @@ namespace MathExtended
         }
 
 
-        #region Matrixatrix Sum
+        #region Matrix Sum
 
         /// <summary>
         /// Суммирует две матрицы и возвращает 3-ю
@@ -183,9 +202,9 @@ namespace MathExtended
 
             for (int row = 0; row < matrixA.RowsCount; row++)
             {
-                for (int collumn = 0; collumn < matrixA.RowsCount; collumn++)
+                for (int collumn = 0; collumn < matrixA.CollumnsCount; collumn++)
                 {
-                    matrixB[row, collumn] = matrixA[row, collumn] * multiplier;
+                    matrixB[row, collumn] = Operator.Multiply(matrixA[row,collumn],multiplier);
                 }
             }
             return matrixB;
@@ -199,18 +218,42 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Сумма A и B</returns>
-        public static Matrix<T> Sum(Matrix<T> matrixA, Matrix<T> matrixB)
+        public static Matrix<T> operator + (Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.CollumnsCount);
 
 
-                for (var i = 0; i < matrixA.Length; i++)
+                for (var i = 0; i < matrixA.RowsCount; i++)
                 {
-                    for (var j = 0; j < matrixB.Length; j++)
+                    for (var j = 0; j < matrixB.CollumnsCount; j++)
                     {
-                        matrixC[i, j] = matrixA[i, j] + matrixB[i, j];
+                        matrixC[i, j] = Operator.Add(matrixA[i, j],matrixB[i, j]);
+                    }
+                }
+                return matrixC;
+            }
+            else
+            {
+                throw new MatrixDifferentSizeException();
+            }
+
+
+        }
+
+        public static Matrix<T> operator - (Matrix<T> matrixA, Matrix<T> matrixB)
+        {
+            if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
+            {
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.CollumnsCount);
+
+
+                for (var i = 0; i < matrixA.RowsCount; i++)
+                {
+                    for (var j = 0; j < matrixB.CollumnsCount; j++)
+                    {
+                        matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
                     }
                 }
                 return matrixC;
@@ -224,6 +267,24 @@ namespace MathExtended
         }
 #endif
 
+        public string OutString()
+        {
+            string outString = String.Empty;
+
+            for (int row = 0;row < this.rowsCount;row++)
+            {
+                for(int collumn = 0;collumn < this.collumnsCount;collumn++)
+                {
+                    outString += $" {this[row,collumn]} ";
+                }
+
+                outString += "\n";
+                
+            }
+
+            return outString;
+
+        }
 
 
         protected virtual void Dispose(bool disposing)
