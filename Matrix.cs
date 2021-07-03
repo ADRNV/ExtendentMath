@@ -7,10 +7,9 @@ using System.Collections;
 using MathExtended.Exceptions;
 using MiscUtil;
 
-
 namespace MathExtended
 {
-    public class Matrix<T> : IEnumerator<T>
+    public class Matrix<T> : IEnumerator<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
 
@@ -30,6 +29,19 @@ namespace MathExtended
 
         private int _position1;
 
+        public T[] MainDiagonal
+        {
+            get
+            {
+                _mainDiagonal = FindDiagonal();
+                return _mainDiagonal;
+            }
+
+            private set
+            {
+                _mainDiagonal = value;
+            }
+        }
         public int RowsCount
         {
             get => rowsCount;
@@ -98,12 +110,13 @@ namespace MathExtended
 
             matrix = new T[rowsCount, collumns];
 
-          
+            MainDiagonal = FindDiagonal();
+
         }
 
         public T[] FindDiagonal()
         {
-            T[] mainDiagonal = new T[(this.Length / 2) - 1];
+            List<T> mainDiagonal = new List<T>(); 
 
             for (int i = 0; i < rowsCount; i++)//Цикл, бегущий по строкам. 
             {
@@ -111,13 +124,13 @@ namespace MathExtended
                 {
                     if (i == j)
                     {
-                        mainDiagonal[j] = this[i, j];
+                        mainDiagonal.Add(this[i, j]);
                     }
 
                 }
             }
           
-            return mainDiagonal;
+            return mainDiagonal.ToArray();
         }
 
         private int GetLenght(T[,] matrix)
@@ -189,14 +202,14 @@ namespace MathExtended
         #endregion
 
 
-#if DEBUG
+
         /// <summary>
         /// Умножает матрицу на число
         /// </summary>
         /// <param name="multiplier"></param>
         /// <param name="matrixA"></param>
         /// <returns></returns>
-        public Matrix<T> MultiplyMatrix(T multiplier, Matrix<T> matrixA)
+        public static Matrix<T> operator * (T multiplier, Matrix<T> matrixA)
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.CollumnsCount);
 
@@ -213,7 +226,7 @@ namespace MathExtended
 
 
         /// <summary>
-        /// Суммирует две матрицы и возвращает 3-ю
+        /// Суммирует две матрицы
         /// </summary>
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
@@ -241,7 +254,12 @@ namespace MathExtended
 
 
         }
-
+        /// <summary>
+        /// Разность матриц
+        /// </summary>
+        /// <param name="matrixA"></param>
+        /// <param name="matrixB"></param>
+        /// <returns><code>Matrix<T></code></returns>
         public static Matrix<T> operator - (Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
@@ -265,8 +283,12 @@ namespace MathExtended
 
 
         }
-#endif
 
+
+        /// <summary>
+        /// Вывод всей матрицы 
+        /// </summary>
+        /// <returns><code>void</code></returns>
         public string OutString()
         {
             string outString = String.Empty;
@@ -286,6 +308,10 @@ namespace MathExtended
 
         }
 
+        public T[,] ToArray()
+        {
+            return matrix;
+        }
 
         protected virtual void Dispose(bool disposing)
         {
@@ -294,6 +320,7 @@ namespace MathExtended
                 if (disposing)
                 {
                     matrix = null;
+                    MainDiagonal = null;
 
                 }
 
