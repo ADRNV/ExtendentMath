@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MathExtended.Interfaces
 {
-    public interface INum: IConvertible,IComparable,IFormattable
+    public interface IAdd<T>
     {
-
+        T Add(T a, T b);
     }
 }
