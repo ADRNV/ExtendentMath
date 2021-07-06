@@ -31,8 +31,14 @@ namespace MathExtended
 
         #region Свойства матрицы
         /// <summary>
-        /// <code>T[]</code>Массив из объектов составляющих матрицу
+        /// Массив из объектов составляющих матрицу
         /// </summary>
+        /* TODO
+         Диагональ не актульна после
+         операций над матрицей([0,0,..n])
+         нужно сделать обновление при изменении или вынести в
+        отдельный метод
+         */
         public T[] MainDiagonal
         {
             get
@@ -46,16 +52,26 @@ namespace MathExtended
                 _mainDiagonal = value;
             }
         }
+
+        /// <summary>
+        /// Колличество строк в матрице
+        /// </summary>
         public int RowsCount
         {
+            
             get => rowsCount;
         }
-
+        /// <summary>
+        /// Колличество столбцов в матрице
+        /// </summary>
         public int CollumnsCount
         {
             get => collumnsCount;
         }
 
+        /// <summary>
+        /// Размер матрицы
+        /// </summary>
         public int Length
         {
             get => matrix.Length;
@@ -107,7 +123,11 @@ namespace MathExtended
         #endregion
 
 
-
+        /// <summary>
+        /// Создает матрицу с указанными размерами
+        /// </summary>
+        /// <param name="rows">Колличество строк в матрице</param>
+        /// <param name="collumns">Колличество столбцов матрице</param>
         public Matrix(int rows, int collumns)
         {
             rowsCount = rows;
@@ -186,7 +206,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
-        /// <returns>Сумма A и B</returns>
+        /// <returns><code>double[,]</code>Сумма A и B</returns>
         public static double[,] SumMatrix(double[,] matrixA, double[,] matrixB)
         {
 
@@ -210,8 +230,13 @@ namespace MathExtended
             }
         }
 
-
-        public static Matrix<T> operator +(Matrix<T> matrixA, Matrix<T> matrixB)
+        /// <summary>
+        /// Суммирует две матрицы
+        /// </summary>
+        /// <param name="matrixA"></param>
+        /// <param name="matrixB"></param>
+        /// <returns>Сумма A и B</returns>
+        public static Matrix<T> operator + (Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
@@ -260,16 +285,6 @@ namespace MathExtended
             }
             return matrixB;
         }
-
-
-
-        /// <summary>
-        /// Суммирует две матрицы
-        /// </summary>
-        /// <param name="matrixA"></param>
-        /// <param name="matrixB"></param>
-        /// <returns>Сумма A и B</returns>
-        
         /// <summary>
         /// Разность матриц
         /// </summary>
@@ -299,7 +314,10 @@ namespace MathExtended
 
 
         }
-
+        /// <summary>
+        /// Преобразует матрицу в двумерный массив
+        /// </summary>
+        /// <returns><code>T[,] matrix</code></returns>
         public T[,] ToArray()
         {
             return matrix;
@@ -308,7 +326,7 @@ namespace MathExtended
         /// <summary>
         /// Вывод всей матрицы 
         /// </summary>
-        /// <returns><code>void</code></returns>
+        /// <returns></returns>
         public string OutString()
         {
             string outString = String.Empty;
