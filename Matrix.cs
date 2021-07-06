@@ -72,7 +72,7 @@ namespace MathExtended
         /// <summary>
         /// Размер матрицы
         /// </summary>
-        public int Length
+        public int Size
         {
             get => matrix.Length;
         }
