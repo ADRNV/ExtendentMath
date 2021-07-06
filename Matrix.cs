@@ -29,6 +29,10 @@ namespace MathExtended
 
         private int _position1;
 
+        #region Свойства матрицы
+        /// <summary>
+        /// <code>T[]</code>Массив из объектов составляющих матрицу
+        /// </summary>
         public T[] MainDiagonal
         {
             get
@@ -57,6 +61,7 @@ namespace MathExtended
             get => matrix.Length;
         }
 
+        #endregion
 
         #region IEnumerable
         public T Current
@@ -71,6 +76,7 @@ namespace MathExtended
             }
         }
 
+        
         object IEnumerator.Current => this.Current;
 
         public IEnumerator<T> GetEnumerator()
@@ -114,13 +120,17 @@ namespace MathExtended
 
         }
 
+        /// <summary>
+        /// Находит диагональ матрицы
+        /// </summary>
+        /// <returns><code>T[] Array</code>Массив значений составляющих диагональ</returns>
         public T[] FindDiagonal()
         {
             List<T> mainDiagonal = new List<T>(); 
 
-            for (int i = 0; i < rowsCount; i++)//Цикл, бегущий по строкам. 
+            for (int i = 0; i < rowsCount; i++) 
             {
-                for (int j = 0; j < collumnsCount; j++)//Цикл, бегущий по столбцам. 
+                for (int j = 0; j < collumnsCount; j++)
                 {
                     if (i == j)
                     {
@@ -177,7 +187,7 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Сумма A и B</returns>
-        public static double[,] SumMatrixatrix(double[,] matrixA, double[,] matrixB)
+        public static double[,] SumMatrix(double[,] matrixA, double[,] matrixB)
         {
 
             if (matrixA.Length == matrixB.Length)
@@ -199,6 +209,34 @@ namespace MathExtended
                 throw new MatrixDifferentSizeException();
             }
         }
+
+
+        public static Matrix<T> operator +(Matrix<T> matrixA, Matrix<T> matrixB)
+        {
+            if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
+            {
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.CollumnsCount);
+
+
+                for (var i = 0; i < matrixA.RowsCount; i++)
+                {
+                    for (var j = 0; j < matrixB.CollumnsCount; j++)
+                    {
+                        matrixC[i, j] = Operator.Add(matrixA[i, j], matrixB[i, j]);
+                    }
+                }
+                return matrixC;
+            }
+            else
+            {
+                throw new MatrixDifferentSizeException();
+            }
+
+
+        }
+
+
+
         #endregion
 
 
@@ -231,29 +269,7 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Сумма A и B</returns>
-        public static Matrix<T> operator + (Matrix<T> matrixA, Matrix<T> matrixB)
-        {
-            if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
-            {
-                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.CollumnsCount);
-
-
-                for (var i = 0; i < matrixA.RowsCount; i++)
-                {
-                    for (var j = 0; j < matrixB.CollumnsCount; j++)
-                    {
-                        matrixC[i, j] = Operator.Add(matrixA[i, j],matrixB[i, j]);
-                    }
-                }
-                return matrixC;
-            }
-            else
-            {
-                throw new MatrixDifferentSizeException();
-            }
-
-
-        }
+        
         /// <summary>
         /// Разность матриц
         /// </summary>
@@ -284,6 +300,10 @@ namespace MathExtended
 
         }
 
+        public T[,] ToArray()
+        {
+            return matrix;
+        }
 
         /// <summary>
         /// Вывод всей матрицы 
@@ -308,10 +328,7 @@ namespace MathExtended
 
         }
 
-        public T[,] ToArray()
-        {
-            return matrix;
-        }
+        
 
         protected virtual void Dispose(bool disposing)
         {
