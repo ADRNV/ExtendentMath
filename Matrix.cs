@@ -311,7 +311,12 @@ namespace MathExtended
             }
             return matrixB;
         }
-
+        /// <summary>
+        /// Перемножает матрицы(пока что только квадратные)
+        /// </summary>
+        /// <param name="matrixA"></param>
+        /// <param name="matrixB"></param>
+        /// <returns></returns>
         public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount)
@@ -324,7 +329,7 @@ namespace MathExtended
                     {
                         for (int k = 0; k < (matrixC.Size / 2) - 1; k++)
                         {
-                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[k, column], matrixB[column,k]));
+                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k,column]));
                         }
                     }
                 }
@@ -338,7 +343,73 @@ namespace MathExtended
 
            
         }
+
         
+        /// <summary>
+        /// Возводит матрицу в степень
+        /// </summary>
+        /// <param name="matrix">Матрица</param>
+        /// <param name="power">Степень</param>
+        /// <returns></returns>
+        public static Matrix<T> Pow(Matrix<T> matrix,int power)
+        {
+            var matrixC = matrix;
+            
+            for(int i = 0;i < power;i++)
+            {
+                matrixC = matrix * matrix;
+            }
+            return matrixC;
+        }
+
+
+        #region Фичи
+
+        //public Matrix<T> FillMatrixRandom()
+        //{
+        //    Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
+
+        //    Random random = new Random(this.Size);
+
+        //    for(int row = 0;row < this.RowsCount;row++)
+        //    {
+        //        for(int column = 0;column < this.ColumnsCount;column++)
+        //        {
+        //            filledMatrix[row, column] = random.Next(0, this.Size);
+        //        }
+        //    }
+
+        //    return filledMatrix;
+        //}
+
+        //public Matrix<int> FillMatrixInOrder()
+        //{
+        //    var filledMatrix = new Matrix<int>(this.RowsCount,this.ColumnsCount);
+
+        //    int counter = 1;
+
+
+        //    for (int i = 0; i < this.RowsCount; i++)
+        //    {
+        //        for (int j = 0; j < this.RowsCount; j++)
+        //        {
+        //            this[i, j] = counter++;
+        //        }
+        //    }
+
+            //return filledMatrix;
+
+        //}
+
+
+
+
+
+
+
+
+        #endregion
+
         /// <summary>
         /// Преобразует матрицу в двумерный массив
         /// </summary>
