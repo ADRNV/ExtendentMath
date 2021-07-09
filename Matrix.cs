@@ -19,7 +19,7 @@ namespace MathExtended
 
         private int rowsCount;
 
-        private int collumnsCount;
+        private int columnsCount;
 
         #endregion
 
@@ -64,9 +64,9 @@ namespace MathExtended
         /// <summary>
         /// Колличество столбцов в матрице
         /// </summary>
-        public int CollumnsCount
+        public int ColumnsCount
         {
-            get => collumnsCount;
+            get => columnsCount;
         }
 
         /// <summary>
@@ -127,14 +127,14 @@ namespace MathExtended
         /// Создает матрицу с указанными размерами
         /// </summary>
         /// <param name="rows">Колличество строк в матрице</param>
-        /// <param name="collumns">Колличество столбцов матрице</param>
-        public Matrix(int rows, int collumns)
+        /// <param name="columns">Колличество столбцов матрице</param>
+        public Matrix(int rows, int columns)
         {
             rowsCount = rows;
 
-            collumnsCount = collumns;
+            columnsCount = columns;
 
-            matrix = new T[rowsCount, collumns];
+            matrix = new T[rowsCount, columns];
 
             MainDiagonal = FindDiagonal();
 
@@ -150,7 +150,7 @@ namespace MathExtended
 
             for (int i = 0; i < rowsCount; i++) 
             {
-                for (int j = 0; j < collumnsCount; j++)
+                for (int j = 0; j < columnsCount; j++)
                 {
                     if (i == j)
                     {
@@ -238,14 +238,14 @@ namespace MathExtended
         /// <returns>Сумма A и B</returns>
         public static Matrix<T> operator + (Matrix<T> matrixA, Matrix<T> matrixB)
         {
-            if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
+            if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
-                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.CollumnsCount);
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
 
                 for (var i = 0; i < matrixA.RowsCount; i++)
                 {
-                    for (var j = 0; j < matrixB.CollumnsCount; j++)
+                    for (var j = 0; j < matrixB.ColumnsCount; j++)
                     {
                         matrixC[i, j] = Operator.Add(matrixA[i, j], matrixB[i, j]);
                     }
@@ -260,47 +260,24 @@ namespace MathExtended
 
         }
 
-
-
         #endregion
 
-
-
-        /// <summary>
-        /// Умножает матрицу на число
-        /// </summary>
-        /// <param name="multiplier"></param>
-        /// <param name="matrixA"></param>
-        /// <returns></returns>
-        public static Matrix<T> operator * (T multiplier, Matrix<T> matrixA)
-        {
-            var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.CollumnsCount);
-
-            for (int row = 0; row < matrixA.RowsCount; row++)
-            {
-                for (int collumn = 0; collumn < matrixA.CollumnsCount; collumn++)
-                {
-                    matrixB[row, collumn] = Operator.Multiply(matrixA[row,collumn],multiplier);
-                }
-            }
-            return matrixB;
-        }
         /// <summary>
         /// Разность матриц
         /// </summary>
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns><code>Matrix<T></code></returns>
-        public static Matrix<T> operator - (Matrix<T> matrixA, Matrix<T> matrixB)
+        public static Matrix<T> operator -(Matrix<T> matrixA, Matrix<T> matrixB)
         {
-            if (matrixA.CollumnsCount == matrixB.CollumnsCount && matrixA.RowsCount == matrixB.RowsCount)
+            if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
-                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.CollumnsCount);
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
 
                 for (var i = 0; i < matrixA.RowsCount; i++)
                 {
-                    for (var j = 0; j < matrixB.CollumnsCount; j++)
+                    for (var j = 0; j < matrixB.ColumnsCount; j++)
                     {
                         matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
                     }
@@ -314,6 +291,54 @@ namespace MathExtended
 
 
         }
+
+        /// <summary>
+        /// Умножает матрицу на число
+        /// </summary>
+        /// <param name="multiplier"></param>
+        /// <param name="matrixA"></param>
+        /// <returns></returns>
+        public static Matrix<T> operator * (T multiplier, Matrix<T> matrixA)
+        {
+            var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
+
+            for (int row = 0; row < matrixA.RowsCount; row++)
+            {
+                for (int column = 0; column < matrixA.ColumnsCount; column++)
+                {
+                    matrixB[row, column] = Operator.Multiply(matrixA[row,column],multiplier);
+                }
+            }
+            return matrixB;
+        }
+
+        public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
+        {
+            if (matrixA.ColumnsCount == matrixB.ColumnsCount)
+            {
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
+
+                for (int row = 0; row < matrixA.RowsCount; row++)
+                {
+                    for (int column = 0; column < matrixB.ColumnsCount; column++)
+                    {
+                        for (int k = 0; k < (matrixC.Size / 2) - 1; k++)
+                        {
+                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[k, column], matrixB[column,k]));
+                        }
+                    }
+                }
+
+                return matrixC;
+            }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
+
+           
+        }
+        
         /// <summary>
         /// Преобразует матрицу в двумерный массив
         /// </summary>
@@ -333,9 +358,9 @@ namespace MathExtended
 
             for (int row = 0;row < this.rowsCount;row++)
             {
-                for(int collumn = 0;collumn < this.collumnsCount;collumn++)
+                for(int column = 0;column < this.columnsCount;column++)
                 {
-                    outString += $" {this[row,collumn]} ";
+                    outString += $" {this[row,column]} ";
                 }
 
                 outString += "\n";
