@@ -262,6 +262,29 @@ namespace MathExtended
 
         #endregion
 
+        public static double[,] SubstractionMatrix(double[,] matrixA, double[,] matrixB)
+        {
+
+            if (matrixA.Length == matrixB.Length)
+            {
+                var matrixC = new double[matrixA.GetLength(0), matrixB.GetLength(0)];
+
+                for (var i = 0; i < matrixA.GetLength(0); i++)
+                {
+                    for (var j = 0; j < matrixB.GetLength(0); j++)
+                    {
+                        matrixC[i, j] = matrixA[i, j] - matrixB[i, j];
+                    }
+                }
+
+                return matrixC;
+            }
+            else
+            {
+                throw new MatrixDifferentSizeException();
+            }
+        }
+
         /// <summary>
         /// Разность матриц
         /// </summary>
@@ -319,7 +342,7 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
         {
-            if (matrixA.ColumnsCount == matrixB.ColumnsCount)
+            if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA != null && matrixB != null)
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
@@ -353,13 +376,20 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> Pow(Matrix<T> matrix,int power)
         {
-            var matrixC = matrix;
-            
-            for(int i = 0;i < power;i++)
+            if (matrix != null)
             {
-                matrixC = matrix * matrix;
+                var matrixC = matrix;
+
+                for (int i = 0; i < power; i++)
+                {
+                    matrixC = matrix * matrix;
+                }
+                return matrixC;
             }
-            return matrixC;
+            else
+            {
+                throw new ArgumentException();
+            }
         }
 
 
@@ -382,24 +412,52 @@ namespace MathExtended
         //    return filledMatrix;
         //}
 
-        //public Matrix<int> FillMatrixInOrder()
-        //{
-        //    var filledMatrix = new Matrix<int>(this.RowsCount,this.ColumnsCount);
+        /// <summary>
+        /// Заполняет матрицу по порядку:от 1 до размера матрицы
+        /// </summary>
+        /// <returns>Матрица заполненная по порядку</returns>
+        public Matrix<int> FillMatrixInOrder()
+        {
+            var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
-        //    int counter = 1;
+            int counter = 1;
 
 
-        //    for (int i = 0; i < this.RowsCount; i++)
-        //    {
-        //        for (int j = 0; j < this.RowsCount; j++)
-        //        {
-        //            this[i, j] = counter++;
-        //        }
-        //    }
+            for (int i = 0; i < this.RowsCount; i++)
+            {
+                for (int j = 0; j < this.RowsCount; j++)
+                {
+                    filledMatrix[i, j] = counter++;
+                }
+            }
 
-            //return filledMatrix;
+            return filledMatrix;
 
-        //}
+        }
+
+        public void ForEach(Func<T,T>func)
+        {
+
+            if (func != null)
+            {
+                for (int row = 0; row < this.ColumnsCount; row++)
+                {
+                    for (int column = 0; column < this.RowsCount; column++)
+                    {
+                        this[row, column] = func(this[row, column]);
+                    }
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException();
+            }
+
+        }
+
+       
+        
+
 
 
 
@@ -450,8 +508,10 @@ namespace MathExtended
             {
                 if (disposing)
                 {
-                    matrix = null;
+                   
                     MainDiagonal = null;
+                    matrix = null;
+                                        
 
                 }
 
