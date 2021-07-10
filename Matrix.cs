@@ -388,11 +388,28 @@ namespace MathExtended
             }
             else
             {
+               
                 throw new ArgumentException();
             }
         }
+        /// <summary>
+        /// Транспонирует текущую матрицу и возвращает новую
+        /// </summary>
+        /// <returns></returns>
+        public Matrix<T> TransponateMatrix()
+        {
+            var transposedMatrix = new Matrix<T>(this.ColumnsCount,this.RowsCount);
 
+            for(int row = 0;row < this.ColumnsCount;row++)
+            {
+                for(int column = 0;column < this.RowsCount;column++)
+                {
+                    transposedMatrix[row, column] = this[column,row];
+                }
+            }
 
+            return transposedMatrix;
+        }
         #region Фичи
 
         //public Matrix<T> FillMatrixRandom()
