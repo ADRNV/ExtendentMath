@@ -9,7 +9,7 @@ using MiscUtil;
 
 namespace MathExtended
 {
-    public class Matrix<T> : IEnumerator<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class Matrix<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
 
@@ -58,7 +58,7 @@ namespace MathExtended
         /// </summary>
         public int RowsCount
         {
-            
+
             get => rowsCount;
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace MathExtended
             }
         }
 
-        
+
         object IEnumerator.Current => this.Current;
 
         public IEnumerator<T> GetEnumerator()
@@ -146,9 +146,9 @@ namespace MathExtended
         /// <returns><code>T[] Array</code>Массив значений составляющих диагональ</returns>
         public T[] FindDiagonal()
         {
-            List<T> mainDiagonal = new List<T>(); 
+            List<T> mainDiagonal = new List<T>();
 
-            for (int i = 0; i < rowsCount; i++) 
+            for (int i = 0; i < rowsCount; i++)
             {
                 for (int j = 0; j < columnsCount; j++)
                 {
@@ -159,7 +159,7 @@ namespace MathExtended
 
                 }
             }
-          
+
             return mainDiagonal.ToArray();
         }
 
@@ -236,7 +236,7 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Сумма A и B</returns>
-        public static Matrix<T> operator + (Matrix<T> matrixA, Matrix<T> matrixB)
+        public static Matrix<T> operator +(Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
@@ -321,7 +321,7 @@ namespace MathExtended
         /// <param name="multiplier"></param>
         /// <param name="matrixA"></param>
         /// <returns></returns>
-        public static Matrix<T> operator * (T multiplier, Matrix<T> matrixA)
+        public static Matrix<T> operator *(T multiplier, Matrix<T> matrixA)
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
 
@@ -329,7 +329,7 @@ namespace MathExtended
             {
                 for (int column = 0; column < matrixA.ColumnsCount; column++)
                 {
-                    matrixB[row, column] = Operator.Multiply(matrixA[row,column],multiplier);
+                    matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
                 }
             }
             return matrixB;
@@ -340,7 +340,7 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns></returns>
-        public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
+        public static Matrix<T> operator *(Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA != null && matrixB != null)
             {
@@ -352,7 +352,7 @@ namespace MathExtended
                     {
                         for (int k = 0; k < (matrixC.Size / 2) - 1; k++)
                         {
-                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k,column]));
+                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
                     }
                 }
@@ -364,17 +364,17 @@ namespace MathExtended
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
 
-           
+
         }
 
-        
+
         /// <summary>
         /// Возводит матрицу в степень
         /// </summary>
         /// <param name="matrix">Матрица</param>
         /// <param name="power">Степень</param>
         /// <returns></returns>
-        public static Matrix<T> Pow(Matrix<T> matrix,int power)
+        public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
             if (matrix != null)
             {
@@ -435,7 +435,7 @@ namespace MathExtended
 
         }
 
-        public void ForEach(Func<T,T>func)
+        public void ForEach(Func<T, T> func)
         {
 
             if (func != null)
@@ -455,8 +455,8 @@ namespace MathExtended
 
         }
 
-       
-        
+
+
 
 
 
@@ -485,22 +485,22 @@ namespace MathExtended
         {
             string outString = String.Empty;
 
-            for (int row = 0;row < this.rowsCount;row++)
+            for (int row = 0; row < this.rowsCount; row++)
             {
-                for(int column = 0;column < this.columnsCount;column++)
+                for (int column = 0; column < this.columnsCount; column++)
                 {
-                    outString += $" {this[row,column]} ";
+                    outString += $" {this[row, column]} ";
                 }
 
                 outString += "\n";
-                
+
             }
 
             return outString;
 
         }
 
-        
+
 
         protected virtual void Dispose(bool disposing)
         {
@@ -508,10 +508,10 @@ namespace MathExtended
             {
                 if (disposing)
                 {
-                   
+
                     MainDiagonal = null;
                     matrix = null;
-                                        
+
 
                 }
 
@@ -535,13 +535,13 @@ namespace MathExtended
             GC.SuppressFinalize(this);
         }
 
-       
+
 
 
     }
 
 
-   
+
 
 
 
