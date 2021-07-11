@@ -465,7 +465,7 @@ namespace MathExtended
                 {
                     for (int column = 0; column < this.RowsCount; column++)
                     {
-                        this[row, column] = func(this[row, column]);
+                        this[column, row] = func(this[column, row]);
                     }
                 }
             }
