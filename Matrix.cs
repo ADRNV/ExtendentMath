@@ -472,23 +472,6 @@ namespace MathExtended
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        #endregion
-
-        /// <summary>
-        /// Преобразует матрицу в двумерный массив
-        /// </summary>
-        /// <returns><code>T[,] matrix</code></returns>
         public T[,] ToArray()
         {
             return matrix;
@@ -516,6 +499,23 @@ namespace MathExtended
             return outString;
 
         }
+
+
+
+
+
+
+
+
+
+
+        #endregion
+
+        /// <summary>
+        /// Преобразует матрицу в двумерный массив
+        /// </summary>
+        /// <returns><code>T[,] matrix</code></returns>
+
 
 
 
