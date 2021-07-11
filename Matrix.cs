@@ -452,6 +452,10 @@ namespace MathExtended
 
         }
 
+        /// <summary>
+        /// Применяет функцию ко всем элементам матрицы
+        /// </summary>
+        /// <param name="func">Делегат(Функтор) с одним параметром</param>
         public void ForEach(Func<T, T> func)
         {
 
