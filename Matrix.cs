@@ -342,13 +342,13 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> operator *(Matrix<T> matrixA, Matrix<T> matrixB)
         {
-            if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA != null && matrixB != null)
+            if (matrixA.ColumnsCount == matrixB.RowsCount && matrixA != null && matrixB != null)
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-                for (int row = 0; row < matrixA.RowsCount; row++)
+                for (int row = 0; row < matrixA.ColumnsCount; row++)
                 {
-                    for (int column = 0; column < matrixB.ColumnsCount; column++)
+                    for (int column = 0; column < matrixB.RowsCount; column++)
                     {
                         for (int k = 0; k < (matrixC.Size / 2) - 1; k++)
                         {
@@ -440,11 +440,11 @@ namespace MathExtended
             int counter = 1;
 
 
-            for (int i = 0; i < this.RowsCount; i++)
+            for (int i = 0; i < this.ColumnsCount; i++)
             {
                 for (int j = 0; j < this.RowsCount; j++)
                 {
-                    filledMatrix[i, j] = counter++;
+                    filledMatrix[j,i] = counter++;
                 }
             }
 
