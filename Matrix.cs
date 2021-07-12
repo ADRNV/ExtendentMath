@@ -342,15 +342,14 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> operator *(Matrix<T> matrixA, Matrix<T> matrixB)
         {
-            if (matrixA.ColumnsCount == matrixB.RowsCount && matrixA != null && matrixB != null)
-            {
-                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
+            
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount );
 
-                for (int row = 0; row < matrixA.ColumnsCount; row++)
+                for (int row = 0; row < matrixA.RowsCount; row++)
                 {
-                    for (int column = 0; column < matrixB.RowsCount; column++)
+                    for (int column = 0; column < matrixB.ColumnsCount; column++)
                     {
-                        for (int k = 0; k < (matrixC.Size / 2) - 1; k++)
+                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
                         {
                             matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
@@ -358,11 +357,7 @@ namespace MathExtended
                 }
 
                 return matrixC;
-            }
-            else
-            {
-                throw new TheNumberOfRowsAndColumnsIsDifferentException();
-            }
+           
 
 
         }
@@ -376,7 +371,7 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
-            if (matrix != null)
+            if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
             {
                 var matrixC = matrix;
 
@@ -388,8 +383,7 @@ namespace MathExtended
             }
             else
             {
-               
-                throw new ArgumentException();
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
         }
         /// <summary>
@@ -439,15 +433,26 @@ namespace MathExtended
 
             int counter = 1;
 
-
-            for (int i = 0; i < this.ColumnsCount; i++)
+            if (this.ColumnsCount != this.RowsCount)
             {
-                for (int j = 0; j < this.RowsCount; j++)
+                for (int i = 0; i < this.ColumnsCount; i++)
                 {
-                    filledMatrix[j,i] = counter++;
+                    for (int j = 0; j < this.RowsCount; j++)
+                    {
+                        filledMatrix[j, i] = counter++;
+                    }
                 }
             }
-
+            else
+            {
+                for (int i = 0; i < this.ColumnsCount; i++)
+                {
+                    for (int j = 0; j < this.RowsCount; j++)
+                    {
+                        filledMatrix[j, i] = counter++;
+                    }
+                }
+            }
             return filledMatrix;
 
         }
@@ -461,11 +466,11 @@ namespace MathExtended
 
             if (func != null)
             {
-                for (int row = 0; row < this.ColumnsCount; row++)
+                for (int row = 0; row < this.RowsCount; row++)
                 {
-                    for (int column = 0; column < this.RowsCount; column++)
+                    for (int column = 0; column < this.ColumnsCount; column++)
                     {
-                        this[column, row] = func(this[column, row]);
+                        this[row, column] = func(this[row, column]);
                     }
                 }
             }
