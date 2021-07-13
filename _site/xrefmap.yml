@@ -1,0 +1,525 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: MathExtended
+  name: MathExtended
+  href: api/MathExtended.html
+  commentId: N:MathExtended
+  fullName: MathExtended
+  nameWithType: MathExtended
+- uid: MathExtended.Exceptions
+  name: MathExtended.Exceptions
+  href: api/MathExtended.Exceptions.html
+  commentId: N:MathExtended.Exceptions
+  fullName: MathExtended.Exceptions
+  nameWithType: MathExtended.Exceptions
+- uid: MathExtended.Exceptions.MatrixDifferentSizeException
+  name: MatrixDifferentSizeException
+  href: api/MathExtended.Exceptions.MatrixDifferentSizeException.html
+  commentId: T:MathExtended.Exceptions.MatrixDifferentSizeException
+  fullName: MathExtended.Exceptions.MatrixDifferentSizeException
+  nameWithType: MatrixDifferentSizeException
+- uid: MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.MatrixDifferentSizeException.html#MathExtended_Exceptions_MatrixDifferentSizeException_Message
+  commentId: P:MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  fullName: MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  nameWithType: MatrixDifferentSizeException.Message
+- uid: MathExtended.Exceptions.MatrixDifferentSizeException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.MatrixDifferentSizeException.html#MathExtended_Exceptions_MatrixDifferentSizeException_Message_
+  commentId: Overload:MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  nameWithType: MatrixDifferentSizeException.Message
+- uid: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException
+  name: TheNumberOfRowsAndColumnsIsDifferentException
+  href: api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html
+  commentId: T:MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException
+  fullName: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException
+  nameWithType: TheNumberOfRowsAndColumnsIsDifferentException
+- uid: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html#MathExtended_Exceptions_TheNumberOfRowsAndColumnsIsDifferentException_Message
+  commentId: P:MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  fullName: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  nameWithType: TheNumberOfRowsAndColumnsIsDifferentException.Message
+- uid: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html#MathExtended_Exceptions_TheNumberOfRowsAndColumnsIsDifferentException_Message_
+  commentId: Overload:MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  nameWithType: TheNumberOfRowsAndColumnsIsDifferentException.Message
+- uid: MathExtended.MathExtendent
+  name: MathExtendent
+  href: api/MathExtended.MathExtendent.html
+  commentId: T:MathExtended.MathExtendent
+  fullName: MathExtended.MathExtendent
+  nameWithType: MathExtendent
+- uid: MathExtended.MathExtendent.Cosec(System.Double)
+  name: Cosec(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Cosec_System_Double_
+  commentId: M:MathExtended.MathExtendent.Cosec(System.Double)
+  fullName: MathExtended.MathExtendent.Cosec(System.Double)
+  nameWithType: MathExtendent.Cosec(Double)
+- uid: MathExtended.MathExtendent.Cosec*
+  name: Cosec
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Cosec_
+  commentId: Overload:MathExtended.MathExtendent.Cosec
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Cosec
+  nameWithType: MathExtendent.Cosec
+- uid: MathExtended.MathExtendent.Cottan(System.Double)
+  name: Cottan(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Cottan_System_Double_
+  commentId: M:MathExtended.MathExtendent.Cottan(System.Double)
+  fullName: MathExtended.MathExtendent.Cottan(System.Double)
+  nameWithType: MathExtendent.Cottan(Double)
+- uid: MathExtended.MathExtendent.Cottan*
+  name: Cottan
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Cottan_
+  commentId: Overload:MathExtended.MathExtendent.Cottan
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Cottan
+  nameWithType: MathExtendent.Cottan
+- uid: MathExtended.MathExtendent.Sec(System.Double)
+  name: Sec(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Sec_System_Double_
+  commentId: M:MathExtended.MathExtendent.Sec(System.Double)
+  fullName: MathExtended.MathExtendent.Sec(System.Double)
+  nameWithType: MathExtendent.Sec(Double)
+- uid: MathExtended.MathExtendent.Sec*
+  name: Sec
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Sec_
+  commentId: Overload:MathExtended.MathExtendent.Sec
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Sec
+  nameWithType: MathExtendent.Sec
+- uid: MathExtended.Matrix`1
+  name: Matrix<T>
+  href: api/MathExtended.Matrix-1.html
+  commentId: T:MathExtended.Matrix`1
+  name.vb: Matrix(Of T)
+  fullName: MathExtended.Matrix<T>
+  fullName.vb: MathExtended.Matrix(Of T)
+  nameWithType: Matrix<T>
+  nameWithType.vb: Matrix(Of T)
+- uid: MathExtended.Matrix`1.#ctor(System.Int32,System.Int32)
+  name: Matrix(Int32, Int32)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1__ctor_System_Int32_System_Int32_
+  commentId: M:MathExtended.Matrix`1.#ctor(System.Int32,System.Int32)
+  fullName: MathExtended.Matrix<T>.Matrix(System.Int32, System.Int32)
+  fullName.vb: MathExtended.Matrix(Of T).Matrix(System.Int32, System.Int32)
+  nameWithType: Matrix<T>.Matrix(Int32, Int32)
+  nameWithType.vb: Matrix(Of T).Matrix(Int32, Int32)
+- uid: MathExtended.Matrix`1.#ctor*
+  name: Matrix
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1__ctor_
+  commentId: Overload:MathExtended.Matrix`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Matrix
+  fullName.vb: MathExtended.Matrix(Of T).Matrix
+  nameWithType: Matrix<T>.Matrix
+  nameWithType.vb: Matrix(Of T).Matrix
+- uid: MathExtended.Matrix`1.ColumnsCount
+  name: ColumnsCount
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ColumnsCount
+  commentId: P:MathExtended.Matrix`1.ColumnsCount
+  fullName: MathExtended.Matrix<T>.ColumnsCount
+  fullName.vb: MathExtended.Matrix(Of T).ColumnsCount
+  nameWithType: Matrix<T>.ColumnsCount
+  nameWithType.vb: Matrix(Of T).ColumnsCount
+- uid: MathExtended.Matrix`1.ColumnsCount*
+  name: ColumnsCount
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ColumnsCount_
+  commentId: Overload:MathExtended.Matrix`1.ColumnsCount
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.ColumnsCount
+  fullName.vb: MathExtended.Matrix(Of T).ColumnsCount
+  nameWithType: Matrix<T>.ColumnsCount
+  nameWithType.vb: Matrix(Of T).ColumnsCount
+- uid: MathExtended.Matrix`1.Current
+  name: Current
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Current
+  commentId: P:MathExtended.Matrix`1.Current
+  fullName: MathExtended.Matrix<T>.Current
+  fullName.vb: MathExtended.Matrix(Of T).Current
+  nameWithType: Matrix<T>.Current
+  nameWithType.vb: Matrix(Of T).Current
+- uid: MathExtended.Matrix`1.Current*
+  name: Current
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Current_
+  commentId: Overload:MathExtended.Matrix`1.Current
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Current
+  fullName.vb: MathExtended.Matrix(Of T).Current
+  nameWithType: Matrix<T>.Current
+  nameWithType.vb: Matrix(Of T).Current
+- uid: MathExtended.Matrix`1.Dispose
+  name: Dispose()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Dispose
+  commentId: M:MathExtended.Matrix`1.Dispose
+  fullName: MathExtended.Matrix<T>.Dispose()
+  fullName.vb: MathExtended.Matrix(Of T).Dispose()
+  nameWithType: Matrix<T>.Dispose()
+  nameWithType.vb: Matrix(Of T).Dispose()
+- uid: MathExtended.Matrix`1.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Dispose_System_Boolean_
+  commentId: M:MathExtended.Matrix`1.Dispose(System.Boolean)
+  fullName: MathExtended.Matrix<T>.Dispose(System.Boolean)
+  fullName.vb: MathExtended.Matrix(Of T).Dispose(System.Boolean)
+  nameWithType: Matrix<T>.Dispose(Boolean)
+  nameWithType.vb: Matrix(Of T).Dispose(Boolean)
+- uid: MathExtended.Matrix`1.Dispose*
+  name: Dispose
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Dispose_
+  commentId: Overload:MathExtended.Matrix`1.Dispose
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Dispose
+  fullName.vb: MathExtended.Matrix(Of T).Dispose
+  nameWithType: Matrix<T>.Dispose
+  nameWithType.vb: Matrix(Of T).Dispose
+- uid: MathExtended.Matrix`1.FillMatrixInOrder
+  name: FillMatrixInOrder()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_FillMatrixInOrder
+  commentId: M:MathExtended.Matrix`1.FillMatrixInOrder
+  fullName: MathExtended.Matrix<T>.FillMatrixInOrder()
+  fullName.vb: MathExtended.Matrix(Of T).FillMatrixInOrder()
+  nameWithType: Matrix<T>.FillMatrixInOrder()
+  nameWithType.vb: Matrix(Of T).FillMatrixInOrder()
+- uid: MathExtended.Matrix`1.FillMatrixInOrder*
+  name: FillMatrixInOrder
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_FillMatrixInOrder_
+  commentId: Overload:MathExtended.Matrix`1.FillMatrixInOrder
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.FillMatrixInOrder
+  fullName.vb: MathExtended.Matrix(Of T).FillMatrixInOrder
+  nameWithType: Matrix<T>.FillMatrixInOrder
+  nameWithType.vb: Matrix(Of T).FillMatrixInOrder
+- uid: MathExtended.Matrix`1.FindDiagonal
+  name: FindDiagonal()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_FindDiagonal
+  commentId: M:MathExtended.Matrix`1.FindDiagonal
+  fullName: MathExtended.Matrix<T>.FindDiagonal()
+  fullName.vb: MathExtended.Matrix(Of T).FindDiagonal()
+  nameWithType: Matrix<T>.FindDiagonal()
+  nameWithType.vb: Matrix(Of T).FindDiagonal()
+- uid: MathExtended.Matrix`1.FindDiagonal*
+  name: FindDiagonal
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_FindDiagonal_
+  commentId: Overload:MathExtended.Matrix`1.FindDiagonal
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.FindDiagonal
+  fullName.vb: MathExtended.Matrix(Of T).FindDiagonal
+  nameWithType: Matrix<T>.FindDiagonal
+  nameWithType.vb: Matrix(Of T).FindDiagonal
+- uid: MathExtended.Matrix`1.ForEach(System.Func{`0,`0})
+  name: ForEach(Func<T, T>)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ForEach_System_Func__0__0__
+  commentId: M:MathExtended.Matrix`1.ForEach(System.Func{`0,`0})
+  name.vb: ForEach(Func(Of T, T))
+  fullName: MathExtended.Matrix<T>.ForEach(System.Func<T, T>)
+  fullName.vb: MathExtended.Matrix(Of T).ForEach(System.Func(Of T, T))
+  nameWithType: Matrix<T>.ForEach(Func<T, T>)
+  nameWithType.vb: Matrix(Of T).ForEach(Func(Of T, T))
+- uid: MathExtended.Matrix`1.ForEach*
+  name: ForEach
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ForEach_
+  commentId: Overload:MathExtended.Matrix`1.ForEach
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.ForEach
+  fullName.vb: MathExtended.Matrix(Of T).ForEach
+  nameWithType: Matrix<T>.ForEach
+  nameWithType.vb: Matrix(Of T).ForEach
+- uid: MathExtended.Matrix`1.Item(System.Int32,System.Int32)
+  name: Item[Int32, Int32]
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Item_System_Int32_System_Int32_
+  commentId: P:MathExtended.Matrix`1.Item(System.Int32,System.Int32)
+  name.vb: Item(Int32, Int32)
+  fullName: MathExtended.Matrix<T>.Item[System.Int32, System.Int32]
+  fullName.vb: MathExtended.Matrix(Of T).Item(System.Int32, System.Int32)
+  nameWithType: Matrix<T>.Item[Int32, Int32]
+  nameWithType.vb: Matrix(Of T).Item(Int32, Int32)
+- uid: MathExtended.Matrix`1.Item*
+  name: Item
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Item_
+  commentId: Overload:MathExtended.Matrix`1.Item
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Item
+  fullName.vb: MathExtended.Matrix(Of T).Item
+  nameWithType: Matrix<T>.Item
+  nameWithType.vb: Matrix(Of T).Item
+- uid: MathExtended.Matrix`1.MainDiagonal
+  name: MainDiagonal
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_MainDiagonal
+  commentId: P:MathExtended.Matrix`1.MainDiagonal
+  fullName: MathExtended.Matrix<T>.MainDiagonal
+  fullName.vb: MathExtended.Matrix(Of T).MainDiagonal
+  nameWithType: Matrix<T>.MainDiagonal
+  nameWithType.vb: Matrix(Of T).MainDiagonal
+- uid: MathExtended.Matrix`1.MainDiagonal*
+  name: MainDiagonal
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_MainDiagonal_
+  commentId: Overload:MathExtended.Matrix`1.MainDiagonal
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.MainDiagonal
+  fullName.vb: MathExtended.Matrix(Of T).MainDiagonal
+  nameWithType: Matrix<T>.MainDiagonal
+  nameWithType.vb: Matrix(Of T).MainDiagonal
+- uid: MathExtended.Matrix`1.MoveNext
+  name: MoveNext()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_MoveNext
+  commentId: M:MathExtended.Matrix`1.MoveNext
+  fullName: MathExtended.Matrix<T>.MoveNext()
+  fullName.vb: MathExtended.Matrix(Of T).MoveNext()
+  nameWithType: Matrix<T>.MoveNext()
+  nameWithType.vb: Matrix(Of T).MoveNext()
+- uid: MathExtended.Matrix`1.MoveNext*
+  name: MoveNext
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_MoveNext_
+  commentId: Overload:MathExtended.Matrix`1.MoveNext
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.MoveNext
+  fullName.vb: MathExtended.Matrix(Of T).MoveNext
+  nameWithType: Matrix<T>.MoveNext
+  nameWithType.vb: Matrix(Of T).MoveNext
+- uid: MathExtended.Matrix`1.op_Addition(MathExtended.Matrix{`0},MathExtended.Matrix{`0})
+  name: Addition(Matrix<T>, Matrix<T>)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Addition_MathExtended_Matrix__0__MathExtended_Matrix__0__
+  commentId: M:MathExtended.Matrix`1.op_Addition(MathExtended.Matrix{`0},MathExtended.Matrix{`0})
+  name.vb: Addition(Matrix(Of T), Matrix(Of T))
+  fullName: MathExtended.Matrix<T>.Addition(MathExtended.Matrix<T>, MathExtended.Matrix<T>)
+  fullName.vb: MathExtended.Matrix(Of T).Addition(MathExtended.Matrix(Of T), MathExtended.Matrix(Of T))
+  nameWithType: Matrix<T>.Addition(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Addition(Matrix(Of T), Matrix(Of T))
+- uid: MathExtended.Matrix`1.op_Addition*
+  name: Addition
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Addition_
+  commentId: Overload:MathExtended.Matrix`1.op_Addition
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Addition
+  fullName.vb: MathExtended.Matrix(Of T).Addition
+  nameWithType: Matrix<T>.Addition
+  nameWithType.vb: Matrix(Of T).Addition
+- uid: MathExtended.Matrix`1.op_Multiply(`0,MathExtended.Matrix{`0})
+  name: Multiply(T, Matrix<T>)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Multiply__0_MathExtended_Matrix__0__
+  commentId: M:MathExtended.Matrix`1.op_Multiply(`0,MathExtended.Matrix{`0})
+  name.vb: Multiply(T, Matrix(Of T))
+  fullName: MathExtended.Matrix<T>.Multiply(T, MathExtended.Matrix<T>)
+  fullName.vb: MathExtended.Matrix(Of T).Multiply(T, MathExtended.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(T, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(T, Matrix(Of T))
+- uid: MathExtended.Matrix`1.op_Multiply(MathExtended.Matrix{`0},MathExtended.Matrix{`0})
+  name: Multiply(Matrix<T>, Matrix<T>)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Multiply_MathExtended_Matrix__0__MathExtended_Matrix__0__
+  commentId: M:MathExtended.Matrix`1.op_Multiply(MathExtended.Matrix{`0},MathExtended.Matrix{`0})
+  name.vb: Multiply(Matrix(Of T), Matrix(Of T))
+  fullName: MathExtended.Matrix<T>.Multiply(MathExtended.Matrix<T>, MathExtended.Matrix<T>)
+  fullName.vb: MathExtended.Matrix(Of T).Multiply(MathExtended.Matrix(Of T), MathExtended.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), Matrix(Of T))
+- uid: MathExtended.Matrix`1.op_Multiply*
+  name: Multiply
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Multiply_
+  commentId: Overload:MathExtended.Matrix`1.op_Multiply
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Multiply
+  fullName.vb: MathExtended.Matrix(Of T).Multiply
+  nameWithType: Matrix<T>.Multiply
+  nameWithType.vb: Matrix(Of T).Multiply
+- uid: MathExtended.Matrix`1.op_Subtraction(MathExtended.Matrix{`0},MathExtended.Matrix{`0})
+  name: Subtraction(Matrix<T>, Matrix<T>)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Subtraction_MathExtended_Matrix__0__MathExtended_Matrix__0__
+  commentId: M:MathExtended.Matrix`1.op_Subtraction(MathExtended.Matrix{`0},MathExtended.Matrix{`0})
+  name.vb: Subtraction(Matrix(Of T), Matrix(Of T))
+  fullName: MathExtended.Matrix<T>.Subtraction(MathExtended.Matrix<T>, MathExtended.Matrix<T>)
+  fullName.vb: MathExtended.Matrix(Of T).Subtraction(MathExtended.Matrix(Of T), MathExtended.Matrix(Of T))
+  nameWithType: Matrix<T>.Subtraction(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Subtraction(Matrix(Of T), Matrix(Of T))
+- uid: MathExtended.Matrix`1.op_Subtraction*
+  name: Subtraction
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_op_Subtraction_
+  commentId: Overload:MathExtended.Matrix`1.op_Subtraction
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Subtraction
+  fullName.vb: MathExtended.Matrix(Of T).Subtraction
+  nameWithType: Matrix<T>.Subtraction
+  nameWithType.vb: Matrix(Of T).Subtraction
+- uid: MathExtended.Matrix`1.Pow(MathExtended.Matrix{`0},System.Int32)
+  name: Pow(Matrix<T>, Int32)
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Pow_MathExtended_Matrix__0__System_Int32_
+  commentId: M:MathExtended.Matrix`1.Pow(MathExtended.Matrix{`0},System.Int32)
+  name.vb: Pow(Matrix(Of T), Int32)
+  fullName: MathExtended.Matrix<T>.Pow(MathExtended.Matrix<T>, System.Int32)
+  fullName.vb: MathExtended.Matrix(Of T).Pow(MathExtended.Matrix(Of T), System.Int32)
+  nameWithType: Matrix<T>.Pow(Matrix<T>, Int32)
+  nameWithType.vb: Matrix(Of T).Pow(Matrix(Of T), Int32)
+- uid: MathExtended.Matrix`1.Pow*
+  name: Pow
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Pow_
+  commentId: Overload:MathExtended.Matrix`1.Pow
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Pow
+  fullName.vb: MathExtended.Matrix(Of T).Pow
+  nameWithType: Matrix<T>.Pow
+  nameWithType.vb: Matrix(Of T).Pow
+- uid: MathExtended.Matrix`1.Reset
+  name: Reset()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Reset
+  commentId: M:MathExtended.Matrix`1.Reset
+  fullName: MathExtended.Matrix<T>.Reset()
+  fullName.vb: MathExtended.Matrix(Of T).Reset()
+  nameWithType: Matrix<T>.Reset()
+  nameWithType.vb: Matrix(Of T).Reset()
+- uid: MathExtended.Matrix`1.Reset*
+  name: Reset
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Reset_
+  commentId: Overload:MathExtended.Matrix`1.Reset
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Reset
+  fullName.vb: MathExtended.Matrix(Of T).Reset
+  nameWithType: Matrix<T>.Reset
+  nameWithType.vb: Matrix(Of T).Reset
+- uid: MathExtended.Matrix`1.RowsCount
+  name: RowsCount
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_RowsCount
+  commentId: P:MathExtended.Matrix`1.RowsCount
+  fullName: MathExtended.Matrix<T>.RowsCount
+  fullName.vb: MathExtended.Matrix(Of T).RowsCount
+  nameWithType: Matrix<T>.RowsCount
+  nameWithType.vb: Matrix(Of T).RowsCount
+- uid: MathExtended.Matrix`1.RowsCount*
+  name: RowsCount
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_RowsCount_
+  commentId: Overload:MathExtended.Matrix`1.RowsCount
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.RowsCount
+  fullName.vb: MathExtended.Matrix(Of T).RowsCount
+  nameWithType: Matrix<T>.RowsCount
+  nameWithType.vb: Matrix(Of T).RowsCount
+- uid: MathExtended.Matrix`1.Size
+  name: Size
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Size
+  commentId: P:MathExtended.Matrix`1.Size
+  fullName: MathExtended.Matrix<T>.Size
+  fullName.vb: MathExtended.Matrix(Of T).Size
+  nameWithType: Matrix<T>.Size
+  nameWithType.vb: Matrix(Of T).Size
+- uid: MathExtended.Matrix`1.Size*
+  name: Size
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_Size_
+  commentId: Overload:MathExtended.Matrix`1.Size
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.Size
+  fullName.vb: MathExtended.Matrix(Of T).Size
+  nameWithType: Matrix<T>.Size
+  nameWithType.vb: Matrix(Of T).Size
+- uid: MathExtended.Matrix`1.SubstractionMatrix(System.Double[0:,0:],System.Double[0:,0:])
+  name: SubstractionMatrix(Double[,], Double[,])
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_SubstractionMatrix_System_Double_0__0___System_Double_0__0___
+  commentId: M:MathExtended.Matrix`1.SubstractionMatrix(System.Double[0:,0:],System.Double[0:,0:])
+  name.vb: SubstractionMatrix(Double(,), Double(,))
+  fullName: MathExtended.Matrix<T>.SubstractionMatrix(System.Double[,], System.Double[,])
+  fullName.vb: MathExtended.Matrix(Of T).SubstractionMatrix(System.Double(,), System.Double(,))
+  nameWithType: Matrix<T>.SubstractionMatrix(Double[,], Double[,])
+  nameWithType.vb: Matrix(Of T).SubstractionMatrix(Double(,), Double(,))
+- uid: MathExtended.Matrix`1.SubstractionMatrix*
+  name: SubstractionMatrix
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_SubstractionMatrix_
+  commentId: Overload:MathExtended.Matrix`1.SubstractionMatrix
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.SubstractionMatrix
+  fullName.vb: MathExtended.Matrix(Of T).SubstractionMatrix
+  nameWithType: Matrix<T>.SubstractionMatrix
+  nameWithType.vb: Matrix(Of T).SubstractionMatrix
+- uid: MathExtended.Matrix`1.SumMatrix(System.Double[0:,0:],System.Double[0:,0:])
+  name: SumMatrix(Double[,], Double[,])
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_SumMatrix_System_Double_0__0___System_Double_0__0___
+  commentId: M:MathExtended.Matrix`1.SumMatrix(System.Double[0:,0:],System.Double[0:,0:])
+  name.vb: SumMatrix(Double(,), Double(,))
+  fullName: MathExtended.Matrix<T>.SumMatrix(System.Double[,], System.Double[,])
+  fullName.vb: MathExtended.Matrix(Of T).SumMatrix(System.Double(,), System.Double(,))
+  nameWithType: Matrix<T>.SumMatrix(Double[,], Double[,])
+  nameWithType.vb: Matrix(Of T).SumMatrix(Double(,), Double(,))
+- uid: MathExtended.Matrix`1.SumMatrix*
+  name: SumMatrix
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_SumMatrix_
+  commentId: Overload:MathExtended.Matrix`1.SumMatrix
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.SumMatrix
+  fullName.vb: MathExtended.Matrix(Of T).SumMatrix
+  nameWithType: Matrix<T>.SumMatrix
+  nameWithType.vb: Matrix(Of T).SumMatrix
+- uid: MathExtended.Matrix`1.System#Collections#IEnumerator#Current
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_System_Collections_IEnumerator_Current
+  commentId: P:MathExtended.Matrix`1.System#Collections#IEnumerator#Current
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrix<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrix(Of T).System.Collections.IEnumerator.Current
+  nameWithType: Matrix<T>.IEnumerator.Current
+  nameWithType.vb: Matrix(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrix`1.System#Collections#IEnumerator#Current*
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_System_Collections_IEnumerator_Current_
+  commentId: Overload:MathExtended.Matrix`1.System#Collections#IEnumerator#Current
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrix<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrix(Of T).System.Collections.IEnumerator.Current
+  nameWithType: Matrix<T>.IEnumerator.Current
+  nameWithType.vb: Matrix(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrix`1.ToArray
+  name: ToArray()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ToArray
+  commentId: M:MathExtended.Matrix`1.ToArray
+  fullName: MathExtended.Matrix<T>.ToArray()
+  fullName.vb: MathExtended.Matrix(Of T).ToArray()
+  nameWithType: Matrix<T>.ToArray()
+  nameWithType.vb: Matrix(Of T).ToArray()
+- uid: MathExtended.Matrix`1.ToArray*
+  name: ToArray
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ToArray_
+  commentId: Overload:MathExtended.Matrix`1.ToArray
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.ToArray
+  fullName.vb: MathExtended.Matrix(Of T).ToArray
+  nameWithType: Matrix<T>.ToArray
+  nameWithType.vb: Matrix(Of T).ToArray
+- uid: MathExtended.Matrix`1.ToString
+  name: ToString()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ToString
+  commentId: M:MathExtended.Matrix`1.ToString
+  fullName: MathExtended.Matrix<T>.ToString()
+  fullName.vb: MathExtended.Matrix(Of T).ToString()
+  nameWithType: Matrix<T>.ToString()
+  nameWithType.vb: Matrix(Of T).ToString()
+- uid: MathExtended.Matrix`1.ToString*
+  name: ToString
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_ToString_
+  commentId: Overload:MathExtended.Matrix`1.ToString
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.ToString
+  fullName.vb: MathExtended.Matrix(Of T).ToString
+  nameWithType: Matrix<T>.ToString
+  nameWithType.vb: Matrix(Of T).ToString
+- uid: MathExtended.Matrix`1.TransponateMatrix
+  name: TransponateMatrix()
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_TransponateMatrix
+  commentId: M:MathExtended.Matrix`1.TransponateMatrix
+  fullName: MathExtended.Matrix<T>.TransponateMatrix()
+  fullName.vb: MathExtended.Matrix(Of T).TransponateMatrix()
+  nameWithType: Matrix<T>.TransponateMatrix()
+  nameWithType.vb: Matrix(Of T).TransponateMatrix()
+- uid: MathExtended.Matrix`1.TransponateMatrix*
+  name: TransponateMatrix
+  href: api/MathExtended.Matrix-1.html#MathExtended_Matrix_1_TransponateMatrix_
+  commentId: Overload:MathExtended.Matrix`1.TransponateMatrix
+  isSpec: "True"
+  fullName: MathExtended.Matrix<T>.TransponateMatrix
+  fullName.vb: MathExtended.Matrix(Of T).TransponateMatrix
+  nameWithType: Matrix<T>.TransponateMatrix
+  nameWithType.vb: Matrix(Of T).TransponateMatrix

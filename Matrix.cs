@@ -9,6 +9,10 @@ using MiscUtil;
 
 namespace MathExtended
 {
+    /// <summary>
+    /// Класс описывающий струтуру матрицы, и основные операции с ней
+    /// </summary>
+    /// <typeparam name="T">Числовой тип</typeparam>
     public class Matrix<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
@@ -95,7 +99,7 @@ namespace MathExtended
 
         object IEnumerator.Current => this.Current;
 
-        public IEnumerator<T> GetEnumerator()
+        private IEnumerator<T> GetEnumerator()
         {
             foreach (var i in matrix)
             {
@@ -261,7 +265,12 @@ namespace MathExtended
         }
 
         #endregion
-
+        /// <summary>
+        /// Вычитает две матрицы
+        /// </summary>
+        /// <param name="matrixA"></param>
+        /// <param name="matrixB"></param>
+        /// <returns><code>T[,]</code></returns>
         public static double[,] SubstractionMatrix(double[,] matrixA, double[,] matrixB)
         {
 
@@ -290,7 +299,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
-        /// <returns><code>Matrix<T></code></returns>
+        /// <returns></returns>
         public static Matrix<T> operator -(Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
@@ -318,8 +327,8 @@ namespace MathExtended
         /// <summary>
         /// Умножает матрицу на число
         /// </summary>
-        /// <param name="multiplier"></param>
-        /// <param name="matrixA"></param>
+        /// <param name="multiplier">множитель</param>
+        /// <param name="matrixA">матрица</param>
         /// <returns></returns>
         public static Matrix<T> operator *(T multiplier, Matrix<T> matrixA)
         {
@@ -337,19 +346,20 @@ namespace MathExtended
         /// <summary>
         /// Перемножает матрицы(пока что только квадратные)
         /// </summary>
-        /// <param name="matrixA"></param>
-        /// <param name="matrixB"></param>
+        /// <param name="matrixA">матрица A</param>
+        /// <param name="matrixB">матрица B</param>
         /// <returns></returns>
         public static Matrix<T> operator *(Matrix<T> matrixA, Matrix<T> matrixB)
         {
-            
-                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount );
+            if(matrixA.RowsCount == matrixB.ColumnsCount && matrixA.ColumnsCount == matrixB.RowsCount)
+            {
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
                 for (int row = 0; row < matrixA.RowsCount; row++)
                 {
                     for (int column = 0; column < matrixB.ColumnsCount; column++)
                     {
-                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                        for (int k = 0; k < matrixB.RowsCount; k++)
                         {
                             matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
@@ -357,8 +367,12 @@ namespace MathExtended
                 }
 
                 return matrixC;
-           
 
+            }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
 
         }
 
@@ -368,7 +382,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="matrix">Матрица</param>
         /// <param name="power">Степень</param>
-        /// <returns></returns>
+        /// <returns>Matrix</returns>
         public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
             if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
@@ -433,26 +447,17 @@ namespace MathExtended
 
             int counter = 1;
 
-            if (this.ColumnsCount != this.RowsCount)
+            
+            
+            for (int i = 0; i < this.RowsCount; i++)
             {
-                for (int i = 0; i < this.ColumnsCount; i++)
+                for (int j = 0; j < this.ColumnsCount; j++)
                 {
-                    for (int j = 0; j < this.RowsCount; j++)
-                    {
-                        filledMatrix[j, i] = counter++;
-                    }
+                    filledMatrix[i, j] = counter++;
                 }
             }
-            else
-            {
-                for (int i = 0; i < this.ColumnsCount; i++)
-                {
-                    for (int j = 0; j < this.RowsCount; j++)
-                    {
-                        filledMatrix[j, i] = counter++;
-                    }
-                }
-            }
+            
+           
             return filledMatrix;
 
         }
@@ -480,7 +485,11 @@ namespace MathExtended
             }
 
         }
-
+        
+        /// <summary>
+        /// Преобразует матрицу в двумерный массив
+        /// </summary>
+        /// <returns><code>T[,] matrix</code></returns>
         public T[,] ToArray()
         {
             return matrix;
@@ -490,7 +499,7 @@ namespace MathExtended
         /// Вывод всей матрицы 
         /// </summary>
         /// <returns></returns>
-        public string OutString()
+        public override string ToString()//Кривой, но все же вывод(
         {
             string outString = String.Empty;
 
@@ -509,25 +518,14 @@ namespace MathExtended
 
         }
 
-
-
-
-
-
-
-
-
+       
 
         #endregion
 
         /// <summary>
-        /// Преобразует матрицу в двумерный массив
+        /// Освобождает выделенные ресурсы
         /// </summary>
-        /// <returns><code>T[,] matrix</code></returns>
-
-
-
-
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
@@ -553,7 +551,9 @@ namespace MathExtended
         //     // Не изменяйте этот код. Разместите код очистки в методе "Dispose(bool disposing)".
         //     Dispose(disposing: false);
         // }
-
+        /// <summary>
+        /// Освобождает выделеные ресурсы
+        /// </summary>
         public void Dispose()
         {
             // Не изменяйте этот код.  Разместите код очистки в методе "Dispose(bool disposing)".
@@ -565,11 +565,4 @@ namespace MathExtended
 
 
     }
-
-
-
-
-
-
-
 }

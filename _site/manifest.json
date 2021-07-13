@@ -1,0 +1,198 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/AnyHDD/source/repos/Lamer0/ExtendentMath",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "sQFH+z0XaXD37A5Y8CD+J24HYtQZnaEG3/pcxXWDmHw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "eUc9ggmqASrmRMxiWmqrtkNpuRhsfwTyPbJfX+axnKs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "5agfLkRXL5iNE7jwhnff96K78xsNDb7N6a0x9klXSI0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathExtended.Exceptions.MatrixDifferentSizeException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MathExtended.Exceptions.MatrixDifferentSizeException.html",
+          "hash": "rHaOQj8dJHX/R7ulTIvTCgYPS/FDnxbVhSK/5bREyEk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html",
+          "hash": "Hc06a3QeMnbAN3XT5qNMYwzEXFANshOS9bzkTxb/alI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathExtended.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MathExtended.Exceptions.html",
+          "hash": "GF3dJ+LqZFDRNA5GD+8Aa1GY2FEYGI4MIl/gA8JVddQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathExtended.MathExtendent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MathExtended.MathExtendent.html",
+          "hash": "ZAgOsK0unCdR5ZjIgEZaep4f/ZdmScHW9BMgWXbn7DY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathExtended.Matrix-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MathExtended.Matrix-1.html",
+          "hash": "S12XAgNGnM2hGUN/du7b94reFSXZ0t2h8UL0cDlfLkA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathExtended.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MathExtended.html",
+          "hash": "V2t9vx8GHs15UHhGat2B9JAHArz3sXGyRuhvKowJu7s="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "g0B7FQL+gOMNM224ZwNKalzCcaSR6kUcTyhSYMi64zM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Oa9PuD4E1hvZnCkVjUgzNBX6S00Zo5YilamTERTZo54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 6
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
