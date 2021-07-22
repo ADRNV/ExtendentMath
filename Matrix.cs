@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using System.Collections;
 using MathExtended.Exceptions;
 using MiscUtil;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace MathExtended
 {
-    public class Matrix<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class Matrix<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T> 
     {
         #region Поля матрицы
 
@@ -43,7 +46,7 @@ namespace MathExtended
         {
             get
             {
-                _mainDiagonal = FindDiagonal();
+                DiagonalChanged.Invoke();
                 return _mainDiagonal;
             }
 
@@ -97,7 +100,7 @@ namespace MathExtended
 
         public IEnumerator<T> GetEnumerator()
         {
-            foreach (var i in matrix)
+            foreach(var i in matrix)
             {
                 yield return i;
             }
@@ -136,7 +139,7 @@ namespace MathExtended
 
             matrix = new T[rowsCount, columns];
 
-            MainDiagonal = FindDiagonal();
+            DiagonalChanged = OnDiagonalChanged;
 
         }
 
@@ -148,22 +151,31 @@ namespace MathExtended
         {
             List<T> mainDiagonal = new List<T>();
 
-            for (int i = 0; i < rowsCount; i++)
+            Parallel.For(0, rowsCount, i => 
             {
-                for (int j = 0; j < columnsCount; j++)
+
+                Parallel.For(0, columnsCount, j =>
                 {
-                    if (i == j)
-                    {
-                        mainDiagonal.Add(this[i, j]);
-                    }
+                   if (i == j)
+                   {
+                       mainDiagonal.Add(this[i, j]);
+                   }
 
-                }
-            }
+                });
 
+            });
+            
             return mainDiagonal.ToArray();
         }
 
-        private int GetLenght(T[,] matrix)
+        private event Action DiagonalChanged;
+
+        private void OnDiagonalChanged()
+        {
+            MainDiagonal = FindDiagonal();
+        }
+
+        private int GetLenght()
         {
             return matrix.Length - 1;
         }
@@ -195,7 +207,6 @@ namespace MathExtended
             {
                 return false;
             }
-
         }
 
 
@@ -243,26 +254,24 @@ namespace MathExtended
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
 
-                for (var i = 0; i < matrixA.RowsCount; i++)
+                Parallel.For(0, matrixA.RowsCount, row =>
                 {
-                    for (var j = 0; j < matrixB.ColumnsCount; j++)
+                    Parallel.For(0, matrixB.ColumnsCount, colunm =>
                     {
-                        matrixC[i, j] = Operator.Add(matrixA[i, j], matrixB[i, j]);
-                    }
-                }
+                         matrixC[row, colunm] = Operator.Add(matrixA[row, colunm], matrixB[row, colunm]);
+                    });
+                });
                 return matrixC;
             }
             else
             {
                 throw new MatrixDifferentSizeException();
             }
-
-
         }
 
         #endregion
 
-        public static double[,] SubstractionMatrix(double[,] matrixA, double[,] matrixB)
+        public static double[,] SubstractionMatrix(ref double[,] matrixA, ref double[,] matrixB)
         {
 
             if (matrixA.Length == matrixB.Length)
@@ -297,21 +306,22 @@ namespace MathExtended
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-
-                for (var i = 0; i < matrixA.RowsCount; i++)
+                Parallel.For(0, matrixA.RowsCount, i =>
                 {
-                    for (var j = 0; j < matrixB.ColumnsCount; j++)
+                
+                    Parallel.For(0, matrixB.ColumnsCount, j =>
                     {
-                        matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
-                    }
-                }
+                            matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
+                    });
+               
+                });
+                
                 return matrixC;
             }
             else
             {
                 throw new MatrixDifferentSizeException();
             }
-
 
         }
 
@@ -321,45 +331,44 @@ namespace MathExtended
         /// <param name="multiplier"></param>
         /// <param name="matrixA"></param>
         /// <returns></returns>
-        public static Matrix<T> operator *(T multiplier, Matrix<T> matrixA)
+        public static Matrix<T> operator *(T multiplier,Matrix<T> matrixA)
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
 
-            for (int row = 0; row < matrixA.RowsCount; row++)
+            Parallel.For(0, matrixA.RowsCount, row =>
             {
-                for (int column = 0; column < matrixA.ColumnsCount; column++)
+            
+                Parallel.For(0, matrixA.ColumnsCount, column =>
                 {
-                    matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
-                }
-            }
+                     matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
+                });
+            
+            });
+            
             return matrixB;
         }
         /// <summary>
-        /// Перемножает матрицы(пока что только квадратные)
+        /// Перемножает матрицы
         /// </summary>
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns></returns>
-        public static Matrix<T> operator *(Matrix<T> matrixA, Matrix<T> matrixB)
+        public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
         {
-            
-                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount );
+            var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount );
 
-                for (int row = 0; row < matrixA.RowsCount; row++)
+            Parallel.For(0,matrixA.RowsCount,row =>
+            {
+                Parallel.For(0, matrixB.ColumnsCount, column =>
                 {
-                    for (int column = 0; column < matrixB.ColumnsCount; column++)
+                    for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
                     {
-                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
-                        {
-                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
-                        }
+                        matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                     }
-                }
+                });
+            });
 
-                return matrixC;
-           
-
-
+            return matrixC;
         }
 
 
@@ -371,6 +380,7 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
+           
             if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
             {
                 var matrixC = matrix;
@@ -385,6 +395,7 @@ namespace MathExtended
             {
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
+
         }
         /// <summary>
         /// Транспонирует текущую матрицу и возвращает новую
@@ -394,13 +405,13 @@ namespace MathExtended
         {
             var transposedMatrix = new Matrix<T>(this.ColumnsCount,this.RowsCount);
 
-            for(int row = 0;row < this.ColumnsCount;row++)
+            Parallel.For(0, this.ColumnsCount, row =>
             {
-                for(int column = 0;column < this.RowsCount;column++)
-                {
-                    transposedMatrix[row, column] = this[column,row];
-                }
-            }
+                  Parallel.For(0, this.RowsCount, column =>
+                  {
+                       transposedMatrix[row, column] = this[column, row];
+                  });
+            });
 
             return transposedMatrix;
         }
@@ -435,23 +446,23 @@ namespace MathExtended
 
             if (this.ColumnsCount != this.RowsCount)
             {
-                for (int i = 0; i < this.ColumnsCount; i++)
+                Parallel.For(0, this.ColumnsCount, column =>
                 {
-                    for (int j = 0; j < this.RowsCount; j++)
+                    Parallel.For(0, this.RowsCount, row =>
                     {
-                        filledMatrix[j, i] = counter++;
-                    }
-                }
+                        filledMatrix[column, row] = counter++;
+                    });
+                });
             }
             else
             {
-                for (int i = 0; i < this.ColumnsCount; i++)
+                Parallel.For(0, this.ColumnsCount, column =>
                 {
-                    for (int j = 0; j < this.RowsCount; j++)
+                    Parallel.For(0, this.RowsCount, row =>
                     {
-                        filledMatrix[j, i] = counter++;
-                    }
-                }
+                        filledMatrix[row, column] = counter++;
+                    });
+                });
             }
             return filledMatrix;
 
@@ -466,13 +477,13 @@ namespace MathExtended
 
             if (func != null)
             {
-                for (int row = 0; row < this.RowsCount; row++)
+                Parallel.For(0, this.RowsCount, row =>
                 {
-                    for (int column = 0; column < this.ColumnsCount; column++)
-                    {
-                        this[row, column] = func(this[row, column]);
-                    }
-                }
+                      Parallel.For(0, this.ColumnsCount, column =>
+                      {
+                           this[row, column] = func(this[row, column]);
+                      });
+                });
             }
             else
             {
@@ -480,7 +491,10 @@ namespace MathExtended
             }
 
         }
-
+        /// <summary>
+        /// Преобразует матрицу в двумерный массив
+        /// </summary>
+        /// <returns>Двумерный массив</returns>
         public T[,] ToArray()
         {
             return matrix;
@@ -494,16 +508,16 @@ namespace MathExtended
         {
             string outString = String.Empty;
 
-            for (int row = 0; row < this.rowsCount; row++)
+            Parallel.For(0, this.rowsCount, row =>
             {
-                for (int column = 0; column < this.columnsCount; column++)
+                Parallel.For(0, this.columnsCount, column =>
                 {
-                    outString += $" {this[row, column]} ";
-                }
+                     outString += $" {this[row, column]} ";
+                });
 
                 outString += "\n";
 
-            }
+            });
 
             return outString;
 
@@ -519,14 +533,6 @@ namespace MathExtended
 
 
         #endregion
-
-        /// <summary>
-        /// Преобразует матрицу в двумерный массив
-        /// </summary>
-        /// <returns><code>T[,] matrix</code></returns>
-
-
-
 
         protected virtual void Dispose(bool disposing)
         {
