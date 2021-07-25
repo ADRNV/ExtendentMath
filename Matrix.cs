@@ -24,6 +24,8 @@ namespace MathExtended
 
         private int columnsCount;
 
+        private bool isSquareMatrix;
+
         #endregion
 
         private bool disposedValue;
@@ -74,6 +76,15 @@ namespace MathExtended
             get => matrix.Length;
         }
 
+        public bool IsSquareMatrix
+        {
+            get => isSquareMatrix;
+
+            private set
+            {
+                isSquareMatrix = rowsCount == columnsCount;
+            }
+        }
         #endregion
 
         #region IEnumerable
@@ -432,31 +443,33 @@ namespace MathExtended
         /// Заполняет матрицу по порядку:от 1 до размера матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<int> FillMatrixInOrder()
+        public Matrix<int> FillMatrixInOrder()//Проблема с заполнением квыдратных матриц
         {
             var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
             int counter = 1;
 
-            if (this.ColumnsCount != this.RowsCount)
+            if(this.ColumnsCount != this.RowsCount && this.ColumnsCount < this.RowsCount)
             {
                 Parallel.For(0, this.ColumnsCount, column =>
                 {
-                    Parallel.For(0, this.RowsCount, row =>
+                    for(int row = 0;row < this.RowsCount; row++)
                     {
-                        filledMatrix[column, row] = counter++;
-                    });
+                        filledMatrix[row, column] = counter++;
+                    }
                 });
+               
             }
             else
             {
-                Parallel.For(0, this.ColumnsCount, column =>
+                Parallel.For(0, this.RowsCount, row =>
                 {
-                    Parallel.For(0, this.RowsCount, row =>
+                    for(int column = 0;column < this.ColumnsCount;column++)
                     {
                         filledMatrix[row, column] = counter++;
-                    });
+                    }
                 });
+               
             }
             return filledMatrix;
 
@@ -502,16 +515,16 @@ namespace MathExtended
         {
             string outString = String.Empty;
 
-            Parallel.For(0, this.rowsCount, row =>
+            for(int row = 0;row < this.rowsCount; row++)
             {
-                Parallel.For(0, this.columnsCount, column =>
+                for(int column = 0;column < this.columnsCount; column++)
                 {
                      outString += $" {this[row, column]} ";
-                });
+                }
 
                 outString += "\n";
 
-            });
+            }
 
             return outString;
 
