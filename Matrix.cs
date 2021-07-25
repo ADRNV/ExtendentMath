@@ -449,30 +449,16 @@ namespace MathExtended
 
             int counter = 1;
 
-            if(this.ColumnsCount != this.RowsCount && this.ColumnsCount < this.RowsCount)
+            Parallel.For(0, this.RowsCount, row =>
             {
-                Parallel.For(0, this.ColumnsCount, column =>
+                for (int column = 0; column < this.ColumnsCount; column++)
                 {
-                    for(int row = 0;row < this.RowsCount; row++)
-                    {
-                        filledMatrix[row, column] = counter++;
-                    }
-                });
+                    filledMatrix[row, column] = counter++;
+                }
+            });
                
-            }
-            else
-            {
-                Parallel.For(0, this.RowsCount, row =>
-                {
-                    for(int column = 0;column < this.ColumnsCount;column++)
-                    {
-                        filledMatrix[row, column] = counter++;
-                    }
-                });
-               
-            }
-            return filledMatrix;
-
+          
+           return filledMatrix;
         }
 
         /// <summary>
