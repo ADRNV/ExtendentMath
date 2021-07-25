@@ -513,7 +513,6 @@ namespace MathExtended
             }
 
             return outString;
-
         }
 
 
