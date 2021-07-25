@@ -365,12 +365,12 @@ namespace MathExtended
             Parallel.For(0,matrixA.RowsCount,row =>
             {
                 Parallel.For(0, matrixB.ColumnsCount, column =>
-                {
-                    for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
-                    {
-                        matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
-                    }
-                });
+                  {
+                      for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                      {
+                          matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
+                      }
+                  });
             });
 
             return matrixC;
@@ -386,13 +386,13 @@ namespace MathExtended
         public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
            
-            if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
+            if (matrix != null)
             {
                 var matrixC = matrix;
 
-                for (int i = 0; i < power; i++)
+                for (int i = 1;i < power; i++)
                 {
-                    matrixC = matrix * matrix;
+                    matrixC *= matrix;
                 }
                 return matrixC;
             }
