@@ -471,7 +471,7 @@ namespace MathExtended
         /// Заполняет матрицу по порядку:от 1 до размера матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<int> FillMatrixInOrder()//Проблема с заполнением квыдратных матриц
+        public Matrix<int> FillMatrixInOrder()//Проблема с заполнением кв кадратных матриц
         {
             var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
