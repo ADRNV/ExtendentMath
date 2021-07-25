@@ -422,22 +422,50 @@ namespace MathExtended
         }
         #region Фичи
 
-        //public Matrix<T> FillMatrixRandom()
-        //{
-        //    Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
+        /// <summary>
+        /// Заполняет матрицу случайными значениями
+        /// </summary>
+        /// <returns>Матрмца со случайными значениями</returns>
+        public dynamic FillMatrixRandom()
+        {
+#warning Небезопасность типов 
+            dynamic filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
 
-        //    Random random = new Random(this.Size);
+            Random random = new Random();
 
-        //    for(int row = 0;row < this.RowsCount;row++)
-        //    {
-        //        for(int column = 0;column < this.ColumnsCount;column++)
-        //        {
-        //            filledMatrix[row, column] = random.Next(0, this.Size);
-        //        }
-        //    }
+            for(int row = 0;row < this.RowsCount;row++)
+            {
+                for(int column = 0;column < this.ColumnsCount;column++)
+                {
+                    filledMatrix[row, column] = random.Next();
+                }
+            }
 
-        //    return filledMatrix;
-        //}
+            return filledMatrix;
+        }
+
+        /// <summary>
+        /// Заполняет матрицу случайными значениями в определенном диапазоне
+        /// </summary>
+        /// <param name="min">Минимальное число</param>
+        /// <param name="max">Максимальное число</param>
+        /// <returns></returns>
+        public dynamic FillMatrixRandom(T min,T max)
+        {
+            dynamic filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
+
+            dynamic random = new Random();
+
+            for (int row = 0; row < this.RowsCount; row++)
+            {
+                for (int column = 0; column < this.ColumnsCount; column++)
+                {
+                    filledMatrix[row, column] = random.Next(min,max);
+                }
+            }
+
+            return filledMatrix;
+        }
 
         /// <summary>
         /// Заполняет матрицу по порядку:от 1 до размера матрицы
@@ -465,7 +493,7 @@ namespace MathExtended
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="func">Делегат(Функтор) с одним параметром</param>
-        public void ForEach(Action<T> func)
+        public void ForEach(Func<T,T> func)
         {
 
             if (func != null)
@@ -484,6 +512,7 @@ namespace MathExtended
             }
 
         }
+
         /// <summary>
         /// Преобразует матрицу в двумерный массив
         /// </summary>
