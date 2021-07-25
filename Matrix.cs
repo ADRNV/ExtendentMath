@@ -465,7 +465,7 @@ namespace MathExtended
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="func">Делегат(Функтор) с одним параметром</param>
-        public void ForEach(Func<T, T> func)
+        public void ForEach(Action<T> func)
         {
 
             if (func != null)
@@ -474,7 +474,7 @@ namespace MathExtended
                 {
                       Parallel.For(0, this.ColumnsCount, column =>
                       {
-                           this[row, column] = func(this[row, column]);
+                           func(this[row, column]);
                       });
                 });
             }
