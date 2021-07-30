@@ -7,18 +7,30 @@ using MathExtended.Exceptions;
 
 namespace MathExtended
 {
+    /// <summary>
+    /// Класс с функциями дополняющими Math
+    /// </summary>
     public static class MathExtendent
     {
         /// <summary>
-        ///
+        ///Секанс
         /// </summary>
         /// <param name="x"></param>
         /// <returns>Возвращает cэканс x</returns>
         public static double Sec(double x)
         {
-            
+
             return 1 / Math.Cos(x);
 
+        }
+        /// <summary>
+        /// Гиперболический секанс
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static double Sch(double x)
+        {
+            return 1 / Math.Cosh(x);
         }
 
         /// <summary>
@@ -35,11 +47,23 @@ namespace MathExtended
         /// </summary>
         /// <param name="x"></param>
         /// <returns>Котангенс x</returns>
-        public static double Cottan(double x)
+
+        public static double Ctgh(double x)
+        {
+            return 1 / Math.Tanh(x);
+        }
+
+        
+        public static double Csch(double x)
         {
 
-            return Math.Cos(x) / Math.Sin(x);
+            return 1 / Sch(x);
         }
+
+
+
+
+
 
     }
 
