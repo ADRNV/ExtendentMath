@@ -12,7 +12,11 @@ using System.Threading;
 
 namespace MathExtended
 {
-    public class Matrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T> 
+    /// <summary>
+    /// Описывает основную логику матриц
+    /// </summary>
+    /// <typeparam name="T">Числовой тип</typeparam>
+    public class Matrix<T>:IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
 
@@ -30,11 +34,11 @@ namespace MathExtended
 
         private bool disposedValue;
 
-        private int _rowPosition;
+        private int _rowPosition = 0;
 
-        private int _columnPosition;
+        private int _columnPosition = -1;
 
-        private int index;
+        
 
         #region Свойства матрицы
         /// <summary>
@@ -100,16 +104,13 @@ namespace MathExtended
         {
             get
             {
-                if (CheckPositionOut(_rowPosition, _columnPosition))
-                {
-                    throw new IndexOutOfRangeException();
-                }
                 return matrix[_rowPosition, _columnPosition];
             }
         }
 
-      
-      
+        object IEnumerator.Current => Current;
+
+
 
         /// <summary>
         /// Перечислитель
@@ -117,40 +118,55 @@ namespace MathExtended
         /// <returns>Перечислитель матрицы</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            foreach(var i in matrix)
+            foreach (var i in matrix)
             {
+
                 yield return i;
             }
         }
-        
-        
+
+        /// <summary>
+        /// Перемещает индексатор на одну позицию вперед
+        /// </summary>
+        /// <returns></returns>
         public bool MoveNext()
         {
 
             if (_rowPosition < this.RowsCount)
             {
-                if(_columnPosition == this.ColumnsCount)
+                if (_columnPosition < this.ColumnsCount - 1)
                 {
-                    _rowPosition++;
+                    _columnPosition++;
+                }
+                else
+                {
+                    if (_rowPosition < this.RowsCount - 1)
+                    {
+                        _rowPosition++;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                     _columnPosition = 0;
                 }
-                
-                _columnPosition++;
-
                 return true;
             }
             else
             {
                 return false;
             }
-            
-            
-          
+
+
+
         }
 
+        /// <summary>
+        /// Перемещает индексатор в начало матрицы
+        /// </summary>
         public void Reset()
         {
-            _rowPosition = -1;
+            _rowPosition = 0;
             _columnPosition = -1;
         }
 
@@ -206,13 +222,13 @@ namespace MathExtended
             MainDiagonal = FindDiagonal();
         }
 
-        private int GetLenght()
-        {
-            return matrix.Length - 1;
-        }
-
-
         #region Индексатор
+        /// <summary>
+        /// Число матрицы
+        /// </summary>
+        /// <param name="index">Строка</param>
+        /// <param name="index1">Столбец</param>
+        /// <returns></returns>
         public T this[int index, int index1]
         {
             get
@@ -227,19 +243,6 @@ namespace MathExtended
         }
 
         #endregion
-
-        private bool CheckPositionOut(int position, int position1)
-        {
-            if (position == -1 || position >= matrix.Length || position1 == -1 || position1 >= matrix.Length)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
 
         #region Matrix Sum
 
@@ -256,11 +259,11 @@ namespace MathExtended
             {
                 var matrixC = new double[matrixA.GetLength(0), matrixB.GetLength(0)];
 
-                for (var i = 0; i < matrixA.GetLength(0); i++)
+                for (var row = 0; row < matrixA.GetLength(0); row++)
                 {
-                    for (var j = 0; j < matrixB.GetLength(0); j++)
+                    for (var column = 0; column < matrixB.GetLength(0); column++)
                     {
-                        matrixC[i, j] = matrixA[i, j] + matrixB[i, j];
+                        matrixC[row, column] = matrixA[row, column] + matrixB[row, column];
                     }
                 }
 
@@ -302,7 +305,7 @@ namespace MathExtended
 
         #endregion
 
-        public static double[,] SubstractionMatrix(ref double[,] matrixA, ref double[,] matrixB)
+        public static double[,] SubstractMatrix(ref double[,] matrixA, ref double[,] matrixB)
         {
 
             if (matrixA.Length == matrixB.Length)
@@ -386,20 +389,29 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
         {
-            var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount );
-
-            Parallel.For(0,matrixA.RowsCount,row =>
+            if(matrixA.RowsCount == matrixB.ColumnsCount)
             {
-                Parallel.For(0, matrixB.ColumnsCount, column =>
-                  {
-                      for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
-                      {
-                          matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
-                      }
-                  });
-            });
+                var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-            return matrixC;
+                Parallel.For(0, matrixA.RowsCount, row =>
+                {
+                      Parallel.For(0, matrixB.ColumnsCount, column =>
+                        {
+                            for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                      {
+                                matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
+                            }
+                        });
+                });
+                
+                return matrixC;
+            }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
+
+            
         }
 
 
@@ -581,6 +593,10 @@ namespace MathExtended
 
         #endregion
 
+        /// <summary>
+        /// Высвобождает использованные ресурсы
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
@@ -607,6 +623,9 @@ namespace MathExtended
         //     Dispose(disposing: false);
         // }
 
+        /// <summary>
+        /// Освобождает использованные ресурсы
+        /// </summary>
         public void Dispose()
         {
             // Не изменяйте этот код.  Разместите код очистки в методе "Dispose(bool disposing)".

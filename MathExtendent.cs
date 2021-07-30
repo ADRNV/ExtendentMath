@@ -34,26 +34,29 @@ namespace MathExtended
         }
 
         /// <summary>
-        ///
+        ///Косеканс 
         /// </summary>
         /// <param name="x"></param>
-        /// <returns>Возвращает коcэканс x</returns>
+        /// <returns>Возвращает коcеканс x</returns>
         public static double Cosec(double x)
         {
             return 1 / Math.Sin(x);
         }
         /// <summary>
-        /// 
+        /// Гиперболический котангенс
         /// </summary>
         /// <param name="x"></param>
         /// <returns>Котангенс x</returns>
-
         public static double Ctgh(double x)
         {
             return 1 / Math.Tanh(x);
         }
 
-        
+        /// <summary>
+        /// Гиперболический косеканс
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         public static double Csch(double x)
         {
 
