@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace MathExtended
 {
-    public class Matrix<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T> 
+    public class Matrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T> 
     {
         #region Поля матрицы
 
@@ -30,9 +30,11 @@ namespace MathExtended
 
         private bool disposedValue;
 
-        private int _position;
+        private int _rowPosition;
 
-        private int _position1;
+        private int _columnPosition;
+
+        private int index;
 
         #region Свойства матрицы
         /// <summary>
@@ -76,6 +78,9 @@ namespace MathExtended
             get => matrix.Length;
         }
 
+        /// <summary>
+        /// Квадратность матрицы
+        /// </summary>
         public bool IsSquareMatrix
         {
             get => isSquareMatrix;
@@ -88,21 +93,28 @@ namespace MathExtended
         #endregion
 
         #region IEnumerable
+        /// <summary>
+        /// Текуший элемент
+        /// </summary>
         public T Current
         {
             get
             {
-                if (CheckPositionOut(_position, _position1))
+                if (CheckPositionOut(_rowPosition, _columnPosition))
                 {
                     throw new IndexOutOfRangeException();
                 }
-                return matrix[_position, _position1];
+                return matrix[_rowPosition, _columnPosition];
             }
         }
 
+      
+      
 
-        object IEnumerator.Current => this.Current;
-
+        /// <summary>
+        /// Перечислитель
+        /// </summary>
+        /// <returns>Перечислитель матрицы</returns>
         public IEnumerator<T> GetEnumerator()
         {
             foreach(var i in matrix)
@@ -110,22 +122,36 @@ namespace MathExtended
                 yield return i;
             }
         }
+        
+        
         public bool MoveNext()
         {
-            if (_position < matrix.GetUpperBound(0) + 1 && _position1 < matrix.Length / matrix.GetUpperBound(1) + 1)
+
+            if (_rowPosition < this.RowsCount)
             {
-                _position++;
-                _position1++;
+                if(_columnPosition == this.ColumnsCount)
+                {
+                    _rowPosition++;
+                    _columnPosition = 0;
+                }
+                
+                _columnPosition++;
+
                 return true;
             }
             else
+            {
                 return false;
+            }
+            
+            
+          
         }
 
         public void Reset()
         {
-            _position = -1;
-            _position1 = -1;
+            _rowPosition = -1;
+            _columnPosition = -1;
         }
 
         #endregion
@@ -304,7 +330,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
-        /// <returns><code>Matrix<T></code></returns>
+        /// <returns>Разность матриц</returns>
         public static Matrix<T> operator -(Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
@@ -335,7 +361,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="multiplier"></param>
         /// <param name="matrixA"></param>
-        /// <returns></returns>
+        /// <returns>Умноженная на число матрица</returns>
         public static Matrix<T> operator *(T multiplier,Matrix<T> matrixA)
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
@@ -403,9 +429,9 @@ namespace MathExtended
 
         }
         /// <summary>
-        /// Транспонирует текущую матрицу и возвращает новую
+        /// Транспонирует(меняет строки со столбцами) текущую матрицу и возвращает новую
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Транспонированная матрица</returns>
         public Matrix<T> TransponateMatrix()
         {
             var transposedMatrix = new Matrix<T>(this.ColumnsCount,this.RowsCount);
@@ -492,17 +518,17 @@ namespace MathExtended
         /// <summary>
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
-        /// <param name="func">Делегат(Функтор) с одним параметром</param>
-        public void ForEach(Func<T,T> func)
+        /// <param name="action">Делегат с одним параметром</param>
+        public void ForEach(Action<T> action)
         {
 
-            if (func != null)
+            if (action != null)
             {
                 Parallel.For(0, this.RowsCount, row =>
                 {
                       Parallel.For(0, this.ColumnsCount, column =>
                       {
-                           func(this[row, column]);
+                           action(this[row, column]);
                       });
                 });
             }
