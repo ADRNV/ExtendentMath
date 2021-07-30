@@ -128,7 +128,7 @@ namespace MathExtended
         /// <summary>
         /// Перемещает индексатор на одну позицию вперед
         /// </summary>
-        /// <returns></returns>
+        /// <returns>true или false в зависимости ли можно переместить индексатор</returns>
         public bool MoveNext()
         {
 
