@@ -386,7 +386,7 @@ namespace MathExtended
         public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
            
-            if (matrix != null)
+            if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
             {
                 var matrixC = matrix;
 
@@ -477,13 +477,13 @@ namespace MathExtended
 
             int counter = 1;
 
-            Parallel.For(0, this.RowsCount, row =>
+            for(int row = 0;row < this.RowsCount;row++)
             {
                 for (int column = 0; column < this.ColumnsCount; column++)
                 {
                     filledMatrix[row, column] = counter++;
                 }
-            });
+            }
                
           
            return filledMatrix;
