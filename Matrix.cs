@@ -514,7 +514,7 @@ namespace MathExtended
             var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
             int counter = 1;
-
+#warning медленное выполениние при больших размерах
             for(int row = 0;row < this.RowsCount;row++)
             {
                 for (int column = 0; column < this.ColumnsCount; column++)
