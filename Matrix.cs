@@ -57,6 +57,13 @@ namespace MathExtended
                 _mainDiagonal = value;
             }
         }
+
+        public T[][] Rows
+        {
+            get => GetRows();
+        }
+
+
         /// <summary>
         /// Колличество строк в матрице
         /// </summary>
@@ -224,6 +231,31 @@ namespace MathExtended
         private void OnDiagonalChanged()
         {
             MainDiagonal = FindDiagonal();
+        }
+
+        public T[][] GetRows()
+        {
+            T[][] rows = new T[rowsCount][];
+
+            for(int ri = 0;ri < rowsCount;ri++)
+            {
+                rows[ri] = new T[columnsCount];
+            }
+
+            int rowsIterator = 0;
+            for(int row = 0;row < rowsCount;row++)
+            {
+                for(int column = 0;column < columnsCount;column++)
+                {
+                    if(column++ == columnsCount)
+                    {
+                        rowsIterator++;
+                    }
+                    rows[rowsIterator][columnsCount - 1] = this[row, column];
+                }
+            }
+
+            return rows;
         }
 
         #region Индексатор
@@ -541,6 +573,17 @@ namespace MathExtended
             return result;
         }
         #endregion
+
+        /// <summary>
+        /// Проверяет матрицу на вырожденность
+        /// </summary>
+        /// <param name="matrix">Мартрица</param>
+        /// <returns>Логический тип.<code>false</code>-если матрица не вырожденная,<code>true</code>-если матрица
+        /// вырожденная</returns>
+        public static bool IsDegenerateMatrix(Matrix<T> matrix)
+        {
+            return Operator.Equal(matrix.CalculateDeterminant(),Operator.Convert<int,T>(0));
+        }
 
         #region Фичи
 
