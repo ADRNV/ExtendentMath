@@ -30,6 +30,8 @@ namespace MathExtended
 
         private bool isSquareMatrix;
 
+        private double precalculatedDeterminant = double.NaN;
+
         #endregion
 
         private bool disposedValue;
@@ -57,13 +59,6 @@ namespace MathExtended
                 _mainDiagonal = value;
             }
         }
-
-        public T[][] Rows
-        {
-            get => GetRows();
-        }
-
-
         /// <summary>
         /// Колличество строк в матрице
         /// </summary>
@@ -233,30 +228,7 @@ namespace MathExtended
             MainDiagonal = FindDiagonal();
         }
 
-        public T[][] GetRows()
-        {
-            T[][] rows = new T[rowsCount][];
-
-            for(int ri = 0;ri < rowsCount;ri++)
-            {
-                rows[ri] = new T[columnsCount];
-            }
-
-            int rowsIterator = 0;
-            for(int row = 0;row < rowsCount;row++)
-            {
-                for(int column = 0;column < columnsCount;column++)
-                {
-                    if(column++ == columnsCount)
-                    {
-                        rowsIterator++;
-                    }
-                    rows[rowsIterator][columnsCount - 1] = this[row, column];
-                }
-            }
-
-            return rows;
-        }
+       
 
         #region Индексатор
         /// <summary>
@@ -542,8 +514,7 @@ namespace MathExtended
                 this[Operator.Convert<T,int>(i), Operator.Convert<T,int>(j)] : this[Operator.Convert<T,int>(i) + 1, Operator.Convert<T,int>(j)]);
             return result;
         }
-        private double precalculatedDeterminant = double.NaN;
-        
+     
         /// <summary>
         /// Находит детерминант матрицы
         /// </summary>
