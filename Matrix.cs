@@ -16,7 +16,7 @@ namespace MathExtended
     /// Описывает основную логику матриц
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public class Matrix<T>:IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class Matrix<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
 
@@ -38,7 +38,7 @@ namespace MathExtended
 
         private int _columnPosition = -1;
 
-        
+
 
         #region Свойства матрицы
         /// <summary>
@@ -57,7 +57,6 @@ namespace MathExtended
                 _mainDiagonal = value;
             }
         }
-
         /// <summary>
         /// Колличество строк в матрице
         /// </summary>
@@ -186,10 +185,15 @@ namespace MathExtended
 
             matrix = new T[rowsCount, columns];
 
+            this.IsSquareMatrix = rows == columns;
+
             DiagonalChanged = OnDiagonalChanged;
 
         }
 
+        
+       
+    
         /// <summary>
         /// Находит диагональ матрицы
         /// </summary>
@@ -305,6 +309,14 @@ namespace MathExtended
 
         #endregion
 
+        #region Операторы
+
+        /// <summary>
+        /// Вычетает две матрицы и возвращает новую
+        /// </summary>
+        /// <param name="matrixA">Первая матрица</param>
+        /// <param name="matrixB">Вторая матрица</param>
+        /// <returns>Двумерный массив</returns>
         public static double[,] SubstractMatrix(ref double[,] matrixA, ref double[,] matrixB)
         {
 
@@ -414,6 +426,7 @@ namespace MathExtended
             
         }
 
+        #endregion
 
         /// <summary>
         /// Возводит матрицу в степень
@@ -458,6 +471,77 @@ namespace MathExtended
 
             return transposedMatrix;
         }
+        #region Требует оптимизации
+
+        /// <summary>
+        /// Создает матрицу с вычеркнутыми столбцами на основе текущей
+        /// </summary>
+        /// <param name="column">Количество вычеркнутых столбцов</param>
+        /// <returns></returns>
+        private Matrix<T> CreateMatrixWithoutColumn(int column)
+        {
+            if (column < 0 || column >= this.ColumnsCount)
+            {
+                throw new ArgumentException("invalid column index");
+            }
+            var result = new Matrix<T>(this.RowsCount, this.ColumnsCount - 1);
+            result.ForEach((i, j) =>
+                result[Operator.Convert<T,int>(i), Operator.Convert<T, int>(j)] = 
+                Operator.Convert<T,int>(j) < column ? this[Operator.Convert<T, int>(i), 
+                Operator.Convert<T, int>(j)] : this[Operator.Convert<T, int>(i), Operator.Convert<T,int>(j) + 1]);
+            return result;
+        }
+
+        /// <summary>
+        /// Создает матрицу с вычеркнутыми строками на основе текущей
+        /// </summary>
+        /// <param name="row">Количество вычеркнутых строк</param>
+        /// <returns></returns>
+        private Matrix<T> CreateMatrixWithoutRow(int row)
+        {
+            if (row < 0 || row >= this.RowsCount)
+            {
+                throw new ArgumentException("invalid row index");
+            }
+            var result = new Matrix<T>(this.RowsCount - 1, this.ColumnsCount);
+            result.ForEach((i, j) =>
+                result[Operator.Convert<T,int>(i), Operator.Convert<T,int>(j)] = 
+                Operator.Convert<T,int>(i) < row ? 
+                this[Operator.Convert<T,int>(i), Operator.Convert<T,int>(j)] : this[Operator.Convert<T,int>(i) + 1, Operator.Convert<T,int>(j)]);
+            return result;
+        }
+        private double precalculatedDeterminant = double.NaN;
+        
+        /// <summary>
+        /// Находит детерминант матрицы
+        /// </summary>
+        /// <returns>Число</returns>
+        public T CalculateDeterminant()
+        {
+            if (!double.IsNaN(this.precalculatedDeterminant))
+            {
+                return Operator.Convert<double,T>(this.precalculatedDeterminant);
+            }
+            if (!this.IsSquareMatrix)
+            {
+                throw new InvalidOperationException("determinant can be calculated only for square matrix");
+            }
+            if (this.RowsCount == 2)
+            {
+                return Operator.Subtract(Operator.Multiply(this[0, 0],this[1, 1]),Operator.Multiply(this[0, 1],this[1, 0]));
+            }
+            dynamic result = 0;
+            dynamic one = 1;
+            for (var j = 0; j < this.RowsCount; j++)
+            {
+                result += Operator.Multiply(Operator.Multiply((j % 2 == 1 ? one : -one),this[1, j]),
+                    this.CreateMatrixWithoutColumn(j).CreateMatrixWithoutRow(1).CalculateDeterminant());
+            }
+            
+            return result;
+        }
+        #endregion
+
         #region Фичи
 
         /// <summary>
@@ -509,7 +593,7 @@ namespace MathExtended
         /// Заполняет матрицу по порядку:от 1 до размера матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<int> FillMatrixInOrder()//Проблема с заполнением кв кадратных матриц
+        public Matrix<int> FillMatrixInOrder()
         {
             var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
@@ -528,7 +612,7 @@ namespace MathExtended
         }
 
         /// <summary>
-        /// Применяет функцию ко всем элементам матрицы
+        /// Применяет действие ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
         public void ForEach(Action<T> action)
@@ -543,6 +627,30 @@ namespace MathExtended
                            action(this[row, column]);
                       });
                 });
+            }
+            else
+            {
+                throw new ArgumentNullException();
+            }
+
+        }
+
+        /// <summary>
+        /// Применяет действие ко всем элементам матрицы
+        /// </summary>
+        /// <param name="action">Делегат с двумя параметром</param>
+        public void ForEach(Action<T,T> action)
+        {
+
+            if (action != null)
+            {
+                for(dynamic row = 0;row < this.RowsCount; row++)
+                {
+                    for(dynamic column = 0;column < this.ColumnsCount; column++) 
+                    {
+                        action(row,column);
+                    }
+                }
             }
             else
             {
