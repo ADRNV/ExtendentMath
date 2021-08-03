@@ -16,11 +16,9 @@ namespace MathExtended
     /// Описывает основную логику матриц
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public class Matrix<T>:IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class Matrix<T>:BaseMatrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
-
-        private T[,] matrix;
 
         private T[] _mainDiagonal;
 
@@ -33,12 +31,6 @@ namespace MathExtended
         #endregion
 
         private bool disposedValue;
-
-        private int _rowPosition = 0;
-
-        private int _columnPosition = -1;
-
-        
 
         #region Свойства матрицы
         /// <summary>
@@ -58,22 +50,7 @@ namespace MathExtended
             }
         }
 
-        /// <summary>
-        /// Колличество строк в матрице
-        /// </summary>
-        public int RowsCount
-        {
-
-            get => rowsCount;
-        }
-        /// <summary>
-        /// Колличество столбцов в матрице
-        /// </summary>
-        public int ColumnsCount
-        {
-            get => columnsCount;
-        }
-
+        
         /// <summary>
         /// Размер матрицы
         /// </summary>
@@ -96,89 +73,12 @@ namespace MathExtended
         }
         #endregion
 
-        #region IEnumerable
-        /// <summary>
-        /// Текуший элемент
-        /// </summary>
-        public T Current
-        {
-            get
-            {
-                return matrix[_rowPosition, _columnPosition];
-            }
-        }
-
-        object IEnumerator.Current => Current;
-
-
-
-        /// <summary>
-        /// Перечислитель
-        /// </summary>
-        /// <returns>Перечислитель матрицы</returns>
-        public IEnumerator<T> GetEnumerator()
-        {
-            foreach (var i in matrix)
-            {
-
-                yield return i;
-            }
-        }
-
-        /// <summary>
-        /// Перемещает индексатор на одну позицию вперед
-        /// </summary>
-        /// <returns>true или false в зависимости ли можно переместить индексатор</returns>
-        public bool MoveNext()
-        {
-
-            if (_rowPosition < this.RowsCount)
-            {
-                if (_columnPosition < this.ColumnsCount - 1)
-                {
-                    _columnPosition++;
-                }
-                else
-                {
-                    if (_rowPosition < this.RowsCount - 1)
-                    {
-                        _rowPosition++;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                    _columnPosition = 0;
-                }
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-
-
-        }
-
-        /// <summary>
-        /// Перемещает индексатор в начало матрицы
-        /// </summary>
-        public void Reset()
-        {
-            _rowPosition = 0;
-            _columnPosition = -1;
-        }
-
-        #endregion
-
-
         /// <summary>
         /// Создает матрицу с указанными размерами
         /// </summary>
         /// <param name="rows">Колличество строк в матрице</param>
         /// <param name="columns">Колличество столбцов матрице</param>
-        public Matrix(int rows, int columns)
+        public Matrix(int rows, int columns):base(rows,columns)
         {
             rowsCount = rows;
 
@@ -396,12 +296,12 @@ namespace MathExtended
                 Parallel.For(0, matrixA.RowsCount, row =>
                 {
                       Parallel.For(0, matrixB.ColumnsCount, column =>
-                        {
-                            for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
                       {
+                            for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                            {
                                 matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                             }
-                        });
+                      });
                 });
                 
                 return matrixC;
@@ -572,7 +472,8 @@ namespace MathExtended
             {
                 for(int column = 0;column < this.columnsCount; column++)
                 {
-                     outString += $" {this[row, column]} ";
+                    outString += matrix[row, column].ToString().PadLeft(8) + " ";
+                   
                 }
 
                 outString += "\n";
@@ -597,7 +498,7 @@ namespace MathExtended
         /// Высвобождает использованные ресурсы
         /// </summary>
         /// <param name="disposing"></param>
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (!disposedValue)
             {
@@ -615,33 +516,5 @@ namespace MathExtended
                 disposedValue = true;
             }
         }
-
-        // // TODO: переопределить метод завершения, только если "Dispose(bool disposing)" содержит код для освобождения неуправляемых ресурсов
-        // ~Matrix()
-        // {
-        //     // Не изменяйте этот код. Разместите код очистки в методе "Dispose(bool disposing)".
-        //     Dispose(disposing: false);
-        // }
-
-        /// <summary>
-        /// Освобождает использованные ресурсы
-        /// </summary>
-        public void Dispose()
-        {
-            // Не изменяйте этот код.  Разместите код очистки в методе "Dispose(bool disposing)".
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
-
-
-
-
     }
-
-
-
-
-
-
-
 }
