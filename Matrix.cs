@@ -20,8 +20,6 @@ namespace MathExtended
     {
         #region Поля матрицы
 
-        private T[] _mainDiagonal;
-
         private int rowsCount;
 
         private int columnsCount;
@@ -32,25 +30,7 @@ namespace MathExtended
 
         private bool disposedValue;
 
-        #region Свойства матрицы
-        /// <summary>
-        /// Массив из объектов составляющих главную диагональ матрицы
-        /// </summary>
-        public T[] MainDiagonal
-        {
-            get
-            {
-                DiagonalChanged.Invoke();
-                return _mainDiagonal;
-            }
-
-            private set
-            {
-                _mainDiagonal = value;
-            }
-        }
-
-        
+        #region Свойства матрицы   
         /// <summary>
         /// Размер матрицы
         /// </summary>
@@ -86,34 +66,27 @@ namespace MathExtended
 
             matrix = new T[rowsCount, columns];
 
+            IsSquareMatrix = RowsCount == ColumnsCount;
+
             DiagonalChanged = OnDiagonalChanged;
 
         }
 
         /// <summary>
-        /// Находит диагональ матрицы
+        /// Создает матрицу на основе двумерного массива 
         /// </summary>
-        /// <returns><code>T[] Array</code>Массив значений составляющих диагональ</returns>
-        public T[] FindDiagonal()
+        /// <param name="array">Двумерный массив</param>
+        public Matrix(T[,] array) : base(array.GetUpperBound(0) + 1,array.GetUpperBound(1) + 1)
         {
-            List<T> mainDiagonal = new List<T>();
-
-            Parallel.For(0, rowsCount, i => 
-            {
-
-                Parallel.For(0, columnsCount, j =>
-                {
-                   if (i == j)
-                   {
-                       mainDiagonal.Add(this[i, j]);
-                   }
-
-                });
-
-            });
             
-            return mainDiagonal.ToArray();
+            matrix = array;
+
+            IsSquareMatrix = RowsCount == ColumnsCount;
+
+            DiagonalChanged = OnDiagonalChanged;
+
         }
+
 
         private event Action DiagonalChanged;
 
@@ -122,29 +95,7 @@ namespace MathExtended
             MainDiagonal = FindDiagonal();
         }
 
-        #region Индексатор
-        /// <summary>
-        /// Число матрицы
-        /// </summary>
-        /// <param name="index">Строка</param>
-        /// <param name="index1">Столбец</param>
-        /// <returns></returns>
-        public T this[int index, int index1]
-        {
-            get
-            {
-                return matrix[index, index1];
-            }
-
-            set
-            {
-                matrix[index, index1] = value;
-            }
-        }
-
-        #endregion
-
-        #region Matrix Sum
+        #region Операторы
 
         /// <summary>
         /// Суммирует две матрицы и возвращает 3-ю
@@ -203,8 +154,12 @@ namespace MathExtended
             }
         }
 
-        #endregion
-
+        /// <summary>
+        /// Вычетает два двумерных массива и возвращает 3-й
+        /// </summary>
+        /// <param name="matrixA">Матрица A</param>
+        /// <param name="matrixB">Матрица B</param>
+        /// <returns>Разность матриц представленных в виде двумерных массивов</returns>
         public static double[,] SubstractMatrix(ref double[,] matrixA, ref double[,] matrixB)
         {
 
@@ -313,6 +268,9 @@ namespace MathExtended
 
             
         }
+
+
+        #endregion
 
 
         /// <summary>

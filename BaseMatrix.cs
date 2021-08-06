@@ -15,12 +15,18 @@ namespace MathExtended
     /// <typeparam name="T">Числовой тип</typeparam>
     public abstract class BaseMatrix<T> : IEnumerator<T>,IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
+        /// <summary>
+        /// Матрица представляющая собой двумерный массив
+        /// </summary>
         protected T[,] matrix;
 
         private int _rowsCount;
 
         private int _columnsCount;
 
+        /// <summary>
+        /// Главная диагональ
+        /// </summary>
         protected T[] _mainDiagonal;
 
 
@@ -41,6 +47,8 @@ namespace MathExtended
             _rowsCount = rows;
             
             _columnsCount = columns;
+
+            
         }
 
         /// <summary>
@@ -48,7 +56,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="row">Строка</param>
         /// <param name="column">Столбец</param>
-        /// <returns></returns>
+        /// <returns>Число по указанному адресу в матрице</returns>
         public T this[int row, int column]
         {
             get
@@ -78,6 +86,9 @@ namespace MathExtended
             get => _columnsCount;
         }
 
+        /// <summary>
+        /// Главная диагональ
+        /// </summary>
         public T[] MainDiagonal
         {
             get
@@ -85,12 +96,16 @@ namespace MathExtended
                 return _mainDiagonal;
             }
 
-            private set
+            protected set
             {
                 _mainDiagonal = value;
             }
         }
 
+        /// <summary>
+        /// Находит главную диагональ матрицы
+        /// </summary>
+        /// <returns>Массив состоящий из чисел составляющих главную диагональ</returns>
         public T[] FindDiagonal()
         {
             List<T> mainDiagonal = new List<T>();
@@ -110,6 +125,12 @@ namespace MathExtended
             });
 
             return mainDiagonal.ToArray();
+        }
+
+      
+        private void OnDiagonalChanged()
+        {
+            MainDiagonal = FindDiagonal();
         }
 
         #region IEnumerable
