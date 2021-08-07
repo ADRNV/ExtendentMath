@@ -323,7 +323,7 @@ namespace MathExtended
         /// <returns><see cref="Matrix{T}"/>Матрица в ступенчатов виде</returns>
         public Matrix<T> ConvertToStepped()
         {
-            var steppedMatrix = ;
+            var steppedMatrix = this;
 
             dynamic primaryElement = null;
 
@@ -357,7 +357,8 @@ namespace MathExtended
 
         }
 
-        // Создает матрицу с вычеркнутыми столбцами на основе текущей
+        ///<summary>
+        /// Создает матрицу с вычеркнутыми столбцами на основе текущей
         /// </summary>
         /// <param name="column">Количество вычеркнутых столбцов</param>
         /// <returns></returns>
@@ -479,22 +480,22 @@ namespace MathExtended
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
-        public void ForEach(Action<T> action)
+        public void ForEach(Action<T, T> action)
         {
 
-            if (action != null)
+            if (action == null)
             {
-                Parallel.For(0, this.RowsCount, row =>
-                {
-                    Parallel.For(0, this.ColumnsCount, column =>
-                    {
-                        action(this[row, column]);
-                    });
-                });
+                throw new ArgumentNullException();
             }
             else
             {
-                throw new ArgumentNullException();
+                for (dynamic row = 0; row < this.RowsCount; row++)
+                {
+                    for (dynamic column = 0; column < this.ColumnsCount; column++)
+                    {
+                        action(row, column);
+                    }
+                }
             }
 
         }
