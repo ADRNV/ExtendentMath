@@ -488,7 +488,7 @@ namespace MathExtended
                 {
                       Parallel.For(0, this.ColumnsCount, column =>
                       {
-                           action(row, column);
+                           action(this[row, column]);
                       });
                 });
             }
