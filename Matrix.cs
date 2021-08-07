@@ -323,26 +323,52 @@ namespace MathExtended
         /// <returns><see cref="Matrix{T}"/>Матрица в ступенчатов виде</returns>
         public Matrix<T> ConvertToStepped()
         {
-            var steppedMatrix = this;
+            var steppedMatrix = ;
+
+            dynamic primaryElement = null;
+
+            T[] primaryRow = null;
 
             if (IsSquareMatrix)
             {
                 for (int i = 0; i < RowsCount; i++)
                 {
-                    for (int j = i + 1; j < ColumnsCount; j++)
+                    if(i != 0)
                     {
-                        dynamic koef = Operator.Divide(steppedMatrix[j, i], steppedMatrix[i, i]);
-                        for (int k = i; k < RowsCount; k++)
-                            steppedMatrix[j, k] -= steppedMatrix[i, k] * koef;
+                        primaryElement = 0;
+                        primaryRow = GetRow(i);
                     }
                 }
+
+                for (int e = 0; e < ColumnsCount; e++)
+                {
+                    steppedMatrix[0, e] = steppedMatrix[0, e] / primaryElement;
+                }
+
+                return steppedMatrix;
             }
+
+          
             else
             {
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
-            return steppedMatrix;
+            
+           
         }
+
+        private T[] GetRow(int index)
+        {
+            var row = new List<T>();
+
+            for(int r = 0;r < RowsCount;r++)
+            {
+                row.Add(this[r,index]);
+            }
+
+            return row.ToArray();
+        }
+
         #region Фичи
 
         /// <summary>
