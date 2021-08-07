@@ -320,7 +320,7 @@ namespace MathExtended
         /// <summary>
         /// Приводит матрицу к ступенчатому виду
         /// </summary>
-        /// <returns><see cref="Matrix{T}"/>.Матрица в ступенчатов виде</returns>
+        /// <returns><see cref="Matrix{T}"/>Матрица в ступенчатов виде</returns>
         public Matrix<T> ConvertToStepped()
         {
             var steppedMatrix = this;
