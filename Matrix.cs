@@ -479,17 +479,17 @@ namespace MathExtended
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
-        public void ForEach(Action<T,T> action)
+        public void ForEach(Action<T> action)
         {
 
             if (action != null)
             {
                 Parallel.For(0, this.RowsCount, row =>
                 {
-                      Parallel.For(0, this.ColumnsCount, column =>
-                      {
-                           action(this[row, column]);
-                      });
+                    Parallel.For(0, this.ColumnsCount, column =>
+                    {
+                        action(this[row, column]);
+                    });
                 });
             }
             else
