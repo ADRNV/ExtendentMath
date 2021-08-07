@@ -353,8 +353,45 @@ namespace MathExtended
             {
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
-            
-           
+
+
+        }
+
+        / Создает матрицу с вычеркнутыми столбцами на основе текущей
+        /// </summary>
+        /// <param name="column">Количество вычеркнутых столбцов</param>
+        /// <returns></returns>
+        private Matrix<T> CreateMatrixWithoutColumn(int column)
+        {
+            if (column < 0 || column >= this.ColumnsCount)
+            {
+                throw new ArgumentException("invalid column index");
+            }
+            var result = new Matrix<T>(this.RowsCount, this.ColumnsCount - 1);
+            result.ForEach((i, j) =>
+                result[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] =
+                Operator.Convert<T, int>(j) < column ? this[Operator.Convert<T, int>(i),
+                Operator.Convert<T, int>(j)] : this[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j) + 1]);
+            return result;
+        }
+
+        /// <summary>
+        /// Создает матрицу с вычеркнутыми строками на основе текущей
+        /// </summary>
+        /// <param name="row">Количество вычеркнутых строк</param>
+        /// <returns></returns>
+        private Matrix<T> CreateMatrixWithoutRow(int row)
+        {
+            if (row < 0 || row >= this.RowsCount)
+            {
+                throw new ArgumentException("invalid row index");
+            }
+            var result = new Matrix<T>(this.RowsCount - 1, this.ColumnsCount);
+            result.ForEach((i, j) =>
+                result[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] =
+                Operator.Convert<T, int>(i) < row ?
+                this[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] : this[Operator.Convert<T, int>(i) + 1, Operator.Convert<T, int>(j)]);
+            return result;
         }
 
         private T[] GetRow(int index)
@@ -442,7 +479,7 @@ namespace MathExtended
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
-        public void ForEach(Action<T> action)
+        public void ForEach(Action<T,T> action)
         {
 
             if (action != null)
@@ -451,7 +488,7 @@ namespace MathExtended
                 {
                       Parallel.For(0, this.ColumnsCount, column =>
                       {
-                           action(this[row, column]);
+                           action(row, column);
                       });
                 });
             }
