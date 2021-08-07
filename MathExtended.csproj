@@ -179,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseMatrix.cs" />
+    <Compile Include="Exceptions\InvalidOperationForMatrix.cs" />
     <Compile Include="Exceptions\MatrixDifferentSizeException.cs" />
     <Compile Include="Exceptions\TheNumberOfRowsAndColumnsIsDifferentException.cs" />
     <Compile Include="Interfaces\IMatrix.cs" />

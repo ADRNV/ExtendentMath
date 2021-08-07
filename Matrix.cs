@@ -316,6 +316,33 @@ namespace MathExtended
 
             return transposedMatrix;
         }
+
+        /// <summary>
+        /// Приводит матрицу к ступенчатому виду
+        /// </summary>
+        /// <returns><see cref="Matrix{T}"/>.Матрица в ступенчатов виде</returns>
+        public Matrix<T> ConvertToStepped()
+        {
+            var steppedMatrix = this;
+
+            if (IsSquareMatrix)
+            {
+                for (int i = 0; i < RowsCount; i++)
+                {
+                    for (int j = i + 1; j < ColumnsCount; j++)
+                    {
+                        dynamic koef = Operator.Divide(steppedMatrix[j, i], steppedMatrix[i, i]);
+                        for (int k = i; k < RowsCount; k++)
+                            steppedMatrix[j, k] -= steppedMatrix[i, k] * koef;
+                    }
+                }
+            }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
+            return steppedMatrix;
+        }
         #region Фичи
 
         /// <summary>
