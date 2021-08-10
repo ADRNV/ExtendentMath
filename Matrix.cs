@@ -413,14 +413,14 @@ namespace MathExtended
 
         private T[] GetRow(int index)
         {
-            var row = new List<T>();
+            var fullRow = new List<T>();
 
-            for(int rowMember = 0;rowMember < ColumnsCount;rowMember++)
+            for(int row = 0;row < ColumnsCount;row++)
             {
-                row.Add(this[index,rowMember]);
+                fullRow.Add(this[index,row]);
             }
 
-            return row.ToArray();
+            return fullRow.ToArray();
         }
 
         private T[] GetColumn(int index)
