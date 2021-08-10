@@ -415,12 +415,24 @@ namespace MathExtended
         {
             var row = new List<T>();
 
-            for(int r = 0;r < RowsCount;r++)
+            for(int rowMember = 0;rowMember < ColumnsCount;rowMember++)
             {
-                row.Add(this[r,index]);
+                row.Add(this[index,rowMember]);
             }
 
             return row.ToArray();
+        }
+
+        private T[] GetColumn(int index)
+        {
+            var fullColumn = new List<T>();
+
+            for(int column = 0;column < RowsCount;column++)
+            {
+                fullColumn.Add(this[column,index]);
+            }
+
+            return fullColumn.ToArray();
         }
 
         #region Фичи
