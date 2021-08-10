@@ -329,21 +329,37 @@ namespace MathExtended
 
             T[] primaryRow = null;
 
+            dynamic zero = 0;
+
             if (IsSquareMatrix)
             {
+
+                
                 for (int i = 0; i < RowsCount; i++)
                 {
-                    if(i != 0)
+                    if(Operator.NotEqual(steppedMatrix[i,0],zero))
                     {
-                        primaryElement = 0;
-                        primaryRow = GetRow(i);
+                        primaryElement = steppedMatrix[i,0];
+                        primaryRow = GetRow(0);
+
+                        break;
+                        
+
+
+                    }
+
+                }
+                for (int i = 0; i < RowsCount; i++)
+                {
+                    for (int e = 0; e < ColumnsCount; e++)
+                    {
+                        steppedMatrix[i, e] = primaryRow[e] / primaryElement;
                     }
                 }
 
-                for (int e = 0; e < ColumnsCount; e++)
-                {
-                    steppedMatrix[0, e] = steppedMatrix[0, e] / primaryElement;
-                }
+
+
+
 
                 return steppedMatrix;
             }
