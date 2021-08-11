@@ -16,7 +16,7 @@ namespace MathExtended
     /// Описывает основную логику матриц
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public class Matrix<T>:BaseMatrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class Matrix<T> : BaseMatrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Поля матрицы
 
@@ -29,6 +29,7 @@ namespace MathExtended
         #endregion
 
         private bool disposedValue;
+        private double precalculatedDeterminant = double.NaN;
 
         #region Свойства матрицы   
         /// <summary>
@@ -58,7 +59,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="rows">Колличество строк в матрице</param>
         /// <param name="columns">Колличество столбцов матрице</param>
-        public Matrix(int rows, int columns):base(rows,columns)
+        public Matrix(int rows, int columns) : base(rows, columns)
         {
             rowsCount = rows;
 
@@ -76,14 +77,16 @@ namespace MathExtended
         /// Создает матрицу на основе двумерного массива 
         /// </summary>
         /// <param name="array">Двумерный массив</param>
-        public Matrix(T[,] array) : base(array.GetUpperBound(0) + 1,array.GetUpperBound(1) + 1)
+        public Matrix(T[,] array) : base(array.GetUpperBound(0) + 1, array.GetUpperBound(1) + 1)
         {
-            
+
             matrix = array;
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
             DiagonalChanged = OnDiagonalChanged;
+
+            RowsUpdate = OnRowsUpdate;
 
         }
 
@@ -143,7 +146,7 @@ namespace MathExtended
                 {
                     Parallel.For(0, matrixB.ColumnsCount, colunm =>
                     {
-                         matrixC[row, colunm] = Operator.Add(matrixA[row, colunm], matrixB[row, colunm]);
+                        matrixC[row, colunm] = Operator.Add(matrixA[row, colunm], matrixB[row, colunm]);
                     });
                 });
                 return matrixC;
@@ -197,14 +200,14 @@ namespace MathExtended
 
                 Parallel.For(0, matrixA.RowsCount, i =>
                 {
-                
+
                     Parallel.For(0, matrixB.ColumnsCount, j =>
                     {
-                            matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
+                        matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
                     });
-               
+
                 });
-                
+
                 return matrixC;
             }
             else
@@ -220,20 +223,20 @@ namespace MathExtended
         /// <param name="multiplier"></param>
         /// <param name="matrixA"></param>
         /// <returns>Умноженная на число матрица</returns>
-        public static Matrix<T> operator *(T multiplier,Matrix<T> matrixA)
+        public static Matrix<T> operator *(T multiplier, Matrix<T> matrixA)
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
 
             Parallel.For(0, matrixA.RowsCount, row =>
             {
-            
+
                 Parallel.For(0, matrixA.ColumnsCount, column =>
                 {
-                     matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
+                    matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
                 });
-            
+
             });
-            
+
             return matrixB;
         }
         /// <summary>
@@ -242,23 +245,23 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns></returns>
-        public static Matrix<T> operator *(Matrix<T> matrixA,Matrix<T> matrixB)
+        public static Matrix<T> operator *(Matrix<T> matrixA, Matrix<T> matrixB)
         {
-            if(matrixA.RowsCount == matrixB.ColumnsCount)
+            if (matrixA.RowsCount == matrixB.ColumnsCount)
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
                 Parallel.For(0, matrixA.RowsCount, row =>
                 {
-                      Parallel.For(0, matrixB.ColumnsCount, column =>
-                      {
-                            for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
-                            {
-                                matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
-                            }
-                      });
+                    Parallel.For(0, matrixB.ColumnsCount, column =>
+                    {
+                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                          {
+                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
+                        }
+                    });
                 });
-                
+
                 return matrixC;
             }
             else
@@ -266,7 +269,7 @@ namespace MathExtended
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
 
-            
+
         }
 
 
@@ -281,12 +284,12 @@ namespace MathExtended
         /// <returns></returns>
         public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
-           
+
             if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
             {
                 var matrixC = matrix;
 
-                for (int i = 1;i < power; i++)
+                for (int i = 1; i < power; i++)
                 {
                     matrixC *= matrix;
                 }
@@ -304,14 +307,15 @@ namespace MathExtended
         /// <returns>Транспонированная матрица</returns>
         public Matrix<T> TransponateMatrix()
         {
-            var transposedMatrix = new Matrix<T>(this.ColumnsCount,this.RowsCount);
+            
+            var transposedMatrix = new Matrix<T>(this.ColumnsCount, this.RowsCount);
 
             Parallel.For(0, this.ColumnsCount, row =>
             {
-                  Parallel.For(0, this.RowsCount, column =>
-                  {
-                       transposedMatrix[row, column] = this[column, row];
-                  });
+                Parallel.For(0, this.RowsCount, column =>
+                {
+                    transposedMatrix[row, column] = this[column, row];
+                });
             });
 
             return transposedMatrix;
@@ -334,16 +338,16 @@ namespace MathExtended
             if (IsSquareMatrix)
             {
 
-                
+
                 for (int i = 0; i < RowsCount; i++)
                 {
-                    if(Operator.NotEqual(steppedMatrix[i,0],zero))
+                    if (Operator.NotEqual(steppedMatrix[i, 0], zero))
                     {
-                        primaryElement = steppedMatrix[i,0];
-                        primaryRow = GetRow(0);
+                        primaryElement = steppedMatrix[i, 0];
+                        primaryRow = GetRow(i);
 
                         break;
-                        
+
 
 
                     }
@@ -351,9 +355,9 @@ namespace MathExtended
                 }
                 for (int i = 0; i < RowsCount; i++)
                 {
-                    for (int e = 0; e < ColumnsCount; e++)
+                    for (int e = 0; e < GetRow(i).Length - 1; e++)
                     {
-                        steppedMatrix[i, e] = primaryRow[e] / primaryElement;
+                        steppedMatrix[i, e] = GetRow(i)[e] / primaryElement;
                     }
                 }
 
@@ -364,7 +368,7 @@ namespace MathExtended
                 return steppedMatrix;
             }
 
-          
+
             else
             {
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
@@ -410,6 +414,105 @@ namespace MathExtended
                 this[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] : this[Operator.Convert<T, int>(i) + 1, Operator.Convert<T, int>(j)]);
             return result;
         }
+        /// <summary>
+        /// Расчитывает детерминант матрицы
+        /// </summary>
+        /// <returns>Детерминант матрицы</returns>
+        public T CalculateDeterminant()
+        {
+
+            if (!double.IsNaN(this.precalculatedDeterminant))
+            {
+                return Operator.Convert<double, T>(this.precalculatedDeterminant);
+            }
+            if (!this.IsSquareMatrix)
+            {
+                throw new InvalidOperationException("determinant can be calculated only for square matrix");
+            }
+            if (this.RowsCount == 2)
+            {
+                return Operator.Subtract(Operator.Multiply(this[0, 0], this[1, 1]), Operator.Multiply(this[0, 1], this[1, 0]));
+            }
+            dynamic result = 0;
+            dynamic one = 1;
+            for (var j = 0; j < this.RowsCount; j++)
+            {
+                result += Operator.Multiply(Operator.Multiply((j % 2 == 1 ? one : -one), this[1, j]),
+                    this.CreateMatrixWithoutColumn(j).CreateMatrixWithoutRow(1).CalculateDeterminant());
+
+            }
+
+            return result;
+        }
+
+       private event Action<int> RowsUpdate;
+
+        private void OnRowsUpdate(int index)
+        {
+            for(int column = 0;column < this.ColumnsCount;column++)
+            {
+                this[index, column] = _rows[index][index];
+            }
+        }
+
+       private T[][] GetRows(Matrix<T> matrix)
+       {
+            T[][] rows = new T[RowsCount][];
+           
+           for(int row = 0;row < RowsCount;row++)
+           {
+              rows[row] = GetRow(row); 
+           }
+
+            return rows;
+       }
+
+        
+        /// <summary>
+        /// Задает строку матрицы по заданному индексу
+        /// </summary>
+        /// <param name="row">Строка</param>
+        /// <param name="index">Индекс строки</param>
+        public void SetRow(T[][] row,int index)
+        {
+            if (index >= this.RowsCount)
+            {
+                for (int c = 0; c < this.ColumnsCount; c++)
+                {
+                    this[index, c] = row[index][c];
+                }
+            }
+        }
+
+        private void SetRows(T[][] rows)
+        {
+          
+            ForEach((column,row) => this[row, column] = rows[row][column]);
+              
+        }
+
+
+        private T[][] _rows;
+        
+        /// <summary>
+        /// Получает/задает все троки матрицы
+        /// </summary>
+        public T[][] Rows
+        {
+            get
+            {
+
+                _rows = GetRows(this);
+                
+                return _rows;
+            
+            }
+
+            set
+            {
+                SetRows(value);
+            }
+        }
 
         private T[] GetRow(int index)
         {
@@ -423,16 +526,25 @@ namespace MathExtended
             return fullRow.ToArray();
         }
 
-        private T[] GetColumn(int index)
+        private T[] GetColumn(Matrix<T> matrix,int columnIndex)
         {
             var fullColumn = new List<T>();
 
-            for(int column = 0;column < RowsCount;column++)
+            for(int row = 0;row < RowsCount;row++)
             {
-                fullColumn.Add(this[column,index]);
+                fullColumn.Add(this[row,columnIndex]);
             }
 
             return fullColumn.ToArray();
+        }
+
+        private T[][] GetColumns(Matrix<T> matrix)
+        {
+            T[][] columns = new T[ColumnsCount][];
+            
+            ForEach((column, row) => columns[row][column] = matrix[column,row]);
+
+            return columns;
         }
 
         #region Фичи
@@ -509,6 +621,26 @@ namespace MathExtended
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
         public void ForEach(Action<T, T> action)
+        {
+
+            if (action == null)
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                for (dynamic row = 0; row < this.RowsCount; row++)
+                {
+                    for (dynamic column = 0; column < this.ColumnsCount; column++)
+                    {
+                        action(row, column);
+                    }
+                }
+            }
+
+        }
+
+        private void ForEach(Action<int, int> action)
         {
 
             if (action == null)
