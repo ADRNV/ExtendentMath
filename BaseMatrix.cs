@@ -20,6 +20,10 @@ namespace MathExtended
         /// </summary>
         protected T[,] matrix;
 
+        private T[][] _rows;
+
+        private T[][] _columns;
+
         private int _rowsCount;
 
         private int _columnsCount;
@@ -101,6 +105,118 @@ namespace MathExtended
                 _mainDiagonal = value;
             }
         }
+
+        /// <summary>
+        /// Получает/задает все троки матрицы
+        /// </summary>
+        public T[][] Rows
+        {
+            get
+            {
+
+                _rows = GetRows(this);
+
+                return _rows;
+
+            }
+
+            set
+            {
+                SetRows(value);
+            }
+        }
+        private T[][] GetRows(BaseMatrix<T> matrix)
+        {
+            T[][] rows = new T[RowsCount][];
+
+            for (int row = 0; row < RowsCount; row++)
+            {
+                rows[row] = GetRow(row);
+            }
+
+            return rows;
+        }
+
+
+        /// <summary>
+        /// Задает строку матрицы по заданному индексу
+        /// </summary>
+        /// <param name="row">Строка</param>
+        /// <param name="index">Индекс строки</param>
+        private void SetRow(T[][] row, int index)
+        {
+            if (index >= this.RowsCount)
+            {
+                for (int c = 0; c < this.ColumnsCount; c++)
+                {
+                    this[index, c] = row[index][c];
+                }
+            }
+        }
+
+        private void SetRows(T[][] rows)
+        {
+
+            ForEach((column, row) => this[row, column] = rows[row][column]);
+
+        }
+        private T[] GetRow(int index)
+        {
+            var fullRow = new List<T>();
+
+            for (int row = 0; row < ColumnsCount; row++)
+            {
+                fullRow.Add(this[index, row]);
+            }
+
+            return fullRow.ToArray();
+        }
+
+        private T[] GetColumn(BaseMatrix<T> matrix, int columnIndex)
+        {
+            var fullColumn = new List<T>();
+
+            for (int row = 0; row < RowsCount; row++)
+            {
+                fullColumn.Add(this[row, columnIndex]);
+            }
+
+            return fullColumn.ToArray();
+        }
+
+        private T[][] GetColumns(BaseMatrix<T> matrix)
+        {
+            T[][] columns = new T[ColumnsCount][];
+
+            ForEach((column, row) => columns[row][column] = matrix[column, row]);
+
+            return columns;
+        }
+
+        /// <summary>
+        /// Применяет функцию ко всем элементам матрицы
+        /// </summary>
+        /// <param name="action">Делегат с одним параметром</param>
+        public virtual void ForEach(Action<int, int> action)
+        {
+
+            if (action == null)
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                for (dynamic row = 0; row < this.RowsCount; row++)
+                {
+                    for (dynamic column = 0; column < this.ColumnsCount; column++)
+                    {
+                        action(row, column);
+                    }
+                }
+            }
+
+        }
+
 
         /// <summary>
         /// Находит главную диагональ матрицы

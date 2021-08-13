@@ -86,7 +86,7 @@ namespace MathExtended
 
             DiagonalChanged = OnDiagonalChanged;
 
-            RowsUpdate = OnRowsUpdate;
+           
 
         }
 
@@ -331,7 +331,7 @@ namespace MathExtended
 
             dynamic primaryElement = null;
 
-            T[] primaryRow = null;
+            T[] primaryRow;
 
             dynamic zero = 0;
 
@@ -339,12 +339,12 @@ namespace MathExtended
             {
 
 
-                for (int i = 0; i < RowsCount; i++)
+                for (int row = 0; row < RowsCount; row++)
                 {
-                    if (Operator.NotEqual(steppedMatrix[i, 0], zero))
+                    if (Operator.NotEqual(steppedMatrix[row, 0], zero))
                     {
-                        primaryElement = steppedMatrix[i, 0];
-                        primaryRow = GetRow(i);
+                        primaryElement = steppedMatrix[row, 0];
+                        primaryRow = base.Rows[row];
 
                         break;
 
@@ -353,21 +353,16 @@ namespace MathExtended
                     }
 
                 }
-                for (int i = 0; i < RowsCount; i++)
+                for (int row = 0; row < RowsCount; row++)
                 {
-                    for (int e = 0; e < GetRow(i).Length - 1; e++)
+                    for (int element = 0; element < Rows[row].Length - 1; element++)
                     {
-                        steppedMatrix[i, e] = GetRow(i)[e] / primaryElement;
+                        steppedMatrix[row, element] = Rows[row][element] / primaryElement;
                     }
                 }
 
-
-
-
-
                 return steppedMatrix;
             }
-
 
             else
             {
@@ -444,108 +439,7 @@ namespace MathExtended
 
             return result;
         }
-
-       private event Action<int> RowsUpdate;
-
-        private void OnRowsUpdate(int index)
-        {
-            for(int column = 0;column < this.ColumnsCount;column++)
-            {
-                this[index, column] = _rows[index][index];
-            }
-        }
-
-       private T[][] GetRows(Matrix<T> matrix)
-       {
-            T[][] rows = new T[RowsCount][];
-           
-           for(int row = 0;row < RowsCount;row++)
-           {
-              rows[row] = GetRow(row); 
-           }
-
-            return rows;
-       }
-
         
-        /// <summary>
-        /// Задает строку матрицы по заданному индексу
-        /// </summary>
-        /// <param name="row">Строка</param>
-        /// <param name="index">Индекс строки</param>
-        public void SetRow(T[][] row,int index)
-        {
-            if (index >= this.RowsCount)
-            {
-                for (int c = 0; c < this.ColumnsCount; c++)
-                {
-                    this[index, c] = row[index][c];
-                }
-            }
-        }
-
-        private void SetRows(T[][] rows)
-        {
-          
-            ForEach((column,row) => this[row, column] = rows[row][column]);
-              
-        }
-
-
-        private T[][] _rows;
-        
-        /// <summary>
-        /// Получает/задает все троки матрицы
-        /// </summary>
-        public T[][] Rows
-        {
-            get
-            {
-
-                _rows = GetRows(this);
-                
-                return _rows;
-            
-            }
-
-            set
-            {
-                SetRows(value);
-            }
-        }
-
-        private T[] GetRow(int index)
-        {
-            var fullRow = new List<T>();
-
-            for(int row = 0;row < ColumnsCount;row++)
-            {
-                fullRow.Add(this[index,row]);
-            }
-
-            return fullRow.ToArray();
-        }
-
-        private T[] GetColumn(Matrix<T> matrix,int columnIndex)
-        {
-            var fullColumn = new List<T>();
-
-            for(int row = 0;row < RowsCount;row++)
-            {
-                fullColumn.Add(this[row,columnIndex]);
-            }
-
-            return fullColumn.ToArray();
-        }
-
-        private T[][] GetColumns(Matrix<T> matrix)
-        {
-            T[][] columns = new T[ColumnsCount][];
-            
-            ForEach((column, row) => columns[row][column] = matrix[column,row]);
-
-            return columns;
-        }
 
         #region Фичи
 
@@ -583,13 +477,13 @@ namespace MathExtended
 
             dynamic random = new Random();
 
-            for (int row = 0; row < this.RowsCount; row++)
+            Parallel.For(0, this.RowsCount, row =>
             {
-                for (int column = 0; column < this.ColumnsCount; column++)
+                Parallel.For(0, this.ColumnsCount, column =>
                 {
-                    filledMatrix[row, column] = random.Next(min,max);
-                }
-            }
+                      filledMatrix[row, column] = random.Next(min, max);
+                });
+            });
 
             return filledMatrix;
         }
@@ -603,17 +497,10 @@ namespace MathExtended
             var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
             int counter = 1;
-#warning медленное выполениние при больших размерах
-            for(int row = 0;row < this.RowsCount;row++)
-            {
-                for (int column = 0; column < this.ColumnsCount; column++)
-                {
-                    filledMatrix[row, column] = counter++;
-                }
-            }
-               
-          
-           return filledMatrix;
+            
+            ForEach((column,row) => filledMatrix[row, column] = counter++);
+           
+            return filledMatrix;
         }
 
         /// <summary>
@@ -622,27 +509,6 @@ namespace MathExtended
         /// <param name="action">Делегат с одним параметром</param>
         public void ForEach(Action<T, T> action)
         {
-
-            if (action == null)
-            {
-                throw new ArgumentNullException();
-            }
-            else
-            {
-                for (dynamic row = 0; row < this.RowsCount; row++)
-                {
-                    for (dynamic column = 0; column < this.ColumnsCount; column++)
-                    {
-                        action(row, column);
-                    }
-                }
-            }
-
-        }
-
-        private void ForEach(Action<int, int> action)
-        {
-
             if (action == null)
             {
                 throw new ArgumentNullException();
@@ -693,14 +559,7 @@ namespace MathExtended
         }
 
 
-
-
-
-
-
-
-
-
+       
         #endregion
 
         /// <summary>
