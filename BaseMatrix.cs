@@ -197,7 +197,7 @@ namespace MathExtended
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
-        public virtual void ForEach(Action<int, int> action)
+        private void ForEach(Action<int, int> action)
         {
 
             if (action == null)

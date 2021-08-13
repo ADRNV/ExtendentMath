@@ -498,7 +498,7 @@ namespace MathExtended
 
             int counter = 1;
             
-            ForEach((column,row) => filledMatrix[row, column] = counter++);
+            ForEach((column,row) => filledMatrix[(dynamic)row, (dynamic)column] = counter++);
            
             return filledMatrix;
         }
