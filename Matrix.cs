@@ -272,7 +272,25 @@ namespace MathExtended
 
         }
 
+        /// <summary>
+        /// Явно приводит двумерный массив к <see cref="Matrix{T}"/>
+        /// </summary>
+        /// <param name="array">Приводимый массив</param>
+        public static explicit operator Matrix<T>(T[,] array)
+        {
+            return new Matrix<T>(array);
+        }
 
+        /// <summary>
+        /// Явно приводит <see cref="Matrix{T}"/> к двумерному массиву
+        /// </summary>
+        /// <param name="matrix">Приводимая матрица</param>
+        public static explicit operator T[,](Matrix<T> matrix)
+        {
+            return matrix.matrix;
+        }
+
+        
         #endregion
 
 
@@ -325,58 +343,59 @@ namespace MathExtended
         /// Приводит матрицу к ступенчатому виду
         /// </summary>
         /// <returns><see cref="Matrix{T}"/>Матрица в ступенчатов виде</returns>
-        public Matrix<T> ConvertToStepped()
-        {
-            var steppedMatrix = this;
+        //public Matrix<T> ConvertToStepped()
+        //{
+        //    var steppedMatrix = this;
 
-            dynamic primaryElement = null;
+        //    dynamic primaryElement = null;
 
-            T[] primaryRow;
+        //    T[] primaryRow;
 
-            dynamic zero = 0;
+        //    dynamic zero = 0;
 
-            if (IsSquareMatrix)
-            {
-
-
-                for (int row = 0; row < RowsCount; row++)
-                {
-                    if (Operator.NotEqual(steppedMatrix[row, 0], zero))
-                    {
-                        primaryElement = steppedMatrix[row, 0];
-                        primaryRow = base.Rows[row];
-
-                        break;
+        //    if (IsSquareMatrix)
+        //    {
 
 
+        //        for (int row = 0; row < RowsCount; row++)
+        //        {
+        //            if (Operator.NotEqual(steppedMatrix[row, 0], zero))
+        //            {
+        //                primaryElement = steppedMatrix[row, 0];
+        //                primaryRow = base.Rows[row];
 
-                    }
-
-                }
-                for (int row = 0; row < RowsCount; row++)
-                {
-                    for (int element = 0; element < Rows[row].Length - 1; element++)
-                    {
-                        steppedMatrix[row, element] = Rows[row][element] / primaryElement;
-                    }
-                }
-
-                return steppedMatrix;
-            }
-
-            else
-            {
-                throw new TheNumberOfRowsAndColumnsIsDifferentException();
-            }
+        //                break;
 
 
-        }
+
+        //            }
+
+        //        }
+        //        for (int row = 0; row < RowsCount; row++)
+        //        {
+        //            for (int element = 0; element < Rows[row].Length - 1; element++)
+        //            {
+        //                steppedMatrix[row, element] = Rows[row][element] / primaryElement;
+        //            }
+        //        }
+
+        //        return steppedMatrix;
+        //    }
+
+        //    else
+        //    {
+        //        throw new TheNumberOfRowsAndColumnsIsDifferentException();
+        //    }
+
+
+        //}
 
         ///<summary>
         /// Создает матрицу с вычеркнутыми столбцами на основе текущей
         /// </summary>
         /// <param name="column">Количество вычеркнутых столбцов</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private Matrix<T> CreateMatrixWithoutColumn(int column)
         {
             if (column < 0 || column >= this.ColumnsCount)
@@ -396,6 +415,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="row">Количество вычеркнутых строк</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private Matrix<T> CreateMatrixWithoutRow(int row)
         {
             if (row < 0 || row >= this.RowsCount)
@@ -413,6 +433,7 @@ namespace MathExtended
         /// Расчитывает детерминант матрицы
         /// </summary>
         /// <returns>Детерминант матрицы</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public T CalculateDeterminant()
         {
 
@@ -454,13 +475,13 @@ namespace MathExtended
 
             Random random = new Random();
 
-            for(int row = 0;row < this.RowsCount;row++)
+            Parallel.For(0, this.RowsCount, row =>
             {
-                for(int column = 0;column < this.ColumnsCount;column++)
-                {
-                    filledMatrix[row, column] = random.Next();
-                }
-            }
+                 Parallel.For(0, this.ColumnsCount, column =>
+                 {
+                     filledMatrix[row, column] = random.Next();
+                 });
+            });
 
             return filledMatrix;
         }
@@ -515,11 +536,11 @@ namespace MathExtended
             }
             else
             {
-                for (dynamic row = 0; row < this.RowsCount; row++)
+                for(dynamic row = 0;row < this.RowsCount; row++)
                 {
                     for (dynamic column = 0; column < this.ColumnsCount; column++)
                     {
-                        action(row, column);
+                        action((dynamic)row, column);
                     }
                 }
             }
@@ -539,7 +560,7 @@ namespace MathExtended
         /// Вывод всей матрицы 
         /// </summary>
         /// <returns></returns>
-        public string OutString()
+        public override string ToString()
         {
             string outString = String.Empty;
 
@@ -562,27 +583,6 @@ namespace MathExtended
        
         #endregion
 
-        /// <summary>
-        /// Высвобождает использованные ресурсы
-        /// </summary>
-        /// <param name="disposing"></param>
-        protected override void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-
-                    MainDiagonal = null;
-                    matrix = null;
-
-
-                }
-
-                // TODO: освободить неуправляемые ресурсы (неуправляемые объекты) и переопределить метод завершения
-                // TODO: установить значение NULL для больших полей
-                disposedValue = true;
-            }
-        }
+        
     }
 }

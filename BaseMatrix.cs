@@ -20,7 +20,7 @@ namespace MathExtended
         /// </summary>
         protected T[,] matrix;
 
-        private T[][] _rows;
+        private Row<T>[] _rows;
 
         private T[][] _columns;
 
@@ -52,7 +52,6 @@ namespace MathExtended
             
             _columnsCount = columns;
 
-            
         }
 
         /// <summary>
@@ -97,6 +96,7 @@ namespace MathExtended
         {
             get
             {
+                _mainDiagonal = FindDiagonal();
                 return _mainDiagonal;
             }
 
@@ -109,21 +109,20 @@ namespace MathExtended
         /// <summary>
         /// Получает/задает все троки матрицы
         /// </summary>
-        public T[][] Rows
+        public Row<T>[] Rows
         {
             get
             {
-
-                _rows = GetRows(this);
-
+                _rows = GetRows();
                 return _rows;
-
             }
 
             set
             {
-                SetRows(value);
+                _rows = value;
+                SetRows(_rows);
             }
+
         }
 
         /// <summary>
@@ -139,13 +138,25 @@ namespace MathExtended
             
             set
             {
-                _columns = SetColumns(value); 
+                _columns = value;
+                SetColumns(_columns);
+                
             }
         }
-
-        private T[][] GetRows(BaseMatrix<T> matrix)
+        private Row<T> GetRow(int rowIndex)
         {
-            T[][] rows = new T[RowsCount][];
+            var fullRow = new Row<T>(RowsCount);
+
+            for (int row = 0; row < ColumnsCount; row++)
+            {
+                fullRow[row] = this[rowIndex, row];
+            }
+
+            return fullRow;
+        }
+        private Row<T>[] GetRows()
+        {
+            Row<T>[] rows = new Row<T>[RowsCount];
 
             for (int row = 0; row < RowsCount; row++)
             {
@@ -155,39 +166,30 @@ namespace MathExtended
             return rows;
         }
 
-
         /// <summary>
         /// Задает строку матрицы по заданному индексу
         /// </summary>
         /// <param name="row">Строка</param>
         /// <param name="index">Индекс строки</param>
-        private void SetRow(T[] row, int index)
+        private void SetRow(Row<T> row, int index)
         {
-            if (index <= this.RowsCount)
+  
+           for (int c = 0; c < this.ColumnsCount; c++)
+           {
+               this[index, c] = row[c];
+           }
+            
+        }
+
+        public void SetRows(Row<T>[] rows)
+        {
+            ForEach((row, column) =>
             {
-                for (int c = 0; c < this.ColumnsCount; c++)
+                if (row <= rows.Length - 1)
                 {
-                    this[index, c] = row[c];
+                    this[row, column] = rows[row][column];
                 }
-            }
-        }
-
-        private void SetRows(T[][] rows)
-        {
-
-            ForEach((column, row) => this[row, column] = rows[row][column]);
-
-        }
-        private T[] GetRow(int rowIndex)
-        {
-            var fullRow = new List<T>();
-
-            for (int row = 0; row < ColumnsCount; row++)
-            {
-                fullRow.Add(this[rowIndex, row]);
-            }
-
-            return fullRow.ToArray();
+            });
         }
 
         private T[] GetColumn(int columnIndex)
@@ -196,7 +198,7 @@ namespace MathExtended
 
             for (int row = 0; row < RowsCount; row++)
             {
-                fullColumn.Add(this[row, columnIndex]);
+               fullColumn.Add(this[row, columnIndex]);
             }
 
             return fullColumn.ToArray();
@@ -211,7 +213,7 @@ namespace MathExtended
             return columns;
         }
 
-        private T[] SetColumn(int columnIndex,T[] column)
+        private void SetColumn(int columnIndex,T[] column)
         {
             if (columnIndex <= this.RowsCount)
             {
@@ -221,13 +223,9 @@ namespace MathExtended
                 }
             }
         }
-        private T[][] SetColumns(T[] columns)
+        private void SetColumns(T[][] columns)
         {
-            T[][] allColumns = new T[this.ColumnsCount][];
-
-            ForEach((row, column) => columns[row] = SetColumn(0,columns));
-
-            return allColumns;
+            ForEach((row, column) => SetColumn(row,columns[row]));
         }
 
         /// <summary>
@@ -243,13 +241,13 @@ namespace MathExtended
             }
             else
             {
-                for (dynamic row = 0; row < this.RowsCount; row++)
+                Parallel.For(0, this.RowsCount, row =>
                 {
                     for (dynamic column = 0; column < this.ColumnsCount; column++)
                     {
                         action(row, column);
                     }
-                }
+                });
             }
 
         }
@@ -263,27 +261,16 @@ namespace MathExtended
         {
             List<T> mainDiagonal = new List<T>();
 
-            Parallel.For(0, _rowsCount, i =>
+            ForEach((row, column) =>
             {
-
-                Parallel.For(0, _columnsCount, j =>
+                if (row == column)
                 {
-                    if (i == j)
-                    {
-                        mainDiagonal.Add(this[i, j]);
-                    }
-
-                });
+                    mainDiagonal.Add(this[row, column]);
+                }
 
             });
 
             return mainDiagonal.ToArray();
-        }
-
-      
-        private void OnDiagonalChanged()
-        {
-            MainDiagonal = FindDiagonal();
         }
 
         #region IEnumerable
@@ -372,11 +359,10 @@ namespace MathExtended
             {
                 if (disposing)
                 {
-
-                   
+                    Rows = null;
+                    Columns = null;
                     matrix = null;
-
-
+                    MainDiagonal = null;
                 }
 
                 // TODO: освободить неуправляемые ресурсы (неуправляемые объекты) и переопределить метод завершения
