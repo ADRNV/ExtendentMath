@@ -470,7 +470,6 @@ namespace MathExtended
         /// <returns>Матрмца со случайными значениями</returns>
         public dynamic FillMatrixRandom()
         {
-#warning Небезопасность типов 
             dynamic filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
 
             Random random = new Random();
@@ -525,9 +524,9 @@ namespace MathExtended
         }
 
         /// <summary>
-        /// Применяет функцию ко всем элементам матрицы
+        /// Применяет действия ко всем элементам матрицы
         /// </summary>
-        /// <param name="action">Делегат с одним параметром</param>
+        /// <param name="action">Действие</param>
         public void ForEach(Action<T, T> action)
         {
             if (action == null)

@@ -181,7 +181,7 @@ namespace MathExtended
             
         }
 
-        public void SetRows(Row<T>[] rows)
+        private void SetRows(Row<T>[] rows)
         {
             ForEach((row, column) =>
             {

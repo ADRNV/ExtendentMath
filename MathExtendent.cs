@@ -62,15 +62,46 @@ namespace MathExtended
 
             return 1 / Sch(x);
         }
+        
+        /// <summary>
+        /// Вычисляет алгебраическую сумму функции
+        /// </summary>
+        /// <param name="i">Индекс суммирования</param>
+        /// <param name="n">Верхняя граница</param>
+        /// <param name="func">Функция</param>
+        /// <returns><see cref="double"/> Алгебраическая сумма</returns>
+        public static double AlgebraicSum(double i, double n, Func<double, double> func)
+        {
+            double sum = 0;
 
+            for (; i <= n; i++)
+            {
+                sum += func(i);
+            }
 
+            return sum;
+        }
 
+        /// <summary>
+        /// Вычисляет алгебраическую сумму функции
+        /// </summary>
+        /// <param name="i">Индекс суммирования</param>
+        /// <param name="min">Нижняя граница</param>
+        /// <param name="max">Верхняя граница</param>
+        /// <param name="func">Функция</param>
+        /// <returns><see cref="double"/> Алгебраическая сумма</returns>
+        public static double AlgebraicSum(double i, double min, double max, Func<double, double> func)
+        {
+            double sum = 0;
 
+            for (; i <= max && i >= max; i++)
+            {
+                sum += func.Invoke(i);
+            }
 
-
+            return sum;
+        }
     }
-
-   
 }
 
 
