@@ -125,6 +125,24 @@ namespace MathExtended
                 SetRows(value);
             }
         }
+
+        /// <summary>
+        /// Столбцы матрицы
+        /// </summary>
+        public T[][] Columns
+        { 
+            get
+            {
+                _columns = GetColumns();
+                return _columns;
+            }
+            
+            set
+            {
+                _columns = SetColumns(value); 
+            }
+        }
+
         private T[][] GetRows(BaseMatrix<T> matrix)
         {
             T[][] rows = new T[RowsCount][];
@@ -143,13 +161,13 @@ namespace MathExtended
         /// </summary>
         /// <param name="row">Строка</param>
         /// <param name="index">Индекс строки</param>
-        private void SetRow(T[][] row, int index)
+        private void SetRow(T[] row, int index)
         {
-            if (index >= this.RowsCount)
+            if (index <= this.RowsCount)
             {
                 for (int c = 0; c < this.ColumnsCount; c++)
                 {
-                    this[index, c] = row[index][c];
+                    this[index, c] = row[c];
                 }
             }
         }
@@ -160,19 +178,19 @@ namespace MathExtended
             ForEach((column, row) => this[row, column] = rows[row][column]);
 
         }
-        private T[] GetRow(int index)
+        private T[] GetRow(int rowIndex)
         {
             var fullRow = new List<T>();
 
             for (int row = 0; row < ColumnsCount; row++)
             {
-                fullRow.Add(this[index, row]);
+                fullRow.Add(this[rowIndex, row]);
             }
 
             return fullRow.ToArray();
         }
 
-        private T[] GetColumn(BaseMatrix<T> matrix, int columnIndex)
+        private T[] GetColumn(int columnIndex)
         {
             var fullColumn = new List<T>();
 
@@ -184,13 +202,32 @@ namespace MathExtended
             return fullColumn.ToArray();
         }
 
-        private T[][] GetColumns(BaseMatrix<T> matrix)
+        private T[][] GetColumns()
         {
             T[][] columns = new T[ColumnsCount][];
 
-            ForEach((column, row) => columns[row][column] = matrix[column, row]);
+            ForEach((row, column) => columns[row] = GetColumn(column));
 
             return columns;
+        }
+
+        private T[] SetColumn(int columnIndex,T[] column)
+        {
+            if (columnIndex <= this.RowsCount)
+            {
+                for (int row = 0; row < this.ColumnsCount; row++)
+                {
+                    this[row, columnIndex] = column[row];
+                }
+            }
+        }
+        private T[][] SetColumns(T[] columns)
+        {
+            T[][] allColumns = new T[this.ColumnsCount][];
+
+            ForEach((row, column) => columns[row] = SetColumn(0,columns));
+
+            return allColumns;
         }
 
         /// <summary>

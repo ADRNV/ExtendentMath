@@ -13,5 +13,13 @@ namespace MathExtended.Exceptions
     public class InvalidOperationForMatrix : Exception
     {
         private string message = "This operation is not achievable for the current matrix.";
+
+        /// <summary>
+        /// Сообщение о возникшем исключении
+        /// </summary>
+        public override string Message
+        {
+            get => message;
+        }
     }
 }
