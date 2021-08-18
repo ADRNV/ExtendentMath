@@ -6,58 +6,30 @@ using System.Threading.Tasks;
 
 namespace MathExtended
 {
-    class Column<T>
+    /// <summary>
+    /// Описывает столбцы матрицы
+    /// </summary>
+    /// <typeparam name="T">Тип содержимого строки</typeparam>
+    public class Column<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        private T[] _cells;
-
-        private int _height;
-
         /// <summary>
-        /// Индексатор.По индексу возвращает или задает значение ячейки из столбца
-        /// </summary>
-        /// <param name="index">Индекс элемента</param>
-        /// <returns>Элемент <code><see cref="T"/> cell</code></returns>
-        public T this[int index]
-        {
-            get
-            {
-                return _cells[index];
-            }
-
-            set
-            {
-                _cells[index] = value;
-            }
-        }
-
-        /// <summary>
-        /// Длина строки
-        /// </summary>
-        public int Height
-        {
-
-            get => _cells.Length;
-        }
-
-        /// <summary>
-        /// Создает строку с указанным размером
+        /// Создает столбец с указанными размерами
         /// </summary>
         /// <param name="height"></param>
-        public Column(int height)
-        {
-            _cells = new T[height];
-        }
+       public Column(int height) : base(height) { }
+       /// <summary>
+       /// Создает столбец на основе массива
+       /// </summary>
+       /// <param name="array"></param>
+       public Column(T[] array) : base(array) { }
 
-        public Column(T[] array)
-        {
-            _cells = array;
-            _height = array.Length;
-        }
-
-        public static implicit operator Column<T>(T[] array)
-        {
+       /// <summary>
+       /// Не явным образом приводит масив к столбцу
+       /// </summary>
+       /// <param name="array">Приводимый массив</param>
+       public static implicit operator Column<T>(T[] array)
+       {
             return new Column<T>(array);
-        }
-
+       }
     }
 }

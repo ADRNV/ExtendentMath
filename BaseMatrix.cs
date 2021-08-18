@@ -2,8 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MathExtended
@@ -22,7 +20,7 @@ namespace MathExtended
 
         private Row<T>[] _rows;
 
-        private T[][] _columns;
+        private Column<T>[] _columns;
 
         private int _rowsCount;
 
@@ -32,7 +30,6 @@ namespace MathExtended
         /// Главная диагональ
         /// </summary>
         protected T[] _mainDiagonal;
-
 
         private int _rowPosition = 0;
 
@@ -47,11 +44,11 @@ namespace MathExtended
         /// <param name="columns">Количество столбцов</param>
         public BaseMatrix(int rows,int columns)
         {
-            
             _rowsCount = rows;
             
             _columnsCount = columns;
 
+            matrix = new T[rows,columns];
         }
 
         /// <summary>
@@ -78,9 +75,9 @@ namespace MathExtended
         /// </summary>
         public int RowsCount
         {
-
             get => _rowsCount;
         }
+
         /// <summary>
         /// Колличество столбцов в матрице
         /// </summary>
@@ -107,20 +104,21 @@ namespace MathExtended
         }
 
         /// <summary>
-        /// Получает/задает все троки матрицы
+        /// Получает все cтроки матрицы
         /// </summary>
         public Row<T>[] Rows
         {
             get
             {
                 _rows = GetRows();
+                
                 return _rows;
+
             }
 
-            set
+            private set
             {
                 _rows = value;
-                SetRows(_rows);
             }
 
         }
@@ -128,7 +126,7 @@ namespace MathExtended
         /// <summary>
         /// Столбцы матрицы
         /// </summary>
-        public T[][] Columns
+        public Column<T>[] Columns
         { 
             get
             {
@@ -136,13 +134,12 @@ namespace MathExtended
                 return _columns;
             }
             
-            set
+            private set
             {
                 _columns = value;
-                SetColumns(_columns);
-                
             }
         }
+
         private Row<T> GetRow(int rowIndex)
         {
             var fullRow = new Row<T>(RowsCount);
@@ -154,6 +151,7 @@ namespace MathExtended
 
             return fullRow;
         }
+
         private Row<T>[] GetRows()
         {
             Row<T>[] rows = new Row<T>[RowsCount];
@@ -171,7 +169,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="row">Строка</param>
         /// <param name="index">Индекс строки</param>
-        private void SetRow(Row<T> row, int index)
+        public void SetRow(Row<T> row, int index)
         {
   
            for (int c = 0; c < this.ColumnsCount; c++)
@@ -181,7 +179,11 @@ namespace MathExtended
             
         }
 
-        private void SetRows(Row<T>[] rows)
+        /// <summary>
+        /// Задает строки матрицы
+        /// </summary>
+        /// <param name="rows">Строки</param>
+        public void SetRows(Row<T>[] rows)
         {
             ForEach((row, column) =>
             {
@@ -192,7 +194,7 @@ namespace MathExtended
             });
         }
 
-        private T[] GetColumn(int columnIndex)
+        private Column<T> GetColumn(int columnIndex)
         {
             var fullColumn = new List<T>();
 
@@ -204,16 +206,21 @@ namespace MathExtended
             return fullColumn.ToArray();
         }
 
-        private T[][] GetColumns()
+        private Column<T>[] GetColumns()
         {
-            T[][] columns = new T[ColumnsCount][];
+            Column<T>[] columns = new Column<T>[ColumnsCount];
 
             ForEach((row, column) => columns[row] = GetColumn(column));
 
             return columns;
         }
 
-        private void SetColumn(int columnIndex,T[] column)
+        /// <summary>
+        /// Задает столбец матрицы по индексу
+        /// </summary>
+        /// <param name="columnIndex">Индекс столбца</param>
+        /// <param name="column">Стобец</param>
+        public void SetColumn(int columnIndex,Column<T> column)
         {
             if (columnIndex <= this.RowsCount)
             {
@@ -223,7 +230,11 @@ namespace MathExtended
                 }
             }
         }
-        private void SetColumns(T[][] columns)
+        /// <summary>
+        /// Задает столбцы матрицы
+        /// </summary>
+        /// <param name="columns">Столбцы</param>
+        public void SetColumns(Column<T>[] columns)
         {
             ForEach((row, column) => SetColumn(row,columns[row]));
         }

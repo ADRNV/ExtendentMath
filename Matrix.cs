@@ -28,8 +28,7 @@ namespace MathExtended
 
         #endregion
 
-        private bool disposedValue;
-        private double precalculatedDeterminant = double.NaN;
+        private readonly double precalculatedDeterminant = double.NaN;
 
         #region Свойства матрицы   
         /// <summary>
@@ -79,17 +78,12 @@ namespace MathExtended
         /// <param name="array">Двумерный массив</param>
         public Matrix(T[,] array) : base(array.GetUpperBound(0) + 1, array.GetUpperBound(1) + 1)
         {
-
             matrix = array;
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
             DiagonalChanged = OnDiagonalChanged;
-
-           
-
         }
-
 
         private event Action DiagonalChanged;
 
@@ -146,7 +140,7 @@ namespace MathExtended
                 {
                     Parallel.For(0, matrixB.ColumnsCount, colunm =>
                     {
-                        matrixC[row, colunm] = Operator.Add(matrixA[row, colunm], matrixB[row, colunm]);
+                        matrixC[row, colunm] = (dynamic)matrixA[row, colunm] + (dynamic)matrixB[row, colunm];
                     });
                 });
                 return matrixC;
@@ -293,7 +287,6 @@ namespace MathExtended
         
         #endregion
 
-
         /// <summary>
         /// Возводит матрицу в степень
         /// </summary>
@@ -319,13 +312,13 @@ namespace MathExtended
             }
 
         }
+
         /// <summary>
         /// Транспонирует(меняет строки со столбцами) текущую матрицу и возвращает новую
         /// </summary>
         /// <returns>Транспонированная матрица</returns>
         public Matrix<T> TransponateMatrix()
         {
-            
             var transposedMatrix = new Matrix<T>(this.ColumnsCount, this.RowsCount);
 
             Parallel.For(0, this.ColumnsCount, row =>
@@ -436,24 +429,27 @@ namespace MathExtended
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public T CalculateDeterminant()
         {
+            dynamic result = 0;
 
             if (!double.IsNaN(this.precalculatedDeterminant))
             {
                 return Operator.Convert<double, T>(this.precalculatedDeterminant);
             }
+            
             if (!this.IsSquareMatrix)
             {
                 throw new InvalidOperationException("determinant can be calculated only for square matrix");
             }
+            
             if (this.RowsCount == 2)
             {
                 return Operator.Subtract(Operator.Multiply(this[0, 0], this[1, 1]), Operator.Multiply(this[0, 1], this[1, 0]));
             }
-            dynamic result = 0;
-            dynamic one = 1;
+            
+            
             for (var j = 0; j < this.RowsCount; j++)
             {
-                result += Operator.Multiply(Operator.Multiply((j % 2 == 1 ? one : -one), this[1, j]),
+                result += Operator.Multiply(Operator.Multiply((j % 2 == 1 ? (dynamic)1 : -(dynamic)1), this[1, j]),
                     this.CreateMatrixWithoutColumn(j).CreateMatrixWithoutRow(1).CalculateDeterminant());
 
             }
@@ -491,7 +487,7 @@ namespace MathExtended
         /// <param name="min">Минимальное число</param>
         /// <param name="max">Максимальное число</param>
         /// <returns></returns>
-        public dynamic FillMatrixRandom(T min,T max)
+        public dynamic FillMatrixRandom(int min,int max)
         {
             dynamic filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
 
@@ -512,7 +508,7 @@ namespace MathExtended
         /// Заполняет матрицу по порядку:от 1 до размера матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<int> FillMatrixInOrder()//Проблема с заполнением кв кадратных матриц
+        public Matrix<int> FillMatrixInOrder()
         {
             var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
@@ -533,13 +529,14 @@ namespace MathExtended
             {
                 throw new ArgumentNullException();
             }
+
             else
             {
                 for(dynamic row = 0;row < this.RowsCount; row++)
                 {
                     for (dynamic column = 0; column < this.ColumnsCount; column++)
                     {
-                        action((dynamic)row, column);
+                        action(row, column);
                     }
                 }
             }

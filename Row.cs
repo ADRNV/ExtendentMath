@@ -6,59 +6,33 @@ using System.Threading.Tasks;
 
 namespace MathExtended
 {
-    public class Row<T>
+    /// <summary>
+    /// Описывает строку
+    /// </summary>
+    /// <typeparam name="T">Тип содержимого строки</typeparam>
+    public class Row<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        private T[] _cells;
-
-        private int _length;
-
-        /// <summary>
-        /// Индексатор.По индексу возвращает или задает значение ячейки из строки
-        /// </summary>
-        /// <param name="index">Индекс элемента</param>
-        /// <returns>Элемент <code><see cref="T"/> cell</code></returns>
-        public T this[int index]
-        {
-            get
-            {
-                return _cells[index];
-            }
-
-            set
-            {
-                _cells[index] = value;
-            }
-        }
-
-        /// <summary>
-        /// Длина строки
-        /// </summary>
-        public int Length
-        {
-
-            get => _cells.Length;
-        }
-
         /// <summary>
         /// Создает строку с указанным размером
         /// </summary>
         /// <param name="length"></param>
-        public Row(int length)
+        public Row(int length) : base(length)
         {
-            _cells = new T[length];
+            
         }
+        /// <summary>
+        /// Создает строку на основе массива
+        /// </summary>
+        /// <param name="array"></param>
+        public Row(T[] array) : base(array) { }
 
-        public Row(T[] array)
-        {
-            _cells = array;
-            _length = array.Length;
-        }
-
+        /// <summary>
+        /// Не явным образом приводит массив к строке
+        /// </summary>
+        /// <param name="array"></param>
         public static  implicit operator Row<T>(T[] array)
         {
             return new Row<T>(array);
         }
-
-
     }
 }
