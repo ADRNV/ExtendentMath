@@ -8,7 +8,7 @@ namespace MathExtended
 {
     /// <summary>
     /// Базовый класс матрицы.Реализует интерфейс перечисления
-    /// и ограничивает принимаемые обобщения до числовых типов(<see cref="int"></see> <see cref="float"></see> <see cref="double"></see> и т.д)
+    /// и ограничивает принимаемые обобщения до числовых типов (<see cref="int"></see> <see cref="float"></see> <see cref="double"></see> и т.д)
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
     public abstract class BaseMatrix<T> : IEnumerator<T>,IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
@@ -131,7 +131,8 @@ namespace MathExtended
             get
             {
                 _columns = GetColumns();
-                return _columns;
+                return _columns; 
+                
             }
             
             private set

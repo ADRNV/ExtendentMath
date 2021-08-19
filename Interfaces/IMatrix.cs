@@ -20,7 +20,7 @@ namespace MathExtended.Interfaces
         /// <summary>
         /// Метод нахождения диагонали
         /// </summary>
-        /// <returns>Массив состоящий определяющийся главной диагональю матрицы</returns>
+        /// <returns>Массив определяющийся главной диагональю матрицы</returns>
         T[] FindDiagonal();
 
         /// <summary>
