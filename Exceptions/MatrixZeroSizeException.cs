@@ -13,9 +13,7 @@ namespace MathExtended.Exceptions
         /// <summary>
         /// Сообщение исключения
         /// </summary>
-        public override string Message
-        {
-            get => _message;
-        }
+        public override string Message => _message;
+        
     }
 }

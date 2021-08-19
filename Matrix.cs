@@ -284,7 +284,6 @@ namespace MathExtended
             return matrix.matrix;
         }
 
-        
         #endregion
 
         /// <summary>
@@ -336,52 +335,48 @@ namespace MathExtended
         /// Приводит матрицу к ступенчатому виду
         /// </summary>
         /// <returns><see cref="Matrix{T}"/>Матрица в ступенчатов виде</returns>
-        //public Matrix<T> ConvertToStepped()
-        //{
-        //    var steppedMatrix = this;
+        public Matrix<T> ConvertToStepped()
+        {
+            var steppedMatrix = this;
 
-        //    dynamic primaryElement = null;
+            dynamic primaryElement = null;
 
-        //    T[] primaryRow;
+            Row<T> primaryRow;
 
-        //    dynamic zero = 0;
+            dynamic zero = 0;
 
-        //    if (IsSquareMatrix)
-        //    {
+            if (IsSquareMatrix)
+            {
+                for (int row = 0; row < RowsCount; row++)
+                {
+                    if (Operator.NotEqual(steppedMatrix[row, 0], zero))
+                    {
+                        primaryElement = steppedMatrix[row, 0];
+                        primaryRow = Rows[row];
 
+                        break;
 
-        //        for (int row = 0; row < RowsCount; row++)
-        //        {
-        //            if (Operator.NotEqual(steppedMatrix[row, 0], zero))
-        //            {
-        //                primaryElement = steppedMatrix[row, 0];
-        //                primaryRow = base.Rows[row];
+                    }
 
-        //                break;
+                }
+                for (int row = 0; row < RowsCount; row++)
+                {
+                    for (int element = 0; element < Rows[row].Size - 1; element++)
+                    {
+                        steppedMatrix[row, element] = Rows[row][element] / primaryElement;
+                    }
+                }
 
+                return steppedMatrix;
+            }
 
-
-        //            }
-
-        //        }
-        //        for (int row = 0; row < RowsCount; row++)
-        //        {
-        //            for (int element = 0; element < Rows[row].Length - 1; element++)
-        //            {
-        //                steppedMatrix[row, element] = Rows[row][element] / primaryElement;
-        //            }
-        //        }
-
-        //        return steppedMatrix;
-        //    }
-
-        //    else
-        //    {
-        //        throw new TheNumberOfRowsAndColumnsIsDifferentException();
-        //    }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
 
 
-        //}
+        }
 
         ///<summary>
         /// Создает матрицу с вычеркнутыми столбцами на основе текущей
@@ -461,23 +456,23 @@ namespace MathExtended
         #region Фичи
 
         /// <summary>
-        /// Заполняет матрицу случайными значениями
+        /// Заполняет матрицу случайными целочисленными значениями
         /// </summary>
-        /// <returns>Матрмца со случайными значениями</returns>
-        public dynamic FillMatrixRandom()
+        /// <returns>Матрица со случайными значениями</returns>
+        public Matrix<T> FillMatrixRandom()
         {
             dynamic filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
 
-            Random random = new Random();
+            ExtendentRandom random = new ExtendentRandom();
 
             Parallel.For(0, this.RowsCount, row =>
             {
-                 Parallel.For(0, this.ColumnsCount, column =>
-                 {
-                     filledMatrix[row, column] = random.Next();
-                 });
+                Parallel.For(0, this.ColumnsCount, column =>
+                {
+                     filledMatrix[row, column] = random.Next<T>();
+                });
             });
-
+            
             return filledMatrix;
         }
 
@@ -486,31 +481,35 @@ namespace MathExtended
         /// </summary>
         /// <param name="min">Минимальное число</param>
         /// <param name="max">Максимальное число</param>
-        /// <returns></returns>
-        public dynamic FillMatrixRandom(int min,int max)
+        /// <returns>Матрица со случайными значениями</returns>
+        public Matrix<T> FillMatrixRandom(T min,T max)
         {
-            dynamic filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
+            Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
 
-            dynamic random = new Random();
+            ExtendentRandom random = new ExtendentRandom();
 
             Parallel.For(0, this.RowsCount, row =>
             {
                 Parallel.For(0, this.ColumnsCount, column =>
                 {
-                      filledMatrix[row, column] = random.Next(min, max);
+                    //Позволяет сохранить инвариантность этого метода
+                    filledMatrix[row, column] = random.Next<T>(min, max);
+                    //(T)(dynamic)random.NextDecimal((decimal)(dynamic)min, (decimal)(dynamic)max);
                 });
             });
+
+
 
             return filledMatrix;
         }
 
         /// <summary>
-        /// Заполняет матрицу по порядку:от 1 до размера матрицы
+        /// Заполняет матрицу по порядку:от 1 до размера последнего элемента матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
         public Matrix<int> FillMatrixInOrder()
         {
-            var filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
+            Matrix<int> filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
             int counter = 1;
             
@@ -543,6 +542,14 @@ namespace MathExtended
 
         }
 
+        public void ForEach(Action<T> action)
+        {
+            foreach(var cell in this)
+            {
+                action(cell);
+            }
+        }
+
         /// <summary>
         /// Преобразует матрицу в двумерный массив
         /// </summary>
@@ -553,9 +560,9 @@ namespace MathExtended
         }
 
         /// <summary>
-        /// Вывод всей матрицы 
+        /// Вывод матрицы в строковом представлении
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Строковое представление матрицы</returns>
         public override string ToString()
         {
             string outString = String.Empty;
