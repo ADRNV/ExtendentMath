@@ -186,6 +186,7 @@
     <Compile Include="Exceptions\MatrixZeroSizeException.cs" />
     <Compile Include="Exceptions\RowZeroSizeException.cs" />
     <Compile Include="Exceptions\TheNumberOfRowsAndColumnsIsDifferentException.cs" />
+    <Compile Include="ExtendentRandom.cs" />
     <Compile Include="Interfaces\IMatrix.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
