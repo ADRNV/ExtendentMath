@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MathExtended
 {
@@ -18,9 +14,9 @@ namespace MathExtended
         /// <param name="minValue">Нижняя граница</param>
         /// <param name="maxValue">Верхняя граница</param>
         /// <returns><typeparamref name="T"/> Число</returns>
-        public T Next<T>(T minValue, T maxValue) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public T Next<T>(in T minValue,in T maxValue) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            return (T)(dynamic)(base.Next((int)(dynamic)minValue, (int)(dynamic)maxValue) + base.NextDouble());
+            return (T)(dynamic)(base.Next((int)(dynamic)minValue, (int)(dynamic)maxValue));
         }
 
         /// <summary>
