@@ -181,9 +181,11 @@
     <Compile Include="BaseCellsCollection.cs" />
     <Compile Include="BaseMatrix.cs" />
     <Compile Include="Column.cs" />
+    <Compile Include="Exceptions\ColumnsOfDifferentSizesException.cs" />
     <Compile Include="Exceptions\ColumnZeroSizeException.cs" />
     <Compile Include="Exceptions\MatrixDifferentSizeException.cs" />
     <Compile Include="Exceptions\MatrixZeroSizeException.cs" />
+    <Compile Include="Exceptions\RowsOfDifferentSizesException.cs" />
     <Compile Include="Exceptions\RowZeroSizeException.cs" />
     <Compile Include="Exceptions\TheNumberOfRowsAndColumnsIsDifferentException.cs" />
     <Compile Include="ExtendentRandom.cs" />

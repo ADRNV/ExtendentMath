@@ -19,7 +19,7 @@ namespace MathExtended
             //return (T)(dynamic)(base.Next((int)Math.Round((dynamic)minValue), (int)Math.Round((dynamic)maxValue)));
             var minValueCasted = (double)(dynamic)minValue;
             var maxValueCasted = (double)(dynamic)maxValue;
-            var random = new Random().NextDouble();
+            var random = base.NextDouble();
             return (T)(dynamic)((random * minValueCasted) + (1 - random) * maxValueCasted);//System.EngineError (Ненормальное потребление памяти)
         }
 

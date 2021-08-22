@@ -186,7 +186,7 @@ namespace MathExtended
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Разность матриц</returns>
-        public static Matrix<T> operator -(Matrix<T> matrixA, Matrix<T> matrixB)
+        public static Matrix<T> operator - (Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
@@ -223,7 +223,6 @@ namespace MathExtended
 
             Parallel.For(0, matrixA.RowsCount, row =>
             {
-
                 Parallel.For(0, matrixA.ColumnsCount, column =>
                 {
                     matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
@@ -233,6 +232,18 @@ namespace MathExtended
 
             return matrixB;
         }
+
+        /// <summary>
+        /// Умножает матрицу на число
+        /// </summary>
+        /// <param name="matrixA"></param>
+        /// <param name="multiplier"></param>
+        /// <returns>Умноженная на число матрица</returns>
+        public static Matrix<T> operator *(Matrix<T> matrixA, T multiplier)
+        {
+            return multiplier * matrixA;
+        }
+
         /// <summary>
         /// Перемножает матрицы
         /// </summary>
@@ -512,6 +523,8 @@ namespace MathExtended
             Matrix<int> filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
             int counter = 1;
+
+            
             
             ForEach((column,row) => filledMatrix[(dynamic)row, (dynamic)column] = counter++);
            

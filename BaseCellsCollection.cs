@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiscUtil;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,10 @@ namespace MathExtended
     /// <typeparam name="T">Тип содержиого</typeparam>
     public abstract class BaseCellsCollection<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        private T[] _cells;
+        /// <summary>
+        /// Массив ячеек
+        /// </summary>
+        protected T[] _cells;
 
         private int _size;
         private bool disposedValue;
@@ -68,14 +72,14 @@ namespace MathExtended
         /// Применяет действие ко всем элементам
         /// </summary>
         /// <param name="action">Действие</param>
-        public virtual void ForEach(Action<int> action)
+        public virtual void ForEach(Action<T> action)
         {
-            for(int item = 0;item < Size - 1;item++)
-            {
-                action(item);
-            }
+           foreach(T cell in _cells)
+           {
+                action(cell);
+           }
         }
-
+        
         #region IEnumerable
         /// <summary>
         /// Текуший элемент
