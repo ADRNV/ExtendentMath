@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MathExtended
 {
     /// <summary>
-    /// Описывает столбцы матрицы
+    /// Описывает столбец матрицы
     /// </summary>
     /// <typeparam name="T">Тип содержимого строки</typeparam>
     public class Column<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
