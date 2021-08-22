@@ -20,7 +20,11 @@ namespace MathExtended
         /// <returns><typeparamref name="T"/> Число</returns>
         public T Next<T>(T minValue, T maxValue) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            return (T)(dynamic)(base.Next((int)(dynamic)minValue, (int)(dynamic)maxValue) + base.NextDouble());
+            //return (T)(dynamic)(base.Next((int)Math.Round((dynamic)minValue), (int)Math.Round((dynamic)maxValue)));
+            var minValueCasted = (double)(dynamic)minValue;
+            var maxValueCasted = (double)(dynamic)maxValue;
+            var random = new Random().NextDouble();
+            return (T)(dynamic)((random * minValueCasted) + (1 - random) * maxValueCasted);//System.EngineError (Ненормальное потребление памяти)
         }
 
         /// <summary>

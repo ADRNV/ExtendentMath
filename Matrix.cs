@@ -542,6 +542,10 @@ namespace MathExtended
 
         }
 
+        /// <summary>
+        /// Применяет действия ко всем элементам матрицы
+        /// </summary>
+        /// <param name="action">Действие</param>
         public void ForEach(Action<T> action)
         {
             foreach(var cell in this)
