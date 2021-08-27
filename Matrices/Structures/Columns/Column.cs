@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathExtended.Matrices.Structures.CellsCollection;
+using MathExtended.Matrices.Structures.Rows;
 
-namespace MathExtended
+namespace MathExtended.Matrices.Structures.Columns
 {
     /// <summary>
     /// Описывает столбец матрицы
@@ -44,12 +46,9 @@ namespace MathExtended
         {
             Column<T> multipliedColumn = new Column<T>(column.Size);
 
-            column.ForEach((cell) =>
-            {
-                int i = 0;
+            int i = 0;
 
-                multipliedColumn[i++] = Operator.Multiply(cell, multiplier);
-            });
+            column.ForEach((cell) => multipliedColumn[i++] = Operator.Multiply(cell, multiplier));
 
             return multipliedColumn;
         }
@@ -64,12 +63,9 @@ namespace MathExtended
         {
             Column<T> multipliedColumn = new Column<T>(column.Size);
 
-            column.ForEach((cell) =>
-            {
-                int i = 0;
+            int i = 0;
 
-                multipliedColumn[i++] = Operator.Multiply(cell, multiplier);
-            });
+            column.ForEach((cell) => multipliedColumn[i++] = Operator.Multiply(cell, multiplier));
 
             return multipliedColumn;
         }
@@ -86,12 +82,9 @@ namespace MathExtended
             {
                 Column<T> summedColumn = new Column<T>(columnA.Size);
 
-                summedColumn.ForEach((cell) =>
-                {
-                    int i = 0;
+                int i = 0;
 
-                    summedColumn[i++] = Operator.Add(columnA[i++], columnB[i++]);
-                });
+                summedColumn.ForEach((cell) => summedColumn[i++] = Operator.Add(columnA[i++], columnB[i++]));
 
                 return summedColumn;
             }
@@ -113,12 +106,9 @@ namespace MathExtended
             {
                 Column<T> summedColumn = new Column<T>(columnA.Size);
 
-                summedColumn.ForEach((cell) =>
-                {
-                    int i = 0;
+                int i = 0;
 
-                    summedColumn[i++] = Operator.Subtract(columnA[i++], columnB[i++]);
-                });
+                summedColumn.ForEach((cell) => summedColumn[i++] = Operator.Subtract(columnA[i++], columnB[i++]));
 
                 return summedColumn;
             }
@@ -126,6 +116,25 @@ namespace MathExtended
             {
                 throw new ColumnsOfDifferentSizesException();
             }
+        }
+
+        /// <summary>
+        /// Явно приводит <see cref="ReadOnlyColumn{T}"/> к <see cref="Column{T}"/>
+        /// Делая пригодным для записи
+        /// </summary>
+        /// <param name="readOnlyColumn">Привидимый столбец</param>
+        public static explicit operator Column<T>(ReadOnlyColumn<T> readOnlyColumn)
+        {
+            Column<T> column = new Column<T>(readOnlyColumn.Size);
+
+            int i = 0;
+
+            readOnlyColumn.ForEach((cell) =>
+            {
+                column[i] = cell;
+            });
+
+            return column;
         }
 
         /// <summary>

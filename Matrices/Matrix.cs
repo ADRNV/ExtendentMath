@@ -10,7 +10,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
-namespace MathExtended
+namespace MathExtended.Matrices
 {
     /// <summary>
     /// Описывает основную логику матриц
@@ -327,7 +327,7 @@ namespace MathExtended
         /// Транспонирует(меняет строки со столбцами) текущую матрицу и возвращает новую
         /// </summary>
         /// <returns>Транспонированная матрица</returns>
-        public Matrix<T> TransponateMatrix()
+        public Matrix<T> Transponate()
         {
             var transposedMatrix = new Matrix<T>(this.ColumnsCount, this.RowsCount);
 
@@ -345,38 +345,27 @@ namespace MathExtended
         /// <summary>
         /// Приводит матрицу к ступенчатому виду
         /// </summary>
-        /// <returns><see cref="Matrix{T}"/>Матрица в ступенчатов виде</returns>
-        public Matrix<T> ConvertToStepped()
+        /// <returns><see cref="Matrix{T}"/> Матрица в ступенчатов виде</returns>
+        public Matrix<T> ToSteppedView()
         {
             var steppedMatrix = this;
 
-            dynamic primaryElement = null;
-
-            Row<T> primaryRow;
-
-            dynamic zero = 0;
-
             if (IsSquareMatrix)
             {
-                for (int row = 0; row < RowsCount; row++)
+                steppedMatrix.ForEach((row,column) => 
                 {
-                    if (Operator.NotEqual(steppedMatrix[row, 0], zero))
+
+                    for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
                     {
-                        primaryElement = steppedMatrix[row, 0];
-                        primaryRow = Rows[row];
+                        dynamic koeficient = Operator.Divide(steppedMatrix[j, row], steppedMatrix[row, row]);
 
-                        break;
-
-                    }
-
-                }
-                for (int row = 0; row < RowsCount; row++)
-                {
-                    for (int element = 0; element < Rows[row].Size - 1; element++)
-                    {
-                        steppedMatrix[row, element] = Rows[row][element] / primaryElement;
-                    }
-                }
+                        for (int k = 0; k < steppedMatrix.RowsCount; k++)
+                        {
+                            steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
+                        }
+                    }   
+                });
+                
 
                 return steppedMatrix;
             }
@@ -385,7 +374,6 @@ namespace MathExtended
             {
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
-
 
         }
 
@@ -403,9 +391,8 @@ namespace MathExtended
             }
             var result = new Matrix<T>(this.RowsCount, this.ColumnsCount - 1);
             result.ForEach((i, j) =>
-                result[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] =
-                Operator.Convert<T, int>(j) < column ? this[Operator.Convert<T, int>(i),
-                Operator.Convert<T, int>(j)] : this[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j) + 1]);
+                result[i, j] =
+                j < column ? this[i,j] : this[i, j + 1]);
             return result;
         }
 
@@ -423,9 +410,9 @@ namespace MathExtended
             }
             var result = new Matrix<T>(this.RowsCount - 1, this.ColumnsCount);
             result.ForEach((i, j) =>
-                result[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] =
-                Operator.Convert<T, int>(i) < row ?
-                this[Operator.Convert<T, int>(i), Operator.Convert<T, int>(j)] : this[Operator.Convert<T, int>(i) + 1, Operator.Convert<T, int>(j)]);
+                result[i, j] =
+                i < row ?
+                this[i, j] : this[i + 1, j]);
             return result;
         }
         /// <summary>
@@ -470,7 +457,7 @@ namespace MathExtended
         /// Заполняет матрицу случайными целочисленными значениями
         /// </summary>
         /// <returns>Матрица со случайными значениями</returns>
-        public Matrix<T> FillMatrixRandom()
+        public Matrix<T> FillRandom()
         {
             dynamic filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
 
@@ -493,7 +480,7 @@ namespace MathExtended
         /// <param name="min">Минимальное число</param>
         /// <param name="max">Максимальное число</param>
         /// <returns>Матрица со случайными значениями</returns>
-        public Matrix<T> FillMatrixRandom(T min,T max)
+        public Matrix<T> FillRandom(T min,T max)
         {
             Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
 
@@ -518,14 +505,12 @@ namespace MathExtended
         /// Заполняет матрицу по порядку:от 1 до размера последнего элемента матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<int> FillMatrixInOrder()
+        public Matrix<int> FillInOrder()
         {
             Matrix<int> filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
 
             int counter = 1;
 
-            
-            
             ForEach((column,row) => filledMatrix[(dynamic)row, (dynamic)column] = counter++);
            
             return filledMatrix;
@@ -535,7 +520,7 @@ namespace MathExtended
         /// Применяет действия ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Действие</param>
-        public void ForEach(Action<T, T> action)
+        public void ForEach(Action<int, int> action)
         {
             if (action == null)
             {
@@ -544,9 +529,9 @@ namespace MathExtended
 
             else
             {
-                for(dynamic row = 0;row < this.RowsCount; row++)
+                for(int row = 0;row < this.RowsCount; row++)
                 {
-                    for (dynamic column = 0; column < this.ColumnsCount; column++)
+                    for (int column = 0; column < this.ColumnsCount; column++)
                     {
                         action(row, column);
                     }

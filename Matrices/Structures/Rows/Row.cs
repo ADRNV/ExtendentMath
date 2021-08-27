@@ -5,8 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MathExtended.Exceptions;
+using MathExtended.Matrices.Structures.CellsCollection;
+using MathExtended.Matrices.Structures.Columns;
+using MathExtended.Matrices.Structures.Rows;
 
-namespace MathExtended
+namespace MathExtended.Matrices.Structures.Rows
 {
     /// <summary>
     /// Описывает строку
@@ -47,14 +50,9 @@ namespace MathExtended
         {
             Row<T> multipliedRow = new Row<T>(row.Size);
 
-            
+            int i = 0;
 
-            row.ForEach((cell) => 
-            { 
-                int i = 0; 
-                
-                multipliedRow[i++] = Operator.Multiply(cell, multiplier); 
-            });
+            row.ForEach((cell) => multipliedRow[i++] = Operator.Multiply(cell, multiplier));
 
             return multipliedRow;
         }
@@ -71,10 +69,10 @@ namespace MathExtended
             {
                 Row<T> summedRow = new Row<T>(rowA.Size);
 
+                int i = 0;
+
                 summedRow.ForEach((cell) =>
                 {
-                    int i = 0;
-
                     summedRow[i++] = Operator.Add(rowA[i++], rowB[i++]);
                 });
 
@@ -97,13 +95,10 @@ namespace MathExtended
             if (rowA.Size == rowB.Size)
             {
                 Row<T> summedRow = new Row<T>(rowA.Size);
+               
+                int i = 0;
 
-                summedRow.ForEach((cell) =>
-                {
-                    int i = 0;
-
-                    summedRow[i++] = Operator.Subtract(rowA[i++], rowB[i++]);
-                });
+                summedRow.ForEach((cell) => summedRow[i++] = Operator.Subtract(rowA[i++], rowB[i++]));
 
                 return summedRow;
             }
@@ -111,6 +106,25 @@ namespace MathExtended
             {
                 throw new RowsOfDifferentSizesException();
             }
+        }
+
+        /// <summary>
+        /// Приводит <see cref="ReadOnlyRow{T}"/> к <see cref="Row{T}"/>
+        /// делая возможной запись
+        /// </summary>
+        /// <param name="readOnlyRow">Приводимая строка</param>
+        public static explicit operator Row<T>(ReadOnlyRow<T> readOnlyRow)
+        {
+            Row<T> row = new Row<T>(readOnlyRow.Size);
+
+            int i = 0;
+
+            readOnlyRow.ForEach((cell) =>
+            {
+                row[i] = cell;
+            });
+
+            return row;
         }
 
         /// <summary>

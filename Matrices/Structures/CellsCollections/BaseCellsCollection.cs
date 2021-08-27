@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathExtended
+namespace MathExtended.Matrices.Structures.CellsCollection
 {
     /// <summary>
     /// Описывает коллекцию ячеек
     /// </summary>
-    /// <typeparam name="T">Тип содержиого</typeparam>
-    public abstract class BaseCellsCollection<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    /// <typeparam name="T">Числовой тип</typeparam>
+    public class BaseCellsCollection<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         /// <summary>
         /// Массив ячеек
@@ -28,7 +28,7 @@ namespace MathExtended
         /// </summary>
         /// <param name="index">Индекс элемента</param>
         /// <returns>Элемент по индексу</returns>
-        public T this[int index]
+        public virtual T this[int index]
         {
             get
             {
@@ -74,12 +74,12 @@ namespace MathExtended
         /// <param name="action">Действие</param>
         public virtual void ForEach(Action<T> action)
         {
-           foreach(T cell in _cells)
-           {
+            foreach (T cell in _cells)
+            {
                 action(cell);
-           }
+            }
         }
-        
+
         #region IEnumerable
         /// <summary>
         /// Текуший элемент

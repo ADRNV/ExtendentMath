@@ -2,9 +2,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using MathExtended.Matrices.Structures.Columns;
+using MathExtended.Matrices.Structures.Rows;
 
-namespace MathExtended
+namespace MathExtended.Matrices
 {
     /// <summary>
     /// Базовый класс матрицы.Реализует интерфейс перечисления
@@ -106,19 +109,14 @@ namespace MathExtended
         /// <summary>
         /// Получает все cтроки матрицы
         /// </summary>
-        public Row<T>[] Rows
+        public ReadOnlyCollection<Row<T>> Rows
         {
             get
             {
                 _rows = GetRows();
                 
-                return _rows;
+                return Array.AsReadOnly(_rows);
 
-            }
-
-            private set
-            {
-                _rows = value;
             }
 
         }
@@ -126,19 +124,15 @@ namespace MathExtended
         /// <summary>
         /// Столбцы матрицы
         /// </summary>
-        public Column<T>[] Columns
+        public ReadOnlyCollection<Column<T>> Columns
         { 
             get
             {
                 _columns = GetColumns();
-                return _columns; 
+                return Array.AsReadOnly(_columns); 
                 
             }
             
-            private set
-            {
-                _columns = value;
-            }
         }
 
         private Row<T> GetRow(int rowIndex)
@@ -371,8 +365,7 @@ namespace MathExtended
             {
                 if (disposing)
                 {
-                    Rows = null;
-                    Columns = null;
+                    
                     matrix = null;
                     MainDiagonal = null;
                 }
