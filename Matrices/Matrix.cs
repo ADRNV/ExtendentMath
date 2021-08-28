@@ -314,16 +314,16 @@ namespace MathExtended.Matrices
             
                 steppedMatrix.ForEach((row, column) =>
                 {
-
-                    for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
-                    {
-                        dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)steppedMatrix[row, row]);
-
-                        for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
+                    
+                        for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
                         {
-                            steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
+                            dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)steppedMatrix[row, row]);
+
+                            for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
+                            {
+                                steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
+                            }
                         }
-                    }
                 });
 
             
