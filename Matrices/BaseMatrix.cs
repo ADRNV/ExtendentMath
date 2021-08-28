@@ -14,7 +14,7 @@ namespace MathExtended.Matrices
     /// и ограничивает принимаемые обобщения до числовых типов (<see cref="int"></see> <see cref="float"></see> <see cref="double"></see> и т.д)
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public abstract class BaseMatrix<T> : IEnumerator<T>,IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public abstract class BaseMatrix<T> : IEnumerator<T>, IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         /// <summary>
         /// Матрица представляющая собой двумерный массив
@@ -129,6 +129,7 @@ namespace MathExtended.Matrices
             get
             {
                 _columns = GetColumns();
+
                 return Array.AsReadOnly(_columns); 
                 
             }
@@ -167,9 +168,9 @@ namespace MathExtended.Matrices
         public void SetRow(Row<T> row, int index)
         {
   
-           for (int c = 0; c < this.ColumnsCount; c++)
+           for (int column = 0; column < this.ColumnsCount; column++)
            {
-               this[index, c] = row[c];
+               this[index, column] = row[column];
            }
             
         }

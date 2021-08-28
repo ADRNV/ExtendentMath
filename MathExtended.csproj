@@ -209,6 +209,7 @@
     <Compile Include="MathExtendent.cs" />
     <Compile Include="Matrices\Structures\Columns\ReadOnlyColumn.cs" />
     <Compile Include="Matrices\Structures\Rows\Row.cs" />
+    <Compile Include="TabulateResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

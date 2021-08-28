@@ -101,6 +101,56 @@ namespace MathExtended
 
             return sum;
         }
+
+        /// <summary>
+        /// Проводит табулирование функции
+        /// </summary>
+        /// <param name="x0">Начальное значение</param>
+        /// <param name="xk">Максимальное значение</param>
+        /// <param name="dx">Шаг</param>
+        /// <param name="func">Табулируемая функции</param>
+        /// <returns><see cref="TabulateResult"/> структура со значениями аргумента и функции</returns>
+        public static TabulateResult TabulateFunction(double x0, double xk, double dx, Func<double,double> func)
+        {
+            List<double> xValues = new List<double>();
+
+            List<double> yValues = new List<double>();
+            
+            for(;x0 < xk;x0 += dx)
+            {
+               xValues.Add(x0);
+               yValues.Add(func(x0));
+            }
+
+            return new TabulateResult(xValues.ToArray(), yValues.ToArray());
+        }
+
+        /// <summary>
+        /// Проводит табулирование функции
+        /// </summary>
+        /// <param name="x0">Начальное значение</param>
+        /// <param name="xk">Максимальное значение</param>
+        /// <param name="dx">Шаг</param>
+        /// <param name="func">Табулируемая функции</param>
+        /// <param name="xValuesArray">Массив для значений X</param>
+        /// <param name="yValuesArray">Массив для значений Y</param>
+        public static void TabulateFunction(double x0, double xk, double dx, Func<double, double> func, out double[] xValuesArray, out double[] yValuesArray)
+        {
+            List<double> xValues = new List<double>();
+            
+            List<double> yValues = new List<double>();
+
+            for (; x0 < xk; x0 += dx)
+            {
+                xValues.Add(x0);
+                yValues.Add(func(x0));
+            }
+
+            xValuesArray = xValues.ToArray();
+
+            yValuesArray = yValues.ToArray();
+
+        }
     }
 }
 

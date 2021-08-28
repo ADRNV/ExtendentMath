@@ -51,6 +51,8 @@ namespace MathExtended.Matrices
                 isSquareMatrix = rowsCount == columnsCount;
             }
         }
+
+        
         #endregion
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace MathExtended.Matrices
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
-            DiagonalChanged = OnDiagonalChanged;
+            MatrixUpdated = OnDiagonalChanged;
 
         }
 
@@ -82,10 +84,26 @@ namespace MathExtended.Matrices
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
-            DiagonalChanged = OnDiagonalChanged;
+            MatrixUpdated = OnDiagonalChanged;
         }
 
-        private event Action DiagonalChanged;
+        private event Action MatrixUpdated;
+
+       
+        private int FindRank()
+        {
+            int rank = 0;
+
+            Parallel.ForEach(this.ToSteppedView().Rows, row =>
+            {
+                 if (!row.IsZeroRow())
+                 {
+                    rank++;
+                 }
+            });
+
+            return rank;
+        }
 
         private void OnDiagonalChanged()
         {
@@ -93,35 +111,6 @@ namespace MathExtended.Matrices
         }
 
         #region Операторы
-
-        /// <summary>
-        /// Суммирует две матрицы и возвращает 3-ю
-        /// </summary>
-        /// <param name="matrixA"></param>
-        /// <param name="matrixB"></param>
-        /// <returns><code>double[,]</code>Сумма A и B</returns>
-        public static double[,] SumMatrix(double[,] matrixA, double[,] matrixB)
-        {
-
-            if (matrixA.Length == matrixB.Length)
-            {
-                var matrixC = new double[matrixA.GetLength(0), matrixB.GetLength(0)];
-
-                for (var row = 0; row < matrixA.GetLength(0); row++)
-                {
-                    for (var column = 0; column < matrixB.GetLength(0); column++)
-                    {
-                        matrixC[row, column] = matrixA[row, column] + matrixB[row, column];
-                    }
-                }
-
-                return matrixC;
-            }
-            else
-            {
-                throw new MatrixDifferentSizeException();
-            }
-        }
 
         /// <summary>
         /// Суммирует две матрицы
@@ -143,35 +132,6 @@ namespace MathExtended.Matrices
                         matrixC[row, colunm] = (dynamic)matrixA[row, colunm] + (dynamic)matrixB[row, colunm];
                     });
                 });
-                return matrixC;
-            }
-            else
-            {
-                throw new MatrixDifferentSizeException();
-            }
-        }
-
-        /// <summary>
-        /// Вычетает два двумерных массива и возвращает 3-й
-        /// </summary>
-        /// <param name="matrixA">Матрица A</param>
-        /// <param name="matrixB">Матрица B</param>
-        /// <returns>Разность матриц представленных в виде двумерных массивов</returns>
-        public static double[,] SubstractMatrix(ref double[,] matrixA, ref double[,] matrixB)
-        {
-
-            if (matrixA.Length == matrixB.Length)
-            {
-                var matrixC = new double[matrixA.GetLength(0), matrixB.GetLength(0)];
-
-                for (var i = 0; i < matrixA.GetLength(0); i++)
-                {
-                    for (var j = 0; j < matrixB.GetLength(0); j++)
-                    {
-                        matrixC[i, j] = matrixA[i, j] - matrixB[i, j];
-                    }
-                }
-
                 return matrixC;
             }
             else
@@ -350,31 +310,25 @@ namespace MathExtended.Matrices
         {
             var steppedMatrix = this;
 
-            if (IsSquareMatrix)
-            {
-                steppedMatrix.ForEach((row,column) => 
+            
+            
+                steppedMatrix.ForEach((row, column) =>
                 {
 
                     for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
                     {
-                        dynamic koeficient = Operator.Divide(steppedMatrix[j, row], steppedMatrix[row, row]);
+                        dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)steppedMatrix[row, row]);
 
-                        for (int k = 0; k < steppedMatrix.RowsCount; k++)
+                        for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
                         {
                             steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
                         }
-                    }   
+                    }
                 });
-                
 
-                return steppedMatrix;
-            }
+            
 
-            else
-            {
-                throw new TheNumberOfRowsAndColumnsIsDifferentException();
-            }
-
+            return steppedMatrix;
         }
 
         ///<summary>
@@ -415,6 +369,8 @@ namespace MathExtended.Matrices
                 this[i, j] : this[i + 1, j]);
             return result;
         }
+
+#if DEBUG
         /// <summary>
         /// Расчитывает детерминант матрицы
         /// </summary>
@@ -449,7 +405,7 @@ namespace MathExtended.Matrices
 
             return result;
         }
-        
+#endif
 
         #region Фичи
 
@@ -511,7 +467,7 @@ namespace MathExtended.Matrices
 
             int counter = 1;
 
-            ForEach((column,row) => filledMatrix[(dynamic)row, (dynamic)column] = counter++);
+            ForEach((row,column) => filledMatrix[row, column] = counter++);
            
             return filledMatrix;
         }
@@ -520,7 +476,7 @@ namespace MathExtended.Matrices
         /// Применяет действия ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Действие</param>
-        public void ForEach(Action<int, int> action)
+        private void ForEach(Action<int, int> action)
         {
             if (action == null)
             {
