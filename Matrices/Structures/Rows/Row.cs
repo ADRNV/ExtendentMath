@@ -135,5 +135,14 @@ namespace MathExtended.Matrices.Structures.Rows
         {
             return new Column<T>(_cells);
         }
+
+        /// <summary>
+        /// Провереяет нулевая ли эта трока
+        /// </summary>
+        /// <returns><see langword="false"/> - если строка не нулевая, <see langword="true"/> - если строка нулевая</returns>
+        public bool IsZeroRow()
+        {
+            return _cells.All((cell) => cell == (dynamic)0);
+        }
     }
 }
