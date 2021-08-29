@@ -80,6 +80,20 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             }
         }
 
+        /// <summary>
+        /// Находит максимальное число среди ячеек
+        /// </summary>
+        /// <returns>Максимальное значение в последовательности ячеек</returns>
+        public T Max() => _cells.Max();
+        
+
+        /// <summary>
+        /// Находит минимальное число среди ячеек
+        /// </summary>
+        /// <returns> Минимальное значение в последовательности ячеек</returns>
+        public T Min() => _cells.Min();
+        
+
         #region IEnumerable
         /// <summary>
         /// Текуший элемент

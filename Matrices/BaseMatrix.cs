@@ -11,7 +11,7 @@ namespace MathExtended.Matrices
 {
     /// <summary>
     /// Базовый класс матрицы.Реализует интерфейс перечисления
-    /// и ограничивает принимаемые обобщения до числовых типов (<see cref="int"></see> <see cref="float"></see> <see cref="double"></see> и т.д)
+    /// и ограничивает принимаемые обобщения до числовых типов (<see cref="int"></see>, <see cref="float"></see>, <see cref="double"></see> и т.д)
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
     public abstract class BaseMatrix<T> : IEnumerator<T>, IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
@@ -41,17 +41,30 @@ namespace MathExtended.Matrices
         private bool disposedValue;
 
         /// <summary>
-        /// Создает матрицу с указаными размерами
+        /// Создает матрицу с указанными размерами
         /// </summary>
         /// <param name="rows">Количество строк</param>
         /// <param name="columns">Количество столбцов</param>
         public BaseMatrix(int rows,int columns)
         {
             _rowsCount = rows;
-            
+
             _columnsCount = columns;
 
             matrix = new T[rows,columns];
+
+            MatrixUpdated += OnMatrix_MatrixUpdated;
+        }
+
+        protected event Action MatrixUpdated;
+
+        /// <summary>
+        /// Обрабытывает событие обновления матрицы
+        /// </summary>
+        protected virtual void OnMatrix_MatrixUpdated()
+        {
+            _mainDiagonal = FindDiagonal();
+            
         }
 
         /// <summary>
@@ -62,15 +75,13 @@ namespace MathExtended.Matrices
         /// <returns>Число по указанному адресу в матрице</returns>
         public T this[int row, int column]
         {
-            get
-            {
-                return matrix[row, column];
-            }
+            get => matrix[row, column];
 
             set
             {
                 matrix[row, column] = value;
             }
+
         }
 
         /// <summary>
@@ -109,13 +120,13 @@ namespace MathExtended.Matrices
         /// <summary>
         /// Получает все cтроки матрицы
         /// </summary>
-        public ReadOnlyCollection<Row<T>> Rows
+        public Row<T>[] Rows
         {
             get
             {
                 _rows = GetRows();
                 
-                return Array.AsReadOnly(_rows);
+                return _rows;
 
             }
 
@@ -124,18 +135,19 @@ namespace MathExtended.Matrices
         /// <summary>
         /// Столбцы матрицы
         /// </summary>
-        public ReadOnlyCollection<Column<T>> Columns
+        public Column<T>[] Columns
         { 
             get
             {
                 _columns = GetColumns();
 
-                return Array.AsReadOnly(_columns); 
+                return _columns; 
                 
             }
             
         }
 
+       
         private Row<T> GetRow(int rowIndex)
         {
             var fullRow = new Row<T>(RowsCount);
@@ -278,6 +290,15 @@ namespace MathExtended.Matrices
             });
 
             return mainDiagonal.ToArray();
+        }
+
+        /// <summary>
+        /// Преобразует матрицу в двумерный массив
+        /// </summary>
+        /// <returns>Двумерный массив</returns>
+        public virtual T[,] ToArray()
+        {
+            return matrix;
         }
 
         #region IEnumerable
