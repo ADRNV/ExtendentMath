@@ -20,10 +20,6 @@ namespace MathExtended.Matrices
     {
         #region Поля матрицы
 
-        private int rowsCount;
-
-        private int columnsCount;
-
         private bool isSquareMatrix;
 
         #endregion
@@ -48,7 +44,7 @@ namespace MathExtended.Matrices
 
             private set
             {
-                isSquareMatrix = rowsCount == columnsCount;
+                isSquareMatrix = base.RowsCount == base.ColumnsCount;
             }
         }
 
@@ -62,15 +58,9 @@ namespace MathExtended.Matrices
         /// <param name="columns">Колличество столбцов матрице</param>
         public Matrix(int rows, int columns) : base(rows, columns)
         {
-            rowsCount = rows;
-
-            columnsCount = columns;
-
-            matrix = new T[rowsCount, columns];
+            matrix = new T[rows, rows];
 
             IsSquareMatrix = RowsCount == ColumnsCount;
-
-            MatrixUpdated = OnDiagonalChanged;
 
         }
 
@@ -84,30 +74,6 @@ namespace MathExtended.Matrices
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
-            MatrixUpdated = OnDiagonalChanged;
-        }
-
-        private event Action MatrixUpdated;
-
-       
-        private int FindRank()
-        {
-            int rank = 0;
-
-            Parallel.ForEach(this.ToSteppedView().Rows, row =>
-            {
-                 if (!row.IsZeroRow())
-                 {
-                    rank++;
-                 }
-            });
-
-            return rank;
-        }
-
-        private void OnDiagonalChanged()
-        {
-            MainDiagonal = FindDiagonal();
         }
 
         #region Операторы
@@ -256,6 +222,29 @@ namespace MathExtended.Matrices
         }
 
         #endregion
+        private async Task<int> FindRankAsync()
+        {
+           return await Task<int>.Run(FindRank);
+        }
+
+        /// <summary>
+        /// Находит ранго мартицы
+        /// </summary>
+        /// <returns>Ранг матрицы</returns>
+        public int FindRank()
+        {
+            int rank = 0;
+
+            Parallel.ForEach(this.ToSteppedView().Rows, row =>
+            {
+                if (!row.IsZeroRow())
+                {
+                    rank++;
+                }
+            });
+
+            return rank;
+        }
 
         /// <summary>
         /// Возводит матрицу в степень
@@ -312,10 +301,13 @@ namespace MathExtended.Matrices
 
             steppedMatrix.ForEach((row, column) =>
             {
-                
 
                 for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
                 {
+
+                    if (this[row, row] != (dynamic)0)
+                    {
+                        dynamic koeficient = steppedMatrix[j, row] / (dynamic)matrix[row, row];
 
                     if (this[row, row] != (dynamic)0)
                     {
@@ -323,10 +315,9 @@ namespace MathExtended.Matrices
 
                         for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
                         {
-                           
+
                             steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
-                            
-                            continue;
+
                         }
                     }
                 }
@@ -514,15 +505,6 @@ namespace MathExtended.Matrices
         }
 
         /// <summary>
-        /// Преобразует матрицу в двумерный массив
-        /// </summary>
-        /// <returns>Двумерный массив</returns>
-        public T[,] ToArray()
-        {
-            return matrix;
-        }
-
-        /// <summary>
         /// Вывод матрицы в строковом представлении
         /// </summary>
         /// <returns>Строковое представление матрицы</returns>
@@ -530,13 +512,12 @@ namespace MathExtended.Matrices
         {
             string outString = String.Empty;
 
-            this.ForEach((row,column) =>
+            for(int row = 0;row < this.RowsCount; row++)
             {
-                outString += this[row,column].ToString().PadLeft(this[row,column].ToString().Length + 1) + " ";
-
-                if (column + 1 == ColumnsCount)
+                for(int column = 0;column < this.ColumnsCount; column++)
                 {
-                    outString += "\n";
+                    outString += matrix[row, column].ToString().PadLeft(8) + " ";
+                   
                 }
             });
 

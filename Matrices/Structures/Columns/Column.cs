@@ -145,5 +145,7 @@ namespace MathExtended.Matrices.Structures.Columns
         {
            return new Row<T>(_cells);
         }
+
+        
     }
 }

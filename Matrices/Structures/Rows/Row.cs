@@ -17,6 +17,7 @@ namespace MathExtended.Matrices.Structures.Rows
     /// <typeparam name="T">Тип содержимого строки</typeparam>
     public class Row<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
+      
         /// <summary>
         /// Создает строку с указанным размером
         /// </summary>
@@ -25,6 +26,7 @@ namespace MathExtended.Matrices.Structures.Rows
         {
 
         }
+
         /// <summary>
         /// Создает строку на основе массива
         /// </summary>
@@ -141,8 +143,9 @@ namespace MathExtended.Matrices.Structures.Rows
         /// </summary>
         /// <returns><see langword="false"/> - если строка не нулевая, <see langword="true"/> - если строка нулевая</returns>
         public bool IsZeroRow()
-        {
+        {   
             return _cells.All((cell) => cell == (dynamic)0);
         }
+
     }
 }
