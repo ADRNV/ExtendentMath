@@ -310,23 +310,28 @@ namespace MathExtended.Matrices
         {
             var steppedMatrix = this;
 
-            
-            
-                steppedMatrix.ForEach((row, column) =>
+            steppedMatrix.ForEach((row, column) =>
+            {
+                
+
+                for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
                 {
 
-                    for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
+                    if (this[row, row] != (dynamic)0)
                     {
-                        dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)steppedMatrix[row, row]);
+                        dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)this[row, row]);
 
                         for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
                         {
+                           
                             steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
+                            
+                            continue;
                         }
                     }
-                });
+                }
+            });
 
-            
 
             return steppedMatrix;
         }
@@ -461,11 +466,11 @@ namespace MathExtended.Matrices
         /// Заполняет матрицу по порядку:от 1 до размера последнего элемента матрицы
         /// </summary>
         /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<int> FillInOrder()
+        public Matrix<T> FillInOrder()
         {
-            Matrix<int> filledMatrix = new Matrix<int>(this.RowsCount, this.ColumnsCount);
+            Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
 
-            int counter = 1;
+            dynamic counter = 1;
 
             ForEach((row,column) => filledMatrix[row, column] = counter++);
            
@@ -525,17 +530,17 @@ namespace MathExtended.Matrices
         {
             string outString = String.Empty;
 
-            for(int row = 0;row < this.rowsCount; row++)
+            this.ForEach((row,column) =>
             {
-                for(int column = 0;column < this.columnsCount; column++)
+                outString += this[row,column].ToString().PadLeft(this[row,column].ToString().Length + 1) + " ";
+
+                if (column + 1 == ColumnsCount)
                 {
-                    outString += matrix[row, column].ToString().PadLeft(8) + " ";
-                   
+                    outString += "\n";
                 }
+            });
 
-                outString += "\n";
-
-            }
+            
 
             return outString;
         }
