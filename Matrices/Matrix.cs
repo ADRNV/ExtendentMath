@@ -307,17 +307,18 @@ namespace MathExtended.Matrices
 
                     if (this[row, row] != (dynamic)0)
                     {
-                        dynamic koeficient = steppedMatrix[j, row] / (dynamic)matrix[row, row];
 
-                    if (this[row, row] != (dynamic)0)
-                    {
-                        dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)this[row, row]);
 
-                        for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
+                        if (this[row, row] != (dynamic)0)
                         {
+                            dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)this[row, row]);
 
-                            steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
+                            for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
+                            {
 
+                                steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
+
+                            }
                         }
                     }
                 }
@@ -519,7 +520,7 @@ namespace MathExtended.Matrices
                     outString += matrix[row, column].ToString().PadLeft(8) + " ";
                    
                 }
-            });
+            };
 
             
 
