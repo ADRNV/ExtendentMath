@@ -151,6 +151,7 @@ namespace MathExtended
             yValuesArray = yValues.ToArray();
 
         }
+
     }
 }
 

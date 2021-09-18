@@ -9,6 +9,7 @@ using MiscUtil;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using MathExtended.Matrices.Structures.CellsCollections;
 
 namespace MathExtended.Matrices
 {
@@ -224,7 +225,7 @@ namespace MathExtended.Matrices
         #endregion
         private async Task<int> FindRankAsync()
         {
-           return await Task<int>.Run(FindRank);
+            return await Task<int>.Run(FindRank);
         }
 
         /// <summary>
@@ -235,9 +236,9 @@ namespace MathExtended.Matrices
         {
             int rank = 0;
 
-            Parallel.ForEach(this.ToSteppedView().Rows, row =>
+            Parallel.ForEach(this.ToSteppedView()[VectorSelector.Rows], row =>
             {
-                if (!row.IsZeroRow())
+                if (!row.IsZero())
                 {
                     rank++;
                 }
@@ -367,7 +368,6 @@ namespace MathExtended.Matrices
             return result;
         }
 
-#if DEBUG
         /// <summary>
         /// Расчитывает детерминант матрицы
         /// </summary>
@@ -381,18 +381,18 @@ namespace MathExtended.Matrices
             {
                 return Operator.Convert<double, T>(this.precalculatedDeterminant);
             }
-            
+
             if (!this.IsSquareMatrix)
             {
                 throw new InvalidOperationException("determinant can be calculated only for square matrix");
             }
-            
+
             if (this.RowsCount == 2)
             {
                 return Operator.Subtract(Operator.Multiply(this[0, 0], this[1, 1]), Operator.Multiply(this[0, 1], this[1, 0]));
             }
-            
-            
+
+
             for (var j = 0; j < this.RowsCount; j++)
             {
                 result += Operator.Multiply(Operator.Multiply((j % 2 == 1 ? (dynamic)1 : -(dynamic)1), this[1, j]),
@@ -401,8 +401,8 @@ namespace MathExtended.Matrices
             }
 
             return result;
+
         }
-#endif
 
         #region Фичи
 
@@ -520,6 +520,8 @@ namespace MathExtended.Matrices
                     outString += matrix[row, column].ToString().PadLeft(8) + " ";
                    
                 }
+
+                outString += "\n";
             };
 
             

@@ -92,7 +92,15 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         /// </summary>
         /// <returns> Минимальное значение в последовательности ячеек</returns>
         public T Min() => _cells.Min();
-        
+
+        /// <summary>
+        /// Проверяет нулевая ли коллекция
+        /// </summary>
+        /// <returns> <see langword="true"/> - если все ячейки равны нулю, <see langword="false"/> - если хоть одна ячейка не равна нулю </returns>
+        public bool IsZero()
+        {
+            return _cells.All((cell) => cell == (dynamic)0);
+        }
 
         #region IEnumerable
         /// <summary>

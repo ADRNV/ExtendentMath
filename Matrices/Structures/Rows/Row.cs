@@ -54,7 +54,7 @@ namespace MathExtended.Matrices.Structures.Rows
 
             int i = 0;
 
-            row.ForEach((cell) => multipliedRow[i++] = Operator.Multiply(cell, multiplier));
+            row.ForEach((cell) => multipliedRow[i++] = (T)Operator.Multiply(cell, multiplier));
 
             return multipliedRow;
         }
@@ -75,7 +75,7 @@ namespace MathExtended.Matrices.Structures.Rows
 
                 summedRow.ForEach((cell) =>
                 {
-                    summedRow[i++] = Operator.Add(rowA[i++], rowB[i++]);
+                    summedRow[i++] = (T)Operator.Add(rowA[i++], rowB[i++]);
                 });
 
                 return summedRow;
@@ -100,7 +100,7 @@ namespace MathExtended.Matrices.Structures.Rows
                
                 int i = 0;
 
-                summedRow.ForEach((cell) => summedRow[i++] = Operator.Subtract(rowA[i++], rowB[i++]));
+                summedRow.ForEach((cell) => summedRow[i++] = (T)Operator.Subtract(rowA[i++], rowB[i++]));
 
                 return summedRow;
             }
@@ -111,6 +111,27 @@ namespace MathExtended.Matrices.Structures.Rows
         }
 
         /// <summary>
+        /// Умножает строку на столбец
+        /// </summary>
+        /// <param name="row">Строка</param>
+        /// <param name="column">Столбец</param>
+        /// <returns><see cref="Matrix{T}"/> результат умножения</returns>
+        public static Matrix<T> operator *(Row<T> row, Column<T> column)
+        {
+            Matrix<T> matrix = new Matrix<T>(row.Size,column.Size);
+
+            for(int i = 0;i < row.Size;i++)
+            {
+                for(int j = 0;j < column.Size;j++)
+                {
+                    matrix[i, j] = (T)Operator.Multiply(row[i],column[j]);
+                }
+            }
+
+            return matrix;
+        }
+
+        /// <summary>
         /// Приводит <see cref="ReadOnlyRow{T}"/> к <see cref="Row{T}"/>
         /// делая возможной запись
         /// </summary>
@@ -118,9 +139,9 @@ namespace MathExtended.Matrices.Structures.Rows
         public static explicit operator Row<T>(ReadOnlyRow<T> readOnlyRow)
         {
             Row<T> row = new Row<T>(readOnlyRow.Size);
-
+            
             int i = 0;
-
+           
             readOnlyRow.ForEach((cell) =>
             {
                 row[i] = cell;
@@ -130,21 +151,24 @@ namespace MathExtended.Matrices.Structures.Rows
         }
 
         /// <summary>
+        /// Приводит <see cref="Row{T}"/>  к <see cref="ReadOnlyRow{T}"/>
+        /// делая возможной запись
+        /// </summary>
+        /// <param name="row">Приводимая строка</param>
+        public static explicit operator ReadOnlyRow<T>(Row<T> row)
+        {
+            ReadOnlyRow<T> readOnlyRow = new ReadOnlyRow<T>(row._cells);
+
+            return readOnlyRow;
+        }
+
+        /// <summary>
         /// Транспонирует строку
         /// </summary>
         /// <returns><see cref="Column{T}"/> Столбец</returns>
         public Column<T> Transponate()
         {
             return new Column<T>(_cells);
-        }
-
-        /// <summary>
-        /// Провереяет нулевая ли эта трока
-        /// </summary>
-        /// <returns><see langword="false"/> - если строка не нулевая, <see langword="true"/> - если строка нулевая</returns>
-        public bool IsZeroRow()
-        {   
-            return _cells.All((cell) => cell == (dynamic)0);
         }
 
     }

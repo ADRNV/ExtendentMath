@@ -30,25 +30,5 @@ namespace MathExtended.Matrices.Structures.Columns
         {
 
         }
-
-        /// <summary>
-        /// Явно приводит <see cref="Column{T}"/> к <see cref="ReadOnlyColumn{T}"/>
-        /// делая только для чтения
-        /// </summary>
-        /// <param name="column">Приводимый столбец</param>
-        public static explicit operator ReadOnlyColumn<T>(Column<T> column)
-        {
-            ReadOnlyColumn<T> readOnlyColumn = new ReadOnlyColumn<T>(column.Size);
-
-            int i = 0;
-
-            readOnlyColumn.ForEach((cell) =>
-            {
-                column[i] = cell;
-            });
-
-            return readOnlyColumn;
-        }
-
     }
 }

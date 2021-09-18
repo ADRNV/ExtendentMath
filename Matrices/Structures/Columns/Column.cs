@@ -138,6 +138,18 @@ namespace MathExtended.Matrices.Structures.Columns
         }
 
         /// <summary>
+        /// Явно приводит <see cref="Column{T}"/> к <see cref="ReadOnlyColumn{T}"/>
+        /// Делая пригодным для записи
+        /// </summary>
+        /// <param name="column">Привидимый столбец</param>
+        public static explicit operator ReadOnlyColumn<T>(Column<T> column)
+        {
+            ReadOnlyColumn<T> readOnlyColumn = new ReadOnlyColumn<T>(column._cells);
+            
+            return readOnlyColumn;
+        }
+
+        /// <summary>
         /// Транспонирует столбец
         /// </summary>
         /// <returns><see cref="Row{T}"/> Строка</returns>

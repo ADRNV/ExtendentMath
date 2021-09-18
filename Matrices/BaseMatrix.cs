@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MathExtended.Matrices.Structures.Columns;
 using MathExtended.Matrices.Structures.Rows;
+using MathExtended.Matrices.Structures.CellsCollections;
+using MathExtended.Matrices.Structures.CellsCollection;
 
 namespace MathExtended.Matrices
 {
@@ -53,17 +55,9 @@ namespace MathExtended.Matrices
 
             matrix = new T[rows,columns];
 
-            MatrixUpdated += OnMatrix_MatrixUpdated;
-        }
+            _rows = GetRows();
 
-        protected event Action MatrixUpdated;
-
-        /// <summary>
-        /// Обрабытывает событие обновления матрицы
-        /// </summary>
-        protected virtual void OnMatrix_MatrixUpdated()
-        {
-            _mainDiagonal = FindDiagonal();
+            _columns = GetColumns();
             
         }
 
@@ -118,36 +112,49 @@ namespace MathExtended.Matrices
         }
 
         /// <summary>
-        /// Получает все cтроки матрицы
+        /// Возвращает столбец или строку в
+        /// зависимости от селектора
         /// </summary>
-        public Row<T>[] Rows
+        /// <param name="selector">Селектор векторов</param>
+        /// <param name="index">Индекс вектора</param>
+        /// <returns>Вектор или строка по индексу</returns>
+        public virtual BaseReadOnlyCellsCollection<T> this[VectorSelector selector, int index]
         {
             get
             {
-                _rows = GetRows();
-                
-                return _rows;
-
+                if(selector == VectorSelector.Rows)
+                {
+                    return (ReadOnlyRow<T>)_rows[index];
+                }
+                else
+                {
+                    return (ReadOnlyColumn<T>)_columns[index];
+                }
             }
 
         }
 
         /// <summary>
-        /// Столбцы матрицы
+        /// Возвращает стоки или столбцы в зависимости от селектора
         /// </summary>
-        public Column<T>[] Columns
-        { 
+        /// <param name="selector">Селектор</param>
+        /// <returns>Массив строк или столбцов</returns>
+        public virtual BaseCellsCollection<T>[] this[VectorSelector selector]
+        {
             get
             {
-                _columns = GetColumns();
-
-                return _columns; 
-                
+                if (selector == VectorSelector.Rows)
+                {
+                    return _rows;
+                }
+                else
+                {
+                    return _columns;
+                }
             }
-            
+
         }
 
-       
         private Row<T> GetRow(int rowIndex)
         {
             var fullRow = new Row<T>(RowsCount);
