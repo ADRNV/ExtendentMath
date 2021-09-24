@@ -193,6 +193,7 @@
     <Compile Include="Matrices\Structures\CellsCollections\BaseCellsCollection.cs" />
     <Compile Include="Matrices\BaseMatrix.cs" />
     <Compile Include="Matrices\Structures\CellsCollections\BaseReadOnlyCellsCollection.cs" />
+    <Compile Include="Matrices\Structures\CellsCollections\MainDiagonal.cs" />
     <Compile Include="Matrices\Structures\CellsCollections\VectorSelector.cs" />
     <Compile Include="Matrices\Structures\Columns\Column.cs" />
     <Compile Include="Exceptions\ColumnsOfDifferentSizesException.cs" />
@@ -215,8 +216,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Matrices\Structures\ColumnsCollections\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

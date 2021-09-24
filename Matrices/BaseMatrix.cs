@@ -34,7 +34,7 @@ namespace MathExtended.Matrices
         /// <summary>
         /// Главная диагональ
         /// </summary>
-        protected T[] _mainDiagonal;
+        protected MainDiagonal<T> _mainDiagonal;
 
         private int _rowPosition = 0;
 
@@ -97,11 +97,11 @@ namespace MathExtended.Matrices
         /// <summary>
         /// Главная диагональ
         /// </summary>
-        public T[] MainDiagonal
+        public MainDiagonal<T> MainDiagonal
         {
             get
             {
-                _mainDiagonal = FindDiagonal();
+                _mainDiagonal = new MainDiagonal<T>(FindDiagonal());
                 return _mainDiagonal;
             }
 

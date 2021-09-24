@@ -96,7 +96,7 @@ namespace MathExtended.Matrices
                 {
                     Parallel.For(0, matrixB.ColumnsCount, colunm =>
                     {
-                        matrixC[row, colunm] = (dynamic)matrixA[row, colunm] + (dynamic)matrixB[row, colunm];
+                        matrixC[row, colunm] = (T)(dynamic)matrixA[row, colunm] + (dynamic)matrixB[row, colunm];
                     });
                 });
                 return matrixC;
@@ -124,7 +124,7 @@ namespace MathExtended.Matrices
 
                     Parallel.For(0, matrixB.ColumnsCount, j =>
                     {
-                        matrixC[i, j] = Operator.Subtract(matrixA[i, j], matrixB[i, j]);
+                        matrixC[i, j] = (T)Operator.Subtract(matrixA[i, j], matrixB[i, j]);
                     });
 
                 });
@@ -152,7 +152,7 @@ namespace MathExtended.Matrices
             {
                 Parallel.For(0, matrixA.ColumnsCount, column =>
                 {
-                    matrixB[row, column] = Operator.Multiply(matrixA[row, column], multiplier);
+                    matrixB[row, column] = (T)Operator.Multiply(matrixA[row, column], multiplier);
                 });
 
             });
@@ -188,8 +188,8 @@ namespace MathExtended.Matrices
                     Parallel.For(0, matrixB.ColumnsCount, column =>
                     {
                         for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
-                          {
-                            matrixC[row, column] = Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
+                        {
+                            matrixC[row, column] = (T)Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
                     });
                 });

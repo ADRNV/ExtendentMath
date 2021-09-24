@@ -14,11 +14,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
     /// <typeparam name="T">Числовой тип</typeparam>
     public class BaseCellsCollection<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        /// <summary>
-        /// Массив ячеек
-        /// </summary>
-        protected T[] _cells;
-
+        private T[] _cells;
         private int _size;
         private bool disposedValue;
         private int _position;
@@ -40,6 +36,15 @@ namespace MathExtended.Matrices.Structures.CellsCollection
                 _cells[index] = value;
             }
         }
+
+        /// <summary>
+        /// Массив ячеек
+        /// </summary>
+        protected T[] Cells
+        {
+            get => _cells;
+        }
+            
 
         /// <summary>
         /// Размер коллекции

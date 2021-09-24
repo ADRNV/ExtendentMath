@@ -157,7 +157,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="row">Приводимая строка</param>
         public static explicit operator ReadOnlyRow<T>(Row<T> row)
         {
-            ReadOnlyRow<T> readOnlyRow = new ReadOnlyRow<T>(row._cells);
+            ReadOnlyRow<T> readOnlyRow = new ReadOnlyRow<T>(row.Cells);
 
             return readOnlyRow;
         }
@@ -168,7 +168,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <returns><see cref="Column{T}"/> Столбец</returns>
         public Column<T> Transponate()
         {
-            return new Column<T>(_cells);
+            return new Column<T>(Cells);
         }
 
     }
