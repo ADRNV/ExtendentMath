@@ -404,6 +404,15 @@ namespace MathExtended.Matrices
 
         }
 
+        /// <summary>
+        /// Расчитывает детерминант матрицы асинхронно
+        /// </summary>
+        /// <returns>Детерминант матрицы</returns>
+        public async Task<T> CalculateDeterminantAsync()
+        {
+           return await Task.Run(CalculateDeterminant);
+        }
+
         #region Фичи
 
         /// <summary>
