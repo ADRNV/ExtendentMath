@@ -162,14 +162,23 @@ namespace MathExtended.Matrices
         /// <returns><see cref="Row{T}"/> строка матрицы</returns>
         public Row<T> GetRow(int rowIndex)
         {
-            var fullRow = new Row<T>(RowsCount);
-
-            for (int row = 0; row < ColumnsCount; row++)
+            if (rowIndex < RowsCount)
             {
-                fullRow[row] = this[rowIndex, row];
+                var fullRow = new Row<T>(RowsCount);
+
+                for (int row = 0; row < ColumnsCount; row++)
+                {
+                    fullRow[row] = this[rowIndex, row];
+                }
+
+                return fullRow;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException($"Index {rowIndex} out of the bounds matrix");
             }
 
-            return fullRow;
+            
         }
 
         /// <summary>
@@ -225,14 +234,22 @@ namespace MathExtended.Matrices
         /// <returns><see cref="Column{T}"/></returns>
         public Column<T> GetColumn(int columnIndex)
         {
-            var fullColumn = new List<T>();
-
-            for (int row = 0; row < RowsCount; row++)
+            if (columnIndex < ColumnsCount)
             {
-               fullColumn.Add(this[row, columnIndex]);
-            }
+                var fullColumn = new List<T>();
 
-            return fullColumn.ToArray();
+                for (int row = 0; row < RowsCount; row++)
+                {
+                    fullColumn.Add(this[row, columnIndex]);
+                }
+
+                return fullColumn.ToArray();
+            }
+            else
+            {
+                throw new IndexOutOfRangeException($"Index {columnIndex} out of the bounds matrix");
+            }
+        
         }
 
         /// <summary>
