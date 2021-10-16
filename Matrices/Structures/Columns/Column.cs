@@ -119,10 +119,39 @@ namespace MathExtended.Matrices.Structures.Columns
         }
 
         /// <summary>
+        /// Умножает столбец на строку
+        /// </summary>
+        /// <param name="column">Столбец</param>
+        /// <param name="row">Строка</param>
+        /// <returns><see cref="Matrix{T}"/> результат умножения</returns>
+        public static Matrix<T> operator *(Column<T> column, Row<T> row)
+        {
+            if (column.Size != row.Size)
+            {
+                throw new VectorsDifferentSizeException();
+            }
+            else
+            {
+                Matrix<T> matrix = new Matrix<T>(row.Size, column.Size);
+
+                for (int i = 0; i < row.Size; i++)
+                {
+                    for (int j = 0; j < column.Size; j++)
+                    {
+                        matrix[i, j] = (T)Operator.Multiply(row[j], column[i]);
+                    }
+                }
+
+                return matrix;
+            }
+        }
+
+
+        /// <summary>
         /// Явно приводит <see cref="ReadOnlyColumn{T}"/> к <see cref="Column{T}"/>
         /// Делая пригодным для записи
         /// </summary>
-        /// <param name="readOnlyColumn">Привидимый столбец</param>
+        /// <param name="readOnlyColumn">Приводимый столбец</param>
         public static explicit operator Column<T>(ReadOnlyColumn<T> readOnlyColumn)
         {
             Column<T> column = new Column<T>(readOnlyColumn.Size);

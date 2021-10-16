@@ -111,25 +111,32 @@ namespace MathExtended.Matrices.Structures.Rows
         }
 
         /// <summary>
-        /// Умножает строку на столбец
+        /// Умножает строку на стотбец, получая число
         /// </summary>
         /// <param name="row">Строка</param>
         /// <param name="column">Столбец</param>
-        /// <returns><see cref="Matrix{T}"/> результат умножения</returns>
-        public static Matrix<T> operator *(Row<T> row, Column<T> column)
+        /// <returns><typeparamref name="T"/> число</returns>
+        public static T operator *(Row<T> row, Column<T> column)
         {
-            Matrix<T> matrix = new Matrix<T>(row.Size,column.Size);
-
-            for(int i = 0;i < row.Size;i++)
+            if (row.Size != column.Size)
             {
-                for(int j = 0;j < column.Size;j++)
+                throw new VectorsDifferentSizeException();
+            }
+            else
+            {
+                dynamic num = 0;
+                
+                for (int i = 0; i < row.Size; i++)
                 {
-                    matrix[i, j] = (T)Operator.Multiply(row[i],column[j]);
+                    num += (T)Operator.Multiply(row[i], column[i]);
                 }
+
+                return num;
             }
 
-            return matrix;
+            
         }
+
 
         /// <summary>
         /// Приводит <see cref="ReadOnlyRow{T}"/> к <see cref="Row{T}"/>
