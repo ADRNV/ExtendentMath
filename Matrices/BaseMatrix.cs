@@ -118,7 +118,7 @@ namespace MathExtended.Matrices
         /// <param name="selector">Селектор векторов</param>
         /// <param name="index">Индекс вектора</param>
         /// <returns>Вектор или строка по индексу</returns>
-        public virtual BaseReadOnlyCellsCollection<T> this[VectorSelector selector, int index]
+        protected virtual BaseReadOnlyCellsCollection<T> this[VectorSelector selector, int index]
         {
             get
             {
@@ -155,7 +155,12 @@ namespace MathExtended.Matrices
 
         }
 
-        private Row<T> GetRow(int rowIndex)
+        /// <summary>
+        /// Возвращает строку матрицы соответсвующую индексу
+        /// </summary>
+        /// <param name="rowIndex">Индекс строки</param>
+        /// <returns><see cref="Row{T}"/> строка матрицы</returns>
+        public Row<T> GetRow(int rowIndex)
         {
             var fullRow = new Row<T>(RowsCount);
 
@@ -167,7 +172,11 @@ namespace MathExtended.Matrices
             return fullRow;
         }
 
-        private Row<T>[] GetRows()
+        /// <summary>
+        /// Возвращает все строки матрицы
+        /// </summary>
+        /// <returns>Массив из <see cref="Row{T}"/></returns>
+        public Row<T>[] GetRows()
         {
             Row<T>[] rows = new Row<T>[RowsCount];
 
@@ -209,7 +218,12 @@ namespace MathExtended.Matrices
             });
         }
 
-        private Column<T> GetColumn(int columnIndex)
+        /// <summary>
+        /// Возвращает столбец матрицы по индексу
+        /// </summary>
+        /// <param name="columnIndex">Индекс столбца</param>
+        /// <returns><see cref="Column{T}"/></returns>
+        public Column<T> GetColumn(int columnIndex)
         {
             var fullColumn = new List<T>();
 
@@ -221,7 +235,11 @@ namespace MathExtended.Matrices
             return fullColumn.ToArray();
         }
 
-        private Column<T>[] GetColumns()
+        /// <summary>
+        /// Возвращает все столбцы матрицы
+        /// </summary>
+        /// <returns>Массив <see cref="Column{T}"/></returns>
+        public Column<T>[] GetColumns()
         {
             Column<T>[] columns = new Column<T>[ColumnsCount];
 
