@@ -217,7 +217,13 @@
     <Compile Include="TabulateResult.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="api\index.md" />
+    <None Include="articles\intro.md" />
+    <None Include="articles\toc.md" />
+    <None Include="docfx.json" />
+    <None Include="index.md" />
     <None Include="packages.config" />
+    <None Include="toc.yml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -227,5 +233,7 @@
       <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\DefaultDocumentation.0.7.9\build\DefaultDocumentation.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\DefaultDocumentation.0.7.9\build\DefaultDocumentation.targets'))" />
+    <Error Condition="!Exists('packages\docfx.console.2.58.9\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\docfx.console.2.58.9\build\docfx.console.targets'))" />
   </Target>
+  <Import Project="packages\docfx.console.2.58.9\build\docfx.console.targets" Condition="Exists('packages\docfx.console.2.58.9\build\docfx.console.targets')" />
 </Project>
