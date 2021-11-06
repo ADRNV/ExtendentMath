@@ -8,7 +8,7 @@ using MathExtended.Exceptions;
 namespace MathExtended
 {
     /// <summary>
-    /// Класс с функциями дополняющими Mаth
+    /// Класс с функциями дополняющими Math
     /// </summary>
     public static class MathExtendent
     {
