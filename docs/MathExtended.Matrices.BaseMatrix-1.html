@@ -1,0 +1,1125 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BaseMatrix&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BaseMatrix&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.58.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MathExtended.Matrices.BaseMatrix`1">
+  
+  
+  <h1 id="MathExtended_Matrices_BaseMatrix_1" data-uid="MathExtended.Matrices.BaseMatrix`1" class="text-break">Class BaseMatrix&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Базовый класс матрицы.Реализует интерфейс перечисления
+и ограничивает принимаемые обобщения до числовых типов (<span class="xref">System.Int32</span>, <span class="xref">System.Single</span>, <span class="xref">System.Double</span> и т.д)</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BaseMatrix&lt;T&gt;</span></div>
+      <div class="level2"><a class="xref" href="MathExtended.Matrices.Matrix-1.html">Matrix&lt;T&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;T&gt;</div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Collections.IEnumerator</span></div>
+    <div><a class="xref" href="MathExtended.Interfaces.IMatrix-1.html">IMatrix</a>&lt;T&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MathExtended.Matrices.html">MathExtended.Matrices</a></h6>
+  <h6><strong>Assembly</strong>: MathExtended.dll</h6>
+  <h5 id="MathExtended_Matrices_BaseMatrix_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BaseMatrix&lt;T&gt; : IEnumerator&lt;T&gt;, IDisposable, IEnumerator, IMatrix&lt;T&gt; where T : IComparable, IFormattable, IConvertible, IComparable&lt;T&gt;, IEquatable&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Числовой тип</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L50">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1__ctor_" data-uid="MathExtended.Matrices.BaseMatrix`1.#ctor*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1__ctor_System_Int32_System_Int32_" data-uid="MathExtended.Matrices.BaseMatrix`1.#ctor(System.Int32,System.Int32)">BaseMatrix(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Создает матрицу с указанными размерами</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseMatrix(int rows, int columns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>Количество строк</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">columns</span></td>
+        <td><p>Количество столбцов</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1__mainDiagonal.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601._mainDiagonal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L37">View Source</a>
+  </span>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1__mainDiagonal" data-uid="MathExtended.Matrices.BaseMatrix`1._mainDiagonal">_mainDiagonal</h4>
+  <div class="markdown level1 summary"><p>Главная диагональ</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MainDiagonal&lt;T&gt; _mainDiagonal</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.CellsCollections.MainDiagonal-1.html">MainDiagonal</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_matrix.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.matrix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L24">View Source</a>
+  </span>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_matrix" data-uid="MathExtended.Matrices.BaseMatrix`1.matrix">matrix</h4>
+  <div class="markdown level1 summary"><p>Матрица представляющая собой двумерный массив</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected T[, ] matrix</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_ColumnsCount.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.ColumnsCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L92">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_ColumnsCount_" data-uid="MathExtended.Matrices.BaseMatrix`1.ColumnsCount*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_ColumnsCount" data-uid="MathExtended.Matrices.BaseMatrix`1.ColumnsCount">ColumnsCount</h4>
+  <div class="markdown level1 summary"><p>Колличество столбцов в матрице</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ColumnsCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Current.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L350">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Current_" data-uid="MathExtended.Matrices.BaseMatrix`1.Current*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Current" data-uid="MathExtended.Matrices.BaseMatrix`1.Current">Current</h4>
+  <div class="markdown level1 summary"><p>Текуший элемент</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Current { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Item_MathExtended_Matrices_Structures_CellsCollections_VectorSelector_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L142">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Item_" data-uid="MathExtended.Matrices.BaseMatrix`1.Item*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Item_MathExtended_Matrices_Structures_CellsCollections_VectorSelector_" data-uid="MathExtended.Matrices.BaseMatrix`1.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector)">Item[VectorSelector]</h4>
+  <div class="markdown level1 summary"><p>Возвращает стоки или столбцы в зависимости от селектора</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual BaseCellsCollection&lt;T&gt;[] this[VectorSelector selector] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.CellsCollections.VectorSelector.html">VectorSelector</a></td>
+        <td><span class="parametername">selector</span></td>
+        <td><p>Селектор</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html">BaseCellsCollection</a>&lt;T&gt;[]</td>
+        <td><p>Массив строк или столбцов</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Item_MathExtended_Matrices_Structures_CellsCollections_VectorSelector_System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L121">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Item_" data-uid="MathExtended.Matrices.BaseMatrix`1.Item*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Item_MathExtended_Matrices_Structures_CellsCollections_VectorSelector_System_Int32_" data-uid="MathExtended.Matrices.BaseMatrix`1.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector,System.Int32)">Item[VectorSelector, Int32]</h4>
+  <div class="markdown level1 summary"><p>Возвращает столбец или строку в
+зависимости от селектора</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual BaseReadOnlyCellsCollection&lt;T&gt; this[VectorSelector selector, int index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.CellsCollections.VectorSelector.html">VectorSelector</a></td>
+        <td><span class="parametername">selector</span></td>
+        <td><p>Селектор векторов</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Индекс вектора</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html">BaseReadOnlyCellsCollection</a>&lt;T&gt;</td>
+        <td><p>Вектор или строка по индексу</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Item_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Item(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L70">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Item_" data-uid="MathExtended.Matrices.BaseMatrix`1.Item*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Item_System_Int32_System_Int32_" data-uid="MathExtended.Matrices.BaseMatrix`1.Item(System.Int32,System.Int32)">Item[Int32, Int32]</h4>
+  <div class="markdown level1 summary"><p>Число матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[int row, int column] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>Строка</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">column</span></td>
+        <td><p>Столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Число по указанному адресу в матрице</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_MainDiagonal.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.MainDiagonal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L100">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_MainDiagonal_" data-uid="MathExtended.Matrices.BaseMatrix`1.MainDiagonal*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_MainDiagonal" data-uid="MathExtended.Matrices.BaseMatrix`1.MainDiagonal">MainDiagonal</h4>
+  <div class="markdown level1 summary"><p>Главная диагональ</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MainDiagonal&lt;T&gt; MainDiagonal { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.CellsCollections.MainDiagonal-1.html">MainDiagonal</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_RowsCount.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.RowsCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L84">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_RowsCount_" data-uid="MathExtended.Matrices.BaseMatrix`1.RowsCount*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_RowsCount" data-uid="MathExtended.Matrices.BaseMatrix`1.RowsCount">RowsCount</h4>
+  <div class="markdown level1 summary"><p>Колличество строк в матрице</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RowsCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Dispose.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L453">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Dispose_" data-uid="MathExtended.Matrices.BaseMatrix`1.Dispose*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Dispose" data-uid="MathExtended.Matrices.BaseMatrix`1.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Освобождает использованные ресурсы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L426">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Dispose_" data-uid="MathExtended.Matrices.BaseMatrix`1.Dispose*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Dispose_System_Boolean_" data-uid="MathExtended.Matrices.BaseMatrix`1.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Высвобождает использованные ресурсы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_FindDiagonal.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.FindDiagonal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L321">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_FindDiagonal_" data-uid="MathExtended.Matrices.BaseMatrix`1.FindDiagonal*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_FindDiagonal" data-uid="MathExtended.Matrices.BaseMatrix`1.FindDiagonal">FindDiagonal()</h4>
+  <div class="markdown level1 summary"><p>Находит главную диагональ матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] FindDiagonal()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>Массив состоящий из чисел составляющих главную диагональ</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_GetColumn_System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.GetColumn(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L235">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_GetColumn_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetColumn*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_GetColumn_System_Int32_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetColumn(System.Int32)">GetColumn(Int32)</h4>
+  <div class="markdown level1 summary"><p>Возвращает столбец матрицы по индексу</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Column&lt;T&gt; GetColumn(int columnIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">columnIndex</span></td>
+        <td><p>Индекс столбца</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column&lt;T&gt;</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_GetColumns.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.GetColumns%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L259">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_GetColumns_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetColumns*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_GetColumns" data-uid="MathExtended.Matrices.BaseMatrix`1.GetColumns">GetColumns()</h4>
+  <div class="markdown level1 summary"><p>Возвращает все столбцы матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Column&lt;T&gt;[] GetColumns()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;[]</td>
+        <td><p>Массив <a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_GetEnumerator.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L366">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_GetEnumerator_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetEnumerator*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_GetEnumerator" data-uid="MathExtended.Matrices.BaseMatrix`1.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Перечислитель</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;T&gt;</td>
+        <td><p>Перечислитель матрицы</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_GetRow_System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.GetRow(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L163">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_GetRow_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetRow*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_GetRow_System_Int32_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetRow(System.Int32)">GetRow(Int32)</h4>
+  <div class="markdown level1 summary"><p>Возвращает строку матрицы соответсвующую индексу</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Row&lt;T&gt; GetRow(int rowIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rowIndex</span></td>
+        <td><p>Индекс строки</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row&lt;T&gt;</a> строка матрицы</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_GetRows.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.GetRows%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L188">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_GetRows_" data-uid="MathExtended.Matrices.BaseMatrix`1.GetRows*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_GetRows" data-uid="MathExtended.Matrices.BaseMatrix`1.GetRows">GetRows()</h4>
+  <div class="markdown level1 summary"><p>Возвращает все строки матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Row&lt;T&gt;[] GetRows()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row</a>&lt;T&gt;[]</td>
+        <td><p>Массив из <a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_MoveNext.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L379">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_MoveNext_" data-uid="MathExtended.Matrices.BaseMatrix`1.MoveNext*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_MoveNext" data-uid="MathExtended.Matrices.BaseMatrix`1.MoveNext">MoveNext()</h4>
+  <div class="markdown level1 summary"><p>Перемещает индексатор на одну позицию вперед</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MoveNext()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true или false в зависимости ли можно переместить индексатор</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_Reset.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L414">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_Reset_" data-uid="MathExtended.Matrices.BaseMatrix`1.Reset*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_Reset" data-uid="MathExtended.Matrices.BaseMatrix`1.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Перемещает индексатор в начало матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_SetColumn_System_Int32_MathExtended_Matrices_Structures_Columns_Column__0__.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.SetColumn(System.Int32%2CMathExtended.Matrices.Structures.Columns.Column%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L273">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_SetColumn_" data-uid="MathExtended.Matrices.BaseMatrix`1.SetColumn*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_SetColumn_System_Int32_MathExtended_Matrices_Structures_Columns_Column__0__" data-uid="MathExtended.Matrices.BaseMatrix`1.SetColumn(System.Int32,MathExtended.Matrices.Structures.Columns.Column{`0})">SetColumn(Int32, Column&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Задает столбец матрицы по индексу</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetColumn(int columnIndex, Column&lt;T&gt; column)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">columnIndex</span></td>
+        <td><p>Индекс столбца</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">column</span></td>
+        <td><p>Стобец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_SetColumns_MathExtended_Matrices_Structures_Columns_Column__0____.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.SetColumns(MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L287">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_SetColumns_" data-uid="MathExtended.Matrices.BaseMatrix`1.SetColumns*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_SetColumns_MathExtended_Matrices_Structures_Columns_Column__0____" data-uid="MathExtended.Matrices.BaseMatrix`1.SetColumns(MathExtended.Matrices.Structures.Columns.Column{`0}[])">SetColumns(Column&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"><p>Задает столбцы матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetColumns(Column&lt;T&gt;[] columns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">columns</span></td>
+        <td><p>Столбцы</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_SetRow_MathExtended_Matrices_Structures_Rows_Row__0__System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.SetRow(MathExtended.Matrices.Structures.Rows.Row%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L205">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_SetRow_" data-uid="MathExtended.Matrices.BaseMatrix`1.SetRow*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_SetRow_MathExtended_Matrices_Structures_Rows_Row__0__System_Int32_" data-uid="MathExtended.Matrices.BaseMatrix`1.SetRow(MathExtended.Matrices.Structures.Rows.Row{`0},System.Int32)">SetRow(Row&lt;T&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Задает строку матрицы по заданному индексу</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRow(Row&lt;T&gt; row, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row</a>&lt;T&gt;</td>
+        <td><span class="parametername">row</span></td>
+        <td><p>Строка</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Индекс строки</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_SetRows_MathExtended_Matrices_Structures_Rows_Row__0____.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.SetRows(MathExtended.Matrices.Structures.Rows.Row%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L219">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_SetRows_" data-uid="MathExtended.Matrices.BaseMatrix`1.SetRows*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_SetRows_MathExtended_Matrices_Structures_Rows_Row__0____" data-uid="MathExtended.Matrices.BaseMatrix`1.SetRows(MathExtended.Matrices.Structures.Rows.Row{`0}[])">SetRows(Row&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"><p>Задает строки матрицы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetRows(Row&lt;T&gt;[] rows)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>Строки</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_ToArray.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.ToArray%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L341">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_ToArray_" data-uid="MathExtended.Matrices.BaseMatrix`1.ToArray*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_ToArray" data-uid="MathExtended.Matrices.BaseMatrix`1.ToArray">ToArray()</h4>
+  <div class="markdown level1 summary"><p>Преобразует матрицу в двумерный массив</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T[, ] ToArray()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td><p>Двумерный массив</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1_System_Collections_IEnumerator_Current.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601.System%23Collections%23IEnumerator%23Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L358">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_BaseMatrix_1_System_Collections_IEnumerator_Current_" data-uid="MathExtended.Matrices.BaseMatrix`1.System#Collections#IEnumerator#Current*"></a>
+  <h4 id="MathExtended_Matrices_BaseMatrix_1_System_Collections_IEnumerator_Current" data-uid="MathExtended.Matrices.BaseMatrix`1.System#Collections#IEnumerator#Current">IEnumerator.Current</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object IEnumerator.Current { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerator&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerator</span>
+  </div>
+  <div>
+      <a class="xref" href="MathExtended.Interfaces.IMatrix-1.html">IMatrix&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_BaseMatrix_1.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.BaseMatrix%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/BaseMatrix.cs/#L19" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

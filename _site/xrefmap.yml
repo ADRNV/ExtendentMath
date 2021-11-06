@@ -1,0 +1,2230 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: MathExtended
+  name: MathExtended
+  href: api/MathExtended.html
+  commentId: N:MathExtended
+  fullName: MathExtended
+  nameWithType: MathExtended
+- uid: MathExtended.Exceptions
+  name: MathExtended.Exceptions
+  href: api/MathExtended.Exceptions.html
+  commentId: N:MathExtended.Exceptions
+  fullName: MathExtended.Exceptions
+  nameWithType: MathExtended.Exceptions
+- uid: MathExtended.Exceptions.ColumnsOfDifferentSizesException
+  name: ColumnsOfDifferentSizesException
+  href: api/MathExtended.Exceptions.ColumnsOfDifferentSizesException.html
+  commentId: T:MathExtended.Exceptions.ColumnsOfDifferentSizesException
+  fullName: MathExtended.Exceptions.ColumnsOfDifferentSizesException
+  nameWithType: ColumnsOfDifferentSizesException
+- uid: MathExtended.Exceptions.ColumnsOfDifferentSizesException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.ColumnsOfDifferentSizesException.html#MathExtended_Exceptions_ColumnsOfDifferentSizesException_Message
+  commentId: P:MathExtended.Exceptions.ColumnsOfDifferentSizesException.Message
+  fullName: MathExtended.Exceptions.ColumnsOfDifferentSizesException.Message
+  nameWithType: ColumnsOfDifferentSizesException.Message
+- uid: MathExtended.Exceptions.ColumnsOfDifferentSizesException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.ColumnsOfDifferentSizesException.html#MathExtended_Exceptions_ColumnsOfDifferentSizesException_Message_
+  commentId: Overload:MathExtended.Exceptions.ColumnsOfDifferentSizesException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.ColumnsOfDifferentSizesException.Message
+  nameWithType: ColumnsOfDifferentSizesException.Message
+- uid: MathExtended.Exceptions.ColumnZeroSizeException
+  name: ColumnZeroSizeException
+  href: api/MathExtended.Exceptions.ColumnZeroSizeException.html
+  commentId: T:MathExtended.Exceptions.ColumnZeroSizeException
+  fullName: MathExtended.Exceptions.ColumnZeroSizeException
+  nameWithType: ColumnZeroSizeException
+- uid: MathExtended.Exceptions.ColumnZeroSizeException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.ColumnZeroSizeException.html#MathExtended_Exceptions_ColumnZeroSizeException_Message
+  commentId: P:MathExtended.Exceptions.ColumnZeroSizeException.Message
+  fullName: MathExtended.Exceptions.ColumnZeroSizeException.Message
+  nameWithType: ColumnZeroSizeException.Message
+- uid: MathExtended.Exceptions.ColumnZeroSizeException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.ColumnZeroSizeException.html#MathExtended_Exceptions_ColumnZeroSizeException_Message_
+  commentId: Overload:MathExtended.Exceptions.ColumnZeroSizeException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.ColumnZeroSizeException.Message
+  nameWithType: ColumnZeroSizeException.Message
+- uid: MathExtended.Exceptions.MatrixDifferentSizeException
+  name: MatrixDifferentSizeException
+  href: api/MathExtended.Exceptions.MatrixDifferentSizeException.html
+  commentId: T:MathExtended.Exceptions.MatrixDifferentSizeException
+  fullName: MathExtended.Exceptions.MatrixDifferentSizeException
+  nameWithType: MatrixDifferentSizeException
+- uid: MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.MatrixDifferentSizeException.html#MathExtended_Exceptions_MatrixDifferentSizeException_Message
+  commentId: P:MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  fullName: MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  nameWithType: MatrixDifferentSizeException.Message
+- uid: MathExtended.Exceptions.MatrixDifferentSizeException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.MatrixDifferentSizeException.html#MathExtended_Exceptions_MatrixDifferentSizeException_Message_
+  commentId: Overload:MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.MatrixDifferentSizeException.Message
+  nameWithType: MatrixDifferentSizeException.Message
+- uid: MathExtended.Exceptions.MatrixZeroSizeException
+  name: MatrixZeroSizeException
+  href: api/MathExtended.Exceptions.MatrixZeroSizeException.html
+  commentId: T:MathExtended.Exceptions.MatrixZeroSizeException
+  fullName: MathExtended.Exceptions.MatrixZeroSizeException
+  nameWithType: MatrixZeroSizeException
+- uid: MathExtended.Exceptions.MatrixZeroSizeException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.MatrixZeroSizeException.html#MathExtended_Exceptions_MatrixZeroSizeException_Message
+  commentId: P:MathExtended.Exceptions.MatrixZeroSizeException.Message
+  fullName: MathExtended.Exceptions.MatrixZeroSizeException.Message
+  nameWithType: MatrixZeroSizeException.Message
+- uid: MathExtended.Exceptions.MatrixZeroSizeException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.MatrixZeroSizeException.html#MathExtended_Exceptions_MatrixZeroSizeException_Message_
+  commentId: Overload:MathExtended.Exceptions.MatrixZeroSizeException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.MatrixZeroSizeException.Message
+  nameWithType: MatrixZeroSizeException.Message
+- uid: MathExtended.Exceptions.RowsOfDifferentSizesException
+  name: RowsOfDifferentSizesException
+  href: api/MathExtended.Exceptions.RowsOfDifferentSizesException.html
+  commentId: T:MathExtended.Exceptions.RowsOfDifferentSizesException
+  fullName: MathExtended.Exceptions.RowsOfDifferentSizesException
+  nameWithType: RowsOfDifferentSizesException
+- uid: MathExtended.Exceptions.RowsOfDifferentSizesException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.RowsOfDifferentSizesException.html#MathExtended_Exceptions_RowsOfDifferentSizesException_Message
+  commentId: P:MathExtended.Exceptions.RowsOfDifferentSizesException.Message
+  fullName: MathExtended.Exceptions.RowsOfDifferentSizesException.Message
+  nameWithType: RowsOfDifferentSizesException.Message
+- uid: MathExtended.Exceptions.RowsOfDifferentSizesException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.RowsOfDifferentSizesException.html#MathExtended_Exceptions_RowsOfDifferentSizesException_Message_
+  commentId: Overload:MathExtended.Exceptions.RowsOfDifferentSizesException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.RowsOfDifferentSizesException.Message
+  nameWithType: RowsOfDifferentSizesException.Message
+- uid: MathExtended.Exceptions.RowZeroSizeException
+  name: RowZeroSizeException
+  href: api/MathExtended.Exceptions.RowZeroSizeException.html
+  commentId: T:MathExtended.Exceptions.RowZeroSizeException
+  fullName: MathExtended.Exceptions.RowZeroSizeException
+  nameWithType: RowZeroSizeException
+- uid: MathExtended.Exceptions.RowZeroSizeException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.RowZeroSizeException.html#MathExtended_Exceptions_RowZeroSizeException_Message
+  commentId: P:MathExtended.Exceptions.RowZeroSizeException.Message
+  fullName: MathExtended.Exceptions.RowZeroSizeException.Message
+  nameWithType: RowZeroSizeException.Message
+- uid: MathExtended.Exceptions.RowZeroSizeException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.RowZeroSizeException.html#MathExtended_Exceptions_RowZeroSizeException_Message_
+  commentId: Overload:MathExtended.Exceptions.RowZeroSizeException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.RowZeroSizeException.Message
+  nameWithType: RowZeroSizeException.Message
+- uid: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException
+  name: TheNumberOfRowsAndColumnsIsDifferentException
+  href: api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html
+  commentId: T:MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException
+  fullName: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException
+  nameWithType: TheNumberOfRowsAndColumnsIsDifferentException
+- uid: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html#MathExtended_Exceptions_TheNumberOfRowsAndColumnsIsDifferentException_Message
+  commentId: P:MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  fullName: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  nameWithType: TheNumberOfRowsAndColumnsIsDifferentException.Message
+- uid: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.html#MathExtended_Exceptions_TheNumberOfRowsAndColumnsIsDifferentException_Message_
+  commentId: Overload:MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.TheNumberOfRowsAndColumnsIsDifferentException.Message
+  nameWithType: TheNumberOfRowsAndColumnsIsDifferentException.Message
+- uid: MathExtended.Exceptions.VectorsDifferentSizeException
+  name: VectorsDifferentSizeException
+  href: api/MathExtended.Exceptions.VectorsDifferentSizeException.html
+  commentId: T:MathExtended.Exceptions.VectorsDifferentSizeException
+  fullName: MathExtended.Exceptions.VectorsDifferentSizeException
+  nameWithType: VectorsDifferentSizeException
+- uid: MathExtended.Exceptions.VectorsDifferentSizeException.Message
+  name: Message
+  href: api/MathExtended.Exceptions.VectorsDifferentSizeException.html#MathExtended_Exceptions_VectorsDifferentSizeException_Message
+  commentId: P:MathExtended.Exceptions.VectorsDifferentSizeException.Message
+  fullName: MathExtended.Exceptions.VectorsDifferentSizeException.Message
+  nameWithType: VectorsDifferentSizeException.Message
+- uid: MathExtended.Exceptions.VectorsDifferentSizeException.Message*
+  name: Message
+  href: api/MathExtended.Exceptions.VectorsDifferentSizeException.html#MathExtended_Exceptions_VectorsDifferentSizeException_Message_
+  commentId: Overload:MathExtended.Exceptions.VectorsDifferentSizeException.Message
+  isSpec: "True"
+  fullName: MathExtended.Exceptions.VectorsDifferentSizeException.Message
+  nameWithType: VectorsDifferentSizeException.Message
+- uid: MathExtended.ExtendentRandom
+  name: ExtendentRandom
+  href: api/MathExtended.ExtendentRandom.html
+  commentId: T:MathExtended.ExtendentRandom
+  fullName: MathExtended.ExtendentRandom
+  nameWithType: ExtendentRandom
+- uid: MathExtended.ExtendentRandom.Next*
+  name: Next
+  href: api/MathExtended.ExtendentRandom.html#MathExtended_ExtendentRandom_Next_
+  commentId: Overload:MathExtended.ExtendentRandom.Next
+  isSpec: "True"
+  fullName: MathExtended.ExtendentRandom.Next
+  nameWithType: ExtendentRandom.Next
+- uid: MathExtended.ExtendentRandom.Next``1
+  name: Next<T>()
+  href: api/MathExtended.ExtendentRandom.html#MathExtended_ExtendentRandom_Next__1
+  commentId: M:MathExtended.ExtendentRandom.Next``1
+  name.vb: Next(Of T)()
+  fullName: MathExtended.ExtendentRandom.Next<T>()
+  fullName.vb: MathExtended.ExtendentRandom.Next(Of T)()
+  nameWithType: ExtendentRandom.Next<T>()
+  nameWithType.vb: ExtendentRandom.Next(Of T)()
+- uid: MathExtended.ExtendentRandom.Next``1(``0@,``0@)
+  name: Next<T>(in T, in T)
+  href: api/MathExtended.ExtendentRandom.html#MathExtended_ExtendentRandom_Next__1___0____0__
+  commentId: M:MathExtended.ExtendentRandom.Next``1(``0@,``0@)
+  name.vb: Next(Of T)(ByRef T, ByRef T)
+  fullName: MathExtended.ExtendentRandom.Next<T>(in T, in T)
+  fullName.vb: MathExtended.ExtendentRandom.Next(Of T)(ByRef T, ByRef T)
+  nameWithType: ExtendentRandom.Next<T>(in T, in T)
+  nameWithType.vb: ExtendentRandom.Next(Of T)(ByRef T, ByRef T)
+- uid: MathExtended.Interfaces
+  name: MathExtended.Interfaces
+  href: api/MathExtended.Interfaces.html
+  commentId: N:MathExtended.Interfaces
+  fullName: MathExtended.Interfaces
+  nameWithType: MathExtended.Interfaces
+- uid: MathExtended.Interfaces.IMatrix`1
+  name: IMatrix<T>
+  href: api/MathExtended.Interfaces.IMatrix-1.html
+  commentId: T:MathExtended.Interfaces.IMatrix`1
+  name.vb: IMatrix(Of T)
+  fullName: MathExtended.Interfaces.IMatrix<T>
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T)
+  nameWithType: IMatrix<T>
+  nameWithType.vb: IMatrix(Of T)
+- uid: MathExtended.Interfaces.IMatrix`1.ColumnsCount
+  name: ColumnsCount
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_ColumnsCount
+  commentId: P:MathExtended.Interfaces.IMatrix`1.ColumnsCount
+  fullName: MathExtended.Interfaces.IMatrix<T>.ColumnsCount
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).ColumnsCount
+  nameWithType: IMatrix<T>.ColumnsCount
+  nameWithType.vb: IMatrix(Of T).ColumnsCount
+- uid: MathExtended.Interfaces.IMatrix`1.ColumnsCount*
+  name: ColumnsCount
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_ColumnsCount_
+  commentId: Overload:MathExtended.Interfaces.IMatrix`1.ColumnsCount
+  isSpec: "True"
+  fullName: MathExtended.Interfaces.IMatrix<T>.ColumnsCount
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).ColumnsCount
+  nameWithType: IMatrix<T>.ColumnsCount
+  nameWithType.vb: IMatrix(Of T).ColumnsCount
+- uid: MathExtended.Interfaces.IMatrix`1.FindDiagonal
+  name: FindDiagonal()
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_FindDiagonal
+  commentId: M:MathExtended.Interfaces.IMatrix`1.FindDiagonal
+  fullName: MathExtended.Interfaces.IMatrix<T>.FindDiagonal()
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).FindDiagonal()
+  nameWithType: IMatrix<T>.FindDiagonal()
+  nameWithType.vb: IMatrix(Of T).FindDiagonal()
+- uid: MathExtended.Interfaces.IMatrix`1.FindDiagonal*
+  name: FindDiagonal
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_FindDiagonal_
+  commentId: Overload:MathExtended.Interfaces.IMatrix`1.FindDiagonal
+  isSpec: "True"
+  fullName: MathExtended.Interfaces.IMatrix<T>.FindDiagonal
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).FindDiagonal
+  nameWithType: IMatrix<T>.FindDiagonal
+  nameWithType.vb: IMatrix(Of T).FindDiagonal
+- uid: MathExtended.Interfaces.IMatrix`1.MainDiagonal
+  name: MainDiagonal
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_MainDiagonal
+  commentId: P:MathExtended.Interfaces.IMatrix`1.MainDiagonal
+  fullName: MathExtended.Interfaces.IMatrix<T>.MainDiagonal
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).MainDiagonal
+  nameWithType: IMatrix<T>.MainDiagonal
+  nameWithType.vb: IMatrix(Of T).MainDiagonal
+- uid: MathExtended.Interfaces.IMatrix`1.MainDiagonal*
+  name: MainDiagonal
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_MainDiagonal_
+  commentId: Overload:MathExtended.Interfaces.IMatrix`1.MainDiagonal
+  isSpec: "True"
+  fullName: MathExtended.Interfaces.IMatrix<T>.MainDiagonal
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).MainDiagonal
+  nameWithType: IMatrix<T>.MainDiagonal
+  nameWithType.vb: IMatrix(Of T).MainDiagonal
+- uid: MathExtended.Interfaces.IMatrix`1.RowsCount
+  name: RowsCount
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_RowsCount
+  commentId: P:MathExtended.Interfaces.IMatrix`1.RowsCount
+  fullName: MathExtended.Interfaces.IMatrix<T>.RowsCount
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).RowsCount
+  nameWithType: IMatrix<T>.RowsCount
+  nameWithType.vb: IMatrix(Of T).RowsCount
+- uid: MathExtended.Interfaces.IMatrix`1.RowsCount*
+  name: RowsCount
+  href: api/MathExtended.Interfaces.IMatrix-1.html#MathExtended_Interfaces_IMatrix_1_RowsCount_
+  commentId: Overload:MathExtended.Interfaces.IMatrix`1.RowsCount
+  isSpec: "True"
+  fullName: MathExtended.Interfaces.IMatrix<T>.RowsCount
+  fullName.vb: MathExtended.Interfaces.IMatrix(Of T).RowsCount
+  nameWithType: IMatrix<T>.RowsCount
+  nameWithType.vb: IMatrix(Of T).RowsCount
+- uid: MathExtended.MathExtendent
+  name: MathExtendent
+  href: api/MathExtended.MathExtendent.html
+  commentId: T:MathExtended.MathExtendent
+  fullName: MathExtended.MathExtendent
+  nameWithType: MathExtendent
+- uid: MathExtended.MathExtendent.AlgebraicSum(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double})
+  name: AlgebraicSum(Double, Double, Double, Func<Double, Double>)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_AlgebraicSum_System_Double_System_Double_System_Double_System_Func_System_Double_System_Double__
+  commentId: M:MathExtended.MathExtendent.AlgebraicSum(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double})
+  name.vb: AlgebraicSum(Double, Double, Double, Func(Of Double, Double))
+  fullName: MathExtended.MathExtendent.AlgebraicSum(System.Double, System.Double, System.Double, System.Func<System.Double, System.Double>)
+  fullName.vb: MathExtended.MathExtendent.AlgebraicSum(System.Double, System.Double, System.Double, System.Func(Of System.Double, System.Double))
+  nameWithType: MathExtendent.AlgebraicSum(Double, Double, Double, Func<Double, Double>)
+  nameWithType.vb: MathExtendent.AlgebraicSum(Double, Double, Double, Func(Of Double, Double))
+- uid: MathExtended.MathExtendent.AlgebraicSum(System.Double,System.Double,System.Func{System.Double,System.Double})
+  name: AlgebraicSum(Double, Double, Func<Double, Double>)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_AlgebraicSum_System_Double_System_Double_System_Func_System_Double_System_Double__
+  commentId: M:MathExtended.MathExtendent.AlgebraicSum(System.Double,System.Double,System.Func{System.Double,System.Double})
+  name.vb: AlgebraicSum(Double, Double, Func(Of Double, Double))
+  fullName: MathExtended.MathExtendent.AlgebraicSum(System.Double, System.Double, System.Func<System.Double, System.Double>)
+  fullName.vb: MathExtended.MathExtendent.AlgebraicSum(System.Double, System.Double, System.Func(Of System.Double, System.Double))
+  nameWithType: MathExtendent.AlgebraicSum(Double, Double, Func<Double, Double>)
+  nameWithType.vb: MathExtendent.AlgebraicSum(Double, Double, Func(Of Double, Double))
+- uid: MathExtended.MathExtendent.AlgebraicSum*
+  name: AlgebraicSum
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_AlgebraicSum_
+  commentId: Overload:MathExtended.MathExtendent.AlgebraicSum
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.AlgebraicSum
+  nameWithType: MathExtendent.AlgebraicSum
+- uid: MathExtended.MathExtendent.Cosec(System.Double)
+  name: Cosec(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Cosec_System_Double_
+  commentId: M:MathExtended.MathExtendent.Cosec(System.Double)
+  fullName: MathExtended.MathExtendent.Cosec(System.Double)
+  nameWithType: MathExtendent.Cosec(Double)
+- uid: MathExtended.MathExtendent.Cosec*
+  name: Cosec
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Cosec_
+  commentId: Overload:MathExtended.MathExtendent.Cosec
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Cosec
+  nameWithType: MathExtendent.Cosec
+- uid: MathExtended.MathExtendent.Csch(System.Double)
+  name: Csch(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Csch_System_Double_
+  commentId: M:MathExtended.MathExtendent.Csch(System.Double)
+  fullName: MathExtended.MathExtendent.Csch(System.Double)
+  nameWithType: MathExtendent.Csch(Double)
+- uid: MathExtended.MathExtendent.Csch*
+  name: Csch
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Csch_
+  commentId: Overload:MathExtended.MathExtendent.Csch
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Csch
+  nameWithType: MathExtendent.Csch
+- uid: MathExtended.MathExtendent.Ctgh(System.Double)
+  name: Ctgh(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Ctgh_System_Double_
+  commentId: M:MathExtended.MathExtendent.Ctgh(System.Double)
+  fullName: MathExtended.MathExtendent.Ctgh(System.Double)
+  nameWithType: MathExtendent.Ctgh(Double)
+- uid: MathExtended.MathExtendent.Ctgh*
+  name: Ctgh
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Ctgh_
+  commentId: Overload:MathExtended.MathExtendent.Ctgh
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Ctgh
+  nameWithType: MathExtendent.Ctgh
+- uid: MathExtended.MathExtendent.Sch(System.Double)
+  name: Sch(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Sch_System_Double_
+  commentId: M:MathExtended.MathExtendent.Sch(System.Double)
+  fullName: MathExtended.MathExtendent.Sch(System.Double)
+  nameWithType: MathExtendent.Sch(Double)
+- uid: MathExtended.MathExtendent.Sch*
+  name: Sch
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Sch_
+  commentId: Overload:MathExtended.MathExtendent.Sch
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Sch
+  nameWithType: MathExtendent.Sch
+- uid: MathExtended.MathExtendent.Sec(System.Double)
+  name: Sec(Double)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Sec_System_Double_
+  commentId: M:MathExtended.MathExtendent.Sec(System.Double)
+  fullName: MathExtended.MathExtendent.Sec(System.Double)
+  nameWithType: MathExtendent.Sec(Double)
+- uid: MathExtended.MathExtendent.Sec*
+  name: Sec
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_Sec_
+  commentId: Overload:MathExtended.MathExtendent.Sec
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.Sec
+  nameWithType: MathExtendent.Sec
+- uid: MathExtended.MathExtendent.TabulateFunction(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double})
+  name: TabulateFunction(Double, Double, Double, Func<Double, Double>)
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_TabulateFunction_System_Double_System_Double_System_Double_System_Func_System_Double_System_Double__
+  commentId: M:MathExtended.MathExtendent.TabulateFunction(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double})
+  name.vb: TabulateFunction(Double, Double, Double, Func(Of Double, Double))
+  fullName: MathExtended.MathExtendent.TabulateFunction(System.Double, System.Double, System.Double, System.Func<System.Double, System.Double>)
+  fullName.vb: MathExtended.MathExtendent.TabulateFunction(System.Double, System.Double, System.Double, System.Func(Of System.Double, System.Double))
+  nameWithType: MathExtendent.TabulateFunction(Double, Double, Double, Func<Double, Double>)
+  nameWithType.vb: MathExtendent.TabulateFunction(Double, Double, Double, Func(Of Double, Double))
+- uid: MathExtended.MathExtendent.TabulateFunction(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double},System.Double[]@,System.Double[]@)
+  name: TabulateFunction(Double, Double, Double, Func<Double, Double>, out Double[], out Double[])
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_TabulateFunction_System_Double_System_Double_System_Double_System_Func_System_Double_System_Double__System_Double____System_Double____
+  commentId: M:MathExtended.MathExtendent.TabulateFunction(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double},System.Double[]@,System.Double[]@)
+  name.vb: TabulateFunction(Double, Double, Double, Func(Of Double, Double), ByRef Double(), ByRef Double())
+  fullName: MathExtended.MathExtendent.TabulateFunction(System.Double, System.Double, System.Double, System.Func<System.Double, System.Double>, out System.Double[], out System.Double[])
+  fullName.vb: MathExtended.MathExtendent.TabulateFunction(System.Double, System.Double, System.Double, System.Func(Of System.Double, System.Double), ByRef System.Double(), ByRef System.Double())
+  nameWithType: MathExtendent.TabulateFunction(Double, Double, Double, Func<Double, Double>, out Double[], out Double[])
+  nameWithType.vb: MathExtendent.TabulateFunction(Double, Double, Double, Func(Of Double, Double), ByRef Double(), ByRef Double())
+- uid: MathExtended.MathExtendent.TabulateFunction*
+  name: TabulateFunction
+  href: api/MathExtended.MathExtendent.html#MathExtended_MathExtendent_TabulateFunction_
+  commentId: Overload:MathExtended.MathExtendent.TabulateFunction
+  isSpec: "True"
+  fullName: MathExtended.MathExtendent.TabulateFunction
+  nameWithType: MathExtendent.TabulateFunction
+- uid: MathExtended.Matrices
+  name: MathExtended.Matrices
+  href: api/MathExtended.Matrices.html
+  commentId: N:MathExtended.Matrices
+  fullName: MathExtended.Matrices
+  nameWithType: MathExtended.Matrices
+- uid: MathExtended.Matrices.BaseMatrix`1
+  name: BaseMatrix<T>
+  href: api/MathExtended.Matrices.BaseMatrix-1.html
+  commentId: T:MathExtended.Matrices.BaseMatrix`1
+  name.vb: BaseMatrix(Of T)
+  fullName: MathExtended.Matrices.BaseMatrix<T>
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T)
+  nameWithType: BaseMatrix<T>
+  nameWithType.vb: BaseMatrix(Of T)
+- uid: MathExtended.Matrices.BaseMatrix`1.#ctor(System.Int32,System.Int32)
+  name: BaseMatrix(Int32, Int32)
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1__ctor_System_Int32_System_Int32_
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.#ctor(System.Int32,System.Int32)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.BaseMatrix(System.Int32, System.Int32)
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).BaseMatrix(System.Int32, System.Int32)
+  nameWithType: BaseMatrix<T>.BaseMatrix(Int32, Int32)
+  nameWithType.vb: BaseMatrix(Of T).BaseMatrix(Int32, Int32)
+- uid: MathExtended.Matrices.BaseMatrix`1.#ctor*
+  name: BaseMatrix
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1__ctor_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.BaseMatrix
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).BaseMatrix
+  nameWithType: BaseMatrix<T>.BaseMatrix
+  nameWithType.vb: BaseMatrix(Of T).BaseMatrix
+- uid: MathExtended.Matrices.BaseMatrix`1._mainDiagonal
+  name: _mainDiagonal
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1__mainDiagonal
+  commentId: F:MathExtended.Matrices.BaseMatrix`1._mainDiagonal
+  fullName: MathExtended.Matrices.BaseMatrix<T>._mainDiagonal
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T)._mainDiagonal
+  nameWithType: BaseMatrix<T>._mainDiagonal
+  nameWithType.vb: BaseMatrix(Of T)._mainDiagonal
+- uid: MathExtended.Matrices.BaseMatrix`1.ColumnsCount
+  name: ColumnsCount
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_ColumnsCount
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.ColumnsCount
+  fullName: MathExtended.Matrices.BaseMatrix<T>.ColumnsCount
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).ColumnsCount
+  nameWithType: BaseMatrix<T>.ColumnsCount
+  nameWithType.vb: BaseMatrix(Of T).ColumnsCount
+- uid: MathExtended.Matrices.BaseMatrix`1.ColumnsCount*
+  name: ColumnsCount
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_ColumnsCount_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.ColumnsCount
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.ColumnsCount
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).ColumnsCount
+  nameWithType: BaseMatrix<T>.ColumnsCount
+  nameWithType.vb: BaseMatrix(Of T).ColumnsCount
+- uid: MathExtended.Matrices.BaseMatrix`1.Current
+  name: Current
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Current
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.Current
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Current
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Current
+  nameWithType: BaseMatrix<T>.Current
+  nameWithType.vb: BaseMatrix(Of T).Current
+- uid: MathExtended.Matrices.BaseMatrix`1.Current*
+  name: Current
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Current_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.Current
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Current
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Current
+  nameWithType: BaseMatrix<T>.Current
+  nameWithType.vb: BaseMatrix(Of T).Current
+- uid: MathExtended.Matrices.BaseMatrix`1.Dispose
+  name: Dispose()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Dispose
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.Dispose
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Dispose()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Dispose()
+  nameWithType: BaseMatrix<T>.Dispose()
+  nameWithType.vb: BaseMatrix(Of T).Dispose()
+- uid: MathExtended.Matrices.BaseMatrix`1.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Dispose_System_Boolean_
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.Dispose(System.Boolean)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Dispose(System.Boolean)
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Dispose(System.Boolean)
+  nameWithType: BaseMatrix<T>.Dispose(Boolean)
+  nameWithType.vb: BaseMatrix(Of T).Dispose(Boolean)
+- uid: MathExtended.Matrices.BaseMatrix`1.Dispose*
+  name: Dispose
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Dispose_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.Dispose
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Dispose
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Dispose
+  nameWithType: BaseMatrix<T>.Dispose
+  nameWithType.vb: BaseMatrix(Of T).Dispose
+- uid: MathExtended.Matrices.BaseMatrix`1.FindDiagonal
+  name: FindDiagonal()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_FindDiagonal
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.FindDiagonal
+  fullName: MathExtended.Matrices.BaseMatrix<T>.FindDiagonal()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).FindDiagonal()
+  nameWithType: BaseMatrix<T>.FindDiagonal()
+  nameWithType.vb: BaseMatrix(Of T).FindDiagonal()
+- uid: MathExtended.Matrices.BaseMatrix`1.FindDiagonal*
+  name: FindDiagonal
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_FindDiagonal_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.FindDiagonal
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.FindDiagonal
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).FindDiagonal
+  nameWithType: BaseMatrix<T>.FindDiagonal
+  nameWithType.vb: BaseMatrix(Of T).FindDiagonal
+- uid: MathExtended.Matrices.BaseMatrix`1.GetColumn(System.Int32)
+  name: GetColumn(Int32)
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetColumn_System_Int32_
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.GetColumn(System.Int32)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetColumn(System.Int32)
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetColumn(System.Int32)
+  nameWithType: BaseMatrix<T>.GetColumn(Int32)
+  nameWithType.vb: BaseMatrix(Of T).GetColumn(Int32)
+- uid: MathExtended.Matrices.BaseMatrix`1.GetColumn*
+  name: GetColumn
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetColumn_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.GetColumn
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetColumn
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetColumn
+  nameWithType: BaseMatrix<T>.GetColumn
+  nameWithType.vb: BaseMatrix(Of T).GetColumn
+- uid: MathExtended.Matrices.BaseMatrix`1.GetColumns
+  name: GetColumns()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetColumns
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.GetColumns
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetColumns()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetColumns()
+  nameWithType: BaseMatrix<T>.GetColumns()
+  nameWithType.vb: BaseMatrix(Of T).GetColumns()
+- uid: MathExtended.Matrices.BaseMatrix`1.GetColumns*
+  name: GetColumns
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetColumns_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.GetColumns
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetColumns
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetColumns
+  nameWithType: BaseMatrix<T>.GetColumns
+  nameWithType.vb: BaseMatrix(Of T).GetColumns
+- uid: MathExtended.Matrices.BaseMatrix`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetEnumerator
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.GetEnumerator
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetEnumerator()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetEnumerator()
+  nameWithType: BaseMatrix<T>.GetEnumerator()
+  nameWithType.vb: BaseMatrix(Of T).GetEnumerator()
+- uid: MathExtended.Matrices.BaseMatrix`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetEnumerator_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.GetEnumerator
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetEnumerator
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetEnumerator
+  nameWithType: BaseMatrix<T>.GetEnumerator
+  nameWithType.vb: BaseMatrix(Of T).GetEnumerator
+- uid: MathExtended.Matrices.BaseMatrix`1.GetRow(System.Int32)
+  name: GetRow(Int32)
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetRow_System_Int32_
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.GetRow(System.Int32)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetRow(System.Int32)
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetRow(System.Int32)
+  nameWithType: BaseMatrix<T>.GetRow(Int32)
+  nameWithType.vb: BaseMatrix(Of T).GetRow(Int32)
+- uid: MathExtended.Matrices.BaseMatrix`1.GetRow*
+  name: GetRow
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetRow_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.GetRow
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetRow
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetRow
+  nameWithType: BaseMatrix<T>.GetRow
+  nameWithType.vb: BaseMatrix(Of T).GetRow
+- uid: MathExtended.Matrices.BaseMatrix`1.GetRows
+  name: GetRows()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetRows
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.GetRows
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetRows()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetRows()
+  nameWithType: BaseMatrix<T>.GetRows()
+  nameWithType.vb: BaseMatrix(Of T).GetRows()
+- uid: MathExtended.Matrices.BaseMatrix`1.GetRows*
+  name: GetRows
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_GetRows_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.GetRows
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.GetRows
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).GetRows
+  nameWithType: BaseMatrix<T>.GetRows
+  nameWithType.vb: BaseMatrix(Of T).GetRows
+- uid: MathExtended.Matrices.BaseMatrix`1.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector)
+  name: Item[VectorSelector]
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Item_MathExtended_Matrices_Structures_CellsCollections_VectorSelector_
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector)
+  name.vb: Item(VectorSelector)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Item[MathExtended.Matrices.Structures.CellsCollections.VectorSelector]
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector)
+  nameWithType: BaseMatrix<T>.Item[VectorSelector]
+  nameWithType.vb: BaseMatrix(Of T).Item(VectorSelector)
+- uid: MathExtended.Matrices.BaseMatrix`1.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector,System.Int32)
+  name: Item[VectorSelector, Int32]
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Item_MathExtended_Matrices_Structures_CellsCollections_VectorSelector_System_Int32_
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector,System.Int32)
+  name.vb: Item(VectorSelector, Int32)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Item[MathExtended.Matrices.Structures.CellsCollections.VectorSelector, System.Int32]
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Item(MathExtended.Matrices.Structures.CellsCollections.VectorSelector, System.Int32)
+  nameWithType: BaseMatrix<T>.Item[VectorSelector, Int32]
+  nameWithType.vb: BaseMatrix(Of T).Item(VectorSelector, Int32)
+- uid: MathExtended.Matrices.BaseMatrix`1.Item(System.Int32,System.Int32)
+  name: Item[Int32, Int32]
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Item_System_Int32_System_Int32_
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.Item(System.Int32,System.Int32)
+  name.vb: Item(Int32, Int32)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Item[System.Int32, System.Int32]
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Item(System.Int32, System.Int32)
+  nameWithType: BaseMatrix<T>.Item[Int32, Int32]
+  nameWithType.vb: BaseMatrix(Of T).Item(Int32, Int32)
+- uid: MathExtended.Matrices.BaseMatrix`1.Item*
+  name: Item
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Item_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.Item
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Item
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Item
+  nameWithType: BaseMatrix<T>.Item
+  nameWithType.vb: BaseMatrix(Of T).Item
+- uid: MathExtended.Matrices.BaseMatrix`1.MainDiagonal
+  name: MainDiagonal
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_MainDiagonal
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.MainDiagonal
+  fullName: MathExtended.Matrices.BaseMatrix<T>.MainDiagonal
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).MainDiagonal
+  nameWithType: BaseMatrix<T>.MainDiagonal
+  nameWithType.vb: BaseMatrix(Of T).MainDiagonal
+- uid: MathExtended.Matrices.BaseMatrix`1.MainDiagonal*
+  name: MainDiagonal
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_MainDiagonal_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.MainDiagonal
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.MainDiagonal
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).MainDiagonal
+  nameWithType: BaseMatrix<T>.MainDiagonal
+  nameWithType.vb: BaseMatrix(Of T).MainDiagonal
+- uid: MathExtended.Matrices.BaseMatrix`1.matrix
+  name: matrix
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_matrix
+  commentId: F:MathExtended.Matrices.BaseMatrix`1.matrix
+  fullName: MathExtended.Matrices.BaseMatrix<T>.matrix
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).matrix
+  nameWithType: BaseMatrix<T>.matrix
+  nameWithType.vb: BaseMatrix(Of T).matrix
+- uid: MathExtended.Matrices.BaseMatrix`1.MoveNext
+  name: MoveNext()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_MoveNext
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.MoveNext
+  fullName: MathExtended.Matrices.BaseMatrix<T>.MoveNext()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).MoveNext()
+  nameWithType: BaseMatrix<T>.MoveNext()
+  nameWithType.vb: BaseMatrix(Of T).MoveNext()
+- uid: MathExtended.Matrices.BaseMatrix`1.MoveNext*
+  name: MoveNext
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_MoveNext_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.MoveNext
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.MoveNext
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).MoveNext
+  nameWithType: BaseMatrix<T>.MoveNext
+  nameWithType.vb: BaseMatrix(Of T).MoveNext
+- uid: MathExtended.Matrices.BaseMatrix`1.Reset
+  name: Reset()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Reset
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.Reset
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Reset()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Reset()
+  nameWithType: BaseMatrix<T>.Reset()
+  nameWithType.vb: BaseMatrix(Of T).Reset()
+- uid: MathExtended.Matrices.BaseMatrix`1.Reset*
+  name: Reset
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_Reset_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.Reset
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.Reset
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).Reset
+  nameWithType: BaseMatrix<T>.Reset
+  nameWithType.vb: BaseMatrix(Of T).Reset
+- uid: MathExtended.Matrices.BaseMatrix`1.RowsCount
+  name: RowsCount
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_RowsCount
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.RowsCount
+  fullName: MathExtended.Matrices.BaseMatrix<T>.RowsCount
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).RowsCount
+  nameWithType: BaseMatrix<T>.RowsCount
+  nameWithType.vb: BaseMatrix(Of T).RowsCount
+- uid: MathExtended.Matrices.BaseMatrix`1.RowsCount*
+  name: RowsCount
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_RowsCount_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.RowsCount
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.RowsCount
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).RowsCount
+  nameWithType: BaseMatrix<T>.RowsCount
+  nameWithType.vb: BaseMatrix(Of T).RowsCount
+- uid: MathExtended.Matrices.BaseMatrix`1.SetColumn(System.Int32,MathExtended.Matrices.Structures.Columns.Column{`0})
+  name: SetColumn(Int32, Column<T>)
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetColumn_System_Int32_MathExtended_Matrices_Structures_Columns_Column__0__
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.SetColumn(System.Int32,MathExtended.Matrices.Structures.Columns.Column{`0})
+  name.vb: SetColumn(Int32, Column(Of T))
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetColumn(System.Int32, MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetColumn(System.Int32, MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: BaseMatrix<T>.SetColumn(Int32, Column<T>)
+  nameWithType.vb: BaseMatrix(Of T).SetColumn(Int32, Column(Of T))
+- uid: MathExtended.Matrices.BaseMatrix`1.SetColumn*
+  name: SetColumn
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetColumn_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.SetColumn
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetColumn
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetColumn
+  nameWithType: BaseMatrix<T>.SetColumn
+  nameWithType.vb: BaseMatrix(Of T).SetColumn
+- uid: MathExtended.Matrices.BaseMatrix`1.SetColumns(MathExtended.Matrices.Structures.Columns.Column{`0}[])
+  name: SetColumns(Column<T>[])
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetColumns_MathExtended_Matrices_Structures_Columns_Column__0____
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.SetColumns(MathExtended.Matrices.Structures.Columns.Column{`0}[])
+  name.vb: SetColumns(Column(Of T)())
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetColumns(MathExtended.Matrices.Structures.Columns.Column<T>[])
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetColumns(MathExtended.Matrices.Structures.Columns.Column(Of T)())
+  nameWithType: BaseMatrix<T>.SetColumns(Column<T>[])
+  nameWithType.vb: BaseMatrix(Of T).SetColumns(Column(Of T)())
+- uid: MathExtended.Matrices.BaseMatrix`1.SetColumns*
+  name: SetColumns
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetColumns_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.SetColumns
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetColumns
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetColumns
+  nameWithType: BaseMatrix<T>.SetColumns
+  nameWithType.vb: BaseMatrix(Of T).SetColumns
+- uid: MathExtended.Matrices.BaseMatrix`1.SetRow(MathExtended.Matrices.Structures.Rows.Row{`0},System.Int32)
+  name: SetRow(Row<T>, Int32)
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetRow_MathExtended_Matrices_Structures_Rows_Row__0__System_Int32_
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.SetRow(MathExtended.Matrices.Structures.Rows.Row{`0},System.Int32)
+  name.vb: SetRow(Row(Of T), Int32)
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetRow(MathExtended.Matrices.Structures.Rows.Row<T>, System.Int32)
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetRow(MathExtended.Matrices.Structures.Rows.Row(Of T), System.Int32)
+  nameWithType: BaseMatrix<T>.SetRow(Row<T>, Int32)
+  nameWithType.vb: BaseMatrix(Of T).SetRow(Row(Of T), Int32)
+- uid: MathExtended.Matrices.BaseMatrix`1.SetRow*
+  name: SetRow
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetRow_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.SetRow
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetRow
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetRow
+  nameWithType: BaseMatrix<T>.SetRow
+  nameWithType.vb: BaseMatrix(Of T).SetRow
+- uid: MathExtended.Matrices.BaseMatrix`1.SetRows(MathExtended.Matrices.Structures.Rows.Row{`0}[])
+  name: SetRows(Row<T>[])
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetRows_MathExtended_Matrices_Structures_Rows_Row__0____
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.SetRows(MathExtended.Matrices.Structures.Rows.Row{`0}[])
+  name.vb: SetRows(Row(Of T)())
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetRows(MathExtended.Matrices.Structures.Rows.Row<T>[])
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetRows(MathExtended.Matrices.Structures.Rows.Row(Of T)())
+  nameWithType: BaseMatrix<T>.SetRows(Row<T>[])
+  nameWithType.vb: BaseMatrix(Of T).SetRows(Row(Of T)())
+- uid: MathExtended.Matrices.BaseMatrix`1.SetRows*
+  name: SetRows
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_SetRows_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.SetRows
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.SetRows
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).SetRows
+  nameWithType: BaseMatrix<T>.SetRows
+  nameWithType.vb: BaseMatrix(Of T).SetRows
+- uid: MathExtended.Matrices.BaseMatrix`1.System#Collections#IEnumerator#Current
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_System_Collections_IEnumerator_Current
+  commentId: P:MathExtended.Matrices.BaseMatrix`1.System#Collections#IEnumerator#Current
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrices.BaseMatrix<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).System.Collections.IEnumerator.Current
+  nameWithType: BaseMatrix<T>.IEnumerator.Current
+  nameWithType.vb: BaseMatrix(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrices.BaseMatrix`1.System#Collections#IEnumerator#Current*
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_System_Collections_IEnumerator_Current_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.System#Collections#IEnumerator#Current
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrices.BaseMatrix<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).System.Collections.IEnumerator.Current
+  nameWithType: BaseMatrix<T>.IEnumerator.Current
+  nameWithType.vb: BaseMatrix(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrices.BaseMatrix`1.ToArray
+  name: ToArray()
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_ToArray
+  commentId: M:MathExtended.Matrices.BaseMatrix`1.ToArray
+  fullName: MathExtended.Matrices.BaseMatrix<T>.ToArray()
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).ToArray()
+  nameWithType: BaseMatrix<T>.ToArray()
+  nameWithType.vb: BaseMatrix(Of T).ToArray()
+- uid: MathExtended.Matrices.BaseMatrix`1.ToArray*
+  name: ToArray
+  href: api/MathExtended.Matrices.BaseMatrix-1.html#MathExtended_Matrices_BaseMatrix_1_ToArray_
+  commentId: Overload:MathExtended.Matrices.BaseMatrix`1.ToArray
+  isSpec: "True"
+  fullName: MathExtended.Matrices.BaseMatrix<T>.ToArray
+  fullName.vb: MathExtended.Matrices.BaseMatrix(Of T).ToArray
+  nameWithType: BaseMatrix<T>.ToArray
+  nameWithType.vb: BaseMatrix(Of T).ToArray
+- uid: MathExtended.Matrices.Matrix`1
+  name: Matrix<T>
+  href: api/MathExtended.Matrices.Matrix-1.html
+  commentId: T:MathExtended.Matrices.Matrix`1
+  name.vb: Matrix(Of T)
+  fullName: MathExtended.Matrices.Matrix<T>
+  fullName.vb: MathExtended.Matrices.Matrix(Of T)
+  nameWithType: Matrix<T>
+  nameWithType.vb: Matrix(Of T)
+- uid: MathExtended.Matrices.Matrix`1.#ctor(`0[0:,0:])
+  name: Matrix(T[,])
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1__ctor__0_0__0___
+  commentId: M:MathExtended.Matrices.Matrix`1.#ctor(`0[0:,0:])
+  name.vb: Matrix(T(,))
+  fullName: MathExtended.Matrices.Matrix<T>.Matrix(T[,])
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Matrix(T(,))
+  nameWithType: Matrix<T>.Matrix(T[,])
+  nameWithType.vb: Matrix(Of T).Matrix(T(,))
+- uid: MathExtended.Matrices.Matrix`1.#ctor(System.Int32,System.Int32)
+  name: Matrix(Int32, Int32)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1__ctor_System_Int32_System_Int32_
+  commentId: M:MathExtended.Matrices.Matrix`1.#ctor(System.Int32,System.Int32)
+  fullName: MathExtended.Matrices.Matrix<T>.Matrix(System.Int32, System.Int32)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Matrix(System.Int32, System.Int32)
+  nameWithType: Matrix<T>.Matrix(Int32, Int32)
+  nameWithType.vb: Matrix(Of T).Matrix(Int32, Int32)
+- uid: MathExtended.Matrices.Matrix`1.#ctor*
+  name: Matrix
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Matrix
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Matrix
+  nameWithType: Matrix<T>.Matrix
+  nameWithType.vb: Matrix(Of T).Matrix
+- uid: MathExtended.Matrices.Matrix`1.CalculateDeterminant
+  name: CalculateDeterminant()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_CalculateDeterminant
+  commentId: M:MathExtended.Matrices.Matrix`1.CalculateDeterminant
+  fullName: MathExtended.Matrices.Matrix<T>.CalculateDeterminant()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).CalculateDeterminant()
+  nameWithType: Matrix<T>.CalculateDeterminant()
+  nameWithType.vb: Matrix(Of T).CalculateDeterminant()
+- uid: MathExtended.Matrices.Matrix`1.CalculateDeterminant*
+  name: CalculateDeterminant
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_CalculateDeterminant_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.CalculateDeterminant
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.CalculateDeterminant
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).CalculateDeterminant
+  nameWithType: Matrix<T>.CalculateDeterminant
+  nameWithType.vb: Matrix(Of T).CalculateDeterminant
+- uid: MathExtended.Matrices.Matrix`1.CalculateDeterminantAsync
+  name: CalculateDeterminantAsync()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_CalculateDeterminantAsync
+  commentId: M:MathExtended.Matrices.Matrix`1.CalculateDeterminantAsync
+  fullName: MathExtended.Matrices.Matrix<T>.CalculateDeterminantAsync()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).CalculateDeterminantAsync()
+  nameWithType: Matrix<T>.CalculateDeterminantAsync()
+  nameWithType.vb: Matrix(Of T).CalculateDeterminantAsync()
+- uid: MathExtended.Matrices.Matrix`1.CalculateDeterminantAsync*
+  name: CalculateDeterminantAsync
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_CalculateDeterminantAsync_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.CalculateDeterminantAsync
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.CalculateDeterminantAsync
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).CalculateDeterminantAsync
+  nameWithType: Matrix<T>.CalculateDeterminantAsync
+  nameWithType.vb: Matrix(Of T).CalculateDeterminantAsync
+- uid: MathExtended.Matrices.Matrix`1.FillInOrder
+  name: FillInOrder()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FillInOrder
+  commentId: M:MathExtended.Matrices.Matrix`1.FillInOrder
+  fullName: MathExtended.Matrices.Matrix<T>.FillInOrder()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FillInOrder()
+  nameWithType: Matrix<T>.FillInOrder()
+  nameWithType.vb: Matrix(Of T).FillInOrder()
+- uid: MathExtended.Matrices.Matrix`1.FillInOrder*
+  name: FillInOrder
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FillInOrder_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.FillInOrder
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.FillInOrder
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FillInOrder
+  nameWithType: Matrix<T>.FillInOrder
+  nameWithType.vb: Matrix(Of T).FillInOrder
+- uid: MathExtended.Matrices.Matrix`1.FillRandom
+  name: FillRandom()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FillRandom
+  commentId: M:MathExtended.Matrices.Matrix`1.FillRandom
+  fullName: MathExtended.Matrices.Matrix<T>.FillRandom()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FillRandom()
+  nameWithType: Matrix<T>.FillRandom()
+  nameWithType.vb: Matrix(Of T).FillRandom()
+- uid: MathExtended.Matrices.Matrix`1.FillRandom(`0,`0)
+  name: FillRandom(T, T)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FillRandom__0__0_
+  commentId: M:MathExtended.Matrices.Matrix`1.FillRandom(`0,`0)
+  fullName: MathExtended.Matrices.Matrix<T>.FillRandom(T, T)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FillRandom(T, T)
+  nameWithType: Matrix<T>.FillRandom(T, T)
+  nameWithType.vb: Matrix(Of T).FillRandom(T, T)
+- uid: MathExtended.Matrices.Matrix`1.FillRandom*
+  name: FillRandom
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FillRandom_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.FillRandom
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.FillRandom
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FillRandom
+  nameWithType: Matrix<T>.FillRandom
+  nameWithType.vb: Matrix(Of T).FillRandom
+- uid: MathExtended.Matrices.Matrix`1.FindRank
+  name: FindRank()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FindRank
+  commentId: M:MathExtended.Matrices.Matrix`1.FindRank
+  fullName: MathExtended.Matrices.Matrix<T>.FindRank()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FindRank()
+  nameWithType: Matrix<T>.FindRank()
+  nameWithType.vb: Matrix(Of T).FindRank()
+- uid: MathExtended.Matrices.Matrix`1.FindRank*
+  name: FindRank
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_FindRank_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.FindRank
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.FindRank
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).FindRank
+  nameWithType: Matrix<T>.FindRank
+  nameWithType.vb: Matrix(Of T).FindRank
+- uid: MathExtended.Matrices.Matrix`1.ForEach(System.Action{`0})
+  name: ForEach(Action<T>)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_ForEach_System_Action__0__
+  commentId: M:MathExtended.Matrices.Matrix`1.ForEach(System.Action{`0})
+  name.vb: ForEach(Action(Of T))
+  fullName: MathExtended.Matrices.Matrix<T>.ForEach(System.Action<T>)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).ForEach(System.Action(Of T))
+  nameWithType: Matrix<T>.ForEach(Action<T>)
+  nameWithType.vb: Matrix(Of T).ForEach(Action(Of T))
+- uid: MathExtended.Matrices.Matrix`1.ForEach*
+  name: ForEach
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_ForEach_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.ForEach
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.ForEach
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).ForEach
+  nameWithType: Matrix<T>.ForEach
+  nameWithType.vb: Matrix(Of T).ForEach
+- uid: MathExtended.Matrices.Matrix`1.IsSquareMatrix
+  name: IsSquareMatrix
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_IsSquareMatrix
+  commentId: P:MathExtended.Matrices.Matrix`1.IsSquareMatrix
+  fullName: MathExtended.Matrices.Matrix<T>.IsSquareMatrix
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).IsSquareMatrix
+  nameWithType: Matrix<T>.IsSquareMatrix
+  nameWithType.vb: Matrix(Of T).IsSquareMatrix
+- uid: MathExtended.Matrices.Matrix`1.IsSquareMatrix*
+  name: IsSquareMatrix
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_IsSquareMatrix_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.IsSquareMatrix
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.IsSquareMatrix
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).IsSquareMatrix
+  nameWithType: Matrix<T>.IsSquareMatrix
+  nameWithType.vb: Matrix(Of T).IsSquareMatrix
+- uid: MathExtended.Matrices.Matrix`1.op_Addition(MathExtended.Matrices.Matrix{`0},MathExtended.Matrices.Matrix{`0})
+  name: Addition(Matrix<T>, Matrix<T>)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Addition_MathExtended_Matrices_Matrix__0__MathExtended_Matrices_Matrix__0__
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Addition(MathExtended.Matrices.Matrix{`0},MathExtended.Matrices.Matrix{`0})
+  name.vb: Addition(Matrix(Of T), Matrix(Of T))
+  fullName: MathExtended.Matrices.Matrix<T>.Addition(MathExtended.Matrices.Matrix<T>, MathExtended.Matrices.Matrix<T>)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Addition(MathExtended.Matrices.Matrix(Of T), MathExtended.Matrices.Matrix(Of T))
+  nameWithType: Matrix<T>.Addition(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Addition(Matrix(Of T), Matrix(Of T))
+- uid: MathExtended.Matrices.Matrix`1.op_Addition*
+  name: Addition
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Addition_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.op_Addition
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Addition
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Addition
+  nameWithType: Matrix<T>.Addition
+  nameWithType.vb: Matrix(Of T).Addition
+- uid: MathExtended.Matrices.Matrix`1.op_Explicit(`0[0:,0:])~MathExtended.Matrices.Matrix{`0}
+  name: Explicit(T[,] to Matrix<T>)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Explicit__0_0__0____MathExtended_Matrices_Matrix__0_
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Explicit(`0[0:,0:])~MathExtended.Matrices.Matrix{`0}
+  name.vb: Narrowing(T(,) to Matrix(Of T))
+  fullName: MathExtended.Matrices.Matrix<T>.Explicit(T[,] to MathExtended.Matrices.Matrix<T>)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Narrowing(T(,) to MathExtended.Matrices.Matrix(Of T))
+  nameWithType: Matrix<T>.Explicit(T[,] to Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Narrowing(T(,) to Matrix(Of T))
+- uid: MathExtended.Matrices.Matrix`1.op_Explicit(MathExtended.Matrices.Matrix{`0})~`0[0:,0:]
+  name: Explicit(Matrix<T> to T[,])
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Explicit_MathExtended_Matrices_Matrix__0____0_0__0__
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Explicit(MathExtended.Matrices.Matrix{`0})~`0[0:,0:]
+  name.vb: Narrowing(Matrix(Of T) to T(,))
+  fullName: MathExtended.Matrices.Matrix<T>.Explicit(MathExtended.Matrices.Matrix<T> to T[,])
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Narrowing(MathExtended.Matrices.Matrix(Of T) to T(,))
+  nameWithType: Matrix<T>.Explicit(Matrix<T> to T[,])
+  nameWithType.vb: Matrix(Of T).Narrowing(Matrix(Of T) to T(,))
+- uid: MathExtended.Matrices.Matrix`1.op_Explicit*
+  name: Explicit
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Explicit_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: MathExtended.Matrices.Matrix<T>.Explicit
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Narrowing
+  nameWithType: Matrix<T>.Explicit
+  nameWithType.vb: Matrix(Of T).Narrowing
+- uid: MathExtended.Matrices.Matrix`1.op_Multiply(`0,MathExtended.Matrices.Matrix{`0})
+  name: Multiply(T, Matrix<T>)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Multiply__0_MathExtended_Matrices_Matrix__0__
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Multiply(`0,MathExtended.Matrices.Matrix{`0})
+  name.vb: Multiply(T, Matrix(Of T))
+  fullName: MathExtended.Matrices.Matrix<T>.Multiply(T, MathExtended.Matrices.Matrix<T>)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Multiply(T, MathExtended.Matrices.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(T, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(T, Matrix(Of T))
+- uid: MathExtended.Matrices.Matrix`1.op_Multiply(MathExtended.Matrices.Matrix{`0},`0)
+  name: Multiply(Matrix<T>, T)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Multiply_MathExtended_Matrices_Matrix__0___0_
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Multiply(MathExtended.Matrices.Matrix{`0},`0)
+  name.vb: Multiply(Matrix(Of T), T)
+  fullName: MathExtended.Matrices.Matrix<T>.Multiply(MathExtended.Matrices.Matrix<T>, T)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Multiply(MathExtended.Matrices.Matrix(Of T), T)
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, T)
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), T)
+- uid: MathExtended.Matrices.Matrix`1.op_Multiply(MathExtended.Matrices.Matrix{`0},MathExtended.Matrices.Matrix{`0})
+  name: Multiply(Matrix<T>, Matrix<T>)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Multiply_MathExtended_Matrices_Matrix__0__MathExtended_Matrices_Matrix__0__
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Multiply(MathExtended.Matrices.Matrix{`0},MathExtended.Matrices.Matrix{`0})
+  name.vb: Multiply(Matrix(Of T), Matrix(Of T))
+  fullName: MathExtended.Matrices.Matrix<T>.Multiply(MathExtended.Matrices.Matrix<T>, MathExtended.Matrices.Matrix<T>)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Multiply(MathExtended.Matrices.Matrix(Of T), MathExtended.Matrices.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), Matrix(Of T))
+- uid: MathExtended.Matrices.Matrix`1.op_Multiply*
+  name: Multiply
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Multiply_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.op_Multiply
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Multiply
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Multiply
+  nameWithType: Matrix<T>.Multiply
+  nameWithType.vb: Matrix(Of T).Multiply
+- uid: MathExtended.Matrices.Matrix`1.op_Subtraction(MathExtended.Matrices.Matrix{`0},MathExtended.Matrices.Matrix{`0})
+  name: Subtraction(Matrix<T>, Matrix<T>)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Subtraction_MathExtended_Matrices_Matrix__0__MathExtended_Matrices_Matrix__0__
+  commentId: M:MathExtended.Matrices.Matrix`1.op_Subtraction(MathExtended.Matrices.Matrix{`0},MathExtended.Matrices.Matrix{`0})
+  name.vb: Subtraction(Matrix(Of T), Matrix(Of T))
+  fullName: MathExtended.Matrices.Matrix<T>.Subtraction(MathExtended.Matrices.Matrix<T>, MathExtended.Matrices.Matrix<T>)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Subtraction(MathExtended.Matrices.Matrix(Of T), MathExtended.Matrices.Matrix(Of T))
+  nameWithType: Matrix<T>.Subtraction(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Subtraction(Matrix(Of T), Matrix(Of T))
+- uid: MathExtended.Matrices.Matrix`1.op_Subtraction*
+  name: Subtraction
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_op_Subtraction_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.op_Subtraction
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Subtraction
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Subtraction
+  nameWithType: Matrix<T>.Subtraction
+  nameWithType.vb: Matrix(Of T).Subtraction
+- uid: MathExtended.Matrices.Matrix`1.Pow(MathExtended.Matrices.Matrix{`0},System.Int32)
+  name: Pow(Matrix<T>, Int32)
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_Pow_MathExtended_Matrices_Matrix__0__System_Int32_
+  commentId: M:MathExtended.Matrices.Matrix`1.Pow(MathExtended.Matrices.Matrix{`0},System.Int32)
+  name.vb: Pow(Matrix(Of T), Int32)
+  fullName: MathExtended.Matrices.Matrix<T>.Pow(MathExtended.Matrices.Matrix<T>, System.Int32)
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Pow(MathExtended.Matrices.Matrix(Of T), System.Int32)
+  nameWithType: Matrix<T>.Pow(Matrix<T>, Int32)
+  nameWithType.vb: Matrix(Of T).Pow(Matrix(Of T), Int32)
+- uid: MathExtended.Matrices.Matrix`1.Pow*
+  name: Pow
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_Pow_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.Pow
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Pow
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Pow
+  nameWithType: Matrix<T>.Pow
+  nameWithType.vb: Matrix(Of T).Pow
+- uid: MathExtended.Matrices.Matrix`1.Size
+  name: Size
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_Size
+  commentId: P:MathExtended.Matrices.Matrix`1.Size
+  fullName: MathExtended.Matrices.Matrix<T>.Size
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Size
+  nameWithType: Matrix<T>.Size
+  nameWithType.vb: Matrix(Of T).Size
+- uid: MathExtended.Matrices.Matrix`1.Size*
+  name: Size
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_Size_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.Size
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Size
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Size
+  nameWithType: Matrix<T>.Size
+  nameWithType.vb: Matrix(Of T).Size
+- uid: MathExtended.Matrices.Matrix`1.ToSteppedView
+  name: ToSteppedView()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_ToSteppedView
+  commentId: M:MathExtended.Matrices.Matrix`1.ToSteppedView
+  fullName: MathExtended.Matrices.Matrix<T>.ToSteppedView()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).ToSteppedView()
+  nameWithType: Matrix<T>.ToSteppedView()
+  nameWithType.vb: Matrix(Of T).ToSteppedView()
+- uid: MathExtended.Matrices.Matrix`1.ToSteppedView*
+  name: ToSteppedView
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_ToSteppedView_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.ToSteppedView
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.ToSteppedView
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).ToSteppedView
+  nameWithType: Matrix<T>.ToSteppedView
+  nameWithType.vb: Matrix(Of T).ToSteppedView
+- uid: MathExtended.Matrices.Matrix`1.ToString
+  name: ToString()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_ToString
+  commentId: M:MathExtended.Matrices.Matrix`1.ToString
+  fullName: MathExtended.Matrices.Matrix<T>.ToString()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).ToString()
+  nameWithType: Matrix<T>.ToString()
+  nameWithType.vb: Matrix(Of T).ToString()
+- uid: MathExtended.Matrices.Matrix`1.ToString*
+  name: ToString
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_ToString_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.ToString
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.ToString
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).ToString
+  nameWithType: Matrix<T>.ToString
+  nameWithType.vb: Matrix(Of T).ToString
+- uid: MathExtended.Matrices.Matrix`1.Transponate
+  name: Transponate()
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_Transponate
+  commentId: M:MathExtended.Matrices.Matrix`1.Transponate
+  fullName: MathExtended.Matrices.Matrix<T>.Transponate()
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Transponate()
+  nameWithType: Matrix<T>.Transponate()
+  nameWithType.vb: Matrix(Of T).Transponate()
+- uid: MathExtended.Matrices.Matrix`1.Transponate*
+  name: Transponate
+  href: api/MathExtended.Matrices.Matrix-1.html#MathExtended_Matrices_Matrix_1_Transponate_
+  commentId: Overload:MathExtended.Matrices.Matrix`1.Transponate
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Matrix<T>.Transponate
+  fullName.vb: MathExtended.Matrices.Matrix(Of T).Transponate
+  nameWithType: Matrix<T>.Transponate
+  nameWithType.vb: Matrix(Of T).Transponate
+- uid: MathExtended.Matrices.Structures.CellsCollection
+  name: MathExtended.Matrices.Structures.CellsCollection
+  href: api/MathExtended.Matrices.Structures.CellsCollection.html
+  commentId: N:MathExtended.Matrices.Structures.CellsCollection
+  fullName: MathExtended.Matrices.Structures.CellsCollection
+  nameWithType: MathExtended.Matrices.Structures.CellsCollection
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1
+  name: BaseCellsCollection<T>
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html
+  commentId: T:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1
+  name.vb: BaseCellsCollection(Of T)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T)
+  nameWithType: BaseCellsCollection<T>
+  nameWithType.vb: BaseCellsCollection(Of T)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.#ctor(`0[])
+  name: BaseCellsCollection(T[])
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.#ctor(`0[])
+  name.vb: BaseCellsCollection(T())
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.BaseCellsCollection(T[])
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).BaseCellsCollection(T())
+  nameWithType: BaseCellsCollection<T>.BaseCellsCollection(T[])
+  nameWithType.vb: BaseCellsCollection(Of T).BaseCellsCollection(T())
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.#ctor(System.Int32)
+  name: BaseCellsCollection(Int32)
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1__ctor_System_Int32_
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.#ctor(System.Int32)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.BaseCellsCollection(System.Int32)
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).BaseCellsCollection(System.Int32)
+  nameWithType: BaseCellsCollection<T>.BaseCellsCollection(Int32)
+  nameWithType.vb: BaseCellsCollection(Of T).BaseCellsCollection(Int32)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.#ctor*
+  name: BaseCellsCollection
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.BaseCellsCollection
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).BaseCellsCollection
+  nameWithType: BaseCellsCollection<T>.BaseCellsCollection
+  nameWithType.vb: BaseCellsCollection(Of T).BaseCellsCollection
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Cells
+  name: Cells
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Cells
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Cells
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Cells
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Cells
+  nameWithType: BaseCellsCollection<T>.Cells
+  nameWithType.vb: BaseCellsCollection(Of T).Cells
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Cells*
+  name: Cells
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Cells_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Cells
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Cells
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Cells
+  nameWithType: BaseCellsCollection<T>.Cells
+  nameWithType.vb: BaseCellsCollection(Of T).Cells
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Current
+  name: Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Current
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Current
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Current
+  nameWithType: BaseCellsCollection<T>.Current
+  nameWithType.vb: BaseCellsCollection(Of T).Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Current*
+  name: Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Current_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Current
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Current
+  nameWithType: BaseCellsCollection<T>.Current
+  nameWithType.vb: BaseCellsCollection(Of T).Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Dispose
+  name: Dispose()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Dispose
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Dispose
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Dispose()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Dispose()
+  nameWithType: BaseCellsCollection<T>.Dispose()
+  nameWithType.vb: BaseCellsCollection(Of T).Dispose()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Dispose_System_Boolean_
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Dispose(System.Boolean)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Dispose(System.Boolean)
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Dispose(System.Boolean)
+  nameWithType: BaseCellsCollection<T>.Dispose(Boolean)
+  nameWithType.vb: BaseCellsCollection(Of T).Dispose(Boolean)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Dispose*
+  name: Dispose
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Dispose_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Dispose
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Dispose
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Dispose
+  nameWithType: BaseCellsCollection<T>.Dispose
+  nameWithType.vb: BaseCellsCollection(Of T).Dispose
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.ForEach(System.Action{`0})
+  name: ForEach(Action<T>)
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_ForEach_System_Action__0__
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.ForEach(System.Action{`0})
+  name.vb: ForEach(Action(Of T))
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.ForEach(System.Action<T>)
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).ForEach(System.Action(Of T))
+  nameWithType: BaseCellsCollection<T>.ForEach(Action<T>)
+  nameWithType.vb: BaseCellsCollection(Of T).ForEach(Action(Of T))
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.ForEach*
+  name: ForEach
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_ForEach_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.ForEach
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.ForEach
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).ForEach
+  nameWithType: BaseCellsCollection<T>.ForEach
+  nameWithType.vb: BaseCellsCollection(Of T).ForEach
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_GetEnumerator
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.GetEnumerator
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.GetEnumerator()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).GetEnumerator()
+  nameWithType: BaseCellsCollection<T>.GetEnumerator()
+  nameWithType.vb: BaseCellsCollection(Of T).GetEnumerator()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_GetEnumerator_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.GetEnumerator
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.GetEnumerator
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).GetEnumerator
+  nameWithType: BaseCellsCollection<T>.GetEnumerator
+  nameWithType.vb: BaseCellsCollection(Of T).GetEnumerator
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.IsZero
+  name: IsZero()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_IsZero
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.IsZero
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.IsZero()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).IsZero()
+  nameWithType: BaseCellsCollection<T>.IsZero()
+  nameWithType.vb: BaseCellsCollection(Of T).IsZero()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.IsZero*
+  name: IsZero
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_IsZero_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.IsZero
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.IsZero
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).IsZero
+  nameWithType: BaseCellsCollection<T>.IsZero
+  nameWithType.vb: BaseCellsCollection(Of T).IsZero
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Item(System.Int32)
+  name: Item[Int32]
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Item_System_Int32_
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Item[System.Int32]
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Item(System.Int32)
+  nameWithType: BaseCellsCollection<T>.Item[Int32]
+  nameWithType.vb: BaseCellsCollection(Of T).Item(Int32)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Item*
+  name: Item
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Item_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Item
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Item
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Item
+  nameWithType: BaseCellsCollection<T>.Item
+  nameWithType.vb: BaseCellsCollection(Of T).Item
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Max
+  name: Max()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Max
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Max
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Max()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Max()
+  nameWithType: BaseCellsCollection<T>.Max()
+  nameWithType.vb: BaseCellsCollection(Of T).Max()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Max*
+  name: Max
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Max_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Max
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Max
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Max
+  nameWithType: BaseCellsCollection<T>.Max
+  nameWithType.vb: BaseCellsCollection(Of T).Max
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Min
+  name: Min()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Min
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Min
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Min()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Min()
+  nameWithType: BaseCellsCollection<T>.Min()
+  nameWithType.vb: BaseCellsCollection(Of T).Min()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Min*
+  name: Min
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Min_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Min
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Min
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Min
+  nameWithType: BaseCellsCollection<T>.Min
+  nameWithType.vb: BaseCellsCollection(Of T).Min
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.MoveNext
+  name: MoveNext()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_MoveNext
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.MoveNext
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.MoveNext()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).MoveNext()
+  nameWithType: BaseCellsCollection<T>.MoveNext()
+  nameWithType.vb: BaseCellsCollection(Of T).MoveNext()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.MoveNext*
+  name: MoveNext
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_MoveNext_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.MoveNext
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.MoveNext
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).MoveNext
+  nameWithType: BaseCellsCollection<T>.MoveNext
+  nameWithType.vb: BaseCellsCollection(Of T).MoveNext
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Reset
+  name: Reset()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Reset
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Reset
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Reset()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Reset()
+  nameWithType: BaseCellsCollection<T>.Reset()
+  nameWithType.vb: BaseCellsCollection(Of T).Reset()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Reset*
+  name: Reset
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Reset_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Reset
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Reset
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Reset
+  nameWithType: BaseCellsCollection<T>.Reset
+  nameWithType.vb: BaseCellsCollection(Of T).Reset
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Size
+  name: Size
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Size
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Size
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Size
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Size
+  nameWithType: BaseCellsCollection<T>.Size
+  nameWithType.vb: BaseCellsCollection(Of T).Size
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Size*
+  name: Size
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Size_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.Size
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.Size
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).Size
+  nameWithType: BaseCellsCollection<T>.Size
+  nameWithType.vb: BaseCellsCollection(Of T).Size
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.System#Collections#IEnumerator#Current
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_System_Collections_IEnumerator_Current
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.System#Collections#IEnumerator#Current
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).System.Collections.IEnumerator.Current
+  nameWithType: BaseCellsCollection<T>.IEnumerator.Current
+  nameWithType.vb: BaseCellsCollection(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.System#Collections#IEnumerator#Current*
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_System_Collections_IEnumerator_Current_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection`1.System#Collections#IEnumerator#Current
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection(Of T).System.Collections.IEnumerator.Current
+  nameWithType: BaseCellsCollection<T>.IEnumerator.Current
+  nameWithType.vb: BaseCellsCollection(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1
+  name: BaseReadOnlyCellsCollection<T>
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html
+  commentId: T:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1
+  name.vb: BaseReadOnlyCellsCollection(Of T)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T)
+  nameWithType: BaseReadOnlyCellsCollection<T>
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.#ctor(`0[])
+  name: BaseReadOnlyCellsCollection(T[])
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.#ctor(`0[])
+  name.vb: BaseReadOnlyCellsCollection(T())
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.BaseReadOnlyCellsCollection(T[])
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).BaseReadOnlyCellsCollection(T())
+  nameWithType: BaseReadOnlyCellsCollection<T>.BaseReadOnlyCellsCollection(T[])
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).BaseReadOnlyCellsCollection(T())
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.#ctor(System.Int32)
+  name: BaseReadOnlyCellsCollection(Int32)
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1__ctor_System_Int32_
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.#ctor(System.Int32)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.BaseReadOnlyCellsCollection(System.Int32)
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).BaseReadOnlyCellsCollection(System.Int32)
+  nameWithType: BaseReadOnlyCellsCollection<T>.BaseReadOnlyCellsCollection(Int32)
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).BaseReadOnlyCellsCollection(Int32)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.#ctor*
+  name: BaseReadOnlyCellsCollection
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.BaseReadOnlyCellsCollection
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).BaseReadOnlyCellsCollection
+  nameWithType: BaseReadOnlyCellsCollection<T>.BaseReadOnlyCellsCollection
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).BaseReadOnlyCellsCollection
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Current
+  name: Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Current
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Current
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Current
+  nameWithType: BaseReadOnlyCellsCollection<T>.Current
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Current*
+  name: Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Current_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Current
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Current
+  nameWithType: BaseReadOnlyCellsCollection<T>.Current
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Dispose
+  name: Dispose()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Dispose
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Dispose
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Dispose()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Dispose()
+  nameWithType: BaseReadOnlyCellsCollection<T>.Dispose()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Dispose()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Dispose_System_Boolean_
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Dispose(System.Boolean)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Dispose(System.Boolean)
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Dispose(System.Boolean)
+  nameWithType: BaseReadOnlyCellsCollection<T>.Dispose(Boolean)
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Dispose(Boolean)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Dispose*
+  name: Dispose
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Dispose_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Dispose
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Dispose
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Dispose
+  nameWithType: BaseReadOnlyCellsCollection<T>.Dispose
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Dispose
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.ForEach(System.Action{`0})
+  name: ForEach(Action<T>)
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_ForEach_System_Action__0__
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.ForEach(System.Action{`0})
+  name.vb: ForEach(Action(Of T))
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.ForEach(System.Action<T>)
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).ForEach(System.Action(Of T))
+  nameWithType: BaseReadOnlyCellsCollection<T>.ForEach(Action<T>)
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).ForEach(Action(Of T))
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.ForEach*
+  name: ForEach
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_ForEach_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.ForEach
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.ForEach
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).ForEach
+  nameWithType: BaseReadOnlyCellsCollection<T>.ForEach
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).ForEach
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_GetEnumerator
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.GetEnumerator
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.GetEnumerator()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).GetEnumerator()
+  nameWithType: BaseReadOnlyCellsCollection<T>.GetEnumerator()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).GetEnumerator()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_GetEnumerator_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.GetEnumerator
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.GetEnumerator
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).GetEnumerator
+  nameWithType: BaseReadOnlyCellsCollection<T>.GetEnumerator
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).GetEnumerator
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.IsZero
+  name: IsZero()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_IsZero
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.IsZero
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.IsZero()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).IsZero()
+  nameWithType: BaseReadOnlyCellsCollection<T>.IsZero()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).IsZero()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.IsZero*
+  name: IsZero
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_IsZero_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.IsZero
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.IsZero
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).IsZero
+  nameWithType: BaseReadOnlyCellsCollection<T>.IsZero
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).IsZero
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Item(System.Int32)
+  name: Item[Int32]
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Item_System_Int32_
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Item[System.Int32]
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Item(System.Int32)
+  nameWithType: BaseReadOnlyCellsCollection<T>.Item[Int32]
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Item(Int32)
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Item*
+  name: Item
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Item_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Item
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Item
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Item
+  nameWithType: BaseReadOnlyCellsCollection<T>.Item
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Item
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Max
+  name: Max()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Max
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Max
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Max()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Max()
+  nameWithType: BaseReadOnlyCellsCollection<T>.Max()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Max()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Max*
+  name: Max
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Max_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Max
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Max
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Max
+  nameWithType: BaseReadOnlyCellsCollection<T>.Max
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Max
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Min
+  name: Min()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Min
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Min
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Min()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Min()
+  nameWithType: BaseReadOnlyCellsCollection<T>.Min()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Min()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Min*
+  name: Min
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Min_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Min
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Min
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Min
+  nameWithType: BaseReadOnlyCellsCollection<T>.Min
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Min
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.MoveNext
+  name: MoveNext()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_MoveNext
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.MoveNext
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.MoveNext()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).MoveNext()
+  nameWithType: BaseReadOnlyCellsCollection<T>.MoveNext()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).MoveNext()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.MoveNext*
+  name: MoveNext
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_MoveNext_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.MoveNext
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.MoveNext
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).MoveNext
+  nameWithType: BaseReadOnlyCellsCollection<T>.MoveNext
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).MoveNext
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Reset
+  name: Reset()
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Reset
+  commentId: M:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Reset
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Reset()
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Reset()
+  nameWithType: BaseReadOnlyCellsCollection<T>.Reset()
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Reset()
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Reset*
+  name: Reset
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Reset_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Reset
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Reset
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Reset
+  nameWithType: BaseReadOnlyCellsCollection<T>.Reset
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Reset
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Size
+  name: Size
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Size
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Size
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Size
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Size
+  nameWithType: BaseReadOnlyCellsCollection<T>.Size
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Size
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Size*
+  name: Size
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_Size_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.Size
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.Size
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).Size
+  nameWithType: BaseReadOnlyCellsCollection<T>.Size
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).Size
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.System#Collections#IEnumerator#Current
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_System_Collections_IEnumerator_Current
+  commentId: P:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.System#Collections#IEnumerator#Current
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).System.Collections.IEnumerator.Current
+  nameWithType: BaseReadOnlyCellsCollection<T>.IEnumerator.Current
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.System#Collections#IEnumerator#Current*
+  name: IEnumerator.Current
+  href: api/MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseReadOnlyCellsCollection_1_System_Collections_IEnumerator_Current_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection`1.System#Collections#IEnumerator#Current
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection<T>.System.Collections.IEnumerator.Current
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollection.BaseReadOnlyCellsCollection(Of T).System.Collections.IEnumerator.Current
+  nameWithType: BaseReadOnlyCellsCollection<T>.IEnumerator.Current
+  nameWithType.vb: BaseReadOnlyCellsCollection(Of T).System.Collections.IEnumerator.Current
+- uid: MathExtended.Matrices.Structures.CellsCollections
+  name: MathExtended.Matrices.Structures.CellsCollections
+  href: api/MathExtended.Matrices.Structures.CellsCollections.html
+  commentId: N:MathExtended.Matrices.Structures.CellsCollections
+  fullName: MathExtended.Matrices.Structures.CellsCollections
+  nameWithType: MathExtended.Matrices.Structures.CellsCollections
+- uid: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal`1
+  name: MainDiagonal<T>
+  href: api/MathExtended.Matrices.Structures.CellsCollections.MainDiagonal-1.html
+  commentId: T:MathExtended.Matrices.Structures.CellsCollections.MainDiagonal`1
+  name.vb: MainDiagonal(Of T)
+  fullName: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal<T>
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal(Of T)
+  nameWithType: MainDiagonal<T>
+  nameWithType.vb: MainDiagonal(Of T)
+- uid: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal`1.#ctor(`0[])
+  name: MainDiagonal(T[])
+  href: api/MathExtended.Matrices.Structures.CellsCollections.MainDiagonal-1.html#MathExtended_Matrices_Structures_CellsCollections_MainDiagonal_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.CellsCollections.MainDiagonal`1.#ctor(`0[])
+  name.vb: MainDiagonal(T())
+  fullName: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal<T>.MainDiagonal(T[])
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal(Of T).MainDiagonal(T())
+  nameWithType: MainDiagonal<T>.MainDiagonal(T[])
+  nameWithType.vb: MainDiagonal(Of T).MainDiagonal(T())
+- uid: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal`1.#ctor*
+  name: MainDiagonal
+  href: api/MathExtended.Matrices.Structures.CellsCollections.MainDiagonal-1.html#MathExtended_Matrices_Structures_CellsCollections_MainDiagonal_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.CellsCollections.MainDiagonal`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal<T>.MainDiagonal
+  fullName.vb: MathExtended.Matrices.Structures.CellsCollections.MainDiagonal(Of T).MainDiagonal
+  nameWithType: MainDiagonal<T>.MainDiagonal
+  nameWithType.vb: MainDiagonal(Of T).MainDiagonal
+- uid: MathExtended.Matrices.Structures.CellsCollections.VectorSelector
+  name: VectorSelector
+  href: api/MathExtended.Matrices.Structures.CellsCollections.VectorSelector.html
+  commentId: T:MathExtended.Matrices.Structures.CellsCollections.VectorSelector
+  fullName: MathExtended.Matrices.Structures.CellsCollections.VectorSelector
+  nameWithType: VectorSelector
+- uid: MathExtended.Matrices.Structures.CellsCollections.VectorSelector.Columns
+  name: Columns
+  href: api/MathExtended.Matrices.Structures.CellsCollections.VectorSelector.html#MathExtended_Matrices_Structures_CellsCollections_VectorSelector_Columns
+  commentId: F:MathExtended.Matrices.Structures.CellsCollections.VectorSelector.Columns
+  fullName: MathExtended.Matrices.Structures.CellsCollections.VectorSelector.Columns
+  nameWithType: VectorSelector.Columns
+- uid: MathExtended.Matrices.Structures.CellsCollections.VectorSelector.Rows
+  name: Rows
+  href: api/MathExtended.Matrices.Structures.CellsCollections.VectorSelector.html#MathExtended_Matrices_Structures_CellsCollections_VectorSelector_Rows
+  commentId: F:MathExtended.Matrices.Structures.CellsCollections.VectorSelector.Rows
+  fullName: MathExtended.Matrices.Structures.CellsCollections.VectorSelector.Rows
+  nameWithType: VectorSelector.Rows
+- uid: MathExtended.Matrices.Structures.Columns
+  name: MathExtended.Matrices.Structures.Columns
+  href: api/MathExtended.Matrices.Structures.Columns.html
+  commentId: N:MathExtended.Matrices.Structures.Columns
+  fullName: MathExtended.Matrices.Structures.Columns
+  nameWithType: MathExtended.Matrices.Structures.Columns
+- uid: MathExtended.Matrices.Structures.Columns.Column`1
+  name: Column<T>
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html
+  commentId: T:MathExtended.Matrices.Structures.Columns.Column`1
+  name.vb: Column(Of T)
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T)
+  nameWithType: Column<T>
+  nameWithType.vb: Column(Of T)
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.#ctor(`0[])
+  name: Column(T[])
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.#ctor(`0[])
+  name.vb: Column(T())
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Column(T[])
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Column(T())
+  nameWithType: Column<T>.Column(T[])
+  nameWithType.vb: Column(Of T).Column(T())
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.#ctor(System.Int32)
+  name: Column(Int32)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1__ctor_System_Int32_
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.#ctor(System.Int32)
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Column(System.Int32)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Column(System.Int32)
+  nameWithType: Column<T>.Column(Int32)
+  nameWithType.vb: Column(Of T).Column(Int32)
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.#ctor*
+  name: Column
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Column
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Column
+  nameWithType: Column<T>.Column
+  nameWithType.vb: Column(Of T).Column
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Addition(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Columns.Column{`0})
+  name: Addition(Column<T>, Column<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Addition_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Columns_Column__0__
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Addition(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Columns.Column{`0})
+  name.vb: Addition(Column(Of T), Column(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Addition(MathExtended.Matrices.Structures.Columns.Column<T>, MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Addition(MathExtended.Matrices.Structures.Columns.Column(Of T), MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: Column<T>.Addition(Column<T>, Column<T>)
+  nameWithType.vb: Column(Of T).Addition(Column(Of T), Column(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Addition*
+  name: Addition
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Addition_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.op_Addition
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Addition
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Addition
+  nameWithType: Column<T>.Addition
+  nameWithType.vb: Column(Of T).Addition
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit(MathExtended.Matrices.Structures.Columns.Column{`0})~MathExtended.Matrices.Structures.Columns.ReadOnlyColumn{`0}
+  name: Explicit(Column<T> to ReadOnlyColumn<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_MathExtended_Matrices_Structures_Columns_Column__0___MathExtended_Matrices_Structures_Columns_ReadOnlyColumn__0_
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit(MathExtended.Matrices.Structures.Columns.Column{`0})~MathExtended.Matrices.Structures.Columns.ReadOnlyColumn{`0}
+  name.vb: Narrowing(Column(Of T) to ReadOnlyColumn(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Explicit(MathExtended.Matrices.Structures.Columns.Column<T> to MathExtended.Matrices.Structures.Columns.ReadOnlyColumn<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Narrowing(MathExtended.Matrices.Structures.Columns.Column(Of T) to MathExtended.Matrices.Structures.Columns.ReadOnlyColumn(Of T))
+  nameWithType: Column<T>.Explicit(Column<T> to ReadOnlyColumn<T>)
+  nameWithType.vb: Column(Of T).Narrowing(Column(Of T) to ReadOnlyColumn(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit(MathExtended.Matrices.Structures.Columns.ReadOnlyColumn{`0})~MathExtended.Matrices.Structures.Columns.Column{`0}
+  name: Explicit(ReadOnlyColumn<T> to Column<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_MathExtended_Matrices_Structures_Columns_ReadOnlyColumn__0___MathExtended_Matrices_Structures_Columns_Column__0_
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit(MathExtended.Matrices.Structures.Columns.ReadOnlyColumn{`0})~MathExtended.Matrices.Structures.Columns.Column{`0}
+  name.vb: Narrowing(ReadOnlyColumn(Of T) to Column(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Explicit(MathExtended.Matrices.Structures.Columns.ReadOnlyColumn<T> to MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Narrowing(MathExtended.Matrices.Structures.Columns.ReadOnlyColumn(Of T) to MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: Column<T>.Explicit(ReadOnlyColumn<T> to Column<T>)
+  nameWithType.vb: Column(Of T).Narrowing(ReadOnlyColumn(Of T) to Column(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit*
+  name: Explicit
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Explicit
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Narrowing
+  nameWithType: Column<T>.Explicit
+  nameWithType.vb: Column(Of T).Narrowing
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Implicit(`0[])~MathExtended.Matrices.Structures.Columns.Column{`0}
+  name: Implicit(T[] to Column<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Implicit__0____MathExtended_Matrices_Structures_Columns_Column__0_
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Implicit(`0[])~MathExtended.Matrices.Structures.Columns.Column{`0}
+  name.vb: Widening(T() to Column(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Implicit(T[] to MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Widening(T() to MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: Column<T>.Implicit(T[] to Column<T>)
+  nameWithType.vb: Column(Of T).Widening(T() to Column(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Implicit*
+  name: Implicit
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Implicit_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Implicit
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Widening
+  nameWithType: Column<T>.Implicit
+  nameWithType.vb: Column(Of T).Widening
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(`0,MathExtended.Matrices.Structures.Columns.Column{`0})
+  name: Multiply(T, Column<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply__0_MathExtended_Matrices_Structures_Columns_Column__0__
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(`0,MathExtended.Matrices.Structures.Columns.Column{`0})
+  name.vb: Multiply(T, Column(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Multiply(T, MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Multiply(T, MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: Column<T>.Multiply(T, Column<T>)
+  nameWithType.vb: Column(Of T).Multiply(T, Column(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(MathExtended.Matrices.Structures.Columns.Column{`0},`0)
+  name: Multiply(Column<T>, T)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_MathExtended_Matrices_Structures_Columns_Column__0___0_
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(MathExtended.Matrices.Structures.Columns.Column{`0},`0)
+  name.vb: Multiply(Column(Of T), T)
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Multiply(MathExtended.Matrices.Structures.Columns.Column<T>, T)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Multiply(MathExtended.Matrices.Structures.Columns.Column(Of T), T)
+  nameWithType: Column<T>.Multiply(Column<T>, T)
+  nameWithType.vb: Column(Of T).Multiply(Column(Of T), T)
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Rows.Row{`0})
+  name: Multiply(Column<T>, Row<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Rows_Row__0__
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Rows.Row{`0})
+  name.vb: Multiply(Column(Of T), Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Multiply(MathExtended.Matrices.Structures.Columns.Column<T>, MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Multiply(MathExtended.Matrices.Structures.Columns.Column(Of T), MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: Column<T>.Multiply(Column<T>, Row<T>)
+  nameWithType.vb: Column(Of T).Multiply(Column(Of T), Row(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply*
+  name: Multiply
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Multiply
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Multiply
+  nameWithType: Column<T>.Multiply
+  nameWithType.vb: Column(Of T).Multiply
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Subtraction(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Columns.Column{`0})
+  name: Subtraction(Column<T>, Column<T>)
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Subtraction_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Columns_Column__0__
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.op_Subtraction(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Columns.Column{`0})
+  name.vb: Subtraction(Column(Of T), Column(Of T))
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Subtraction(MathExtended.Matrices.Structures.Columns.Column<T>, MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Subtraction(MathExtended.Matrices.Structures.Columns.Column(Of T), MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: Column<T>.Subtraction(Column<T>, Column<T>)
+  nameWithType.vb: Column(Of T).Subtraction(Column(Of T), Column(Of T))
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.op_Subtraction*
+  name: Subtraction
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_op_Subtraction_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.op_Subtraction
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Subtraction
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Subtraction
+  nameWithType: Column<T>.Subtraction
+  nameWithType.vb: Column(Of T).Subtraction
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.Transponate
+  name: Transponate()
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_Transponate
+  commentId: M:MathExtended.Matrices.Structures.Columns.Column`1.Transponate
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Transponate()
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Transponate()
+  nameWithType: Column<T>.Transponate()
+  nameWithType.vb: Column(Of T).Transponate()
+- uid: MathExtended.Matrices.Structures.Columns.Column`1.Transponate*
+  name: Transponate
+  href: api/MathExtended.Matrices.Structures.Columns.Column-1.html#MathExtended_Matrices_Structures_Columns_Column_1_Transponate_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.Column`1.Transponate
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Columns.Column<T>.Transponate
+  fullName.vb: MathExtended.Matrices.Structures.Columns.Column(Of T).Transponate
+  nameWithType: Column<T>.Transponate
+  nameWithType.vb: Column(Of T).Transponate
+- uid: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1
+  name: ReadOnlyColumn<T>
+  href: api/MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html
+  commentId: T:MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1
+  name.vb: ReadOnlyColumn(Of T)
+  fullName: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn<T>
+  fullName.vb: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn(Of T)
+  nameWithType: ReadOnlyColumn<T>
+  nameWithType.vb: ReadOnlyColumn(Of T)
+- uid: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1.#ctor(`0[])
+  name: ReadOnlyColumn(T[])
+  href: api/MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html#MathExtended_Matrices_Structures_Columns_ReadOnlyColumn_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1.#ctor(`0[])
+  name.vb: ReadOnlyColumn(T())
+  fullName: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn<T>.ReadOnlyColumn(T[])
+  fullName.vb: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn(Of T).ReadOnlyColumn(T())
+  nameWithType: ReadOnlyColumn<T>.ReadOnlyColumn(T[])
+  nameWithType.vb: ReadOnlyColumn(Of T).ReadOnlyColumn(T())
+- uid: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1.#ctor(System.Int32)
+  name: ReadOnlyColumn(Int32)
+  href: api/MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html#MathExtended_Matrices_Structures_Columns_ReadOnlyColumn_1__ctor_System_Int32_
+  commentId: M:MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1.#ctor(System.Int32)
+  fullName: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn<T>.ReadOnlyColumn(System.Int32)
+  fullName.vb: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn(Of T).ReadOnlyColumn(System.Int32)
+  nameWithType: ReadOnlyColumn<T>.ReadOnlyColumn(Int32)
+  nameWithType.vb: ReadOnlyColumn(Of T).ReadOnlyColumn(Int32)
+- uid: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1.#ctor*
+  name: ReadOnlyColumn
+  href: api/MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html#MathExtended_Matrices_Structures_Columns_ReadOnlyColumn_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.Columns.ReadOnlyColumn`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn<T>.ReadOnlyColumn
+  fullName.vb: MathExtended.Matrices.Structures.Columns.ReadOnlyColumn(Of T).ReadOnlyColumn
+  nameWithType: ReadOnlyColumn<T>.ReadOnlyColumn
+  nameWithType.vb: ReadOnlyColumn(Of T).ReadOnlyColumn
+- uid: MathExtended.Matrices.Structures.Rows
+  name: MathExtended.Matrices.Structures.Rows
+  href: api/MathExtended.Matrices.Structures.Rows.html
+  commentId: N:MathExtended.Matrices.Structures.Rows
+  fullName: MathExtended.Matrices.Structures.Rows
+  nameWithType: MathExtended.Matrices.Structures.Rows
+- uid: MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1
+  name: ReadOnlyRow<T>
+  href: api/MathExtended.Matrices.Structures.Rows.ReadOnlyRow-1.html
+  commentId: T:MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1
+  name.vb: ReadOnlyRow(Of T)
+  fullName: MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>
+  fullName.vb: MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T)
+  nameWithType: ReadOnlyRow<T>
+  nameWithType.vb: ReadOnlyRow(Of T)
+- uid: MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.#ctor(`0[])
+  name: ReadOnlyRow(T[])
+  href: api/MathExtended.Matrices.Structures.Rows.ReadOnlyRow-1.html#MathExtended_Matrices_Structures_Rows_ReadOnlyRow_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.#ctor(`0[])
+  name.vb: ReadOnlyRow(T())
+  fullName: MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>.ReadOnlyRow(T[])
+  fullName.vb: MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T).ReadOnlyRow(T())
+  nameWithType: ReadOnlyRow<T>.ReadOnlyRow(T[])
+  nameWithType.vb: ReadOnlyRow(Of T).ReadOnlyRow(T())
+- uid: MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.#ctor(System.Int32)
+  name: ReadOnlyRow(Int32)
+  href: api/MathExtended.Matrices.Structures.Rows.ReadOnlyRow-1.html#MathExtended_Matrices_Structures_Rows_ReadOnlyRow_1__ctor_System_Int32_
+  commentId: M:MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.#ctor(System.Int32)
+  fullName: MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>.ReadOnlyRow(System.Int32)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T).ReadOnlyRow(System.Int32)
+  nameWithType: ReadOnlyRow<T>.ReadOnlyRow(Int32)
+  nameWithType.vb: ReadOnlyRow(Of T).ReadOnlyRow(Int32)
+- uid: MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.#ctor*
+  name: ReadOnlyRow
+  href: api/MathExtended.Matrices.Structures.Rows.ReadOnlyRow-1.html#MathExtended_Matrices_Structures_Rows_ReadOnlyRow_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>.ReadOnlyRow
+  fullName.vb: MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T).ReadOnlyRow
+  nameWithType: ReadOnlyRow<T>.ReadOnlyRow
+  nameWithType.vb: ReadOnlyRow(Of T).ReadOnlyRow
+- uid: MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.op_Explicit(MathExtended.Matrices.Structures.Rows.ReadOnlyRow{`0})~MathExtended.Matrices.Structures.Rows.Row{`0}
+  name: Explicit(ReadOnlyRow<T> to Row<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.ReadOnlyRow-1.html#MathExtended_Matrices_Structures_Rows_ReadOnlyRow_1_op_Explicit_MathExtended_Matrices_Structures_Rows_ReadOnlyRow__0___MathExtended_Matrices_Structures_Rows_Row__0_
+  commentId: M:MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.op_Explicit(MathExtended.Matrices.Structures.Rows.ReadOnlyRow{`0})~MathExtended.Matrices.Structures.Rows.Row{`0}
+  name.vb: Narrowing(ReadOnlyRow(Of T) to Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>.Explicit(MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T> to MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T).Narrowing(MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T) to MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: ReadOnlyRow<T>.Explicit(ReadOnlyRow<T> to Row<T>)
+  nameWithType.vb: ReadOnlyRow(Of T).Narrowing(ReadOnlyRow(Of T) to Row(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.op_Explicit*
+  name: Explicit
+  href: api/MathExtended.Matrices.Structures.Rows.ReadOnlyRow-1.html#MathExtended_Matrices_Structures_Rows_ReadOnlyRow_1_op_Explicit_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.ReadOnlyRow`1.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>.Explicit
+  fullName.vb: MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T).Narrowing
+  nameWithType: ReadOnlyRow<T>.Explicit
+  nameWithType.vb: ReadOnlyRow(Of T).Narrowing
+- uid: MathExtended.Matrices.Structures.Rows.Row`1
+  name: Row<T>
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html
+  commentId: T:MathExtended.Matrices.Structures.Rows.Row`1
+  name.vb: Row(Of T)
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T)
+  nameWithType: Row<T>
+  nameWithType.vb: Row(Of T)
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.#ctor(`0[])
+  name: Row(T[])
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1__ctor__0___
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.#ctor(`0[])
+  name.vb: Row(T())
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Row(T[])
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Row(T())
+  nameWithType: Row<T>.Row(T[])
+  nameWithType.vb: Row(Of T).Row(T())
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.#ctor(System.Int32)
+  name: Row(Int32)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1__ctor_System_Int32_
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.#ctor(System.Int32)
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Row(System.Int32)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Row(System.Int32)
+  nameWithType: Row<T>.Row(Int32)
+  nameWithType.vb: Row(Of T).Row(Int32)
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.#ctor*
+  name: Row
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1__ctor_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.#ctor
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Row
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Row
+  nameWithType: Row<T>.Row
+  nameWithType.vb: Row(Of T).Row
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Addition(MathExtended.Matrices.Structures.Rows.Row{`0},MathExtended.Matrices.Structures.Rows.Row{`0})
+  name: Addition(Row<T>, Row<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Addition_MathExtended_Matrices_Structures_Rows_Row__0__MathExtended_Matrices_Structures_Rows_Row__0__
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Addition(MathExtended.Matrices.Structures.Rows.Row{`0},MathExtended.Matrices.Structures.Rows.Row{`0})
+  name.vb: Addition(Row(Of T), Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Addition(MathExtended.Matrices.Structures.Rows.Row<T>, MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Addition(MathExtended.Matrices.Structures.Rows.Row(Of T), MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: Row<T>.Addition(Row<T>, Row<T>)
+  nameWithType.vb: Row(Of T).Addition(Row(Of T), Row(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Addition*
+  name: Addition
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Addition_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.op_Addition
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Addition
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Addition
+  nameWithType: Row<T>.Addition
+  nameWithType.vb: Row(Of T).Addition
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Explicit(MathExtended.Matrices.Structures.Rows.ReadOnlyRow{`0})~MathExtended.Matrices.Structures.Rows.Row{`0}
+  name: Explicit(ReadOnlyRow<T> to Row<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Explicit_MathExtended_Matrices_Structures_Rows_ReadOnlyRow__0___MathExtended_Matrices_Structures_Rows_Row__0_
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Explicit(MathExtended.Matrices.Structures.Rows.ReadOnlyRow{`0})~MathExtended.Matrices.Structures.Rows.Row{`0}
+  name.vb: Narrowing(ReadOnlyRow(Of T) to Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Explicit(MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T> to MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Narrowing(MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T) to MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: Row<T>.Explicit(ReadOnlyRow<T> to Row<T>)
+  nameWithType.vb: Row(Of T).Narrowing(ReadOnlyRow(Of T) to Row(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Explicit(MathExtended.Matrices.Structures.Rows.Row{`0})~MathExtended.Matrices.Structures.Rows.ReadOnlyRow{`0}
+  name: Explicit(Row<T> to ReadOnlyRow<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Explicit_MathExtended_Matrices_Structures_Rows_Row__0___MathExtended_Matrices_Structures_Rows_ReadOnlyRow__0_
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Explicit(MathExtended.Matrices.Structures.Rows.Row{`0})~MathExtended.Matrices.Structures.Rows.ReadOnlyRow{`0}
+  name.vb: Narrowing(Row(Of T) to ReadOnlyRow(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Explicit(MathExtended.Matrices.Structures.Rows.Row<T> to MathExtended.Matrices.Structures.Rows.ReadOnlyRow<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Narrowing(MathExtended.Matrices.Structures.Rows.Row(Of T) to MathExtended.Matrices.Structures.Rows.ReadOnlyRow(Of T))
+  nameWithType: Row<T>.Explicit(Row<T> to ReadOnlyRow<T>)
+  nameWithType.vb: Row(Of T).Narrowing(Row(Of T) to ReadOnlyRow(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Explicit*
+  name: Explicit
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Explicit_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Explicit
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Narrowing
+  nameWithType: Row<T>.Explicit
+  nameWithType.vb: Row(Of T).Narrowing
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Implicit(`0[])~MathExtended.Matrices.Structures.Rows.Row{`0}
+  name: Implicit(T[] to Row<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Implicit__0____MathExtended_Matrices_Structures_Rows_Row__0_
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Implicit(`0[])~MathExtended.Matrices.Structures.Rows.Row{`0}
+  name.vb: Widening(T() to Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Implicit(T[] to MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Widening(T() to MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: Row<T>.Implicit(T[] to Row<T>)
+  nameWithType.vb: Row(Of T).Widening(T() to Row(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Implicit*
+  name: Implicit
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Implicit_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Implicit
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Widening
+  nameWithType: Row<T>.Implicit
+  nameWithType.vb: Row(Of T).Widening
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Multiply(`0,MathExtended.Matrices.Structures.Rows.Row{`0})
+  name: Multiply(T, Row<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Multiply__0_MathExtended_Matrices_Structures_Rows_Row__0__
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Multiply(`0,MathExtended.Matrices.Structures.Rows.Row{`0})
+  name.vb: Multiply(T, Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Multiply(T, MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Multiply(T, MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: Row<T>.Multiply(T, Row<T>)
+  nameWithType.vb: Row(Of T).Multiply(T, Row(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Multiply(MathExtended.Matrices.Structures.Rows.Row{`0},MathExtended.Matrices.Structures.Columns.Column{`0})
+  name: Multiply(Row<T>, Column<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Multiply_MathExtended_Matrices_Structures_Rows_Row__0__MathExtended_Matrices_Structures_Columns_Column__0__
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Multiply(MathExtended.Matrices.Structures.Rows.Row{`0},MathExtended.Matrices.Structures.Columns.Column{`0})
+  name.vb: Multiply(Row(Of T), Column(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Multiply(MathExtended.Matrices.Structures.Rows.Row<T>, MathExtended.Matrices.Structures.Columns.Column<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Multiply(MathExtended.Matrices.Structures.Rows.Row(Of T), MathExtended.Matrices.Structures.Columns.Column(Of T))
+  nameWithType: Row<T>.Multiply(Row<T>, Column<T>)
+  nameWithType.vb: Row(Of T).Multiply(Row(Of T), Column(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Multiply*
+  name: Multiply
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Multiply_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.op_Multiply
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Multiply
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Multiply
+  nameWithType: Row<T>.Multiply
+  nameWithType.vb: Row(Of T).Multiply
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Subtraction(MathExtended.Matrices.Structures.Rows.Row{`0},MathExtended.Matrices.Structures.Rows.Row{`0})
+  name: Subtraction(Row<T>, Row<T>)
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Subtraction_MathExtended_Matrices_Structures_Rows_Row__0__MathExtended_Matrices_Structures_Rows_Row__0__
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.op_Subtraction(MathExtended.Matrices.Structures.Rows.Row{`0},MathExtended.Matrices.Structures.Rows.Row{`0})
+  name.vb: Subtraction(Row(Of T), Row(Of T))
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Subtraction(MathExtended.Matrices.Structures.Rows.Row<T>, MathExtended.Matrices.Structures.Rows.Row<T>)
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Subtraction(MathExtended.Matrices.Structures.Rows.Row(Of T), MathExtended.Matrices.Structures.Rows.Row(Of T))
+  nameWithType: Row<T>.Subtraction(Row<T>, Row<T>)
+  nameWithType.vb: Row(Of T).Subtraction(Row(Of T), Row(Of T))
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.op_Subtraction*
+  name: Subtraction
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_op_Subtraction_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.op_Subtraction
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Subtraction
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Subtraction
+  nameWithType: Row<T>.Subtraction
+  nameWithType.vb: Row(Of T).Subtraction
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.Transponate
+  name: Transponate()
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_Transponate
+  commentId: M:MathExtended.Matrices.Structures.Rows.Row`1.Transponate
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Transponate()
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Transponate()
+  nameWithType: Row<T>.Transponate()
+  nameWithType.vb: Row(Of T).Transponate()
+- uid: MathExtended.Matrices.Structures.Rows.Row`1.Transponate*
+  name: Transponate
+  href: api/MathExtended.Matrices.Structures.Rows.Row-1.html#MathExtended_Matrices_Structures_Rows_Row_1_Transponate_
+  commentId: Overload:MathExtended.Matrices.Structures.Rows.Row`1.Transponate
+  isSpec: "True"
+  fullName: MathExtended.Matrices.Structures.Rows.Row<T>.Transponate
+  fullName.vb: MathExtended.Matrices.Structures.Rows.Row(Of T).Transponate
+  nameWithType: Row<T>.Transponate
+  nameWithType.vb: Row(Of T).Transponate
+- uid: MathExtended.TabulateResult
+  name: TabulateResult
+  href: api/MathExtended.TabulateResult.html
+  commentId: T:MathExtended.TabulateResult
+  fullName: MathExtended.TabulateResult
+  nameWithType: TabulateResult
+- uid: MathExtended.TabulateResult.#ctor(System.Double[],System.Double[])
+  name: TabulateResult(Double[], Double[])
+  href: api/MathExtended.TabulateResult.html#MathExtended_TabulateResult__ctor_System_Double___System_Double___
+  commentId: M:MathExtended.TabulateResult.#ctor(System.Double[],System.Double[])
+  name.vb: TabulateResult(Double(), Double())
+  fullName: MathExtended.TabulateResult.TabulateResult(System.Double[], System.Double[])
+  fullName.vb: MathExtended.TabulateResult.TabulateResult(System.Double(), System.Double())
+  nameWithType: TabulateResult.TabulateResult(Double[], Double[])
+  nameWithType.vb: TabulateResult.TabulateResult(Double(), Double())
+- uid: MathExtended.TabulateResult.#ctor*
+  name: TabulateResult
+  href: api/MathExtended.TabulateResult.html#MathExtended_TabulateResult__ctor_
+  commentId: Overload:MathExtended.TabulateResult.#ctor
+  isSpec: "True"
+  fullName: MathExtended.TabulateResult.TabulateResult
+  nameWithType: TabulateResult.TabulateResult
+- uid: MathExtended.TabulateResult.X
+  name: X
+  href: api/MathExtended.TabulateResult.html#MathExtended_TabulateResult_X
+  commentId: P:MathExtended.TabulateResult.X
+  fullName: MathExtended.TabulateResult.X
+  nameWithType: TabulateResult.X
+- uid: MathExtended.TabulateResult.X*
+  name: X
+  href: api/MathExtended.TabulateResult.html#MathExtended_TabulateResult_X_
+  commentId: Overload:MathExtended.TabulateResult.X
+  isSpec: "True"
+  fullName: MathExtended.TabulateResult.X
+  nameWithType: TabulateResult.X
+- uid: MathExtended.TabulateResult.Y
+  name: Y
+  href: api/MathExtended.TabulateResult.html#MathExtended_TabulateResult_Y
+  commentId: P:MathExtended.TabulateResult.Y
+  fullName: MathExtended.TabulateResult.Y
+  nameWithType: TabulateResult.Y
+- uid: MathExtended.TabulateResult.Y*
+  name: Y
+  href: api/MathExtended.TabulateResult.html#MathExtended_TabulateResult_Y_
+  commentId: Overload:MathExtended.TabulateResult.Y
+  isSpec: "True"
+  fullName: MathExtended.TabulateResult.Y
+  nameWithType: TabulateResult.Y
