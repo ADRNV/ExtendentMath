@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="JTForks.MiscUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\JTForks.MiscUtil.1.285.0\lib\netstandard1.0\JTForks.MiscUtil.dll</HintPath>
