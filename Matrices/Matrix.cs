@@ -253,7 +253,7 @@ namespace MathExtended.Matrices
         /// <param name="matrix">Матрица</param>
         /// <param name="power">Степень</param>
         /// <returns></returns>
-        public static Matrix<T> Pow(Matrix<T> matrix, int power)
+        public Matrix<T> Pow(Matrix<T> matrix,int power)
         {
 
             if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
