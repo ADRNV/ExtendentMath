@@ -1,0 +1,764 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Column&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Column&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.58.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MathExtended.Matrices.Structures.Columns.Column`1">
+  
+  
+  <h1 id="MathExtended_Matrices_Structures_Columns_Column_1" data-uid="MathExtended.Matrices.Structures.Columns.Column`1" class="text-break">Class Column&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Описывает столбец матрицы</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html">BaseCellsCollection</a>&lt;T&gt;</div>
+    <div class="level2"><span class="xref">Column&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;T&gt;</div>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><span class="xref">System.Collections.IEnumerator</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Item_System_Int32_">BaseCellsCollection&lt;T&gt;.Item[Int32]</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Cells">BaseCellsCollection&lt;T&gt;.Cells</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Size">BaseCellsCollection&lt;T&gt;.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_ForEach_System_Action__0__">BaseCellsCollection&lt;T&gt;.ForEach(Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Max">BaseCellsCollection&lt;T&gt;.Max()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Min">BaseCellsCollection&lt;T&gt;.Min()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_IsZero">BaseCellsCollection&lt;T&gt;.IsZero()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Current">BaseCellsCollection&lt;T&gt;.Current</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_System_Collections_IEnumerator_Current">BaseCellsCollection&lt;T&gt;.IEnumerator.Current</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_GetEnumerator">BaseCellsCollection&lt;T&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_MoveNext">BaseCellsCollection&lt;T&gt;.MoveNext()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Reset">BaseCellsCollection&lt;T&gt;.Reset()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Dispose_System_Boolean_">BaseCellsCollection&lt;T&gt;.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathExtended.Matrices.Structures.CellsCollection.BaseCellsCollection-1.html#MathExtended_Matrices_Structures_CellsCollection_BaseCellsCollection_1_Dispose">BaseCellsCollection&lt;T&gt;.Dispose()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MathExtended.Matrices.Structures.Columns.html">MathExtended.Matrices.Structures.Columns</a></h6>
+  <h6><strong>Assembly</strong>: MathExtended.dll</h6>
+  <h5 id="MathExtended_Matrices_Structures_Columns_Column_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Column&lt;T&gt; : BaseCellsCollection&lt;T&gt;, IEnumerator&lt;T&gt;, IDisposable, IEnumerator where T : IComparable, IFormattable, IConvertible, IComparable&lt;T&gt;, IEquatable&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Тип содержимого строки</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1__ctor__0___.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.%23ctor(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L28">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1__ctor_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.#ctor*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1__ctor__0___" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.#ctor(`0[])">Column(T[])</h4>
+  <div class="markdown level1 summary"><p>Создает столбец на основе массива</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Column(T[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L23">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1__ctor_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.#ctor*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1__ctor_System_Int32_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.#ctor(System.Int32)">Column(Int32)</h4>
+  <div class="markdown level1 summary"><p>Создает столбец с указанными размерами</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Column(int height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_Transponate.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.Transponate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L185">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_Transponate_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.Transponate*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_Transponate" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.Transponate">Transponate()</h4>
+  <div class="markdown level1 summary"><p>Транспонирует столбец</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Row&lt;T&gt; Transponate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row&lt;T&gt;</a> Строка</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Addition_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Columns_Column__0__.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Addition(MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%2CMathExtended.Matrices.Structures.Columns.Column%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L79">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Addition_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Addition*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Addition_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Columns_Column__0__" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Addition(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Columns.Column{`0})">Addition(Column&lt;T&gt;, Column&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Складывает столбцы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Column&lt;T&gt; operator +(Column&lt;T&gt; columnA, Column&lt;T&gt; columnB)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">columnA</span></td>
+        <td><p>Первый столбец</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">columnB</span></td>
+        <td><p>Второй столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><p>Сумма двух столбцов</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_MathExtended_Matrices_Structures_Columns_Column__0___MathExtended_Matrices_Structures_Columns_ReadOnlyColumn__0_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Explicit(MathExtended.Matrices.Structures.Columns.Column%7B%600%7D)~MathExtended.Matrices.Structures.Columns.ReadOnlyColumn%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L174">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_MathExtended_Matrices_Structures_Columns_Column__0___MathExtended_Matrices_Structures_Columns_ReadOnlyColumn__0_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit(MathExtended.Matrices.Structures.Columns.Column{`0})~MathExtended.Matrices.Structures.Columns.ReadOnlyColumn{`0}">Explicit(Column&lt;T&gt; to ReadOnlyColumn&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Явно приводит <a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column&lt;T&gt;</a> к <a class="xref" href="MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html">ReadOnlyColumn&lt;T&gt;</a>
+Делая пригодным для записи</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator ReadOnlyColumn&lt;T&gt;(Column&lt;T&gt; column)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">column</span></td>
+        <td><p>Привидимый столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html">ReadOnlyColumn</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_MathExtended_Matrices_Structures_Columns_ReadOnlyColumn__0___MathExtended_Matrices_Structures_Columns_Column__0_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Explicit(MathExtended.Matrices.Structures.Columns.ReadOnlyColumn%7B%600%7D)~MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L155">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Explicit_MathExtended_Matrices_Structures_Columns_ReadOnlyColumn__0___MathExtended_Matrices_Structures_Columns_Column__0_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Explicit(MathExtended.Matrices.Structures.Columns.ReadOnlyColumn{`0})~MathExtended.Matrices.Structures.Columns.Column{`0}">Explicit(ReadOnlyColumn&lt;T&gt; to Column&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Явно приводит <a class="xref" href="MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html">ReadOnlyColumn&lt;T&gt;</a> к <a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column&lt;T&gt;</a>
+Делая пригодным для записи</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Column&lt;T&gt;(ReadOnlyColumn&lt;T&gt; readOnlyColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.ReadOnlyColumn-1.html">ReadOnlyColumn</a>&lt;T&gt;</td>
+        <td><span class="parametername">readOnlyColumn</span></td>
+        <td><p>Приводимый столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Implicit__0____MathExtended_Matrices_Structures_Columns_Column__0_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Implicit(%600%5B%5D)~MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L34">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Implicit_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Implicit*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Implicit__0____MathExtended_Matrices_Structures_Columns_Column__0_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Implicit(`0[])~MathExtended.Matrices.Structures.Columns.Column{`0}">Implicit(T[] to Column&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Не явным образом приводит масив к столбцу</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Column&lt;T&gt;(T[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>Приводимый массив</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply__0_MathExtended_Matrices_Structures_Columns_Column__0__.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Multiply(%600%2CMathExtended.Matrices.Structures.Columns.Column%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L45">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply__0_MathExtended_Matrices_Structures_Columns_Column__0__" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(`0,MathExtended.Matrices.Structures.Columns.Column{`0})">Multiply(T, Column&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Умножает число на столбец</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Column&lt;T&gt; operator *(T multiplier, Column&lt;T&gt; column)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">multiplier</span></td>
+        <td><p>Множитель</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">column</span></td>
+        <td><p>Столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><p>Умноженый столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_MathExtended_Matrices_Structures_Columns_Column__0___0_.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Multiply(MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L62">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_MathExtended_Matrices_Structures_Columns_Column__0___0_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(MathExtended.Matrices.Structures.Columns.Column{`0},`0)">Multiply(Column&lt;T&gt;, T)</h4>
+  <div class="markdown level1 summary"><p>Умножает число на столбец</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Column&lt;T&gt; operator *(Column&lt;T&gt; column, T multiplier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">column</span></td>
+        <td><p>Столбец</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">multiplier</span></td>
+        <td><p>Множитель</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><p>Умноженный столбец</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Rows_Row__0__.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Multiply(MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%2CMathExtended.Matrices.Structures.Rows.Row%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L127">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Multiply_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Rows_Row__0__" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Multiply(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Rows.Row{`0})">Multiply(Column&lt;T&gt;, Row&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Умножает столбец на строку</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(Column&lt;T&gt; column, Row&lt;T&gt; row)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">column</span></td>
+        <td><p>Столбец</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Rows.Row-1.html">Row</a>&lt;T&gt;</td>
+        <td><span class="parametername">row</span></td>
+        <td><p>Строка</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MathExtended.Matrices.Matrix-1.html">Matrix&lt;T&gt;</a> результат умножения</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1_op_Subtraction_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Columns_Column__0__.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601.op_Subtraction(MathExtended.Matrices.Structures.Columns.Column%7B%600%7D%2CMathExtended.Matrices.Structures.Columns.Column%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L103">View Source</a>
+  </span>
+  <a id="MathExtended_Matrices_Structures_Columns_Column_1_op_Subtraction_" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Subtraction*"></a>
+  <h4 id="MathExtended_Matrices_Structures_Columns_Column_1_op_Subtraction_MathExtended_Matrices_Structures_Columns_Column__0__MathExtended_Matrices_Structures_Columns_Column__0__" data-uid="MathExtended.Matrices.Structures.Columns.Column`1.op_Subtraction(MathExtended.Matrices.Structures.Columns.Column{`0},MathExtended.Matrices.Structures.Columns.Column{`0})">Subtraction(Column&lt;T&gt;, Column&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Вычетает столбцы</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Column&lt;T&gt; operator -(Column&lt;T&gt; columnA, Column&lt;T&gt; columnB)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">columnA</span></td>
+        <td><p>Первый столбец</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><span class="parametername">columnB</span></td>
+        <td><p>Второй столбец </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathExtended.Matrices.Structures.Columns.Column-1.html">Column</a>&lt;T&gt;</td>
+        <td><p>Разность двух столбцов</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerator&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerator</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Lamer0/ExtendentMath/new/Documented/apiSpec/new?filename=MathExtended_Matrices_Structures_Columns_Column_1.md&amp;value=---%0Auid%3A%20MathExtended.Matrices.Structures.Columns.Column%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Lamer0/ExtendentMath/blob/Documented/Matrices/Structures/Columns/Column.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
