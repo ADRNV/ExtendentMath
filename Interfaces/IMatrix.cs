@@ -22,7 +22,7 @@ namespace MathExtended.Interfaces
         /// Метод нахождения диагонали
         /// </summary>
         /// <returns>Массив определяющийся главной диагональю матрицы</returns>
-        T[] FindDiagonal();
+        MainDiagonal<T> FindDiagonal();
 
         /// <summary>
         /// Количество строк
@@ -34,6 +34,17 @@ namespace MathExtended.Interfaces
         /// </summary>
         int ColumnsCount { get; }
 
-        
+        /// <summary>
+        /// Индексатор для доступа к ячейка матрицы
+        /// </summary>
+        /// <param name="row">Номер строки</param>
+        /// <param name="column">Номер столбца</param>
+        /// <returns>Содержимое ячейки по индексу</returns>
+        T this[int row, int column]
+        {
+            get;
+            set;
+        }
+
     }
 }

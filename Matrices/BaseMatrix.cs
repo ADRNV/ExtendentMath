@@ -101,7 +101,7 @@ namespace MathExtended.Matrices
         {
             get
             {
-                _mainDiagonal = new MainDiagonal<T>(FindDiagonal());
+                _mainDiagonal = FindDiagonal();
                 return _mainDiagonal;
             }
 
@@ -318,7 +318,7 @@ namespace MathExtended.Matrices
         /// Находит главную диагональ матрицы
         /// </summary>
         /// <returns>Массив состоящий из чисел составляющих главную диагональ</returns>
-        public T[] FindDiagonal()
+        public MainDiagonal<T> FindDiagonal(this IMatrix<T> matrix)
         {
             List<T> mainDiagonal = new List<T>();
 
@@ -326,12 +326,12 @@ namespace MathExtended.Matrices
             {
                 if (row == column)
                 {
-                    mainDiagonal.Add(this[row, column]);
+                    mainDiagonal.Add(matrix[row, column]);
                 }
 
             });
 
-            return mainDiagonal.ToArray();
+            return new MainDiagonal<T>(mainDiagonal.ToArray());
         }
 
         /// <summary>
