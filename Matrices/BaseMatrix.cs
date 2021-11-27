@@ -157,6 +157,7 @@ namespace MathExtended.Matrices
 
         }
 
+      
         /// <summary>
         /// Возвращает строку матрицы соответсвующую индексу
         /// </summary>
@@ -177,7 +178,7 @@ namespace MathExtended.Matrices
             }
             else
             {
-                throw new IndexOutOfRangeException($"Index {rowIndex} out of the bounds matrix");
+                throw new IndexOutOfRangeException();
             }
 
             
@@ -206,10 +207,17 @@ namespace MathExtended.Matrices
         /// <param name="index">Индекс строки</param>
         public void SetRow(Row<T> row, int index)
         {
-           for (int column = 0; column < this.ColumnsCount; column++)
-           {
-               this[index, column] = row[column];
-           }
+            if (index <= row.Size)
+            {
+                for (int column = 0; column < this.ColumnsCount; column++)
+                {
+                    this[index, column] = row[column];
+                }
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
             
         }
 
@@ -281,6 +289,8 @@ namespace MathExtended.Matrices
                 }
             }
         }
+        
+        
         /// <summary>
         /// Задает столбцы матрицы
         /// </summary>
@@ -318,9 +328,9 @@ namespace MathExtended.Matrices
         /// Преобразует матрицу в двумерный массив
         /// </summary>
         /// <returns>Двумерный массив</returns>
-        public virtual T[,] ToArray()
+        public static explicit operator T[,](BaseMatrix<T> matrix)
         {
-            return matrix;
+            return matrix.matrix;
         }
 
         #region IEnumerable

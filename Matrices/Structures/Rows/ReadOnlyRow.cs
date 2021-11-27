@@ -13,6 +13,7 @@ namespace MathExtended.Matrices.Structures.Rows
     /// <typeparam name="T">Числовой тип</typeparam>
     public class ReadOnlyRow<T> : BaseReadOnlyCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
+
         /// <summary>
         /// Создает строку только для чтения определенного размера
         /// </summary>
@@ -28,7 +29,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="array">Массив</param>
         public ReadOnlyRow(T[] array) : base(array)
         {
-
+            
         }
 
         /// <summary>
