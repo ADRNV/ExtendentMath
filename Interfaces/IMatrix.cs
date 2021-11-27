@@ -11,23 +11,23 @@ namespace MathExtended.Interfaces
     /// Определяет основную структуру матрицы
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public interface IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public interface IMatrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         /// <summary>
         ///  Главная диагональ
         /// </summary>
-        MainDiagonal<T> MainDiagonal { get;}
+        MainDiagonal<T> MainDiagonal { get; }
 
         /// <summary>
         /// Метод нахождения диагонали
         /// </summary>
         /// <returns>Массив определяющийся главной диагональю матрицы</returns>
-        MainDiagonal<T> FindDiagonal();
+       
 
         /// <summary>
         /// Количество строк
         /// </summary>
-        int RowsCount { get;}
+        int RowsCount { get; }
 
         /// <summary>
         /// Количество столбцов
@@ -35,16 +35,17 @@ namespace MathExtended.Interfaces
         int ColumnsCount { get; }
 
         /// <summary>
-        /// Индексатор для доступа к ячейка матрицы
+        /// Индесатор матрицы, получает ячейку в соответсвии с ее адресом в матрице
         /// </summary>
-        /// <param name="row">Номер строки</param>
-        /// <param name="column">Номер столбца</param>
-        /// <returns>Содержимое ячейки по индексу</returns>
+        /// <param name="row">Индекс строки</param>
+        /// <param name="column">Индекс столбца</param>
+        /// <returns><typeparamref name="T"/> число по индексу</returns>
         T this[int row, int column]
         {
             get;
             set;
         }
+
 
     }
 }

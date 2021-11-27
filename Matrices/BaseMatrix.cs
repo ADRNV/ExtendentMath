@@ -8,6 +8,8 @@ using MathExtended.Matrices.Structures.Columns;
 using MathExtended.Matrices.Structures.Rows;
 using MathExtended.Matrices.Structures.CellsCollections;
 using MathExtended.Matrices.Structures.CellsCollection;
+using System.Linq;
+using MathExtended.Matrices.Extensions;
 
 namespace MathExtended.Matrices
 {
@@ -101,7 +103,7 @@ namespace MathExtended.Matrices
         {
             get
             {
-                _mainDiagonal = FindDiagonal();
+                _mainDiagonal = this.FindDiagonal();
                 return _mainDiagonal;
             }
 
@@ -204,7 +206,6 @@ namespace MathExtended.Matrices
         /// <param name="index">Индекс строки</param>
         public void SetRow(Row<T> row, int index)
         {
-  
            for (int column = 0; column < this.ColumnsCount; column++)
            {
                this[index, column] = row[column];
@@ -311,27 +312,6 @@ namespace MathExtended.Matrices
                 });
             }
 
-        }
-
-
-        /// <summary>
-        /// Находит главную диагональ матрицы
-        /// </summary>
-        /// <returns>Массив состоящий из чисел составляющих главную диагональ</returns>
-        public MainDiagonal<T> FindDiagonal(this IMatrix<T> matrix)
-        {
-            List<T> mainDiagonal = new List<T>();
-
-            ForEach((row, column) =>
-            {
-                if (row == column)
-                {
-                    mainDiagonal.Add(matrix[row, column]);
-                }
-
-            });
-
-            return new MainDiagonal<T>(mainDiagonal.ToArray());
         }
 
         /// <summary>
