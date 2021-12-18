@@ -60,7 +60,7 @@ namespace MathExtended.Matrices
             _rows = GetRows();
 
             _columns = GetColumns();
-            
+
         }
 
         /// <summary>
