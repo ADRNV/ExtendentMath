@@ -210,10 +210,8 @@
     <Compile Include="Exceptions\RowsOfDifferentSizesException.cs" />
     <Compile Include="Exceptions\RowZeroSizeException.cs" />
     <Compile Include="Exceptions\TheNumberOfRowsAndColumnsIsDifferentException.cs" />
-    <Compile Include="ExtendentRandom.cs" />
-    <Compile Include="Interfaces\IMatrix.cs" />
-    <Compile Include="Matrices\Matrix.cs" />
-    <Compile Include="Matrices\Structures\Rows\ReadOnlyRow.cs" />
+    <Compile Include="GenericMath\GenericMath.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MathExtendent.cs" />
     <Compile Include="Matrices\Structures\Columns\ReadOnlyColumn.cs" />

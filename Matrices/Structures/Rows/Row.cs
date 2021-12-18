@@ -17,7 +17,8 @@ namespace MathExtended.Matrices.Structures.Rows
     /// <typeparam name="T">Тип содержимого строки</typeparam>
     public class Row<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-      
+        private BaseCellsCollection<T> RowCells;
+        
         /// <summary>
         /// Создает строку с указанным размером
         /// </summary>

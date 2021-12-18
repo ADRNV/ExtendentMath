@@ -458,8 +458,6 @@ namespace MathExtended.Matrices
                 });
             });
 
-
-
             return filledMatrix;
         }
 
@@ -474,7 +472,7 @@ namespace MathExtended.Matrices
             dynamic counter = 1;
 
             ForEach((row,column) => filledMatrix[row, column] = counter++);
-           
+
             return filledMatrix;
         }
 

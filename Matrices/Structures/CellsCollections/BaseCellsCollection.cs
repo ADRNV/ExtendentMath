@@ -40,9 +40,14 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         /// <summary>
         /// Массив ячеек
         /// </summary>
-        protected T[] Cells
+        protected virtual T[] Cells
         {
             get => _cells;
+
+            set
+            {
+                _cells = value;
+            }
         }
             
 
@@ -89,20 +94,20 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         /// Находит максимальное число среди ячеек
         /// </summary>
         /// <returns>Максимальное значение в последовательности ячеек</returns>
-        public T Max() => _cells.Max();
+        public virtual T Max() => _cells.Max();
         
 
         /// <summary>
         /// Находит минимальное число среди ячеек
         /// </summary>
         /// <returns> Минимальное значение в последовательности ячеек</returns>
-        public T Min() => _cells.Min();
+        public virtual T Min() => _cells.Min();
 
         /// <summary>
         /// Проверяет нулевая ли коллекция
         /// </summary>
         /// <returns> <see langword="true"/> - если все ячейки равны нулю, <see langword="false"/> - если хоть одна ячейка не равна нулю </returns>
-        public bool IsZero()
+        public virtual bool IsZero()
         {
             return _cells.All((cell) => cell == (dynamic)0);
         }
