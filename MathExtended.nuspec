@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0.0</version>
+    <title>MathExtendent</title>
+    <authors>Lamer0</authors>
+    <langluage>C#</langluage>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Lamer0/ExtendentMath</projectUrl>
+    <PackageIcon>https://avatars.githubusercontent.com/u/49834917?v=4</PackageIcon>
+    <summary>MathExtended</summary>
+    <description>A math library that will include work with matrices, some trigonometric functions of which are not in Math</description>
+    <releaseNotes></releaseNotes>
+    <copyright>https://github.com/Lamer0/ExtendentMath</copyright>
+    <tags>Pre-release</tags>
+  </metadata>
+</package>
