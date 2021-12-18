@@ -30,7 +30,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="array">Массив</param>
         public ReadOnlyRow(T[] array) : base(array)
         {
-
+            
         }
 
         /// <summary>
