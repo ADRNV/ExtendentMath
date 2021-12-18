@@ -19,12 +19,6 @@ namespace MathExtended.Interfaces
         MainDiagonal<T> MainDiagonal { get; }
 
         /// <summary>
-        /// Метод нахождения диагонали
-        /// </summary>
-        /// <returns>Массив определяющийся главной диагональю матрицы</returns>
-       
-
-        /// <summary>
         /// Количество строк
         /// </summary>
         int RowsCount { get; }
