@@ -1,5 +1,4 @@
-﻿using MathExtended.Interfaces;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +9,7 @@ using MathExtended.Matrices.Structures.CellsCollections;
 using MathExtended.Matrices.Structures.CellsCollection;
 using System.Linq;
 using MathExtended.Matrices.Extensions;
+using MathExtended.Interfaces;
 
 namespace MathExtended.Matrices
 {
