@@ -92,9 +92,9 @@ namespace MathExtended.Matrices
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
 
-                Parallel.For(0, matrixA.RowsCount, row =>
+                Parallel.For(0, matrixA.RowsCount - 1, row =>
                 {
-                    Parallel.For(0, matrixB.ColumnsCount, colunm =>
+                    Parallel.For(0, matrixB.ColumnsCount - 1, colunm =>
                     {
                         matrixC[row, colunm] = (T)(dynamic)matrixA[row, colunm] + (dynamic)matrixB[row, colunm];
                     });
@@ -119,10 +119,10 @@ namespace MathExtended.Matrices
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-                Parallel.For(0, matrixA.RowsCount, i =>
+                Parallel.For(0, matrixA.RowsCount - 1, i =>
                 {
 
-                    Parallel.For(0, matrixB.ColumnsCount, j =>
+                    Parallel.For(0, matrixB.ColumnsCount - 1, j =>
                     {
                         matrixC[i, j] = (T)Operator.Subtract(matrixA[i, j], matrixB[i, j]);
                     });
@@ -148,9 +148,9 @@ namespace MathExtended.Matrices
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
 
-            Parallel.For(0, matrixA.RowsCount, row =>
+            Parallel.For(0, matrixA.RowsCount - 1, row =>
             {
-                Parallel.For(0, matrixA.ColumnsCount, column =>
+                Parallel.For(0, matrixA.ColumnsCount - 1, column =>
                 {
                     matrixB[row, column] = (T)Operator.Multiply(matrixA[row, column], multiplier);
                 });
@@ -183,11 +183,11 @@ namespace MathExtended.Matrices
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-                Parallel.For(0, matrixA.RowsCount, row =>
+                Parallel.For(0, matrixA.RowsCount - 1, row =>
                 {
-                    Parallel.For(0, matrixB.ColumnsCount, column =>
+                    Parallel.For(0, matrixB.ColumnsCount - 1, column =>
                     {
-                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                        for (int k = 0; k < matrixB.RowsCount - 1; k++)// A B или C ?
                         {
                             matrixC[row, column] = (T)Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
@@ -253,7 +253,7 @@ namespace MathExtended.Matrices
         /// <param name="matrix">Матрица</param>
         /// <param name="power">Степень</param>
         /// <returns></returns>
-        public Matrix<T> Pow(Matrix<T> matrix,int power)
+        public static Matrix<T> Pow(Matrix<T> matrix,int power)
         {
 
             if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
@@ -281,9 +281,9 @@ namespace MathExtended.Matrices
         {
             var transposedMatrix = new Matrix<T>(this.ColumnsCount, this.RowsCount);
 
-            Parallel.For(0, this.ColumnsCount, row =>
+            Parallel.For(0, this.ColumnsCount - 1, row =>
             {
-                Parallel.For(0, this.RowsCount, column =>
+                Parallel.For(0, this.RowsCount - 1, column =>
                 {
                     transposedMatrix[row, column] = this[column, row];
                 });
@@ -335,7 +335,7 @@ namespace MathExtended.Matrices
         /// <param name="column">Количество вычеркнутых столбцов</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private Matrix<T> CreateMatrixWithoutColumn(int column)
+        public Matrix<T> CreateMatrixWithoutColumn(int column)
         {
             if (column < 0 || column >= this.ColumnsCount)
             {
@@ -354,7 +354,7 @@ namespace MathExtended.Matrices
         /// <param name="row">Количество вычеркнутых строк</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private Matrix<T> CreateMatrixWithoutRow(int row)
+        public Matrix<T> CreateMatrixWithoutRow(int row)
         {
             if (row < 0 || row >= this.RowsCount)
             {
@@ -425,9 +425,9 @@ namespace MathExtended.Matrices
 
             ExtendentRandom random = new ExtendentRandom();
 
-            Parallel.For(0, this.RowsCount, row =>
+            Parallel.For(0, this.RowsCount - 1, row =>
             {
-                Parallel.For(0, this.ColumnsCount, column =>
+                Parallel.For(0, this.ColumnsCount - 1, column =>
                 {
                      filledMatrix[row, column] = random.Next<T>();
                 });
@@ -448,16 +448,18 @@ namespace MathExtended.Matrices
 
             ExtendentRandom random = new ExtendentRandom();
 
-            Parallel.For(0, this.RowsCount, row =>
-            {
-                Parallel.For(0, this.ColumnsCount, column =>
+            
+                Parallel.For(0, this.RowsCount - 1, row =>
                 {
+                    Parallel.For(0, this.ColumnsCount - 1, column =>
+                    {
                     //Позволяет сохранить инвариантность этого метода
                     filledMatrix[row, column] = random.Next<T>(min, max);
                     //(T)(dynamic)random.NextDecimal((decimal)(dynamic)min, (decimal)(dynamic)max);
+                    });
                 });
-            });
-
+            
+            
             return filledMatrix;
         }
 
@@ -489,9 +491,9 @@ namespace MathExtended.Matrices
 
             else
             {
-                for(int row = 0;row < this.RowsCount; row++)
+                for(int row = 0;row < this.RowsCount - 1; row++)
                 {
-                    for (int column = 0; column < this.ColumnsCount; column++)
+                    for (int column = 0; column < this.ColumnsCount - 1; column++)
                     {
                         action(row, column);
                     }
@@ -520,9 +522,9 @@ namespace MathExtended.Matrices
         {
             string outString = String.Empty;
 
-            for(int row = 0;row < this.RowsCount; row++)
+            for(int row = 0;row < this.RowsCount - 1; row++)
             {
-                for(int column = 0;column < this.ColumnsCount; column++)
+                for(int column = 0;column < this.ColumnsCount - 1; column++)
                 {
                     outString += matrix[row, column].ToString().PadLeft(8) + " ";
                    

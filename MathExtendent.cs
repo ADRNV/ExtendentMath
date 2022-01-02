@@ -116,7 +116,7 @@ namespace MathExtended
 
             List<double> yValues = new List<double>();
             
-            for(;x0 < xk;x0 += dx)
+            for(;x0 <= xk;x0 += dx)
             {
                xValues.Add(x0);
                yValues.Add(func(x0));
@@ -140,7 +140,7 @@ namespace MathExtended
             
             List<double> yValues = new List<double>();
 
-            for (; x0 < xk; x0 += dx)
+            for (; x0 <= xk; x0 += dx)
             {
                 xValues.Add(x0);
                 yValues.Add(func(x0));

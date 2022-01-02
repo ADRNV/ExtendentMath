@@ -57,10 +57,6 @@ namespace MathExtended.Matrices
 
             matrix = new T[rows,columns];
 
-            _rows = GetRows();
-
-            _columns = GetColumns();
-
         }
 
         /// <summary>
@@ -247,9 +243,9 @@ namespace MathExtended.Matrices
             {
                 var fullColumn = new List<T>();
 
-                for (int row = 0; row < RowsCount; row++)
+                for (int column = 0; column < ColumnsCount; column++)
                 {
-                    fullColumn.Add(this[row, columnIndex]);
+                    fullColumn.Add(this[column, columnIndex]);
                 }
 
                 return fullColumn.ToArray();
@@ -269,7 +265,7 @@ namespace MathExtended.Matrices
         {
             Column<T>[] columns = new Column<T>[ColumnsCount];
 
-            ForEach((row, column) => columns[row] = GetColumn(column));
+            ForEach((row, column) => columns[column] = GetColumn(column));
 
             return columns;
         }
