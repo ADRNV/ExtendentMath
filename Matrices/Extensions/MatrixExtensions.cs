@@ -53,7 +53,16 @@ namespace MathExtended.Matrices.Extensions
 
             return new MainDiagonal<T>(mainDiagonal.ToArray());
         }
-
+        /// <summary>
+        /// В разработке
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="matrix"></param>
+        /// <param name="downRowBound"></param>
+        /// <param name="downColumnBound"></param>
+        /// <param name="upperRowBound"></param>
+        /// <param name="upperColumnBound"></param>
+        /// <returns></returns>
         public static IMatrix<T> GetSubMatrix<T>(this Matrix<T> matrix,int downRowBound, int downColumnBound, int upperRowBound, int upperColumnBound) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             Matrix<T> subMatrix = new Matrix<T>
