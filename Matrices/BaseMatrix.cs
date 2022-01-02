@@ -10,6 +10,7 @@ using MathExtended.Matrices.Structures.CellsCollection;
 using System.Linq;
 using MathExtended.Matrices.Extensions;
 using MathExtended.Interfaces;
+using MathExtended.Exceptions;
 
 namespace MathExtended.Matrices
 {
@@ -51,12 +52,22 @@ namespace MathExtended.Matrices
         /// <param name="columns">Количество столбцов</param>
         public BaseMatrix(int rows,int columns)
         {
-            _rowsCount = rows;
+            if (!(rows <= 0) || !(columns <= 0))
+            {
+                _rowsCount = rows;
 
-            _columnsCount = columns;
+                _columnsCount = columns;
 
-            matrix = new T[rows,columns];
+                matrix = new T[rows, columns];
 
+                _rows = GetRows();
+
+                _columns = GetColumns();
+            }
+            else
+            {
+                throw new MatrixInvalidSizesException();
+            }
         }
 
         /// <summary>
@@ -163,12 +174,10 @@ namespace MathExtended.Matrices
         {
             if (rowIndex < RowsCount)
             {
-                var fullRow = new Row<T>(RowsCount);
+                var fullRow = new Row<T>(RowsCount - 1);
 
-                for (int row = 0; row < ColumnsCount; row++)
-                {
-                    fullRow[row] = this[rowIndex, row];
-                }
+                ForEach((row,column) => fullRow[row] = this[rowIndex, column]);
+                
 
                 return fullRow;
             }
@@ -186,9 +195,9 @@ namespace MathExtended.Matrices
         /// <returns>Массив из <see cref="Row{T}"/></returns>
         public Row<T>[] GetRows()
         {
-            Row<T>[] rows = new Row<T>[RowsCount];
+            Row<T>[] rows = new Row<T>[RowsCount - 1];
 
-            for (int row = 0; row < RowsCount; row++)
+            for (int row = 0; row < RowsCount - 1; row++)
             {
                 rows[row] = GetRow(row);
             }
@@ -205,10 +214,9 @@ namespace MathExtended.Matrices
         {
             if (index <= row.Size)
             {
-                for (int column = 0; column < this.ColumnsCount; column++)
-                {
-                    this[index, column] = row[column];
-                }
+        
+               ForEach((r,c) => this[index, c] = row[c]);
+                
             }
             else
             {
@@ -243,7 +251,7 @@ namespace MathExtended.Matrices
             {
                 var fullColumn = new List<T>();
 
-                for (int column = 0; column < ColumnsCount; column++)
+                for (int column = 0; column < RowsCount - 1; column++)
                 {
                     fullColumn.Add(this[column, columnIndex]);
                 }
@@ -263,7 +271,7 @@ namespace MathExtended.Matrices
         /// <returns>Массив <see cref="Column{T}"/></returns>
         public Column<T>[] GetColumns()
         {
-            Column<T>[] columns = new Column<T>[ColumnsCount];
+            Column<T>[] columns = new Column<T>[ColumnsCount - 1];
 
             ForEach((row, column) => columns[column] = GetColumn(column));
 
@@ -277,12 +285,14 @@ namespace MathExtended.Matrices
         /// <param name="column">Стобец</param>
         public void SetColumn(int columnIndex,Column<T> column)
         {
-            if (columnIndex <= this.RowsCount)
+            if (columnIndex <= this.RowsCount - 1)
             {
-                for (int row = 0; row < this.ColumnsCount; row++)
-                {
-                    this[row, columnIndex] = column[row];
-                }
+                ForEach((r,c) => this[r, columnIndex] = column[r]);
+                
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
             }
         }
         
@@ -309,9 +319,9 @@ namespace MathExtended.Matrices
             }
             else
             {
-                Parallel.For(0, this.RowsCount, row =>
+                Parallel.For(0, this.RowsCount - 1, row =>
                 {
-                    for (dynamic column = 0; column < this.ColumnsCount; column++)
+                    for (dynamic column = 0; column < this.ColumnsCount - 1; column++)
                     {
                         action(row, column);
                     }

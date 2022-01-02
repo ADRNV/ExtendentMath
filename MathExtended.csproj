@@ -204,7 +204,7 @@
     <Compile Include="Exceptions\ColumnsOfDifferentSizesException.cs" />
     <Compile Include="Exceptions\ColumnZeroSizeException.cs" />
     <Compile Include="Exceptions\MatrixDifferentSizeException.cs" />
-    <Compile Include="Exceptions\MatrixZeroSizeException.cs" />
+    <Compile Include="Exceptions\MatrixInvalidSizesException.cs" />
     <Compile Include="Exceptions\RowsOfDifferentSizesException.cs" />
     <Compile Include="Exceptions\RowZeroSizeException.cs" />
     <Compile Include="Exceptions\TheNumberOfRowsAndColumnsIsDifferentException.cs" />
