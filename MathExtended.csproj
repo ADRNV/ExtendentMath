@@ -195,6 +195,7 @@
   <ItemGroup>
     <Compile Include="Exceptions\VectorsDifferentSizeException.cs" />
     <Compile Include="Matrices\Extensions\MatrixExtensions.cs" />
+    <Compile Include="Matrices\MatrixType.cs" />
     <Compile Include="Matrices\Structures\CellsCollections\BaseCellsCollection.cs" />
     <Compile Include="Matrices\BaseMatrix.cs" />
     <Compile Include="Matrices\Structures\CellsCollections\BaseReadOnlyCellsCollection.cs" />

@@ -59,7 +59,7 @@ namespace MathExtended.Matrices
         /// <param name="columns">Колличество столбцов матрице</param>
         public Matrix(int rows, int columns) : base(rows, columns)
         {
-            matrix = new T[rows, rows];
+           
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
@@ -491,13 +491,16 @@ namespace MathExtended.Matrices
 
             else
             {
-                for(int row = 0;row < this.RowsCount - 1; row++)
+               
+                for (int row = 0; row < this.RowsCount - 1; row++)
                 {
                     for (int column = 0; column < this.ColumnsCount - 1; column++)
                     {
                         action(row, column);
                     }
                 }
+                
+
             }
 
         }

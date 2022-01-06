@@ -45,6 +45,7 @@ namespace MathExtended.Matrices
 
         private bool disposedValue;
 
+
         /// <summary>
         /// Создает матрицу с указанными размерами
         /// </summary>
@@ -174,12 +175,15 @@ namespace MathExtended.Matrices
         {
             if (rowIndex < RowsCount)
             {
-                var fullRow = new Row<T>(RowsCount - 1);
+                var fullRow = new List<T>();
 
-                ForEach((row,column) => fullRow[row] = this[rowIndex, column]);
+               for(int column = 0;column < ColumnsCount;column++)
+               {
+                    fullRow.Add(this[rowIndex, column]);
+               }
                 
 
-                return fullRow;
+                return new Row<T>(fullRow.ToArray());
             }
             else
             {
@@ -195,9 +199,9 @@ namespace MathExtended.Matrices
         /// <returns>Массив из <see cref="Row{T}"/></returns>
         public Row<T>[] GetRows()
         {
-            Row<T>[] rows = new Row<T>[RowsCount - 1];
+            Row<T>[] rows = new Row<T>[RowsCount];
 
-            for (int row = 0; row < RowsCount - 1; row++)
+            for (int row = 0; row < RowsCount; row++)
             {
                 rows[row] = GetRow(row);
             }
@@ -251,12 +255,12 @@ namespace MathExtended.Matrices
             {
                 var fullColumn = new List<T>();
 
-                for (int column = 0; column < RowsCount - 1; column++)
+                for (int column = 0; column < RowsCount; column++)
                 {
                     fullColumn.Add(this[column, columnIndex]);
                 }
 
-                return fullColumn.ToArray();
+                return (Column<T>)fullColumn.ToArray();
             }
             else
             {
@@ -271,7 +275,7 @@ namespace MathExtended.Matrices
         /// <returns>Массив <see cref="Column{T}"/></returns>
         public Column<T>[] GetColumns()
         {
-            Column<T>[] columns = new Column<T>[ColumnsCount - 1];
+            Column<T>[] columns = new Column<T>[ColumnsCount];
 
             ForEach((row, column) => columns[column] = GetColumn(column));
 
@@ -319,9 +323,9 @@ namespace MathExtended.Matrices
             }
             else
             {
-                Parallel.For(0, this.RowsCount - 1, row =>
+                Parallel.For(0, this.RowsCount, row =>
                 {
-                    for (dynamic column = 0; column < this.ColumnsCount - 1; column++)
+                    for (dynamic column = 0; column < this.ColumnsCount; column++)
                     {
                         action(row, column);
                     }

@@ -78,6 +78,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             _size = array.Length;
         }
 
+
         /// <summary>
         /// Применяет действие ко всем элементам
         /// </summary>
@@ -112,6 +113,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             return _cells.All((cell) => cell == (dynamic)0);
         }
 
+       
         #region IEnumerable
         /// <summary>
         /// Текуший элемент
