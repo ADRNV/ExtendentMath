@@ -54,7 +54,7 @@ namespace MathExtended.Matrices.Extensions
             return new MainDiagonal<T>(mainDiagonal.ToArray());
         }
        
-      
+        
        
     }
 }

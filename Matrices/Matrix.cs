@@ -92,9 +92,9 @@ namespace MathExtended.Matrices
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
 
-                Parallel.For(0, matrixA.RowsCount - 1, row =>
+                Parallel.For(0, matrixA.RowsCount, row =>
                 {
-                    Parallel.For(0, matrixB.ColumnsCount - 1, colunm =>
+                    Parallel.For(0, matrixB.ColumnsCount, colunm =>
                     {
                         matrixC[row, colunm] = (T)(dynamic)matrixA[row, colunm] + (dynamic)matrixB[row, colunm];
                     });
@@ -119,10 +119,10 @@ namespace MathExtended.Matrices
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-                Parallel.For(0, matrixA.RowsCount - 1, i =>
+                Parallel.For(0, matrixA.RowsCount, i =>
                 {
 
-                    Parallel.For(0, matrixB.ColumnsCount - 1, j =>
+                    Parallel.For(0, matrixB.ColumnsCount, j =>
                     {
                         matrixC[i, j] = (T)Operator.Subtract(matrixA[i, j], matrixB[i, j]);
                     });
@@ -148,9 +148,9 @@ namespace MathExtended.Matrices
         {
             var matrixB = new Matrix<T>(matrixA.RowsCount, matrixA.ColumnsCount);
 
-            Parallel.For(0, matrixA.RowsCount - 1, row =>
+            Parallel.For(0, matrixA.RowsCount, row =>
             {
-                Parallel.For(0, matrixA.ColumnsCount - 1, column =>
+                Parallel.For(0, matrixA.ColumnsCount, column =>
                 {
                     matrixB[row, column] = (T)Operator.Multiply(matrixA[row, column], multiplier);
                 });
@@ -183,11 +183,11 @@ namespace MathExtended.Matrices
             {
                 var matrixC = new Matrix<T>(matrixA.RowsCount, matrixB.ColumnsCount);
 
-                Parallel.For(0, matrixA.RowsCount - 1, row =>
+                Parallel.For(0, matrixA.RowsCount, row =>
                 {
-                    Parallel.For(0, matrixB.ColumnsCount - 1, column =>
+                    Parallel.For(0, matrixB.ColumnsCount, column =>
                     {
-                        for (int k = 0; k < matrixB.RowsCount - 1; k++)// A B или C ?
+                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
                         {
                             matrixC[row, column] = (T)Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
@@ -281,9 +281,9 @@ namespace MathExtended.Matrices
         {
             var transposedMatrix = new Matrix<T>(this.ColumnsCount, this.RowsCount);
 
-            Parallel.For(0, this.ColumnsCount - 1, row =>
+            Parallel.For(0, this.ColumnsCount, row =>
             {
-                Parallel.For(0, this.RowsCount - 1, column =>
+                Parallel.For(0, this.RowsCount, column =>
                 {
                     transposedMatrix[row, column] = this[column, row];
                 });
@@ -425,9 +425,9 @@ namespace MathExtended.Matrices
 
             ExtendentRandom random = new ExtendentRandom();
 
-            Parallel.For(0, this.RowsCount - 1, row =>
+            Parallel.For(0, this.RowsCount, row =>
             {
-                Parallel.For(0, this.ColumnsCount - 1, column =>
+                Parallel.For(0, this.ColumnsCount, column =>
                 {
                      filledMatrix[row, column] = random.Next<T>();
                 });
@@ -449,9 +449,9 @@ namespace MathExtended.Matrices
             ExtendentRandom random = new ExtendentRandom();
 
             
-                Parallel.For(0, this.RowsCount - 1, row =>
+                Parallel.For(0, this.RowsCount, row =>
                 {
-                    Parallel.For(0, this.ColumnsCount - 1, column =>
+                    Parallel.For(0, this.ColumnsCount, column =>
                     {
                     //Позволяет сохранить инвариантность этого метода
                     filledMatrix[row, column] = random.Next<T>(min, max);
@@ -492,9 +492,9 @@ namespace MathExtended.Matrices
             else
             {
                
-                for (int row = 0; row < this.RowsCount - 1; row++)
+                for (int row = 0; row < this.RowsCount; row++)
                 {
-                    for (int column = 0; column < this.ColumnsCount - 1; column++)
+                    for (int column = 0; column < this.ColumnsCount; column++)
                     {
                         action(row, column);
                     }
@@ -525,9 +525,9 @@ namespace MathExtended.Matrices
         {
             string outString = String.Empty;
 
-            for(int row = 0;row < this.RowsCount - 1; row++)
+            for(int row = 0;row < this.RowsCount; row++)
             {
-                for(int column = 0;column < this.ColumnsCount - 1; column++)
+                for(int column = 0;column < this.ColumnsCount; column++)
                 {
                     outString += matrix[row, column].ToString().PadLeft(8) + " ";
                    
