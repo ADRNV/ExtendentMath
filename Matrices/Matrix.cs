@@ -260,7 +260,7 @@ namespace MathExtended.Matrices
             {
                 var matrixC = matrix;
 
-                for (int i = 1; i < power; i++)
+                for (int i = 1; i <= power; i++)
                 {
                     matrixC *= matrix;
                 }
@@ -308,7 +308,6 @@ namespace MathExtended.Matrices
 
                     if (this[row, row] != (dynamic)0)
                     {
-
 
                         if (this[row, row] != (dynamic)0)
                         {
