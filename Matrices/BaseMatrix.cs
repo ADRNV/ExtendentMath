@@ -19,7 +19,7 @@ namespace MathExtended.Matrices
     /// и ограничивает принимаемые обобщения до числовых типов (<see cref="int"></see>, <see cref="float"></see>, <see cref="double"></see> и т.д)
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public abstract class BaseMatrix<T> : IEnumerator<T>, IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public abstract class BaseMatrix<T> : IEnumerable<T>,IEnumerator<T>, IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         /// <summary>
         /// Матрица представляющая собой двумерный массив
@@ -53,7 +53,7 @@ namespace MathExtended.Matrices
         /// <param name="columns">Количество столбцов</param>
         public BaseMatrix(int rows,int columns)
         {
-            if (!(rows <= 0) || !(columns <= 0))
+            if (!(rows <= 0) && !(columns <= 0))
             {
                 _rowsCount = rows;
 
@@ -371,6 +371,12 @@ namespace MathExtended.Matrices
                 yield return i;
             }
         }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+
 
         /// <summary>
         /// Перемещает индексатор на одну позицию вперед
