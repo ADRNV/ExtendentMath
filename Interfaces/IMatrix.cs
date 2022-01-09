@@ -11,7 +11,7 @@ namespace MathExtended.Interfaces
     /// Определяет основную структуру матрицы
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public interface IMatrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public interface IMatrix<T> : IEnumerable<T>, IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         /// <summary>
         ///  Главная диагональ

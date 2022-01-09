@@ -252,7 +252,7 @@ namespace MathExtended.Matrices
         /// </summary>
         /// <param name="matrix">Матрица</param>
         /// <param name="power">Степень</param>
-        /// <returns></returns>
+        /// <returns>Матрица в заданной степени</returns>
         public static Matrix<T> Pow(Matrix<T> matrix,int power)
         {
 
@@ -415,69 +415,6 @@ namespace MathExtended.Matrices
         #region Фичи
 
         /// <summary>
-        /// Заполняет матрицу случайными целочисленными значениями
-        /// </summary>
-        /// <returns>Матрица со случайными значениями</returns>
-        public Matrix<T> FillRandom()
-        {
-            dynamic filledMatrix = new Matrix<T>(this.RowsCount,this.ColumnsCount);
-
-            ExtendentRandom random = new ExtendentRandom();
-
-            Parallel.For(0, this.RowsCount, row =>
-            {
-                Parallel.For(0, this.ColumnsCount, column =>
-                {
-                     filledMatrix[row, column] = random.Next<T>();
-                });
-            });
-            
-            return filledMatrix;
-        }
-
-        /// <summary>
-        /// Заполняет матрицу случайными значениями в определенном диапазоне
-        /// </summary>
-        /// <param name="min">Минимальное число</param>
-        /// <param name="max">Максимальное число</param>
-        /// <returns>Матрица со случайными значениями</returns>
-        public Matrix<T> FillRandom(T min,T max)
-        {
-            Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
-
-            ExtendentRandom random = new ExtendentRandom();
-
-            
-                Parallel.For(0, this.RowsCount, row =>
-                {
-                    Parallel.For(0, this.ColumnsCount, column =>
-                    {
-                    //Позволяет сохранить инвариантность этого метода
-                    filledMatrix[row, column] = random.Next<T>(min, max);
-                    //(T)(dynamic)random.NextDecimal((decimal)(dynamic)min, (decimal)(dynamic)max);
-                    });
-                });
-            
-            
-            return filledMatrix;
-        }
-
-        /// <summary>
-        /// Заполняет матрицу по порядку:от 1 до размера последнего элемента матрицы
-        /// </summary>
-        /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<T> FillInOrder()
-        {
-            Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
-
-            dynamic counter = 1;
-
-            ForEach((row,column) => filledMatrix[row, column] = counter++);
-
-            return filledMatrix;
-        }
-
-        /// <summary>
         /// Применяет действия ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Действие</param>
@@ -505,15 +442,18 @@ namespace MathExtended.Matrices
         }
 
         /// <summary>
-        /// Применяет действия ко всем элементам матрицы
+        /// Заполняет матрицу по порядку:от 1-го до размера последнего элемента матрицы
         /// </summary>
-        /// <param name="action">Действие</param>
-        public void ForEach(Action<T> action)
+        /// <returns>Матрица заполненная по порядку</returns>
+        public Matrix<T> FillInOrder()
         {
-            foreach(var cell in this)
-            {
-                action(cell);
-            }
+            Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
+
+            dynamic counter = 1;
+
+            this.ForEach((row, column) => filledMatrix[row, column] = counter++);
+
+            return filledMatrix;
         }
 
         /// <summary>

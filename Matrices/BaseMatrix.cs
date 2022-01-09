@@ -343,6 +343,8 @@ namespace MathExtended.Matrices
             return matrix.matrix;
         }
 
+        
+
         #region IEnumerable
         /// <summary>
         /// Текуший элемент

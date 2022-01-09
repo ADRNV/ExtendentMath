@@ -8,7 +8,8 @@ namespace MathExtended
     public class ExtendentRandom : Random
     {
         /// <summary>
-        /// Генерирует случайное число типа <typeparamref name="T"/>
+        /// Генерирует случайное число типа <typeparamref name="T"/> 
+        /// в заданных границах
         /// </summary>
         /// <typeparam name="T">Числовой тип</typeparam>
         /// <param name="minValue">Нижняя граница</param>
@@ -16,10 +17,17 @@ namespace MathExtended
         /// <returns><typeparamref name="T"/> Число</returns>
         public T Next<T>(in T minValue,in T maxValue) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            var minValueCasted = (double)(dynamic)minValue;
-            var maxValueCasted = (double)(dynamic)maxValue;
-            var random = base.NextDouble();
-            return (T)(dynamic)((random * minValueCasted) + (1 - random) * maxValueCasted);//System.EngineError (Ненормальное потребление памяти)
+            if ((dynamic)minValue < maxValue)
+            {
+                var minValueCasted = (double)(dynamic)minValue;
+                var maxValueCasted = (double)(dynamic)maxValue;
+                var random = base.NextDouble();
+                return (T)(dynamic)((random * minValueCasted) + (1 - random) * maxValueCasted);//System.EngineError (Ненормальное потребление памяти)
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
 
         /// <summary>
