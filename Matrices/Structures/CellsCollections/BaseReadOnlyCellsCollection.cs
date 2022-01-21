@@ -12,7 +12,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
     /// Описывает коллекцию ячеек только для чтения
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public abstract class BaseReadOnlyCellsCollection<T> : BaseCellsCollection<T>,IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public abstract class BaseReadOnlyCellsCollection<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         
         /// <summary>
@@ -33,5 +33,14 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             Cells = array;
         }
 
+        /// <summary>
+        /// Индексатор.По индексу возвращает или задает значение ячейки
+        /// </summary>
+        /// <param name="index">Индекс элемента</param>
+        /// <returns>Элемент по индексу</returns>
+        public override T this[int index] 
+        { 
+            get => base[index];
+        }
     }
 }

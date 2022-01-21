@@ -414,33 +414,7 @@ namespace MathExtended.Matrices
 
         #region Фичи
 
-        /// <summary>
-        /// Применяет действия ко всем элементам матрицы
-        /// </summary>
-        /// <param name="action">Действие</param>
-        private void ForEach(Action<int, int> action)
-        {
-            if (action == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            else
-            {
-               
-                for (int row = 0; row < this.RowsCount; row++)
-                {
-                    for (int column = 0; column < this.ColumnsCount; column++)
-                    {
-                        action(row, column);
-                    }
-                }
-                
-
-            }
-
-        }
-
+        
         /// <summary>
         /// Заполняет матрицу по порядку:от 1-го до размера последнего элемента матрицы
         /// </summary>

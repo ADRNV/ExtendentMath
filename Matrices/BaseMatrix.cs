@@ -314,7 +314,7 @@ namespace MathExtended.Matrices
         /// Применяет функцию ко всем элементам матрицы
         /// </summary>
         /// <param name="action">Делегат с одним параметром</param>
-        private void ForEach(Action<int, int> action)
+        protected private void ForEach(Action<int, int> action)
         {
 
             if (action == null)
