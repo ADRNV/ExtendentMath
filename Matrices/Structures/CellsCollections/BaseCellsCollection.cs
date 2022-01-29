@@ -12,7 +12,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
     /// Описывает коллекцию ячеек
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public class BaseCellsCollection<T> : IEnumerator<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class BaseCellsCollection<T> : IEnumerator<T>, IEnumerable<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         private T[] _cells;
         private int _size;
@@ -203,6 +203,11 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             // Не изменяйте этот код.  Разместите код очистки в методе "Dispose(bool disposing)".
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return _cells.GetEnumerator();
         }
 
         #endregion
