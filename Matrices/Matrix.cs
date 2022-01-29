@@ -229,7 +229,7 @@ namespace MathExtended.Matrices
         }
 
         /// <summary>
-        /// Находит ранго мартицы
+        /// Находит ранг мартицы
         /// </summary>
         /// <returns>Ранг матрицы</returns>
         public int FindRank()
