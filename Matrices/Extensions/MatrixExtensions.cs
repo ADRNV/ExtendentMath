@@ -62,7 +62,7 @@ namespace MathExtended.Matrices.Extensions
         /// <param name="matrix">Матрица</param>
         /// <param name="action">Действие</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void ForEach<T>(this Matrix<T> matrix, Action<T> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static void ForEach<T>(this IMatrix<T> matrix, Action<T> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             foreach (var cell in matrix)
             {
@@ -98,7 +98,7 @@ namespace MathExtended.Matrices.Extensions
         /// <param name="min">Минимальное число</param>
         /// <param name="max">Максимальное число</param>
         /// <returns>Матрица со случайными значениями</returns>
-        public static Matrix<T> FillRandom<T>(this Matrix<T> matrix ,T min, T max) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static Matrix<T> FillRandom<T>(this IMatrix<T> matrix ,T min, T max) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             Matrix<T> filledMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
 
@@ -115,8 +115,34 @@ namespace MathExtended.Matrices.Extensions
                 });
             });
 
-
             return filledMatrix;
+        }
+
+        /// <summary>
+        /// Находит минор матрицы
+        /// </summary>
+        /// <param name="matrix">Матрица</param>
+        /// <param name="crossedOutRow">Вычеркнутая строка</param>
+        /// <param name="crossedOutColumn">Вычеркнутый столбец</param>
+        /// <returns><see cref="Matrix{T}"/> Минор матрицы</returns>
+        public static Matrix<T> FindMinor<T>(this IMatrix<T> matrix,uint crossedOutRow, uint crossedOutColumn) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            int i, j, p, q;
+
+            Matrix<T> minor = new Matrix<T>(matrix.RowsCount - 1, matrix.ColumnsCount - 1);
+
+            for (j = 0, q = 0; q < minor.RowsCount; j++, q++)
+            {
+                for (i = 0, p = 0; p < minor.ColumnsCount; i++, p++)
+                {
+                    if (i == crossedOutRow) i++;
+                    if (j == crossedOutColumn) j++;
+                    minor[p, q] = matrix[i, j];
+                }
+
+            }
+
+            return minor;
         }
     }
 }

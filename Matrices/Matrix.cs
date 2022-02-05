@@ -391,6 +391,11 @@ namespace MathExtended.Matrices
                 return Operator.Subtract(Operator.Multiply(this[0, 0], this[1, 1]), Operator.Multiply(this[0, 1], this[1, 0]));
             }
 
+            if(this.RowsCount == 1)
+            {
+                return this[0,0];
+            }
+
 
             for (var j = 0; j < this.RowsCount; j++)
             {
