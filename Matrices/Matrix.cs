@@ -274,25 +274,6 @@ namespace MathExtended.Matrices
         }
 
         /// <summary>
-        /// Транспонирует(меняет строки со столбцами) текущую матрицу и возвращает новую
-        /// </summary>
-        /// <returns>Транспонированная матрица</returns>
-        public Matrix<T> Transponate()
-        {
-            var transposedMatrix = new Matrix<T>(this.ColumnsCount, this.RowsCount);
-
-            Parallel.For(0, this.ColumnsCount, row =>
-            {
-                Parallel.For(0, this.RowsCount, column =>
-                {
-                    transposedMatrix[row, column] = this[column, row];
-                });
-            });
-
-            return transposedMatrix;
-        }
-
-        /// <summary>
         /// Приводит матрицу к ступенчатому виду
         /// </summary>
         /// <returns><see cref="Matrix{T}"/> Матрица в ступенчатов виде</returns>

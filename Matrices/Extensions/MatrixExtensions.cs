@@ -15,6 +15,19 @@ namespace MathExtended.Matrices.Extensions
     /// </summary>
     public static class MatrixExtensions
     {
+        /// <summary>
+        /// Выполняет действие с кaждой ячейкой матрицы
+        /// </summary>
+        /// <param name="matrix">Матрица</param>
+        /// <param name="action">Действие</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ForEach<T>(this IMatrix<T> matrix, Action<T> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            foreach (var cell in matrix)
+            {
+                action(cell);
+            }
+        }
         private static void ForEach<T>(this IMatrix<T> matrix, Action<int, int> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             if (action == null)
@@ -57,17 +70,22 @@ namespace MathExtended.Matrices.Extensions
         }
 
         /// <summary>
-        /// Выполняет действие с кaждой ячейкой матрицы
+        /// Транспонирует(меняет строки со столбцами) текущую матрицу и возвращает новую
         /// </summary>
-        /// <param name="matrix">Матрица</param>
-        /// <param name="action">Действие</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void ForEach<T>(this IMatrix<T> matrix, Action<T> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        /// <returns>Транспонированная матрица</returns>
+        public static IMatrix<T> Transponate<T>(this IMatrix<T> matrix) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            foreach (var cell in matrix)
+            var transposedMatrix = new Matrix<T>(matrix.ColumnsCount, matrix.RowsCount);
+
+            Parallel.For(0, matrix.RowsCount, row =>
             {
-                action(cell);
-            }
+                Parallel.For(0, matrix.ColumnsCount, column =>
+                {
+                    transposedMatrix[row, column] = matrix[column, row];
+                });
+            });
+
+            return transposedMatrix;
         }
 
         /// <summary>
@@ -103,7 +121,6 @@ namespace MathExtended.Matrices.Extensions
             Matrix<T> filledMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
 
             ExtendentRandom random = new ExtendentRandom();
-
 
             Parallel.For(0, matrix.RowsCount, row =>
             {
