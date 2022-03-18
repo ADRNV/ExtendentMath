@@ -9,6 +9,7 @@ using MathExtended.Matrices;
 using MathExtended.Exceptions;
 using MathExtended.Matrices.Structures.Rows;
 using MathExtended.Matrices.Extensions;
+using MathExtended.Interfaces;
 
 namespace MathExtendedTests
 {

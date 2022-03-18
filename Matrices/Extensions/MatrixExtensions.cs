@@ -36,13 +36,13 @@ namespace MathExtended.Matrices.Extensions
             }
             else
             {
-                Parallel.For(0, matrix.RowsCount, row =>
+                for(dynamic row = 0;row < matrix.RowsCount; row++)
                 {
                     for (dynamic column = 0; column < matrix.ColumnsCount; column++)
                     {
                         action(row, column);
                     }
-                });
+                }
             }
 
         }
@@ -73,9 +73,9 @@ namespace MathExtended.Matrices.Extensions
         /// Транспонирует(меняет строки со столбцами) текущую матрицу и возвращает новую
         /// </summary>
         /// <returns>Транспонированная матрица</returns>
-        public static IMatrix<T> Transponate<T>(this IMatrix<T> matrix) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static Matrix<T> Transponate<T>(this IMatrix<T> matrix) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            var transposedMatrix = new Matrix<T>(matrix.ColumnsCount, matrix.RowsCount);
+            Matrix<T> transposedMatrix = new Matrix<T>(matrix.ColumnsCount, matrix.RowsCount);
 
             Parallel.For(0, matrix.RowsCount, row =>
             {
@@ -89,12 +89,46 @@ namespace MathExtended.Matrices.Extensions
         }
 
         /// <summary>
+        /// Initialize matrix by function
+        /// matrix cell value will be equal to function(Method) result.
+        /// Arguments for function - cells indexes
+        /// </summary>
+        /// <typeparam name="T">Numerical type</typeparam>
+        /// <param name="matrix">Matrix</param>
+        /// <param name="func">Function</param>
+        /// <returns>Initialized matrix</returns>
+        public static Matrix<T> InitBy<T>(this IMatrix<T> matrix,Func<T,T,T> func) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            Matrix<T> initedMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
+
+            matrix.ForEach((r,c) => initedMatrix[r,c] = func.Invoke((dynamic)r,(dynamic)c));
+
+            return initedMatrix;
+        }
+
+        /// <summary>
+        /// Заполняет матрицу по порядку:от 1-го до размера последнего элемента матрицы
+        /// </summary>
+        /// <returns>Матрица заполненная по порядку</returns>
+        public static Matrix<T> FillInOrder<T>(this IMatrix<T> matrix) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            Matrix<T> filledMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
+
+            dynamic counter = 1;
+
+            matrix.ForEach((row, column) => filledMatrix[row, column] = counter++);
+
+            return filledMatrix;
+        }
+
+
+        /// <summary>
         /// Заполняет матрицу случайными целочисленными значениями
         /// </summary>
         /// <returns>Матрица со случайными значениями</returns>
         public static Matrix<T> FillRandom<T>(this IMatrix<T> matrix) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            dynamic filledMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
+            Matrix<T> filledMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
 
             ExtendentRandom random = new ExtendentRandom();
 

@@ -222,6 +222,7 @@ namespace MathExtended.Matrices
             return matrix.matrix;
         }
 
+        
         #endregion
         private async Task<int> FindRankAsync()
         {
@@ -398,23 +399,7 @@ namespace MathExtended.Matrices
            return await Task.Run(CalculateDeterminant);
         }
 
-        #region Фичи
-
-        
-        /// <summary>
-        /// Заполняет матрицу по порядку:от 1-го до размера последнего элемента матрицы
-        /// </summary>
-        /// <returns>Матрица заполненная по порядку</returns>
-        public Matrix<T> FillInOrder()
-        {
-            Matrix<T> filledMatrix = new Matrix<T>(this.RowsCount, this.ColumnsCount);
-
-            dynamic counter = 1;
-
-            this.ForEach((row, column) => filledMatrix[row, column] = counter++);
-
-            return filledMatrix;
-        }
+        #region Features
 
         /// <summary>
         /// Вывод матрицы в строковом представлении
