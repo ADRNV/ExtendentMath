@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathExtended.Matrices.Structures.CellsCollection;
+﻿using MathExtended.Matrices.Structures.CellsCollection;
+using System;
 
 namespace MathExtended.Matrices.Structures.Rows
 {
@@ -30,7 +26,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="array">Массив</param>
         public ReadOnlyRow(T[] array) : base(array)
         {
-            
+
         }
 
         /// <summary>

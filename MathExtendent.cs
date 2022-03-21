@@ -1,9 +1,5 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathExtended.Exceptions;
 
 namespace MathExtended
 {
@@ -62,7 +58,7 @@ namespace MathExtended
 
             return 1 / Sch(x);
         }
-        
+
         /// <summary>
         /// Вычисляет алгебраическую сумму функции
         /// </summary>
@@ -110,16 +106,16 @@ namespace MathExtended
         /// <param name="dx">Шаг</param>
         /// <param name="func">Табулируемая функции</param>
         /// <returns><see cref="TabulateResult"/> структура со значениями аргумента и функции</returns>
-        public static TabulateResult TabulateFunction(double x0, double xk, double dx, Func<double,double> func)
+        public static TabulateResult TabulateFunction(double x0, double xk, double dx, Func<double, double> func)
         {
             List<double> xValues = new List<double>();
 
             List<double> yValues = new List<double>();
-            
-            for(;x0 <= xk;x0 += dx)
+
+            for (; x0 <= xk; x0 += dx)
             {
-               xValues.Add(x0);
-               yValues.Add(func(x0));
+                xValues.Add(x0);
+                yValues.Add(func(x0));
             }
 
             return new TabulateResult(xValues.ToArray(), yValues.ToArray());
@@ -137,7 +133,7 @@ namespace MathExtended
         public static void TabulateFunction(double x0, double xk, double dx, Func<double, double> func, out double[] xValuesArray, out double[] yValuesArray)
         {
             List<double> xValues = new List<double>();
-            
+
             List<double> yValues = new List<double>();
 
             for (; x0 <= xk; x0 += dx)

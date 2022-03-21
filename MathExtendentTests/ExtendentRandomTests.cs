@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathExtended;
+﻿using MathExtended;
+using System;
 using Xunit;
 
 namespace MathExtendedTests
@@ -17,8 +13,8 @@ namespace MathExtendedTests
         [InlineData(-2, 3)]
         public void ExtendentRandomGeneratesIntValueInRangeOfValues(int downBound, int upperBound)
         {
-            int generatedValue = new ExtendentRandom().Next(downBound,upperBound);
-            
+            int generatedValue = new ExtendentRandom().Next(downBound, upperBound);
+
             Assert.True(generatedValue < upperBound && generatedValue >= downBound);
         }
 
@@ -37,9 +33,9 @@ namespace MathExtendedTests
         }
 
         [Theory]
-        [InlineData(4,2)]
+        [InlineData(4, 2)]
         [InlineData(2, 0)]
-        [InlineData(-2,-4)]
+        [InlineData(-2, -4)]
         public void ExtendentRandomGeneratesValueInInvalidRange(int downBound, int upperBound)
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => new ExtendentRandom().Next(downBound, upperBound));

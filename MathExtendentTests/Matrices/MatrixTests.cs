@@ -1,15 +1,10 @@
-﻿using System;
+﻿using MathExtended.Exceptions;
+using MathExtended.Matrices;
+using MathExtended.Matrices.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using Xunit.Extensions;
-using MathExtended.Matrices;
-using MathExtended.Exceptions;
-using MathExtended.Matrices.Structures.Rows;
-using MathExtended.Matrices.Extensions;
-using MathExtended.Interfaces;
 
 namespace MathExtendedTests
 {
@@ -27,6 +22,18 @@ namespace MathExtendedTests
             Assert.Equal(rowsCount, matrix.RowsCount);
             Assert.Equal(columnsCount, matrix.ColumnsCount);
             Assert.Equal(rowsCount * columnsCount, matrix.Size);
+        }
+
+        [Fact]
+        public void InitMatrixByFunc()
+        {
+            Func<double, double, double> func = (r, c) => (r + 1) * (c + 1);
+
+            double[,] expected = { { 1, 2, 3 }, { 2, 4, 6 }, { 3, 6, 9 } };
+
+            Matrix<double> matrix = new Matrix<double>(3, 3).InitBy(func);
+
+            Assert.Equal(expected, (double[,])matrix);
         }
 
         [Theory]
@@ -58,7 +65,7 @@ namespace MathExtendedTests
         }
 
         [Theory]
-        [InlineData(3, 3, new double[] {1, 2, 3, 4, 5, 6, 7, 8, 9 })]
+        [InlineData(3, 3, new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
         [InlineData(3, 2, new double[] { 1, 2, 3, 4, 5, 6 })]
         [InlineData(2, 3, new double[] { 1, 2, 3, 4, 5, 6 })]
         public void FillInOrderAllMatrixCellls(int rowsCount, int columnsCount, IEnumerable<double> expectedValues)
@@ -72,7 +79,7 @@ namespace MathExtendedTests
         [Theory]
         [InlineData(3, 3, new int[] { 2, 4, 6, 8, 10, 12, 14, 16, 18 })]
         [InlineData(3, 2, new int[] { 2, 4, 6, 8, 10, 12 })]
-        [InlineData(2, 3, new int[] {2, 4, 6, 8, 10, 12})]
+        [InlineData(2, 3, new int[] { 2, 4, 6, 8, 10, 12 })]
         public void AddOperatorMatrix(int rowsCount, int columnsCount, ICollection<int> expectedValues)
         {
             List<int> actualValues = new List<int>();
@@ -103,19 +110,19 @@ namespace MathExtendedTests
         }
 
         [Theory]
-        [InlineData(3,3,3,3)]
-        [InlineData(3,2,3,2)]
-        [InlineData(3,6,3,6)]
-        public void MinusOperatorMatrices       
+        [InlineData(3, 3, 3, 3)]
+        [InlineData(3, 2, 3, 2)]
+        [InlineData(3, 6, 3, 6)]
+        public void MinusOperatorMatrices
         (int rowsCountFirstMatrix, int columnsCountFirstMatrix, int rowsCountSecondMatrix, int columnsCountSecondMatrix)
         {
-            Matrix<double> firstMatrix = new Matrix<double>(rowsCountFirstMatrix, columnsCountFirstMatrix).FillInOrder();
+            Matrix<double> matrixA = new Matrix<double>(rowsCountFirstMatrix, columnsCountFirstMatrix).FillInOrder();
 
-            Matrix<double> secondMatrix = new Matrix<double>(rowsCountSecondMatrix, columnsCountSecondMatrix).FillInOrder();
+            Matrix<double> matrixB = new Matrix<double>(rowsCountSecondMatrix, columnsCountSecondMatrix).FillInOrder();
 
-            Matrix<double> result = firstMatrix - secondMatrix;
+            Matrix<double> result = matrixA - matrixB;
 
-            result.ForEach((c) => Assert.Equal(0, c));
+            result.ToList().ForEach(c => Assert.Equal(0, c));
         }
 
         [Theory]
@@ -128,6 +135,48 @@ namespace MathExtendedTests
             Matrix<double> matrixB = new Matrix<double>(rowsCountSecondMatrix, columnsCountSecondMatrix).FillInOrder();
 
             Assert.Throws<MatrixDifferentSizeException>(() => matrixA + matrixB);
+        }
+
+        [Theory]
+        [InlineData(3, 3, 3, 3, new double[] { 30, 36, 42, 66, 81, 96, 102, 126, 150 })]
+        [InlineData(4, 4, 4, 4, new double[] { 90, 100, 110, 120, 202, 228, 254, 280, 314, 356, 398, 440, 426, 484, 542, 600 })]
+        [InlineData(4, 3, 3, 4, new double[] { 38, 44, 50, 56, 83, 98, 113, 128, 128, 152, 176, 200, 173, 206, 239, 272 })]
+        [InlineData(2, 3, 3, 2, new double[] { 22, 28, 49, 64 })]
+        public void MultiplyOperatorMatricesDifferentSizes(int rowsCountFirstMatrix, int columnsCountFirstMatrix, int rowCountSecondMatrix, int columnsCountSecondMatrix, ICollection<double> expected)
+        {
+            Matrix<double> matrixA = new Matrix<double>(rowsCountFirstMatrix, columnsCountFirstMatrix).FillInOrder();
+
+            Matrix<double> matrixB = new Matrix<double>(rowCountSecondMatrix, columnsCountSecondMatrix).FillInOrder();
+
+            Matrix<double> result = matrixA * matrixB;
+
+            Assert.Equal(expected, result.ToArray());
+
+        }
+
+        [Theory]
+        [InlineData(3, 2, 4, 2)]
+        [InlineData(4, 2, 3, 2)]
+        public void MultiplyOperatorInvalidSizes(int rowsCountFirstMatrix, int columnsCountFirstMatrix, int rowCountSecondMatrix, int columnsCountSecondMatrix)
+        {
+            Matrix<double> matrixA = new Matrix<double>(rowsCountFirstMatrix, columnsCountFirstMatrix);
+
+            Matrix<double> matrixB = new Matrix<double>(rowCountSecondMatrix, columnsCountSecondMatrix);
+
+            Assert.Throws<TheNumberOfRowsAndColumnsIsDifferentException>(() => matrixA * matrixB);
+        }
+
+        [Theory]
+        [InlineData(3, 3, new double[] { 1, 4, 7, 2, 5, 8, 3, 6, 9 })]
+        [InlineData(3, 2, new double[] { 1, 3, 5, 2, 4, 6 })]
+        [InlineData(2, 3, new double[] { 1, 4, 2, 5, 3, 6 })]
+        public void TransponateMatrixDifferentSizes(int rowsCount, int columsCount, ICollection<double> expected)
+        {
+            Matrix<double> matrix = new Matrix<double>(rowsCount, columsCount)
+                .FillInOrder()
+                .Transponate();
+
+            Assert.Equal(expected, matrix.ToList());
         }
 
     }

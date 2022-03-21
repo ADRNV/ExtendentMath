@@ -15,7 +15,7 @@ namespace MathExtended
         /// <param name="minValue">Нижняя граница</param>
         /// <param name="maxValue">Верхняя граница</param>
         /// <returns><typeparamref name="T"/> Число</returns>
-        public T Next<T>(in T minValue,in T maxValue) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public T Next<T>(in T minValue, in T maxValue) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             if ((dynamic)minValue < maxValue)
             {

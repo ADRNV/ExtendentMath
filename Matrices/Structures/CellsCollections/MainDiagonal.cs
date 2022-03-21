@@ -1,11 +1,5 @@
-﻿using MathExtended.Interfaces;
-using MathExtended.Matrices.Structures.CellsCollection;
-using MathExtended.Matrices.Structures.Rows;
+﻿using MathExtended.Matrices.Structures.CellsCollection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MathExtended.Matrices.Structures.CellsCollections
 {
@@ -19,7 +13,7 @@ namespace MathExtended.Matrices.Structures.CellsCollections
         /// Создает клавную диагональ на основе массива
         /// </summary>
         /// <param name="array">Массив</param>
-        public MainDiagonal(T[] array):base(array)
+        public MainDiagonal(T[] array) : base(array)
         {
 
         }

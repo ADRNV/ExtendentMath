@@ -2,9 +2,7 @@
 using MathExtended.Matrices.Structures.CellsCollections;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 
 
@@ -36,7 +34,7 @@ namespace MathExtended.Matrices.Extensions
             }
             else
             {
-                for(dynamic row = 0;row < matrix.RowsCount; row++)
+                for (dynamic row = 0; row < matrix.RowsCount; row++)
                 {
                     for (dynamic column = 0; column < matrix.ColumnsCount; column++)
                     {
@@ -45,6 +43,17 @@ namespace MathExtended.Matrices.Extensions
                 }
             }
 
+        }
+
+        public static void ForEachAsParrallel<T>(this IMatrix<T> matrix, Action<int, int> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            Parallel.For(0, matrix.RowsCount, row =>
+            {
+                Parallel.For(0, matrix.ColumnsCount, column =>
+                {
+                    action.Invoke(row, column);
+                });
+            });
         }
 
         /// <summary>
@@ -77,13 +86,7 @@ namespace MathExtended.Matrices.Extensions
         {
             Matrix<T> transposedMatrix = new Matrix<T>(matrix.ColumnsCount, matrix.RowsCount);
 
-            Parallel.For(0, matrix.RowsCount, row =>
-            {
-                Parallel.For(0, matrix.ColumnsCount, column =>
-                {
-                    transposedMatrix[row, column] = matrix[column, row];
-                });
-            });
+            matrix.ForEachAsParrallel((r,c) => transposedMatrix[r, c] = matrix[c,r]);
 
             return transposedMatrix;
         }
@@ -97,11 +100,11 @@ namespace MathExtended.Matrices.Extensions
         /// <param name="matrix">Matrix</param>
         /// <param name="func">Function</param>
         /// <returns>Initialized matrix</returns>
-        public static Matrix<T> InitBy<T>(this IMatrix<T> matrix,Func<T,T,T> func) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static Matrix<T> InitBy<T>(this IMatrix<T> matrix, Func<T, T, T> func) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             Matrix<T> initedMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
 
-            matrix.ForEach((r,c) => initedMatrix[r,c] = func.Invoke((dynamic)r,(dynamic)c));
+            matrix.ForEach((r, c) => initedMatrix[r, c] = func.Invoke((dynamic)r, (dynamic)c));
 
             return initedMatrix;
         }
@@ -150,7 +153,7 @@ namespace MathExtended.Matrices.Extensions
         /// <param name="min">Минимальное число</param>
         /// <param name="max">Максимальное число</param>
         /// <returns>Матрица со случайными значениями</returns>
-        public static Matrix<T> FillRandom<T>(this IMatrix<T> matrix ,T min, T max) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static Matrix<T> FillRandom<T>(this IMatrix<T> matrix, T min, T max) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             Matrix<T> filledMatrix = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
 
@@ -160,9 +163,9 @@ namespace MathExtended.Matrices.Extensions
             {
                 Parallel.For(0, matrix.ColumnsCount, column =>
                 {
-                    
+
                     filledMatrix[row, column] = random.Next<T>(min, max);
-                    
+
                 });
             });
 
@@ -176,7 +179,7 @@ namespace MathExtended.Matrices.Extensions
         /// <param name="crossedOutRow">Вычеркнутая строка</param>
         /// <param name="crossedOutColumn">Вычеркнутый столбец</param>
         /// <returns><see cref="Matrix{T}"/> Минор матрицы</returns>
-        public static Matrix<T> FindMinor<T>(this IMatrix<T> matrix,uint crossedOutRow, uint crossedOutColumn) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static Matrix<T> FindMinor<T>(this IMatrix<T> matrix, uint crossedOutRow, uint crossedOutColumn) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             int i, j, p, q;
 

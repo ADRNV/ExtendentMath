@@ -8,11 +8,11 @@ namespace MathExtended.Exceptions
     public class MatrixDifferentSizeException : Exception
     {
         private string message = "Matrices must be the same size";
-        
+
         /// <summary>
         /// Сообщение исключения
         /// </summary>
         public override string Message => message;
-        
+
     }
 }
