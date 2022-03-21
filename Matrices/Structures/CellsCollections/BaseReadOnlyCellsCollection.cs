@@ -1,10 +1,4 @@
-﻿using MathExtended.Interfaces;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace MathExtended.Matrices.Structures.CellsCollection
 {
@@ -14,12 +8,12 @@ namespace MathExtended.Matrices.Structures.CellsCollection
     /// <typeparam name="T">Числовой тип</typeparam>
     public abstract class BaseReadOnlyCellsCollection<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        
+
         /// <summary>
         /// Создает коллекцию ячеек только для чтения с указанным размером
         /// </summary>
         /// <param name="size">Размер коллеции</param>
-        public BaseReadOnlyCellsCollection(int size):base(size)
+        public BaseReadOnlyCellsCollection(int size) : base(size)
         {
             Cells = new T[size];
         }
@@ -28,7 +22,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         /// Создает коллецию только для чтения на основе массива
         /// </summary>
         /// <param name="array">Массив</param>
-        public BaseReadOnlyCellsCollection(T[] array):base(array)
+        public BaseReadOnlyCellsCollection(T[] array) : base(array)
         {
             Cells = array;
         }
@@ -38,8 +32,8 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         /// </summary>
         /// <param name="index">Индекс элемента</param>
         /// <returns>Элемент по индексу</returns>
-        public override T this[int index] 
-        { 
+        public override T this[int index]
+        {
             get => base[index];
         }
     }

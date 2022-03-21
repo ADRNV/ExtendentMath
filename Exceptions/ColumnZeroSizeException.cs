@@ -15,6 +15,6 @@ namespace MathExtended.Exceptions
         /// Сообщение исключения
         /// </summary>
         public override string Message => _message;
-        
+
     }
 }

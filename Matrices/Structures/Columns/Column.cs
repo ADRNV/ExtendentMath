@@ -1,12 +1,8 @@
-﻿using MiscUtil;
-using System;
-using MathExtended.Exceptions;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MathExtended.Exceptions;
 using MathExtended.Matrices.Structures.CellsCollection;
 using MathExtended.Matrices.Structures.Rows;
+using MiscUtil;
+using System;
 
 namespace MathExtended.Matrices.Structures.Columns
 {
@@ -21,21 +17,21 @@ namespace MathExtended.Matrices.Structures.Columns
         /// Создает столбец с указанными размерами
         /// </summary>
         /// <param name="height"></param>
-       public Column(int height) : base(height) { }
-       /// <summary>
-       /// Создает столбец на основе массива
-       /// </summary>
-       /// <param name="array"></param>
-       public Column(T[] array) : base(array) { }
+        public Column(int height) : base(height) { }
+        /// <summary>
+        /// Создает столбец на основе массива
+        /// </summary>
+        /// <param name="array"></param>
+        public Column(T[] array) : base(array) { }
 
-       /// <summary>
-       /// Не явным образом приводит масив к столбцу
-       /// </summary>
-       /// <param name="array">Приводимый массив</param>
-       public static implicit operator Column<T>(T[] array)
-       {
+        /// <summary>
+        /// Не явным образом приводит масив к столбцу
+        /// </summary>
+        /// <param name="array">Приводимый массив</param>
+        public static implicit operator Column<T>(T[] array)
+        {
             return new Column<T>(array);
-       }
+        }
 
         /// <summary>
         /// Умножает число на столбец
@@ -175,7 +171,7 @@ namespace MathExtended.Matrices.Structures.Columns
         public static explicit operator ReadOnlyColumn<T>(Column<T> column)
         {
             ReadOnlyColumn<T> readOnlyColumn = new ReadOnlyColumn<T>(column.Cells);
-            
+
             return readOnlyColumn;
         }
 
@@ -185,9 +181,9 @@ namespace MathExtended.Matrices.Structures.Columns
         /// <returns><see cref="Row{T}"/> Строка</returns>
         public Row<T> Transponate()
         {
-           return new Row<T>(Cells);
+            return new Row<T>(Cells);
         }
 
-        
+
     }
 }

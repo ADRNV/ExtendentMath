@@ -1,10 +1,7 @@
-﻿using MiscUtil;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MathExtended.Matrices.Structures.CellsCollection
 {
@@ -49,7 +46,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
                 _cells = value;
             }
         }
-            
+
 
         /// <summary>
         /// Размер коллекции
@@ -96,7 +93,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         /// </summary>
         /// <returns>Максимальное значение в последовательности ячеек</returns>
         public virtual T Max() => _cells.Max();
-        
+
 
         /// <summary>
         /// Находит минимальное число среди ячеек
@@ -113,7 +110,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             return _cells.All((cell) => cell == (dynamic)0);
         }
 
-       
+
         #region IEnumerable
         /// <summary>
         /// Текуший элемент

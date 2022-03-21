@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
-using MathExtended.Exceptions;
-using MiscUtil;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading;
+﻿using MathExtended.Exceptions;
 using MathExtended.Matrices.Structures.CellsCollections;
+using MiscUtil;
+using System;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace MathExtended.Matrices
 {
@@ -49,7 +43,7 @@ namespace MathExtended.Matrices
             }
         }
 
-        
+
         #endregion
 
         /// <summary>
@@ -59,7 +53,7 @@ namespace MathExtended.Matrices
         /// <param name="columns">Колличество столбцов матрице</param>
         public Matrix(int rows, int columns) : base(rows, columns)
         {
-           
+
 
             IsSquareMatrix = RowsCount == ColumnsCount;
 
@@ -113,7 +107,7 @@ namespace MathExtended.Matrices
         /// <param name="matrixA"></param>
         /// <param name="matrixB"></param>
         /// <returns>Разность матриц</returns>
-        public static Matrix<T> operator - (Matrix<T> matrixA, Matrix<T> matrixB)
+        public static Matrix<T> operator -(Matrix<T> matrixA, Matrix<T> matrixB)
         {
             if (matrixA.ColumnsCount == matrixB.ColumnsCount && matrixA.RowsCount == matrixB.RowsCount)
             {
@@ -187,7 +181,7 @@ namespace MathExtended.Matrices
                 {
                     Parallel.For(0, matrixB.ColumnsCount, column =>
                     {
-                        for (int k = 0; k < matrixB.RowsCount; k++)// A B или C ?
+                        for (int k = 0; k < matrixB.RowsCount; k++)
                         {
                             matrixC[row, column] = (T)Operator.Add(matrixC[row, column], Operator.Multiply(matrixA[row, k], matrixB[k, column]));
                         }
@@ -222,7 +216,7 @@ namespace MathExtended.Matrices
             return matrix.matrix;
         }
 
-        
+
         #endregion
         private async Task<int> FindRankAsync()
         {
@@ -254,7 +248,7 @@ namespace MathExtended.Matrices
         /// <param name="matrix">Матрица</param>
         /// <param name="power">Степень</param>
         /// <returns>Матрица в заданной степени</returns>
-        public static Matrix<T> Pow(Matrix<T> matrix,int power)
+        public static Matrix<T> Pow(Matrix<T> matrix, int power)
         {
 
             if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
@@ -325,7 +319,7 @@ namespace MathExtended.Matrices
             var result = new Matrix<T>(this.RowsCount, this.ColumnsCount - 1);
             result.ForEach((i, j) =>
                 result[i, j] =
-                j < column ? this[i,j] : this[i, j + 1]);
+                j < column ? this[i, j] : this[i, j + 1]);
             return result;
         }
 
@@ -373,9 +367,9 @@ namespace MathExtended.Matrices
                 return Operator.Subtract(Operator.Multiply(this[0, 0], this[1, 1]), Operator.Multiply(this[0, 1], this[1, 0]));
             }
 
-            if(this.RowsCount == 1)
+            if (this.RowsCount == 1)
             {
-                return this[0,0];
+                return this[0, 0];
             }
 
 
@@ -396,7 +390,7 @@ namespace MathExtended.Matrices
         /// <returns>Детерминант матрицы</returns>
         public async Task<T> CalculateDeterminantAsync()
         {
-           return await Task.Run(CalculateDeterminant);
+            return await Task.Run(CalculateDeterminant);
         }
 
         #region Features
@@ -409,26 +403,26 @@ namespace MathExtended.Matrices
         {
             string outString = String.Empty;
 
-            for(int row = 0;row < this.RowsCount; row++)
+            for (int row = 0; row < this.RowsCount; row++)
             {
-                for(int column = 0;column < this.ColumnsCount; column++)
+                for (int column = 0; column < this.ColumnsCount; column++)
                 {
                     outString += matrix[row, column].ToString().PadLeft(8) + " ";
-                   
+
                 }
 
                 outString += "\n";
             };
 
-            
+
 
             return outString;
         }
 
 
-       
+
         #endregion
 
-        
+
     }
 }

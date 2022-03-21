@@ -1,13 +1,8 @@
-﻿using MiscUtil;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathExtended.Exceptions;
+﻿using MathExtended.Exceptions;
 using MathExtended.Matrices.Structures.CellsCollection;
 using MathExtended.Matrices.Structures.Columns;
-using MathExtended.Matrices.Structures.Rows;
+using MiscUtil;
+using System;
 
 namespace MathExtended.Matrices.Structures.Rows
 {
@@ -18,7 +13,7 @@ namespace MathExtended.Matrices.Structures.Rows
     public class Row<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         private BaseCellsCollection<T> RowCells;
-        
+
         /// <summary>
         /// Создает строку с указанным размером
         /// </summary>
@@ -49,7 +44,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="multiplier">Множитель</param>
         /// <param name="row">Строка</param>
         /// <returns>Умноженная строка</returns>
-        public static Row<T> operator * (T multiplier, Row<T> row)
+        public static Row<T> operator *(T multiplier, Row<T> row)
         {
             Row<T> multipliedRow = new Row<T>(row.Size);
 
@@ -66,7 +61,7 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="rowA">Первая строка</param>
         /// <param name="rowB">Вторая строка</param>
         /// <returns>Сумма двух строк</returns>
-        public static Row<T> operator + (Row<T> rowA, Row<T> rowB)
+        public static Row<T> operator +(Row<T> rowA, Row<T> rowB)
         {
             if (rowA.Size == rowB.Size)
             {
@@ -93,12 +88,12 @@ namespace MathExtended.Matrices.Structures.Rows
         /// <param name="rowA">Первая строка</param>
         /// <param name="rowB">Вторая строка</param>
         /// <returns>Разность двух строк</returns>
-        public static Row<T> operator - (Row<T> rowA, Row<T> rowB)
+        public static Row<T> operator -(Row<T> rowA, Row<T> rowB)
         {
             if (rowA.Size == rowB.Size)
             {
                 Row<T> summedRow = new Row<T>(rowA.Size);
-               
+
                 int i = 0;
 
                 summedRow.ForEach((cell) => summedRow[i++] = (T)Operator.Subtract(rowA[i++], rowB[i++]));
@@ -126,7 +121,7 @@ namespace MathExtended.Matrices.Structures.Rows
             else
             {
                 dynamic num = 0;
-                
+
                 for (int i = 0; i < row.Size; i++)
                 {
                     num += (T)Operator.Multiply(row[i], column[i]);
@@ -135,7 +130,7 @@ namespace MathExtended.Matrices.Structures.Rows
                 return num;
             }
 
-            
+
         }
 
 
@@ -147,9 +142,9 @@ namespace MathExtended.Matrices.Structures.Rows
         public static explicit operator Row<T>(ReadOnlyRow<T> readOnlyRow)
         {
             Row<T> row = new Row<T>(readOnlyRow.Size);
-            
+
             int i = 0;
-           
+
             readOnlyRow.ForEach((cell) =>
             {
                 row[i] = cell;

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+﻿using MathExtended.Exceptions;
+using MathExtended.Interfaces;
+using MathExtended.Matrices.Extensions;
+using MathExtended.Matrices.Structures.CellsCollection;
+using MathExtended.Matrices.Structures.CellsCollections;
 using MathExtended.Matrices.Structures.Columns;
 using MathExtended.Matrices.Structures.Rows;
-using MathExtended.Matrices.Structures.CellsCollections;
-using MathExtended.Matrices.Structures.CellsCollection;
-using System.Linq;
-using MathExtended.Matrices.Extensions;
-using MathExtended.Interfaces;
-using MathExtended.Exceptions;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MathExtended.Matrices
 {
@@ -19,7 +17,7 @@ namespace MathExtended.Matrices
     /// и ограничивает принимаемые обобщения до числовых типов (<see cref="int"></see>, <see cref="float"></see>, <see cref="double"></see> и т.д)
     /// </summary>
     /// <typeparam name="T">Числовой тип</typeparam>
-    public abstract class BaseMatrix<T> : IEnumerable<T>,IEnumerator<T>, IMatrix<T> where T: IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public abstract class BaseMatrix<T> : IEnumerable<T>, IEnumerator<T>, IMatrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         /// <summary>
         /// Матрица представляющая собой двумерный массив
@@ -51,7 +49,7 @@ namespace MathExtended.Matrices
         /// </summary>
         /// <param name="rows">Количество строк</param>
         /// <param name="columns">Количество столбцов</param>
-        public BaseMatrix(int rows,int columns)
+        public BaseMatrix(int rows, int columns)
         {
             if (!(rows <= 0) && !(columns <= 0))
             {
@@ -132,7 +130,7 @@ namespace MathExtended.Matrices
         {
             get
             {
-                if(selector == VectorSelector.Rows)
+                if (selector == VectorSelector.Rows)
                 {
                     return (ReadOnlyRow<T>)_rows[index];
                 }
@@ -165,7 +163,7 @@ namespace MathExtended.Matrices
 
         }
 
-      
+
         /// <summary>
         /// Возвращает строку матрицы соответсвующую индексу
         /// </summary>
@@ -177,11 +175,11 @@ namespace MathExtended.Matrices
             {
                 var fullRow = new List<T>();
 
-               for(int column = 0;column < ColumnsCount;column++)
-               {
+                for (int column = 0; column < ColumnsCount; column++)
+                {
                     fullRow.Add(this[rowIndex, column]);
-               }
-                
+                }
+
 
                 return new Row<T>(fullRow.ToArray());
             }
@@ -190,7 +188,7 @@ namespace MathExtended.Matrices
                 throw new IndexOutOfRangeException();
             }
 
-            
+
         }
 
         /// <summary>
@@ -218,15 +216,15 @@ namespace MathExtended.Matrices
         {
             if (index <= row.Size)
             {
-        
-               ForEach((r,c) => this[index, c] = row[c]);
-                
+
+                ForEach((r, c) => this[index, c] = row[c]);
+
             }
             else
             {
                 throw new IndexOutOfRangeException();
             }
-            
+
         }
 
         /// <summary>
@@ -266,7 +264,7 @@ namespace MathExtended.Matrices
             {
                 throw new IndexOutOfRangeException($"Index {columnIndex} out of the bounds matrix");
             }
-        
+
         }
 
         /// <summary>
@@ -287,27 +285,27 @@ namespace MathExtended.Matrices
         /// </summary>
         /// <param name="columnIndex">Индекс столбца</param>
         /// <param name="column">Стобец</param>
-        public void SetColumn(int columnIndex,Column<T> column)
+        public void SetColumn(int columnIndex, Column<T> column)
         {
             if (columnIndex <= this.RowsCount - 1)
             {
-                ForEach((r,c) => this[r, columnIndex] = column[r]);
-                
+                ForEach((r, c) => this[r, columnIndex] = column[r]);
+
             }
             else
             {
                 throw new IndexOutOfRangeException();
             }
         }
-        
-        
+
+
         /// <summary>
         /// Задает столбцы матрицы
         /// </summary>
         /// <param name="columns">Столбцы</param>
         public void SetColumns(Column<T>[] columns)
         {
-            ForEach((row, column) => SetColumn(row,columns[row]));
+            ForEach((row, column) => SetColumn(row, columns[row]));
         }
 
         /// <summary>
@@ -343,7 +341,7 @@ namespace MathExtended.Matrices
             return matrix.matrix;
         }
 
-        
+
 
         #region IEnumerable
         /// <summary>
@@ -425,7 +423,7 @@ namespace MathExtended.Matrices
             _columnPosition = -1;
         }
 
-        
+
 
         /// <summary>
         /// Высвобождает использованные ресурсы
@@ -437,7 +435,7 @@ namespace MathExtended.Matrices
             {
                 if (disposing)
                 {
-                    
+
                     matrix = null;
                     MainDiagonal = null;
                 }
