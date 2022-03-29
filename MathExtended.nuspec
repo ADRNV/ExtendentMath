@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>1.0.1.1</version>
+    <id>MathExtended</id>
+    <version>1.0.1.2</version>
     <title>MathExtendent</title>
     <authors>Lamer0</authors>
     <language>C#</language>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/Lamer0/ExtendentMath</projectUrl>
-    <summary>MathExtended</summary>
+    <summary>MathExtendent - tiny lib includes random, some trigonometry, matrices</summary>
     <description>A math library that will include work with matrices, some trigonometric functions of which are not in Math</description>
     <releaseNotes></releaseNotes>
     <copyright>https://github.com/Lamer0/ExtendentMath</copyright>

@@ -1,6 +1,7 @@
 ﻿using MathExtended.Exceptions;
 using MathExtended.Matrices;
 using MathExtended.Matrices.Extensions;
+using MathExtended.Matrices.Structures.Rows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MathExtendedTests
         [InlineData(3, 6)]
         public void InitMatrix(int rowsCount, int columnsCount)
         {
-            Matrix<int> matrix = new Matrix<int>(rowsCount, columnsCount);
+            Matrix<int> matrix = new(rowsCount, columnsCount);
 
             Assert.Equal(rowsCount, matrix.RowsCount);
             Assert.Equal(columnsCount, matrix.ColumnsCount);

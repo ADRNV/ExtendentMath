@@ -59,6 +59,7 @@ namespace MathExtended
             return 1 / Sch(x);
         }
 
+        
         /// <summary>
         /// Вычисляет алгебраическую сумму функции
         /// </summary>
@@ -78,26 +79,7 @@ namespace MathExtended
             return sum;
         }
 
-        /// <summary>
-        /// Вычисляет алгебраическую сумму функции
-        /// </summary>
-        /// <param name="i">Индекс суммирования</param>
-        /// <param name="min">Нижняя граница</param>
-        /// <param name="max">Верхняя граница</param>
-        /// <param name="func">Функция</param>
-        /// <returns><see cref="double"/> Алгебраическая сумма</returns>
-        public static double AlgebraicSum(double i, double min, double max, Func<double, double> func)
-        {
-            double sum = 0;
-
-            for (; i <= max && i >= max; i++)
-            {
-                sum += func.Invoke(i);
-            }
-
-            return sum;
-        }
-
+       
         /// <summary>
         /// Проводит табулирование функции
         /// </summary>

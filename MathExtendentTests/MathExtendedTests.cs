@@ -28,16 +28,16 @@ namespace MathExtendedTests
         /// <summary>
         /// Фактическая алгебраическая сумма должна совпадать с вычисленной
         /// </summary>
-        [Fact]
-        public void AlgebraicSumReturnsSameSum()
+        [Theory]
+        [InlineData(0, 100, 338552)]
+        [InlineData(1, 100, 338550)]
+        [InlineData(0d, 5.0653d, 69.1240283333)]
+        public void AlgebraicSumReturnsSameSum(double start, double stop, double expected)
         {
-            double factSum = 333835502;
+            double calculatedSum = MathExtendent.AlgebraicSum(start, stop, (x) => Math.Pow(x, 2) + 2);
 
-            double calculatedSum = MathExtendent.AlgebraicSum(0, 1000, (x) => Math.Pow(x, 2) + 2);
-
-            Assert.Equal(calculatedSum, factSum);
+            Assert.Equal(expected, calculatedSum);
         }
-
 
     }
 }

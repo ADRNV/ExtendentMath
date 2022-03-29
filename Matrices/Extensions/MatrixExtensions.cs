@@ -45,13 +45,30 @@ namespace MathExtended.Matrices.Extensions
 
         }
 
-        public static void ForEachAsParrallel<T>(this IMatrix<T> matrix, Action<int, int> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        private static void ForEachAsParrallel<T>(this IMatrix<T> matrix, Action<int, int> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             Parallel.For(0, matrix.RowsCount, row =>
             {
                 Parallel.For(0, matrix.ColumnsCount, column =>
                 {
                     action.Invoke(row, column);
+                });
+            });
+        }
+
+        /// <summary>
+        /// Invokes action for each cell in matrix
+        /// </summary>
+        /// <typeparam name="T">Numerical type</typeparam>
+        /// <param name="matrix">Matrix</param>
+        /// <param name="action">Action(takes matrix cell value)</param>
+        public static void ForEachAsParrallel<T>(this IMatrix<T> matrix, Action<T> action) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            Parallel.For(0, matrix.RowsCount, row =>
+            {
+                Parallel.For(0, matrix.ColumnsCount, column =>
+                {
+                    action.Invoke(matrix[row, column]);
                 });
             });
         }
