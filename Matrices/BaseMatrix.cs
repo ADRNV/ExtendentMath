@@ -22,7 +22,7 @@ namespace MathExtended.Matrices
         /// <summary>
         /// Матрица представляющая собой двумерный массив
         /// </summary>
-        protected T[,] matrix;
+        protected T[][] matrix;
 
         private Row<T>[] _rows;
 
@@ -57,11 +57,9 @@ namespace MathExtended.Matrices
 
                 _columnsCount = columns;
 
-                matrix = new T[rows, columns];
+                InitRows();
 
-                _rows = GetRows();
-
-                _columns = GetColumns();
+                
             }
             else
             {
@@ -77,13 +75,23 @@ namespace MathExtended.Matrices
         /// <returns>Число по указанному адресу в матрице</returns>
         public T this[int row, int column]
         {
-            get => matrix[row, column];
+            get => matrix[row][column];
 
             set
             {
-                matrix[row, column] = value;
+                matrix[row][column] = value;
             }
 
+        }
+
+        public T[] this[int row]
+        {
+            get => matrix[row];
+
+            set
+            {
+                matrix[row] = value;
+            }
         }
 
         /// <summary>
@@ -163,6 +171,13 @@ namespace MathExtended.Matrices
 
         }
 
+        private void InitRows()
+        {
+            for(int row = 0;row < RowsCount;row++)
+            {
+                matrix[row] = new T[ColumnsCount];
+            }
+        }
 
         /// <summary>
         /// Возвращает строку матрицы соответсвующую индексу
@@ -336,7 +351,7 @@ namespace MathExtended.Matrices
         /// Преобразует матрицу в двумерный массив
         /// </summary>
         /// <returns>Двумерный массив</returns>
-        public static explicit operator T[,](BaseMatrix<T> matrix)
+        public static explicit operator T[][](BaseMatrix<T> matrix)
         {
             return matrix.matrix;
         }
@@ -351,7 +366,7 @@ namespace MathExtended.Matrices
         {
             get
             {
-                return matrix[_rowPosition, _columnPosition];
+                return matrix[_rowPosition][_columnPosition];
             }
         }
 
@@ -365,10 +380,12 @@ namespace MathExtended.Matrices
         /// <returns>Перечислитель матрицы</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            foreach (var i in matrix)
+            foreach(T[] row in matrix)
             {
-
-                yield return i;
+                foreach(T cell in row)
+                {
+                    yield return cell;
+                }
             }
         }
 

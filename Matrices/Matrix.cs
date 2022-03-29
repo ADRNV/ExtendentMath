@@ -53,17 +53,14 @@ namespace MathExtended.Matrices
         /// <param name="columns">Колличество столбцов матрице</param>
         public Matrix(int rows, int columns) : base(rows, columns)
         {
-
-
             IsSquareMatrix = RowsCount == ColumnsCount;
-
         }
 
         /// <summary>
         /// Создает матрицу на основе двумерного массива 
         /// </summary>
         /// <param name="array">Двумерный массив</param>
-        public Matrix(T[,] array) : base(array.GetUpperBound(0) + 1, array.GetUpperBound(1) + 1)
+        public Matrix(T[][] array) : base(array.GetUpperBound(0) + 1, array.GetUpperBound(1) + 1)
         {
             matrix = array;
 
@@ -202,7 +199,7 @@ namespace MathExtended.Matrices
         /// Явно приводит двумерный массив к <see cref="Matrix{T}"/>
         /// </summary>
         /// <param name="array">Приводимый массив</param>
-        public static explicit operator Matrix<T>(T[,] array)
+        public static explicit operator Matrix<T>(T[][] array)
         {
             return new Matrix<T>(array);
         }
@@ -211,7 +208,7 @@ namespace MathExtended.Matrices
         /// Явно приводит <see cref="Matrix{T}"/> к двумерному массиву
         /// </summary>
         /// <param name="matrix">Приводимая матрица</param>
-        public static explicit operator T[,](Matrix<T> matrix)
+        public static explicit operator T[][](Matrix<T> matrix)
         {
             return matrix.matrix;
         }
@@ -407,7 +404,7 @@ namespace MathExtended.Matrices
             {
                 for (int column = 0; column < this.ColumnsCount; column++)
                 {
-                    outString += matrix[row, column].ToString().PadLeft(8) + " ";
+                    outString += matrix[row][column].ToString().PadLeft(8) + " ";
 
                 }
 
