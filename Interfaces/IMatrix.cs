@@ -31,12 +31,17 @@ namespace MathExtended.Interfaces
         /// <param name="row">Индекс строки</param>
         /// <param name="column">Индекс столбца</param>
         /// <returns><typeparamref name="T"/> число по индексу</returns>
-        T this[int row, int column]
+        T this[int row,int column]
         {
             get;
             set;
         }
 
+        T[] this[int row]
+        {
+            get;
+            set;
+        }
 
     }
 }

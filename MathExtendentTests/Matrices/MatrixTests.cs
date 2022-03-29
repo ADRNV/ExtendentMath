@@ -30,11 +30,18 @@ namespace MathExtendedTests
         {
             Func<double, double, double> func = (r, c) => (r + 1) * (c + 1);
 
-            double[,] expected = { { 1, 2, 3 }, { 2, 4, 6 }, { 3, 6, 9 } };
+            double[][] expected = new double[3][];
+
+            expected[0] = new double[]{ 1, 2, 3 };
+
+            expected[1] = new double[] { 2, 4, 6 };
+
+            expected[2] = new double[] { 3, 6, 9 };
+
 
             Matrix<double> matrix = new Matrix<double>(3, 3).InitBy(func);
 
-            Assert.Equal(expected, (double[,])matrix);
+            Assert.Equal(expected, (double[][])matrix);
         }
 
         [Theory]
