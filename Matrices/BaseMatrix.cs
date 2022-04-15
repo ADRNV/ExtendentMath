@@ -8,6 +8,7 @@ using MathExtended.Matrices.Structures.Rows;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MathExtended.Matrices
@@ -23,10 +24,6 @@ namespace MathExtended.Matrices
         /// Матрица представляющая собой двумерный массив
         /// </summary>
         protected T[][] matrix;
-
-        private Row<T>[] _rows;
-
-        private Column<T>[] _columns;
 
         private int _rowsCount;
 
@@ -58,8 +55,6 @@ namespace MathExtended.Matrices
                 _columnsCount = columns;
 
                 InitRows();
-
-                
             }
             else
             {
@@ -84,16 +79,22 @@ namespace MathExtended.Matrices
 
         }
 
-        public T[] this[int row]
+        /// <summary>
+        /// Get or set row in matrix
+        /// </summary>
+        /// <param name="row">Index of row</param>
+        /// <returns><see cref="Row{T}"/> row index in matrix</returns>
+        public Row<T> this[int row]
         {
             get => matrix[row];
 
             set
             {
-                matrix[row] = value;
+                matrix[row] = (T[])value;
             }
         }
 
+        
         /// <summary>
         /// Колличество строк в матрице
         /// </summary>
@@ -125,50 +126,6 @@ namespace MathExtended.Matrices
             {
                 _mainDiagonal = value;
             }
-        }
-
-        /// <summary>
-        /// Возвращает столбец или строку в
-        /// зависимости от селектора
-        /// </summary>
-        /// <param name="selector">Селектор векторов</param>
-        /// <param name="index">Индекс вектора</param>
-        /// <returns>Вектор или строка по индексу</returns>
-        protected virtual BaseReadOnlyCellsCollection<T> this[VectorSelector selector, int index]
-        {
-            get
-            {
-                if (selector == VectorSelector.Rows)
-                {
-                    return (ReadOnlyRow<T>)_rows[index];
-                }
-                else
-                {
-                    return (ReadOnlyColumn<T>)_columns[index];
-                }
-            }
-
-        }
-
-        /// <summary>
-        /// Возвращает стоки или столбцы в зависимости от селектора
-        /// </summary>
-        /// <param name="selector">Селектор</param>
-        /// <returns>Массив строк или столбцов</returns>
-        public virtual BaseCellsCollection<T>[] this[VectorSelector selector]
-        {
-            get
-            {
-                if (selector == VectorSelector.Rows)
-                {
-                    return _rows;
-                }
-                else
-                {
-                    return _columns;
-                }
-            }
-
         }
 
         private void InitRows()

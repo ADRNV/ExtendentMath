@@ -39,6 +39,15 @@ namespace MathExtended.Matrices.Structures.Rows
         }
 
         /// <summary>
+        /// Casts <see cref="Row{T}"/> to array
+        /// </summary>
+        /// <param name="row">Row</param>
+        public static explicit operator T[](Row<T> row)
+        {
+            return row.Cells;
+        }
+
+        /// <summary>
         /// Умножает число на строку
         /// </summary>
         /// <param name="multiplier">Множитель</param>

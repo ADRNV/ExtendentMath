@@ -1,4 +1,5 @@
 ﻿using MathExtended.Matrices.Structures.CellsCollections;
+using MathExtended.Matrices.Structures.Rows;
 using System;
 using System.Collections.Generic;
 
@@ -37,7 +38,12 @@ namespace MathExtended.Interfaces
             set;
         }
 
-        T[] this[int row]
+        /// <summary>
+        /// Get or set row in matrix
+        /// </summary>
+        /// <param name="row">Index of row</param>
+        /// <returns><see cref="Row{T}"/> row index in matrix</returns>
+        Row<T> this[int row]
         {
             get;
             set;
