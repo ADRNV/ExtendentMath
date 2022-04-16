@@ -9,7 +9,6 @@ namespace MathExtended.Matrices.Structures.Rows
     /// <typeparam name="T">Числовой тип</typeparam>
     public class ReadOnlyRow<T> : BaseReadOnlyCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        private BaseCellsCollection<T> RowCells;
 
         /// <summary>
         /// Создает строку только для чтения определенного размера

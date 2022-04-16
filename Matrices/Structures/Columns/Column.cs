@@ -12,7 +12,7 @@ namespace MathExtended.Matrices.Structures.Columns
     /// <typeparam name="T">Тип содержимого строки</typeparam>
     public class Column<T> : BaseCellsCollection<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
-        private BaseCellsCollection<T> ColumnCells;
+
         /// <summary>
         /// Создает столбец с указанными размерами
         /// </summary>

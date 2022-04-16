@@ -1,7 +1,6 @@
 ﻿using MathExtended.Exceptions;
 using MathExtended.Matrices;
 using MathExtended.Matrices.Extensions;
-using MathExtended.Matrices.Structures.Rows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +31,7 @@ namespace MathExtendedTests
 
             double[][] expected = new double[3][];
 
-            expected[0] = new double[]{ 1, 2, 3 };
+            expected[0] = new double[] { 1, 2, 3 };
 
             expected[1] = new double[] { 2, 4, 6 };
 
@@ -71,6 +70,26 @@ namespace MathExtendedTests
 
             Assert.Equal(eventInvokeCount, eventInvokeCountActual);
         }
+
+        [Theory]
+        [InlineData(1, 1, 1)]
+        [InlineData(3, 3, 9)]
+        [InlineData(3, 2, 6)]
+        [InlineData(3, 6, 18)]
+        public void ForEachAsOperatorInMatrix(int rowsCount, int columnsCount, int eventInvokeCount)
+        {
+            int eventInvokeCountActual = 0;
+
+            Matrix<double> matrix = new Matrix<double>(rowsCount, columnsCount);
+
+            foreach (double cell in matrix)
+            {
+                eventInvokeCountActual++;
+            }
+
+            Assert.Equal(eventInvokeCount, eventInvokeCountActual);
+        }
+
 
         [Theory]
         [InlineData(3, 3, new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
@@ -185,6 +204,26 @@ namespace MathExtendedTests
                 .Transponate();
 
             Assert.Equal(expected, matrix);
+        }
+
+        [Theory]
+        [InlineData(3, 3, new double[] { 1, 0, -1, 0, 1, 2, 0, 0, 0 })]
+        public void ToSteppedViewMatrixDifferentSizes(int rowsCount, int columsCount, ICollection<double> expected)
+        {
+            Matrix<double> steppedMatrix = new Matrix<double>(rowsCount, columsCount)
+                .FillInOrder()
+                .ToSteppedView();
+
+            Assert.Equal(expected, steppedMatrix);
+
+        }
+
+        [Fact]
+        public void MatrixCalculateDeterminant()
+        {
+            Matrix<double> matrix1 = new Matrix<double>(2, 2).InitBy((r, c) => r + 2 * c + 1);
+
+            Assert.Equal(9, matrix1.CalculateDeterminant());
         }
 
     }

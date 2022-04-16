@@ -1,5 +1,4 @@
 ﻿using MathExtended.Exceptions;
-using MathExtended.Matrices.Structures.CellsCollections;
 using MiscUtil;
 using System;
 using System.Runtime.CompilerServices;
@@ -228,7 +227,7 @@ namespace MathExtended.Matrices
         {
             int rank = 0;
 
-            Parallel.ForEach(this.ToSteppedView()[VectorSelector.Rows], row =>
+            Parallel.ForEach(this.ToSteppedView().Rows, row =>
             {
                 if (!row.IsZero())
                 {
@@ -278,22 +277,18 @@ namespace MathExtended.Matrices
 
                 for (int j = row + 1; j < steppedMatrix.RowsCount; j++)
                 {
-
                     if (this[row, row] != (dynamic)0)
                     {
+                        dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)this[row, row]);
 
-                        if (this[row, row] != (dynamic)0)
+                        for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
                         {
-                            dynamic koeficient = (dynamic)(steppedMatrix[j, row] / (dynamic)this[row, row]);
 
-                            for (int k = 0; k < steppedMatrix.ColumnsCount; k++)
-                            {
+                            steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
 
-                                steppedMatrix[j, k] -= steppedMatrix[row, k] * koeficient;
-
-                            }
                         }
                     }
+
                 }
             });
 
@@ -404,7 +399,7 @@ namespace MathExtended.Matrices
             {
                 for (int column = 0; column < this.ColumnsCount; column++)
                 {
-                    outString += matrix[row][column].ToString().PadLeft(8) + " ";
+                    outString += matrix[row][column].ToString().PadLeft(matrix[row][column].ToString().Length) + " ";
 
                 }
 

@@ -103,7 +103,7 @@ namespace MathExtended.Matrices.Extensions
         {
             Matrix<T> transposedMatrix = new Matrix<T>(matrix.ColumnsCount, matrix.RowsCount);
 
-            transposedMatrix.ForEachAsParrallel((r,c) => transposedMatrix[r, c] = matrix[c,r]);
+            transposedMatrix.ForEachAsParrallel((r, c) => transposedMatrix[r, c] = matrix[c, r]);
 
             return transposedMatrix;
         }
@@ -215,5 +215,6 @@ namespace MathExtended.Matrices.Extensions
 
             return minor;
         }
+
     }
 }

@@ -1,14 +1,12 @@
 ﻿using MathExtended.Exceptions;
 using MathExtended.Interfaces;
 using MathExtended.Matrices.Extensions;
-using MathExtended.Matrices.Structures.CellsCollection;
 using MathExtended.Matrices.Structures.CellsCollections;
 using MathExtended.Matrices.Structures.Columns;
 using MathExtended.Matrices.Structures.Rows;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MathExtended.Matrices
@@ -94,7 +92,16 @@ namespace MathExtended.Matrices
             }
         }
 
-        
+        /// <summary>
+        /// Get rows all from matrix
+        /// </summary>
+        public Row<T>[] Rows
+        {
+            get => GetRows();
+
+            set => SetRows(value);
+        }
+
         /// <summary>
         /// Колличество строк в матрице
         /// </summary>
@@ -132,7 +139,7 @@ namespace MathExtended.Matrices
         {
             matrix = new T[RowsCount][];
 
-            for(int row = 0;row < RowsCount;row++)
+            for (int row = 0; row < RowsCount; row++)
             {
                 matrix[row] = new T[ColumnsCount];
             }
@@ -147,15 +154,7 @@ namespace MathExtended.Matrices
         {
             if (rowIndex < RowsCount)
             {
-                var fullRow = new List<T>();
-
-                for (int column = 0; column < ColumnsCount; column++)
-                {
-                    fullRow.Add(this[rowIndex, column]);
-                }
-
-
-                return new Row<T>(fullRow.ToArray());
+                return matrix[rowIndex];
             }
             else
             {
@@ -190,9 +189,7 @@ namespace MathExtended.Matrices
         {
             if (index <= row.Size)
             {
-
-                ForEach((r, c) => this[index, c] = row[c]);
-
+                matrix[index] = (T[])row;
             }
             else
             {
@@ -339,9 +336,9 @@ namespace MathExtended.Matrices
         /// <returns>Перечислитель матрицы</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            foreach(T[] row in matrix)
+            foreach (T[] row in matrix)
             {
-                foreach(T cell in row)
+                foreach (T cell in row)
                 {
                     yield return cell;
                 }
@@ -422,12 +419,6 @@ namespace MathExtended.Matrices
             }
         }
 
-        // // TODO: переопределить метод завершения, только если "Dispose(bool disposing)" содержит код для освобождения неуправляемых ресурсов
-        // ~Matrix()
-        // {
-        //     // Не изменяйте этот код. Разместите код очистки в методе "Dispose(bool disposing)".
-        //     Dispose(disposing: false);
-        // }
 
         /// <summary>
         /// Освобождает использованные ресурсы

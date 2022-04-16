@@ -59,7 +59,7 @@ namespace MathExtended
             return 1 / Sch(x);
         }
 
-        
+
         /// <summary>
         /// Вычисляет алгебраическую сумму функции
         /// </summary>
@@ -79,7 +79,7 @@ namespace MathExtended
             return sum;
         }
 
-       
+
         /// <summary>
         /// Проводит табулирование функции
         /// </summary>
