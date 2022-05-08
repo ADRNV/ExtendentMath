@@ -28,10 +28,13 @@ namespace MathExtended.Matrices.Structures.Columns
         /// Не явным образом приводит масив к столбцу
         /// </summary>
         /// <param name="array">Приводимый массив</param>
-        public static implicit operator Column<T>(T[] array)
-        {
-            return new Column<T>(array);
-        }
+        public static implicit operator Column<T>(T[] array) => new Column<T>(array);
+
+        /// <summary>
+        /// Explicitly casts <see cref="Column{T}"/> to <see cref="T"/> array
+        /// </summary>
+        /// <param name="column">Reduced column</param>
+        public static explicit operator T[](Column<T> column) => column.Cells; 
 
         /// <summary>
         /// Умножает число на столбец

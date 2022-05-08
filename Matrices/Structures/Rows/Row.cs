@@ -33,20 +33,14 @@ namespace MathExtended.Matrices.Structures.Rows
         /// Не явным образом приводит массив к строке
         /// </summary>
         /// <param name="array"></param>
-        public static implicit operator Row<T>(T[] array)
-        {
-            return new Row<T>(array);
-        }
+        public static implicit operator Row<T>(T[] array) => new Row<T>(array);
 
         /// <summary>
-        /// Casts <see cref="Row{T}"/> to array
+        /// Explicitly casts <see cref="Row{T}"/> to array
         /// </summary>
         /// <param name="row">Row</param>
-        public static explicit operator T[](Row<T> row)
-        {
-            return row.Cells;
-        }
-
+        public static explicit operator T[](Row<T> row) => row.Cells;
+        
         /// <summary>
         /// Умножает число на строку
         /// </summary>
