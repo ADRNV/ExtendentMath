@@ -74,7 +74,8 @@ namespace MathExtended.Matrices.Structures.Rows
 
                 summedRow.ForEach((cell) =>
                 {
-                    summedRow[i++] = (T)Operator.Add(rowA[i++], rowB[i++]);
+                    summedRow[i] = (T)Operator.Add(rowA[i], rowB[i]);
+                    i++;
                 });
 
                 return summedRow;
