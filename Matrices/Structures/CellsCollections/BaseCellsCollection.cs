@@ -14,7 +14,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
         private T[] _cells;
         private int _size;
         private bool disposedValue;
-        private int _position;
+        private int _position = -1;
 
         /// <summary>
         /// Индексатор.По индексу возвращает или задает значение ячейки
