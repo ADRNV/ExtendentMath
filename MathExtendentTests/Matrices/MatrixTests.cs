@@ -221,9 +221,9 @@ namespace MathExtendedTests
         [Fact]
         public void MatrixCalculateDeterminant()
         {
-            Matrix<double> matrix1 = new Matrix<double>(2, 2).InitBy((r, c) => r + 2 * c + 1);
+            Matrix<double> matrix1 = new Matrix<double>(3, 3).FillInOrder();
 
-            Assert.Equal(9, matrix1.CalculateDeterminant());
+            Assert.Equal(0, matrix1.CalculateDeterminant());
         }
 
     }
