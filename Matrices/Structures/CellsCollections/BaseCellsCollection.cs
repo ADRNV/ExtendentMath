@@ -75,7 +75,6 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             _size = array.Length;
         }
 
-
         /// <summary>
         /// Применяет действие ко всем элементам
         /// </summary>
@@ -88,29 +87,7 @@ namespace MathExtended.Matrices.Structures.CellsCollection
             }
         }
 
-        /// <summary>
-        /// Находит максимальное число среди ячеек
-        /// </summary>
-        /// <returns>Максимальное значение в последовательности ячеек</returns>
-        public virtual T Max() => _cells.Max();
-
-
-        /// <summary>
-        /// Находит минимальное число среди ячеек
-        /// </summary>
-        /// <returns> Минимальное значение в последовательности ячеек</returns>
-        public virtual T Min() => _cells.Min();
-
-        /// <summary>
-        /// Проверяет нулевая ли коллекция
-        /// </summary>
-        /// <returns> <see langword="true"/> - если все ячейки равны нулю, <see langword="false"/> - если хоть одна ячейка не равна нулю </returns>
-        public virtual bool IsZero()
-        {
-            return _cells.All((cell) => cell == (dynamic)0);
-        }
-
-
+        
         #region IEnumerable
         /// <summary>
         /// Текуший элемент
