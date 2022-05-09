@@ -1,4 +1,5 @@
 ﻿using MathExtended.Exceptions;
+using MathExtended.Matrices.Structures.CellsCollections;
 using MiscUtil;
 using System;
 using System.Runtime.CompilerServices;

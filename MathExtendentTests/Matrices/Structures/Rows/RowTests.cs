@@ -12,41 +12,6 @@ namespace MathExtendentTests.Matrices.Structures.Rows
 {
     public class RowTests
     {
-        [Theory]
-        [InlineData(0)]
-        [InlineData(1)]
-        [InlineData(2)]
-        [InlineData(6)]
-        public void InitRow(int lenght)
-        {
-            Row<decimal> row = new Row<decimal>(lenght);
-
-            Assert.Equal(lenght, row.Size);
-        }
-
-        [Theory]
-        [InlineData(-1)]
-        public void InitRowWithInvalidSize(int lenght)
-        {
-            Assert.Throws<OverflowException>(() =>
-            {
-                Row<decimal> row = new Row<decimal>(lenght);
-            });
-        }
-
-        [Theory]
-        [InlineData(new double[0] { })]
-        [InlineData(new double[3] { 1, 2, 3 })]
-        [InlineData(new double[6] { 1, 2, 4, 5, 6, 7 })]
-        public void InitRowByArray(double[] array)
-        {
-            Row<double> row = new Row<double>(array);
-
-            Assert.Equal(array.Length, row.Size);
-
-            Assert.Equal(array, row);
-        }
-
         [Fact]
         public void RowCastToArray()
         {
@@ -67,6 +32,19 @@ namespace MathExtendentTests.Matrices.Structures.Rows
             row = array;
 
             Assert.Equal(row.GetType(), ((Row<int>)array).GetType());
+        }
+
+        [Theory]
+        [InlineData(new double[3] { 2, 3, 1 })]
+        [InlineData(new double[5] { 1, 2, 3, 4, 5})]
+        [InlineData(new double[6] { 1, 2, 3, 4, 5, 6})]
+        public void TransponateRowToColum(double[] array)
+        {
+            Row<double> row = array;
+
+            Column<double> colum = array;
+
+            Assert.Equal(colum,row.Transponate());
         }
 
         [Theory]
