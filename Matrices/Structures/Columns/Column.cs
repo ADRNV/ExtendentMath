@@ -84,7 +84,11 @@ namespace MathExtended.Matrices.Structures.Columns
 
                 int i = 0;
 
-                summedColumn.ForEach((cell) => summedColumn[i++] = Operator.Add(columnA[i++], columnB[i++]));
+                summedColumn.ForEach((cell) => 
+                {
+                    summedColumn[i] = Operator.Add(columnA[i], columnB[i]);
+                    i++;
+                });
 
                 return summedColumn;
             }
@@ -108,7 +112,11 @@ namespace MathExtended.Matrices.Structures.Columns
 
                 int i = 0;
 
-                summedColumn.ForEach((cell) => summedColumn[i++] = Operator.Subtract(columnA[i++], columnB[i++]));
+                summedColumn.ForEach((cell) =>
+                {
+                    summedColumn[i] = Operator.Subtract(columnA[i], columnB[i]);
+                    i++;
+                });
 
                 return summedColumn;
             }
