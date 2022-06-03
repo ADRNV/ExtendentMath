@@ -1,4 +1,5 @@
 ﻿using MathExtended.Exceptions;
+using MathExtended.Matrices.Extensions;
 using MathExtended.Matrices.Structures.CellsCollections;
 using MiscUtil;
 using System;
@@ -269,45 +270,6 @@ namespace MathExtended.Matrices
 
 
             return steppedMatrix;
-        }
-
-        ///<summary>
-        /// Создает матрицу с вычеркнутыми столбцами на основе текущей
-        /// </summary>
-        /// <param name="column">Количество вычеркнутых столбцов</param>
-        /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Matrix<T> CreateMatrixWithoutColumn(int column)
-        {
-            if (column < 0 || column >= this.ColumnsCount)
-            {
-                throw new ArgumentException("invalid column index");
-            }
-            var result = new Matrix<T>(this.RowsCount, this.ColumnsCount - 1);
-            result.ForEach((i, j) =>
-                result[i, j] =
-                j < column ? this[i, j] : this[i, j + 1]);
-            return result;
-        }
-
-        /// <summary>
-        /// Создает матрицу с вычеркнутыми строками на основе текущей
-        /// </summary>
-        /// <param name="row">Количество вычеркнутых строк</param>
-        /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Matrix<T> CreateMatrixWithoutRow(int row)
-        {
-            if (row < 0 || row >= this.RowsCount)
-            {
-                throw new ArgumentException("invalid row index");
-            }
-            var result = new Matrix<T>(this.RowsCount - 1, this.ColumnsCount);
-            result.ForEach((i, j) =>
-                result[i, j] =
-                i < row ?
-                this[i, j] : this[i + 1, j]);
-            return result;
         }
 
         /// <summary>

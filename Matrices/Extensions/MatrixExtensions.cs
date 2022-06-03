@@ -190,31 +190,56 @@ namespace MathExtended.Matrices.Extensions
             return filledMatrix;
         }
 
-        /// <summary>
-        /// Находит минор матрицы
+        ///<summary>
+        /// Создает матрицу с вычеркнутыми столбцами на основе текущей
         /// </summary>
-        /// <param name="matrix">Матрица</param>
-        /// <param name="crossedOutRow">Вычеркнутая строка</param>
-        /// <param name="crossedOutColumn">Вычеркнутый столбец</param>
-        /// <returns><see cref="Matrix{T}"/> Минор матрицы</returns>
-        public static Matrix<T> FindMinor<T>(this IMatrix<T> matrix, uint crossedOutRow, uint crossedOutColumn) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        /// <param name="column">Количество вычеркнутых столбцов</param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix<T> CreateMatrixWithoutColumn<T>(this IMatrix<T> matrix, int column) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
-            int i, j, p, q;
-
-            Matrix<T> minor = new Matrix<T>(matrix.RowsCount - 1, matrix.ColumnsCount - 1);
-
-            for (j = 0, q = 0; q < minor.RowsCount; j++, q++)
+            if (column < 0 || column >= matrix.ColumnsCount)
             {
-                for (i = 0, p = 0; p < minor.ColumnsCount; i++, p++)
-                {
-                    if (i == crossedOutRow) i++;
-                    if (j == crossedOutColumn) j++;
-                    minor[p, q] = matrix[i, j];
-                }
-
+                throw new ArgumentException("invalid column index");
             }
+            var result = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount - 1);
+            result.ForEach((i, j) =>
+                result[i, j] =
+                j < column ? matrix[i, j] : matrix[i, j + 1]);
+            return result;
+        }
 
-            return minor;
+        /// <summary>
+        /// Создает матрицу с вычеркнутыми строками на основе текущей
+        /// </summary>
+        /// <param name="row">Количество вычеркнутых строк</param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix<T> CreateMatrixWithoutRow<T>(this IMatrix<T> matrix,int row) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            if (row < 0 || row >= matrix.RowsCount)
+            {
+                throw new ArgumentException("invalid row index");
+            }
+            var result = new Matrix<T>(matrix.RowsCount - 1, matrix.ColumnsCount);
+            result.ForEach((i, j) =>
+                result[i, j] =
+                i < row ?
+                matrix[i, j] : matrix[i + 1, j]);
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates minor for
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="matrix"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <returns></returns>
+        public static T CalculateMinor<T>(this IMatrix<T> matrix, int row, int column) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            return matrix.CreateMatrixWithoutColumn(column).CreateMatrixWithoutRow(row).CalculateDeterminant();
         }
 
         /// <summary>
@@ -241,6 +266,44 @@ namespace MathExtended.Matrices.Extensions
                 throw new TheNumberOfRowsAndColumnsIsDifferentException();
             }
 
+        }
+
+        /// <summary>
+        /// Calculate inverted matrix.If matrix degenerate
+        /// returns <see langword="null"/>
+        /// </summary>
+        /// <typeparam name="T">Numerical type</typeparam>
+        /// <param name="matrix">Matrix</param>
+        /// <returns>Inverted matrix (matrix^-1)</returns>
+        /// <exception cref="TheNumberOfRowsAndColumnsIsDifferentException"></exception>
+        public static Matrix<T> CalculateInvertibleMatrix<T>(this Matrix<T> matrix) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            if (matrix.IsSquareMatrix)
+            {
+                Matrix<T> inverted = new Matrix<T>(matrix.RowsCount, matrix.ColumnsCount);
+
+                T determinant = matrix.CalculateDeterminant();
+
+                if (!(Math.Abs((dynamic)determinant) < (T)(dynamic)0.0000001))
+                {
+
+                    matrix.ForEach((row, column) =>
+                    {
+                        inverted[row, column] = (dynamic)((row + column) % 2 == 1 ? -1 : 1) * matrix.CalculateMinor(row, column) / determinant;
+                    });
+                }
+                else
+                {
+                    return null;
+                }
+
+                return inverted.Transponate();
+            }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
+           
         }
 
     }
