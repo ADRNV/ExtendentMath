@@ -210,12 +210,13 @@ namespace MathExtended.Matrices.Extensions
         }
 
         /// <summary>
-        /// Создает матрицу с вычеркнутыми строками на основе текущей
+        /// Creates matrix based on current, but crossed row
         /// </summary>
-        /// <param name="row">Количество вычеркнутых строк</param>
-        /// <returns></returns>
+        /// <param name="matrix">Matrix</param>
+        /// <param name="row">Index of remove row</param>
+        /// <returns>Matrix without slected row</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Matrix<T> CreateMatrixWithoutRow<T>(this IMatrix<T> matrix,int row) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        public static Matrix<T> CreateMatrixWithoutRow<T>(this IMatrix<T> matrix, int row) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
             if (row < 0 || row >= matrix.RowsCount)
             {
@@ -232,10 +233,10 @@ namespace MathExtended.Matrices.Extensions
         /// <summary>
         /// Calculates minor for
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="matrix"></param>
-        /// <param name="i"></param>
-        /// <param name="j"></param>
+        /// <typeparam name="T">Numerical type</typeparam>
+        /// <param name="matrix">Matrix</param>
+        /// <param name="row">Row index in matrix</param>
+        /// <param name="column">Column index in matrix</param>
         /// <returns></returns>
         public static T CalculateMinor<T>(this IMatrix<T> matrix, int row, int column) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
         {
