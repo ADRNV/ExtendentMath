@@ -1,4 +1,5 @@
-﻿using MathExtended.Interfaces;
+﻿using MathExtended.Exceptions;
+using MathExtended.Interfaces;
 using MathExtended.Matrices.Structures.CellsCollections;
 using System;
 using System.Collections.Generic;
@@ -214,6 +215,32 @@ namespace MathExtended.Matrices.Extensions
             }
 
             return minor;
+        }
+
+        /// <summary>
+        /// Возводит матрицу в степень
+        /// </summary>
+        /// <param name="matrix">Матрица</param>
+        /// <param name="power">Степень</param>
+        /// <returns>Матрица в заданной степени</returns>
+        public static Matrix<T> Pow<T>(this Matrix<T> matrix, int power) where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+
+            if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
+            {
+                var matrixC = matrix;
+
+                for (int i = 1; i <= power; i++)
+                {
+                    matrixC *= matrix;
+                }
+                return matrixC;
+            }
+            else
+            {
+                throw new TheNumberOfRowsAndColumnsIsDifferentException();
+            }
+
         }
 
     }

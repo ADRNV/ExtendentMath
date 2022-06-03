@@ -240,32 +240,6 @@ namespace MathExtended.Matrices
         }
 
         /// <summary>
-        /// Возводит матрицу в степень
-        /// </summary>
-        /// <param name="matrix">Матрица</param>
-        /// <param name="power">Степень</param>
-        /// <returns>Матрица в заданной степени</returns>
-        public static Matrix<T> Pow(Matrix<T> matrix, int power)
-        {
-
-            if (matrix != null && matrix.ColumnsCount == matrix.RowsCount)
-            {
-                var matrixC = matrix;
-
-                for (int i = 1; i <= power; i++)
-                {
-                    matrixC *= matrix;
-                }
-                return matrixC;
-            }
-            else
-            {
-                throw new TheNumberOfRowsAndColumnsIsDifferentException();
-            }
-
-        }
-
-        /// <summary>
         /// Приводит матрицу к ступенчатому виду
         /// </summary>
         /// <returns><see cref="Matrix{T}"/> Матрица в ступенчатов виде</returns>
