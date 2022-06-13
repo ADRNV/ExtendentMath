@@ -61,7 +61,7 @@ namespace MathExtended.Matrices
         /// Создает матрицу на основе двумерного массива 
         /// </summary>
         /// <param name="array">Двумерный массив</param>
-        public Matrix(T[][] array) : base(array.GetUpperBound(0) + 1, array.GetUpperBound(1) + 1)
+        public Matrix(T[][] array) : base(array.GetUpperBound(0) + 1, array[0].Length + 1)
         {
             matrix = array;
 
